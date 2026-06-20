@@ -16,6 +16,7 @@ import {
   Sheet,
   SheetClose,
   SheetContent,
+  SheetDescription,
   SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet";
@@ -125,6 +126,9 @@ export function Header() {
               <SheetTitle className="border-b border-border px-6 py-5">
                 <Logo />
               </SheetTitle>
+              <SheetDescription className="sr-only">
+                {site.name}
+              </SheetDescription>
               <nav
                 aria-label="Mobile"
                 className="flex flex-col gap-1 px-4 py-4"
