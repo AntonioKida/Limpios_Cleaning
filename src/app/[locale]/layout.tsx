@@ -8,6 +8,7 @@ import { routing, type Locale } from "@/i18n/routing";
 import { site } from "@/content/site";
 import { Header } from "@/components/layout/header";
 import { Footer } from "@/components/layout/footer";
+import { GoogleAnalytics } from "@/components/analytics/google-analytics";
 import "../globals.css";
 
 const poppins = Poppins({
@@ -95,6 +96,7 @@ export default async function LocaleLayout({
           <Footer />
         </NextIntlClientProvider>
         <Analytics />
+        <GoogleAnalytics />
       </body>
     </html>
   );
