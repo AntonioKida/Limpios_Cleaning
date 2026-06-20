@@ -7,6 +7,13 @@ import { buildMetadata } from "@/lib/metadata";
 import { PageHero } from "@/components/sections/page-hero";
 import { Section } from "@/components/ui/section";
 import { Container } from "@/components/ui/container";
+import { JsonLd } from "@/components/json-ld";
+import {
+  serviceSchema,
+  faqPageSchema,
+  breadcrumbSchema,
+} from "@/lib/json-ld";
+import { faqIds } from "@/content/faq";
 import { CheckList } from "@/components/check-list";
 import { ServiceCard } from "@/components/sections/service-card";
 import { Faq } from "@/components/sections/faq";
@@ -58,6 +65,15 @@ export default async function ServiceDetailPage({
   const t = await getTranslations("Services");
   const tc = await getTranslations("Common");
   const tf = await getTranslations("Home.finalCta");
+  const tFaq = await getTranslations("Faq.items");
+  const tNav = await getTranslations("Nav");
+
+  const serviceName = t(`items.${service}.name`);
+  const serviceUrl = `${site.url}/${locale}/services/${service}`;
+  const faqItems = faqIds.map((id) => ({
+    q: tFaq(`${id}.q`),
+    a: tFaq(`${id}.a`),
+  }));
 
   const included = t.raw(`items.${service}.included`) as string[];
   const who = t.raw(`items.${service}.who`) as string[];
@@ -76,10 +92,25 @@ export default async function ServiceDetailPage({
 
   return (
     <main id="main-content">
+      <JsonLd
+        data={[
+          serviceSchema({
+            name: serviceName,
+            description: t(`items.${service}.metaDescription`),
+            url: serviceUrl,
+          }),
+          faqPageSchema(faqItems),
+          breadcrumbSchema([
+            { name: tNav("home"), url: `${site.url}/${locale}` },
+            { name: tNav("services"), url: `${site.url}/${locale}/services` },
+            { name: serviceName, url: serviceUrl },
+          ]),
+        ]}
+      />
       <PageHero
         align="left"
         eyebrow={t(`items.${service}.tagline`)}
-        title={t(`items.${service}.name`)}
+        title={serviceName}
         subtitle={t(`items.${service}.description`)}
       >
         <QuoteCTA service={service} />

@@ -1,5 +1,8 @@
 import { setRequestLocale, getTranslations } from "next-intl/server";
 import type { Locale } from "@/i18n/routing";
+import { JsonLd } from "@/components/json-ld";
+import { localBusinessSchema, faqPageSchema } from "@/lib/json-ld";
+import { faqIds } from "@/content/faq";
 import { Hero } from "@/components/sections/hero";
 import { TrustBar } from "@/components/sections/trust-bar";
 import { ServicesOverview } from "@/components/sections/services-overview";
@@ -19,9 +22,21 @@ export default async function HomePage({
   const { locale } = await params;
   setRequestLocale(locale);
   const t = await getTranslations("Home.finalCta");
+  const tMeta = await getTranslations("Meta");
+  const tFaq = await getTranslations("Faq.items");
+  const faqItems = faqIds.map((id) => ({
+    q: tFaq(`${id}.q`),
+    a: tFaq(`${id}.a`),
+  }));
 
   return (
     <main id="main-content">
+      <JsonLd
+        data={[
+          localBusinessSchema({ description: tMeta("defaultDescription") }),
+          faqPageSchema(faqItems),
+        ]}
+      />
       <Hero />
       <TrustBar />
       <ServicesOverview />
