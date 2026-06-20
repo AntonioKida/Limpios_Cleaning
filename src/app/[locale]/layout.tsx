@@ -1,10 +1,12 @@
 import type { Metadata, Viewport } from "next";
 import { notFound } from "next/navigation";
 import { hasLocale, NextIntlClientProvider } from "next-intl";
-import { setRequestLocale } from "next-intl/server";
+import { setRequestLocale, getTranslations } from "next-intl/server";
 import { Poppins, Inter } from "next/font/google";
 import { Analytics } from "@vercel/analytics/next";
 import { routing } from "@/i18n/routing";
+import { Header } from "@/components/layout/header";
+import { Footer } from "@/components/layout/footer";
 import "../globals.css";
 
 const poppins = Poppins({
@@ -53,6 +55,7 @@ export default async function LocaleLayout({
   }
   // Enable static rendering for this locale.
   setRequestLocale(locale);
+  const t = await getTranslations("Common");
 
   return (
     <html
@@ -61,7 +64,17 @@ export default async function LocaleLayout({
       className={`${poppins.variable} ${inter.variable}`}
     >
       <body className="flex min-h-dvh flex-col bg-background text-foreground">
-        <NextIntlClientProvider>{children}</NextIntlClientProvider>
+        <NextIntlClientProvider>
+          <a
+            href="#main-content"
+            className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[100] focus:rounded-lg focus:bg-surface focus:px-4 focus:py-2 focus:text-sm focus:font-semibold focus:text-navy focus:shadow-lg focus:outline-2 focus:outline-offset-2 focus:outline-ring"
+          >
+            {t("skipToContent")}
+          </a>
+          <Header />
+          {children}
+          <Footer />
+        </NextIntlClientProvider>
         <Analytics />
       </body>
     </html>

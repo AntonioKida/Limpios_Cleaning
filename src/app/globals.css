@@ -199,3 +199,12 @@
     scroll-behavior: auto !important;
   }
 }
+
+/* Safety net: if JS is disabled, motion's inline initial styles never run, so
+   force scroll-reveal content fully visible. */
+@media (scripting: none) {
+  [data-reveal] {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}

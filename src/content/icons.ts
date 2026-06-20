@@ -29,6 +29,4 @@ export type IconName =
   | "Clock"
   | "Check"
   | "ArrowRight"
-  | "Quote"
-  | "Instagram"
-  | "Facebook";
+  | "Quote";
