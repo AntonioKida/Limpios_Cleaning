@@ -1,0 +1,153 @@
+import type { Metadata } from "next";
+import { notFound } from "next/navigation";
+import { ArrowLeft, Phone } from "lucide-react";
+import { setRequestLocale, getTranslations } from "next-intl/server";
+import type { Locale } from "@/i18n/routing";
+import { buildMetadata } from "@/lib/metadata";
+import { PageHero } from "@/components/sections/page-hero";
+import { Section } from "@/components/ui/section";
+import { Container } from "@/components/ui/container";
+import { CheckList } from "@/components/check-list";
+import { ServiceCard } from "@/components/sections/service-card";
+import { Faq } from "@/components/sections/faq";
+import { CTASection } from "@/components/sections/cta-section";
+import { QuoteCTA } from "@/components/quote/quote-cta";
+import { Button } from "@/components/ui/button";
+import { Badge } from "@/components/ui/badge";
+import { Link } from "@/i18n/navigation";
+import {
+  type Service,
+  serviceSlugs,
+  getService,
+  isServiceSlug,
+} from "@/content/services";
+import { site } from "@/content/site";
+import { routes } from "@/lib/routes";
+import { formatCurrency } from "@/lib/format";
+
+export function generateStaticParams() {
+  return serviceSlugs.map((service) => ({ service }));
+}
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: Locale; service: string }>;
+}): Promise<Metadata> {
+  const { locale, service } = await params;
+  if (!isServiceSlug(service)) return {};
+  const t = await getTranslations({ locale, namespace: "Services.items" });
+  return buildMetadata({
+    title: t(`${service}.name`),
+    description: t(`${service}.metaDescription`),
+    locale,
+    path: `/services/${service}`,
+  });
+}
+
+export default async function ServiceDetailPage({
+  params,
+}: {
+  params: Promise<{ locale: Locale; service: string }>;
+}) {
+  const { locale, service } = await params;
+  if (!isServiceSlug(service)) notFound();
+  setRequestLocale(locale);
+
+  const svc = getService(service)!;
+  const t = await getTranslations("Services");
+  const tc = await getTranslations("Common");
+  const tf = await getTranslations("Home.finalCta");
+
+  const included = t.raw(`items.${service}.included`) as string[];
+  const who = t.raw(`items.${service}.who`) as string[];
+  const factors = t.raw(`items.${service}.factors`) as string[];
+
+  const priceLabel =
+    svc.price.model === "from" && svc.price.amount
+      ? tc("from", { amount: formatCurrency(svc.price.amount, locale) })
+      : svc.price.model === "custom"
+        ? tc("customQuote")
+        : tc("requestQuote");
+
+  const related = svc.related
+    .map((slug) => getService(slug))
+    .filter((s): s is Service => Boolean(s));
+
+  return (
+    <main id="main-content">
+      <PageHero
+        align="left"
+        eyebrow={t(`items.${service}.tagline`)}
+        title={t(`items.${service}.name`)}
+        subtitle={t(`items.${service}.description`)}
+      >
+        <QuoteCTA service={service} />
+        <Button asChild variant="outline" size="xl">
+          <a href={site.phone.href}>
+            <Phone className="size-5" aria-hidden />
+            {tc("callNow")}
+          </a>
+        </Button>
+        <Badge variant="soft" size="md" className="px-3.5 py-2 text-sm">
+          {svc.price.model === "from" && svc.price.amount
+            ? `${t("labels.startingAt")} ${formatCurrency(svc.price.amount, locale)}`
+            : priceLabel}
+        </Badge>
+      </PageHero>
+
+      {/* Breadcrumb back link */}
+      <Container className="pt-8">
+        <Link
+          href={routes.services}
+          className="inline-flex items-center gap-1.5 text-sm font-semibold text-royal hover:underline"
+        >
+          <ArrowLeft className="size-4" />
+          {t("labels.allServices")}
+        </Link>
+      </Container>
+
+      <Section surface="none" className="pt-8">
+        <div className="grid gap-10 lg:grid-cols-3 lg:gap-12">
+          <div className="lg:col-span-2">
+            <h2 className="font-heading text-2xl font-bold text-navy">
+              {t("labels.included")}
+            </h2>
+            <CheckList items={included} columns={2} className="mt-6" />
+          </div>
+          <aside className="flex flex-col gap-8">
+            <div>
+              <h2 className="font-heading text-xl font-bold text-navy">
+                {t("labels.whoFor")}
+              </h2>
+              <CheckList items={who} className="mt-5" />
+            </div>
+            <div>
+              <h2 className="font-heading text-xl font-bold text-navy">
+                {t("labels.priceFactors")}
+              </h2>
+              <CheckList items={factors} className="mt-5" />
+            </div>
+          </aside>
+        </div>
+      </Section>
+
+      {related.length > 0 ? (
+        <Section surface="white">
+          <h2 className="font-heading text-2xl font-bold text-navy">
+            {t("labels.related")}
+          </h2>
+          <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            {related.map((r) => (
+              <ServiceCard key={r.slug} service={r} />
+            ))}
+          </div>
+        </Section>
+      ) : null}
+
+      <Faq />
+
+      <CTASection title={tf("title")} subtitle={tf("subtitle")} service={service} />
+    </main>
+  );
+}

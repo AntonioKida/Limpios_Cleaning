@@ -7,8 +7,10 @@
 import type { IconName } from "./icons";
 import type { ServiceSlug } from "./services";
 
+export type PricePackageId = "standard" | "deep" | "recurring" | "commercial";
+
 export interface PricePackage {
-  id: string;
+  id: PricePackageId;
   icon: IconName;
   model: "from" | "custom";
   amount?: number;

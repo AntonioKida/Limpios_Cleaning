@@ -177,7 +177,7 @@
     },
     "beforeAfter": {
       "eyebrow": "See the difference",
-      "title": "Before &amp; after",
+      "title": "Before & after",
       "subtitle": "Real results, every visit. (Sample images shown — your home is next.)",
       "beforeLabel": "Before",
       "afterLabel": "After",
@@ -219,7 +219,7 @@
   "Services": {
     "hub": {
       "eyebrow": "Services",
-      "title": "Cleaning &amp; care for every space",
+      "title": "Cleaning & care for every space",
       "subtitle": "Eco-friendly, insured, and done to a checklist — choose the service that fits, or get a free quote and we'll guide you.",
       "intro": "Whether it's a one-time refresh or recurring care, Limpios brings the same veteran-owned attention to detail to every job across Central Florida."
     },
@@ -483,6 +483,8 @@
       "getQuoteIn": "Get a free quote in {city}"
     },
     "cityPage": {
+      "metaTitle": "Cleaning Services in {city}, FL",
+      "metaDescription": "Veteran-owned, eco-friendly home & commercial cleaning in {city}, FL. Licensed, insured and bilingual. Recurring, deep, move-out and more — get a free quote.",
       "intro": "Limpios Cleaning Management provides veteran-owned, eco-friendly cleaning in {city} and the surrounding area. From recurring home cleaning to deep cleans, move-in/out and commercial service — we bring a trusted, insured team and a satisfaction guarantee.",
       "whyTitle": "Your local cleaners in {city}",
       "whyBody": "We're based right here in Central Florida, so we show up on time and treat {city} homes and businesses like our own. Licensed, insured, bilingual, and eco-friendly — the difference is in the details.",

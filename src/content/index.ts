@@ -9,7 +9,7 @@ export {
 } from "./services";
 export type { Service, ServiceSlug } from "./services";
 export { cities, citySlugs, getCity } from "./cities";
-export type { City, CountyKey } from "./cities";
+export type { City, CountyKey, CitySlug } from "./cities";
 export { reviews, reviewsArePlaceholder } from "./reviews";
 export type { Review, ReviewId } from "./reviews";
 export { faqIds } from "./faq";

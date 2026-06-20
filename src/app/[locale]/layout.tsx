@@ -4,7 +4,8 @@ import { hasLocale, NextIntlClientProvider } from "next-intl";
 import { setRequestLocale, getTranslations } from "next-intl/server";
 import { Poppins, Inter } from "next/font/google";
 import { Analytics } from "@vercel/analytics/next";
-import { routing } from "@/i18n/routing";
+import { routing, type Locale } from "@/i18n/routing";
+import { site } from "@/content/site";
 import { Header } from "@/components/layout/header";
 import { Footer } from "@/components/layout/footer";
 import "../globals.css";
@@ -33,14 +34,32 @@ export const viewport: Viewport = {
   initialScale: 1,
 };
 
-export const metadata: Metadata = {
-  title: {
-    template: "%s | Limpios Cleaning Management",
-    default: "Limpios Cleaning Management",
-  },
-  description:
-    "Veteran-owned, eco-friendly residential & commercial cleaning in Clermont and Central Florida.",
-};
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: Locale }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: "Meta" });
+  return {
+    metadataBase: new URL(site.url),
+    title: {
+      template: `%s | ${t("siteName")}`,
+      default: t("defaultTitle"),
+    },
+    description: t("defaultDescription"),
+    alternates: {
+      canonical: `/${locale}`,
+      languages: { en: "/en", es: "/es", "x-default": "/en" },
+    },
+    openGraph: {
+      type: "website",
+      siteName: t("siteName"),
+      locale: locale === "es" ? "es_ES" : "en_US",
+    },
+    twitter: { card: "summary_large_image" },
+  };
+}
 
 export default async function LocaleLayout({
   children,

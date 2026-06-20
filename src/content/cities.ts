@@ -8,8 +8,18 @@
 
 export type CountyKey = "lake" | "orange" | "multi";
 
+export type CitySlug =
+  | "clermont"
+  | "minneola"
+  | "groveland"
+  | "winter-garden"
+  | "horizon-west"
+  | "four-corners"
+  | "montverde"
+  | "mascotte";
+
 export interface City {
-  slug: string;
+  slug: CitySlug;
   /** Proper noun — not translated. */
   name: string;
   county: CountyKey;
@@ -18,7 +28,7 @@ export interface City {
   /** Representative ZIP codes. TODO: confirm exact coverage + ZIPs with client. */
   zips: string[];
   /** Nearby city slugs for internal linking. */
-  nearby: string[];
+  nearby: CitySlug[];
 }
 
 export const cities: City[] = [
