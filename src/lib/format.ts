@@ -16,3 +16,12 @@ export function formatTime(hhmm: string, locale: Locale): string {
 export function spokenPhone(display: string): string {
   return display.replace(/\D/g, "").split("").join(" ");
 }
+
+/** Whole-dollar USD currency, locale-aware (e.g. "$120"). */
+export function formatCurrency(amount: number, locale: Locale): string {
+  return new Intl.NumberFormat(locale, {
+    style: "currency",
+    currency: "USD",
+    maximumFractionDigits: 0,
+  }).format(amount);
+}

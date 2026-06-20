@@ -11,7 +11,7 @@ export type { Service, ServiceSlug } from "./services";
 export { cities, citySlugs, getCity } from "./cities";
 export type { City, CountyKey } from "./cities";
 export { reviews, reviewsArePlaceholder } from "./reviews";
-export type { Review } from "./reviews";
+export type { Review, ReviewId } from "./reviews";
 export { faqIds } from "./faq";
 export type { FaqId } from "./faq";
 export { founder, valueCards } from "./founder";

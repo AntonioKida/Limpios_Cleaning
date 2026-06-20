@@ -713,6 +713,43 @@
     "devNote": "Modo de desarrollo: sin clave de correo configurada — los datos del cliente se registraron en la consola del servidor."
   },
 
+  "Faq": {
+    "items": {
+      "pricing": {
+        "q": "¿Cuánto cuesta la limpieza?",
+        "a": "Cada espacio es distinto, así que el precio depende del tamaño, la condición y la frecuencia con que reserva. Las limpiezas estándar de casa comienzan alrededor de $120 y las profundas alrededor de $200. Su cotización siempre es gratis y a la medida — sin sorpresas."
+      },
+      "eco": {
+        "q": "¿Sus productos son ecológicos y seguros para mascotas y niños?",
+        "a": "Sí. Usamos productos ecológicos y de bajo olor, duros con la suciedad pero suaves con su familia, sus mascotas y el aire de su hogar. Si tiene sensibilidades específicas, solo avísenos."
+      },
+      "supplies": {
+        "q": "¿Tengo que proporcionar productos o equipo?",
+        "a": "No — nuestro equipo llega totalmente equipado con productos profesionales y ecológicos. Si prefiere que usemos un producto específico que ya tiene, con gusto lo hacemos."
+      },
+      "pets": {
+        "q": "¿Qué hago con mis mascotas durante la limpieza?",
+        "a": "Sus mascotas pueden quedarse en casa. Solo cuéntenos sobre ellas al reservar para que nuestro equipo se organice y las mantenga cómodas y seguras."
+      },
+      "satisfaction": {
+        "q": "¿Y si no quedo conforme con la limpieza?",
+        "a": "Su satisfacción está garantizada. Si algo no quedó bien, avísenos dentro de 24 horas y regresamos a limpiarlo de nuevo sin costo."
+      },
+      "bilingual": {
+        "q": "¿Ofrecen servicio en español?",
+        "a": "Por supuesto. Limpios es completamente bilingüe — con gusto le ayudamos en inglés o español, por teléfono, mensaje o en persona."
+      },
+      "insured": {
+        "q": "¿Tienen licencia y seguro?",
+        "a": "Sí. Limpios cuenta con licencia y seguro, y nuestro equipo está verificado y con revisión de antecedentes para su tranquilidad."
+      },
+      "booking": {
+        "q": "¿Cómo reservo o pido una cotización?",
+        "a": "Solicite una cotización gratis en línea en unos dos minutos, o llámenos directamente. Confirmamos los detalles y agendamos una hora que le funcione."
+      }
+    }
+  },
+
   "Booking": {
     "title": "Reserva en línea — próximamente",
     "body": "Estamos preparando la reserva en línea instantánea. Mientras tanto, solicite una cotización gratis y confirmamos su cita personalmente.",

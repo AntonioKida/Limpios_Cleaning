@@ -4,8 +4,10 @@
  * before/after work photography. Captions/room labels are translatable and live
  * in messages under `Home.beforeAfter.items.<id>`.
  */
+export type BeforeAfterId = "kitchen" | "bathroom" | "living";
+
 export interface BeforeAfterPair {
-  id: string;
+  id: BeforeAfterId;
   before: string;
   after: string;
 }

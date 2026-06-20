@@ -1,13 +1,14 @@
 "use client";
 
+import { useState } from "react";
 import { ArrowRight } from "lucide-react";
 import { useTranslations } from "next-intl";
-import { Button } from "@/components/ui/button";
+import type { VariantProps } from "class-variance-authority";
+import { Button, type buttonVariants } from "@/components/ui/button";
 import { Link } from "@/i18n/navigation";
 import { routes } from "@/lib/routes";
 import { cn } from "@/lib/utils";
-import type { VariantProps } from "class-variance-authority";
-import type { buttonVariants } from "@/components/ui/button";
+import { QuoteDialog } from "./quote-dialog";
 
 type ButtonVariant = VariantProps<typeof buttonVariants>["variant"];
 type ButtonSize = VariantProps<typeof buttonVariants>["size"];
@@ -19,14 +20,14 @@ interface QuoteCTAProps {
   withIcon?: boolean;
   fullWidth?: boolean;
   className?: string;
-  /** Optional service slug to prefill the quote (read by the quote page). */
+  /** Optional service slug to prefill the quote form. */
   service?: string;
 }
 
 /**
- * The single entry point for "Get a free quote". Centralizing it means the
- * modal upgrade and any prefill logic live in one place. Renders a real link to
- * /quote (works without JS); the quote experience is progressively enhanced.
+ * The single entry point for "Get a free quote". Progressive enhancement: it's a
+ * real link to /quote (works without JS); when JS is available, clicking opens
+ * the multi-step quote modal instead. Modifier/middle clicks still navigate.
  */
 export function QuoteCTA({
   label,
@@ -38,23 +39,33 @@ export function QuoteCTA({
   service,
 }: QuoteCTAProps) {
   const t = useTranslations("Quote");
-  const href = service
-    ? { pathname: routes.quote, query: { service } }
-    : routes.quote;
+  const [open, setOpen] = useState(false);
+  const href = service ? `${routes.quote}?service=${service}` : routes.quote;
+
+  function handleClick(e: React.MouseEvent) {
+    if (e.metaKey || e.ctrlKey || e.shiftKey || e.altKey || e.button !== 0) {
+      return; // let new-tab / modified clicks navigate to /quote
+    }
+    e.preventDefault();
+    setOpen(true);
+  }
 
   return (
-    <Button
-      asChild
-      variant={variant}
-      size={size}
-      className={cn(fullWidth && "w-full", className)}
-    >
-      <Link href={href}>
-        {label ?? t("trigger")}
-        {withIcon ? (
-          <ArrowRight className="transition-transform group-hover/button:translate-x-0.5" />
-        ) : null}
-      </Link>
-    </Button>
+    <>
+      <Button
+        asChild
+        variant={variant}
+        size={size}
+        className={cn(fullWidth && "w-full", className)}
+      >
+        <Link href={href} onClick={handleClick}>
+          {label ?? t("trigger")}
+          {withIcon ? (
+            <ArrowRight className="transition-transform group-hover/button:translate-x-0.5" />
+          ) : null}
+        </Link>
+      </Button>
+      <QuoteDialog open={open} onOpenChange={setOpen} defaultService={service} />
+    </>
   );
 }

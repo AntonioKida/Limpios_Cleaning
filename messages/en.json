@@ -713,6 +713,43 @@
     "devNote": "Dev mode: no email key set — lead details were logged to the server console."
   },
 
+  "Faq": {
+    "items": {
+      "pricing": {
+        "q": "How much does cleaning cost?",
+        "a": "Every space is different, so pricing depends on size, condition and how often you book. Standard home cleans start around $120 and deep cleans around $200. Your quote is always free and tailored — no surprises."
+      },
+      "eco": {
+        "q": "Are your products eco-friendly and safe for pets and kids?",
+        "a": "Yes. We use eco-friendly, low-odor products that are tough on dirt but gentle on your family, pets and indoor air. If you have specific sensitivities, just let us know."
+      },
+      "supplies": {
+        "q": "Do I need to provide supplies or equipment?",
+        "a": "No — our team arrives fully equipped with professional, eco-friendly supplies. If you'd prefer we use a specific product you already own, we're happy to."
+      },
+      "pets": {
+        "q": "What should I do with my pets during the cleaning?",
+        "a": "Pets are welcome to stay home. Just tell us about them when you book so our team can plan accordingly and keep them comfortable and safe."
+      },
+      "satisfaction": {
+        "q": "What if I'm not happy with the cleaning?",
+        "a": "Your satisfaction is guaranteed. If anything isn't right, let us know within 24 hours and we'll return to re-clean it free of charge."
+      },
+      "bilingual": {
+        "q": "Do you offer service in Spanish?",
+        "a": "Absolutely. Limpios is fully bilingual — we're glad to help you in English or Spanish, by phone, message or in person."
+      },
+      "insured": {
+        "q": "Are you licensed and insured?",
+        "a": "Yes. Limpios is licensed and insured, and our team is vetted and background-checked for your peace of mind."
+      },
+      "booking": {
+        "q": "How do I book or get a quote?",
+        "a": "Request a free quote online in about two minutes, or call us directly. We'll confirm the details and schedule a time that works for you."
+      }
+    }
+  },
+
   "Booking": {
     "title": "Online booking — coming soon",
     "body": "We're setting up instant online booking. In the meantime, request a free quote and we'll confirm your appointment personally.",

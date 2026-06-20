@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" role="img" aria-label="AFTER Bathroom — sample placeholder">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#eaf5fc"/>
+      <stop offset="1" stop-color="#cdeafb"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="600" fill="url(#g)"/>
+  <rect x="60" y="90" width="680" height="360" rx="16" fill="none" stroke="#0a2359" stroke-opacity="0.18" stroke-width="3"/>
+  <line x1="60" y1="330" x2="740" y2="330" stroke="#0a2359" stroke-opacity="0.16" stroke-width="3"/>
+  <rect x="120" y="150" width="180" height="140" rx="8" fill="#28a2ef" opacity="0.28"/>
+  <rect x="500" y="170" width="160" height="120" rx="8" fill="#28a2ef" opacity="0.26"/>
+  
+    <g fill="#f47b20">
+      <path d="M690 120 l8 22 22 8 -22 8 -8 22 -8 -22 -22 -8 22 -8 z"/>
+    </g>
+    <g fill="#28a2ef" opacity="0.9">
+      <path d="M120 380 l6 16 16 6 -16 6 -6 16 -6 -16 -16 -6 16 -6 z"/>
+    </g>
+  <text x="400" y="520" text-anchor="middle" font-family="Poppins, Arial, sans-serif" font-size="46" font-weight="700" fill="#0a2359">AFTER</text>
+  <text x="400" y="560" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="22" fill="#0a2359" opacity="0.7">Bathroom · sample placeholder</text>
+</svg>

@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 700" role="img" aria-label="Founder photo — placeholder">
+  <defs><linearGradient id="f" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#1b5a9d"/><stop offset="1" stop-color="#0a2359"/></linearGradient></defs>
+  <rect width="600" height="700" fill="url(#f)"/>
+  <circle cx="300" cy="270" r="110" fill="#ffffff" opacity="0.14"/>
+  <circle cx="300" cy="245" r="58" fill="#ffffff" opacity="0.22"/>
+  <path d="M180 470 q120 -150 240 0 z" fill="#ffffff" opacity="0.18"/>
+  <text x="300" y="600" text-anchor="middle" font-family="Poppins, Arial, sans-serif" font-size="30" font-weight="600" fill="#ffffff" opacity="0.85">Founder photo</text>
+  <text x="300" y="636" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="20" fill="#ffffff" opacity="0.6">placeholder — to be replaced</text>
+</svg>

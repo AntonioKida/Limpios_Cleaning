@@ -12,8 +12,10 @@
 
 export const reviewsArePlaceholder = true;
 
+export type ReviewId = "r1" | "r2" | "r3" | "r4" | "r5" | "r6";
+
 export interface Review {
-  id: string;
+  id: ReviewId;
   /** Sample name — replace with real reviewer. */
   name: string;
   /** Sample city. */
