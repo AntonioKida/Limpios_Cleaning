@@ -1,0 +1,7 @@
+<!-- Placeholder simplified brand mark (navy badge + cyan "L" + orange sparkle).
+     TODO: replace with the client's real simplified/vector icon when available. -->
+<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="32" height="32" rx="7" fill="#0A2359"/>
+  <path d="M12 8 V21 H21" stroke="#5ED7F4" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="22.6" cy="9.8" r="2.2" fill="#F47B20"/>
+</svg>

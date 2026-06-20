@@ -1,26 +1,201 @@
 @import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+@custom-variant dark (&:is(.dark *));
+
+/* =========================================================================
+   Limpios Cleaning — Brand design-token layer
+   Centralized palette extracted from the client logo (blue-led, NOT green).
+   Edit a value here once and it propagates everywhere. Colors are kept as HEX
+   (matching the brand brief) so they are easy for the client to tweak.
+   Orange (#F47B20) is RESERVED for primary CTAs only — see the `cta` Button
+   variant. CTA labels use deep-navy text for WCAG AA (~5.5:1 vs ~2.7:1 white).
+   ========================================================================= */
 
 @theme inline {
+  /* Brand palette exposed as Tailwind utilities: bg-navy, text-royal, bg-cta… */
+  --color-navy: var(--navy);
+  --color-royal: var(--royal);
+  --color-sky: var(--sky);
+  --color-cyan: var(--cyan);
+  --color-cta: var(--cta);
+  --color-cta-foreground: var(--cta-foreground);
+  --color-sand: var(--sand);
+  --color-cool: var(--cool-white);
+  --color-surface: var(--surface);
+
+  /* Fonts (loaded via next/font in the root layout) */
+  --font-sans: var(--font-inter);
+  --font-heading: var(--font-poppins);
+  --font-mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
+
+  /* shadcn semantic tokens -> brand */
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+
+  --radius-sm: calc(var(--radius) * 0.6);
+  --radius-md: calc(var(--radius) * 0.8);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) * 1.4);
+  --radius-2xl: calc(var(--radius) * 1.8);
+  --radius-3xl: calc(var(--radius) * 2.2);
+  --radius-4xl: calc(var(--radius) * 2.6);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+:root {
+  /* ---- Raw brand palette (from logo) ---- */
+  --navy: #0a2359; /* Deep navy — headings, depth, gravitas */
+  --royal: #1b5a9d; /* Royal blue — primary brand, nav, links */
+  --sky: #28a2ef; /* Sky blue — accents, icons, highlights */
+  --cyan: #5ed7f4; /* Cyan — illustration, subtle fills */
+  --cta: #f47b20; /* Glove orange — CTA buttons ONLY */
+  --cta-foreground: #0a2359; /* Navy label on orange = AA (~5.5:1) */
+  --sand: #e9c686; /* Hat sand — warm accent, sparing */
+  --cool-white: #f4f9fb; /* Page base / section background */
+  --surface: #ffffff; /* Cards, surfaces */
+
+  --radius: 0.75rem;
+
+  /* ---- shadcn semantic tokens mapped to brand ---- */
+  --background: var(--cool-white);
+  --foreground: var(--navy);
+  --card: var(--surface);
+  --card-foreground: var(--navy);
+  --popover: var(--surface);
+  --popover-foreground: var(--navy);
+
+  --primary: var(--royal); /* general brand primary (non-CTA) */
+  --primary-foreground: #ffffff;
+
+  --secondary: #e8f1fa; /* soft sky tint */
+  --secondary-foreground: var(--navy);
+
+  --muted: #eef4f8;
+  --muted-foreground: #50607a; /* blue-slate body copy, AA (~6.4:1) */
+
+  --accent: #e1f0fb; /* light sky accent */
+  --accent-foreground: var(--navy);
+
+  --destructive: #c1352b;
+
+  --border: #d8e3ee;
+  --input: #cddcea;
+  --ring: var(--royal);
+
+  --chart-1: var(--royal);
+  --chart-2: var(--sky);
+  --chart-3: var(--cyan);
+  --chart-4: var(--sand);
+  --chart-5: var(--navy);
+
+  --sidebar: var(--surface);
+  --sidebar-foreground: var(--navy);
+  --sidebar-primary: var(--royal);
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: #e1f0fb;
+  --sidebar-accent-foreground: var(--navy);
+  --sidebar-border: #d8e3ee;
+  --sidebar-ring: var(--royal);
+}
+
+/* The site is intentionally light/airy. A `.dark` block is retained only so
+   shadcn primitives remain valid; it is never activated (no class is added). */
+.dark {
+  --background: #0a1a33;
+  --foreground: #f4f9fb;
+  --card: #0e224a;
+  --card-foreground: #f4f9fb;
+  --popover: #0e224a;
+  --popover-foreground: #f4f9fb;
+  --primary: var(--sky);
+  --primary-foreground: #07142b;
+  --secondary: #16305c;
+  --secondary-foreground: #f4f9fb;
+  --muted: #16305c;
+  --muted-foreground: #aac2dd;
+  --accent: #16305c;
+  --accent-foreground: #f4f9fb;
+  --destructive: #e5564b;
+  --border: oklch(1 0 0 / 12%);
+  --input: oklch(1 0 0 / 16%);
+  --ring: var(--sky);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  html {
+    @apply font-sans;
+    scroll-padding-top: 6rem; /* offset anchored sections below sticky header */
+  }
+  body {
+    @apply bg-background text-foreground antialiased;
+    text-rendering: optimizeLegibility;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading;
+    text-wrap: balance;
+  }
+  p {
+    text-wrap: pretty;
+  }
+  /* Visible, on-brand keyboard focus everywhere */
+  :focus-visible {
+    @apply outline-2 outline-offset-2 outline-ring;
+  }
+  ::selection {
+    background-color: color-mix(in srgb, var(--sky) 28%, transparent);
+    color: var(--navy);
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+/* Smooth anchor scrolling, disabled for users who prefer reduced motion.
+   Next 16 only honors smooth scroll on navigation when html opts in via the
+   data-scroll-behavior attribute (set in the root layout). */
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }
