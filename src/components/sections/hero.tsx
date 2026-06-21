@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button";
 import { Mascot } from "@/components/brand/mascot";
 import { QuoteCTA } from "@/components/quote/quote-cta";
 import { StarRating } from "@/components/star-rating";
+import { BrandIcon } from "@/components/brand-icons";
 import { site } from "@/content/site";
 
 export function Hero() {
@@ -14,16 +15,16 @@ export function Hero() {
 
   return (
     <section className="relative isolate overflow-hidden bg-cool">
-      {/* Shield-derived geometric motif (flat, intentional — no radial glow). */}
+      {/* Flat shield-grid motif (no radial glow). */}
       <div
         aria-hidden
         className="pointer-events-none absolute inset-0 -z-10 opacity-[0.55] [mask-image:linear-gradient(to_bottom,black,transparent_85%)] [background-image:linear-gradient(var(--border)_1px,transparent_1px),linear-gradient(90deg,var(--border)_1px,transparent_1px)] [background-size:64px_64px]"
       />
 
       <Container className="grid items-center gap-12 py-16 sm:py-20 lg:grid-cols-2 lg:gap-16 lg:py-24">
-        {/* Copy */}
+        {/* Copy — the one signature entrance on the site. */}
         <div className="flex flex-col items-start gap-6 text-left">
-          <Reveal>
+          <Reveal signature>
             <span className="inline-flex items-center gap-2 rounded-full border border-sky/30 bg-surface px-3.5 py-1.5 text-sm font-semibold text-royal shadow-sm">
               <ShieldCheck className="size-4 text-sky" aria-hidden />
               {t("eyebrow")}
@@ -38,15 +39,10 @@ export function Hero() {
             {t("subtitle")}
           </p>
 
-          <Reveal delay={0.12} className="w-full">
+          <Reveal signature delay={0.1} className="w-full">
             <div className="flex flex-col gap-3 sm:flex-row sm:items-center">
               <QuoteCTA size="2xl" withIcon className="w-full sm:w-auto" />
-              <Button
-                asChild
-                variant="outline"
-                size="2xl"
-                className="w-full sm:w-auto"
-              >
+              <Button asChild variant="outline" size="2xl" className="w-full sm:w-auto">
                 <a href={site.phone.href}>
                   <Phone className="size-5" aria-hidden />
                   {t("ctaSecondary")}
@@ -55,7 +51,7 @@ export function Hero() {
             </div>
           </Reveal>
 
-          <Reveal delay={0.2}>
+          <Reveal signature delay={0.18}>
             <div className="flex flex-wrap items-center gap-x-3 gap-y-1 text-sm text-muted-foreground">
               <StarRating rating={5} />
               <span className="font-medium text-foreground">{t("trust")}</span>
@@ -63,29 +59,20 @@ export function Hero() {
           </Reveal>
         </div>
 
-        {/* Mascot with floating trust accents */}
+        {/* Mascot with anchored proof chips (solid, not glassy/floating). */}
         <div className="relative mx-auto w-full max-w-md lg:max-w-none">
           <Mascot alt={t("mascotAlt")} priority className="mx-auto max-w-md" />
 
-          {/* Rating accent */}
-          <div className="animate-float absolute -top-4 -right-2 flex items-center gap-2.5 rounded-2xl border border-border bg-surface px-4 py-3 shadow-lg sm:-right-4">
+          {/* Rating chip — solid navy, anchored top-right */}
+          <div className="absolute -top-3 -right-1 flex items-center gap-2.5 rounded-xl bg-navy px-4 py-2.5 shadow-md ring-1 ring-white/10 sm:-right-4">
             <StarRating rating={5} starClassName="size-4" />
-            <span className="text-sm font-semibold text-navy">
-              {tt("rating")}
-            </span>
+            <span className="text-sm font-semibold text-white">{tt("rating")}</span>
           </div>
 
-          {/* Veteran accent */}
-          <div
-            className="animate-float absolute -bottom-4 -left-2 flex items-center gap-2.5 rounded-2xl border border-border bg-surface px-4 py-3 shadow-lg sm:-left-4"
-            style={{ animationDelay: "1.4s" }}
-          >
-            <span className="grid size-9 place-items-center rounded-xl bg-secondary text-royal">
-              <ShieldCheck className="size-5" aria-hidden />
-            </span>
-            <span className="text-sm font-semibold text-navy">
-              {tt("veteran")}
-            </span>
+          {/* Veteran chip — white with a sky accent edge, anchored bottom-left */}
+          <div className="absolute -bottom-3 -left-1 flex items-center gap-2.5 rounded-xl border border-border border-l-[3px] border-l-sky bg-surface px-4 py-2.5 shadow-md sm:-left-4">
+            <BrandIcon name="hat" className="size-7 text-royal" />
+            <span className="text-sm font-semibold text-navy">{tt("veteran")}</span>
           </div>
         </div>
       </Container>

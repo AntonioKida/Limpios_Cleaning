@@ -11,24 +11,26 @@ interface RevealProps {
   /** Vertical travel distance in px. */
   y?: number;
   once?: boolean;
+  /**
+   * Motion restraint: reveals are STATIC by default. Pass `signature` only on
+   * the one or two moments worth animating (the hero entrance, a key section).
+   * Everything else stays still. Honors `prefers-reduced-motion` (static) and
+   * no-JS (the `@media (scripting: none)` rule keeps [data-reveal] visible).
+   */
+  signature?: boolean;
 }
 
-/**
- * Subtle scroll-reveal. Honors `prefers-reduced-motion` (renders static) and
- * falls back to fully visible when JavaScript is disabled (see the
- * `@media (scripting: none)` rule in globals.css targeting [data-reveal]).
- * Use for below-the-fold content only — never wrap the LCP hero element.
- */
 export function Reveal({
   children,
   className,
   delay = 0,
-  y = 18,
+  y = 14,
   once = true,
+  signature = false,
 }: RevealProps) {
   const reduceMotion = useReducedMotion();
 
-  if (reduceMotion) {
+  if (!signature || reduceMotion) {
     return <div className={className}>{children}</div>;
   }
 
@@ -38,8 +40,8 @@ export function Reveal({
       className={cn(className)}
       initial={{ opacity: 0, y }}
       whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once, margin: "-80px" }}
-      transition={{ duration: 0.55, delay, ease: [0.22, 1, 0.36, 1] }}
+      viewport={{ once, margin: "-60px" }}
+      transition={{ duration: 0.5, delay, ease: [0.22, 1, 0.36, 1] }}
     >
       {children}
     </motion.div>
