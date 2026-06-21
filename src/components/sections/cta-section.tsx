@@ -28,7 +28,7 @@ export function CTASection({
         <div className="relative isolate overflow-hidden rounded-[2rem] bg-navy px-6 py-14 text-center text-white sm:px-12 sm:py-16">
           <div
             aria-hidden
-            className="pointer-events-none absolute -top-20 -right-16 -z-10 size-80 rounded-full bg-[radial-gradient(circle_at_center,color-mix(in_srgb,var(--sky)_30%,transparent),transparent_60%)]"
+            className="pointer-events-none absolute inset-0 -z-10 opacity-[0.18] [mask-image:radial-gradient(circle_at_70%_0%,black,transparent_70%)] [background-image:linear-gradient(rgba(255,255,255,0.4)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.4)_1px,transparent_1px)] [background-size:54px_54px]"
           />
           <h2 className="mx-auto max-w-2xl font-heading text-3xl font-bold text-balance sm:text-4xl">
             {title}

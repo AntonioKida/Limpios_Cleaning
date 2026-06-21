@@ -123,14 +123,14 @@ export default async function AboutPage({
               {t("team.body")}
             </p>
             {/* TODO: add real team photos + bios. */}
-            <p className="text-xs text-muted-foreground">
+            <p className="text-sm text-muted-foreground">
               {t("team.placeholderNote")}
             </p>
           </div>
-          <div className="relative aspect-video overflow-hidden rounded-[1.75rem] bg-gradient-to-br from-royal to-navy shadow-xl ring-1 ring-white/10">
+          <div className="relative aspect-video overflow-hidden rounded-[1.75rem] bg-navy shadow-xl ring-1 ring-white/10">
             <div
               aria-hidden
-              className="absolute inset-0 bg-[radial-gradient(circle_at_70%_30%,color-mix(in_srgb,var(--sky)_30%,transparent),transparent_55%)]"
+              className="absolute inset-0 opacity-[0.16] [background-image:linear-gradient(rgba(255,255,255,0.4)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.4)_1px,transparent_1px)] [background-size:44px_44px]"
             />
             <div className="absolute inset-0 flex flex-col items-center justify-center gap-4 text-center text-white">
               <span className="grid size-16 place-items-center rounded-full bg-white/15 ring-1 ring-white/30 backdrop-blur">

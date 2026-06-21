@@ -43,7 +43,7 @@ export function BeforeAfterGallery() {
                       />
                       <span
                         className={
-                          "absolute top-2 left-2 rounded-full px-2.5 py-0.5 text-[0.7rem] font-bold tracking-wide uppercase " +
+                          "absolute top-2 left-2 rounded-full px-2.5 py-0.5 text-xs font-bold tracking-wide uppercase " +
                           (side.tone === "after"
                             ? "bg-cta text-cta-foreground"
                             : "bg-navy/80 text-white")
@@ -63,7 +63,7 @@ export function BeforeAfterGallery() {
         })}
       </div>
 
-      <p className="mt-6 text-center text-xs text-muted-foreground">
+      <p className="mt-6 text-center text-sm text-muted-foreground">
         {/* Placeholder disclaimer — replace with real before/after photos. */}
         {t("placeholderNote")}
       </p>

@@ -30,7 +30,7 @@ export function HowItWorks() {
             >
               <div className="relative grid size-16 place-items-center rounded-2xl bg-surface text-royal shadow-sm ring-1 ring-border">
                 <Icon name={step.icon} className="size-7" />
-                <span className="absolute -top-2 -right-2 grid size-7 place-items-center rounded-full bg-cta text-xs font-bold text-cta-foreground shadow">
+                <span className="absolute -top-2 -right-2 grid size-7 place-items-center rounded-full bg-cta text-sm font-bold text-cta-foreground shadow">
                   {step.n}
                 </span>
               </div>

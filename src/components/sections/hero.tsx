@@ -14,14 +14,10 @@ export function Hero() {
 
   return (
     <section className="relative isolate overflow-hidden bg-cool">
-      {/* Subtle brand backdrop (single soft accent — not glow-everywhere). */}
+      {/* Shield-derived geometric motif (flat, intentional — no radial glow). */}
       <div
         aria-hidden
-        className="pointer-events-none absolute -top-24 -right-24 -z-10 size-[36rem] rounded-full bg-[radial-gradient(circle_at_center,color-mix(in_srgb,var(--cyan)_30%,transparent),transparent_62%)]"
-      />
-      <div
-        aria-hidden
-        className="pointer-events-none absolute -bottom-32 -left-24 -z-10 size-[30rem] rounded-full bg-[radial-gradient(circle_at_center,color-mix(in_srgb,var(--sky)_16%,transparent),transparent_60%)]"
+        className="pointer-events-none absolute inset-0 -z-10 opacity-[0.55] [mask-image:linear-gradient(to_bottom,black,transparent_85%)] [background-image:linear-gradient(var(--border)_1px,transparent_1px),linear-gradient(90deg,var(--border)_1px,transparent_1px)] [background-size:64px_64px]"
       />
 
       <Container className="grid items-center gap-12 py-16 sm:py-20 lg:grid-cols-2 lg:gap-16 lg:py-24">
@@ -34,7 +30,7 @@ export function Hero() {
             </span>
           </Reveal>
 
-          <h1 className="font-heading text-4xl leading-[1.08] font-bold tracking-tight text-balance text-navy sm:text-5xl lg:text-6xl">
+          <h1 className="font-heading text-6xl font-bold text-balance text-navy">
             {t("title")} <span className="text-royal">{t("titleAccent")}</span>
           </h1>
 
@@ -74,7 +70,7 @@ export function Hero() {
           {/* Rating accent */}
           <div className="animate-float absolute -top-4 -right-2 flex items-center gap-2.5 rounded-2xl border border-border bg-surface px-4 py-3 shadow-lg sm:-right-4">
             <StarRating rating={5} starClassName="size-4" />
-            <span className="text-xs font-semibold text-navy">
+            <span className="text-sm font-semibold text-navy">
               {tt("rating")}
             </span>
           </div>
@@ -87,7 +83,7 @@ export function Hero() {
             <span className="grid size-9 place-items-center rounded-xl bg-secondary text-royal">
               <ShieldCheck className="size-5" aria-hidden />
             </span>
-            <span className="text-xs font-semibold text-navy">
+            <span className="text-sm font-semibold text-navy">
               {tt("veteran")}
             </span>
           </div>

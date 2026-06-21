@@ -26,7 +26,7 @@ export function CityCard({
         </span>
         <div className="flex flex-col">
           <h2 className="font-heading text-lg font-semibold text-navy">{name}</h2>
-          <span className="text-xs font-medium text-muted-foreground">
+          <span className="text-sm font-medium text-muted-foreground">
             {countyLabel}
           </span>
         </div>

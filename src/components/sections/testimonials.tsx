@@ -38,7 +38,7 @@ export function Testimonials() {
       </div>
 
       {/* Placeholder disclaimer — sample reviews must be replaced before launch. */}
-      <p className="mx-auto mt-8 flex max-w-2xl items-start justify-center gap-2 text-center text-xs text-muted-foreground">
+      <p className="mx-auto mt-8 flex max-w-2xl items-start justify-center gap-2 text-center text-sm text-muted-foreground">
         <Info className="mt-0.5 size-3.5 shrink-0" aria-hidden />
         <span>{td("disclaimer")}</span>
       </p>

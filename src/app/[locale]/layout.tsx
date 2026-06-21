@@ -2,7 +2,7 @@ import type { Metadata, Viewport } from "next";
 import { notFound } from "next/navigation";
 import { hasLocale, NextIntlClientProvider } from "next-intl";
 import { setRequestLocale, getTranslations } from "next-intl/server";
-import { Poppins, Inter } from "next/font/google";
+import { Bricolage_Grotesque, Public_Sans } from "next/font/google";
 import { Analytics } from "@vercel/analytics/next";
 import { routing, type Locale } from "@/i18n/routing";
 import { site } from "@/content/site";
@@ -11,17 +11,23 @@ import { Footer } from "@/components/layout/footer";
 import { GoogleAnalytics } from "@/components/analytics/google-analytics";
 import "../globals.css";
 
-const poppins = Poppins({
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
+// Headings: Bricolage Grotesque — a humanist grotesque with a little hand-drawn
+// irregularity (reads "drawn by a person," not generated). Variable, with the
+// optical-size axis so large display headings get the right treatment.
+const fontHeading = Bricolage_Grotesque({
+  subsets: ["latin", "latin-ext"],
   display: "swap",
-  variable: "--font-poppins",
+  axes: ["opsz"],
+  variable: "--font-bricolage",
 });
 
-const inter = Inter({
-  subsets: ["latin"],
+// Body: Public Sans — the USWDS/government typeface. Clear and credible, with a
+// quiet civic undertone that suits a veteran-owned business, and full Spanish
+// diacritic coverage.
+const fontBody = Public_Sans({
+  subsets: ["latin", "latin-ext"],
   display: "swap",
-  variable: "--font-inter",
+  variable: "--font-public-sans",
 });
 
 // Pre-render both locales at build time (static).
@@ -81,7 +87,7 @@ export default async function LocaleLayout({
     <html
       lang={locale}
       data-scroll-behavior="smooth"
-      className={`${poppins.variable} ${inter.variable}`}
+      className={`${fontHeading.variable} ${fontBody.variable}`}
     >
       <body className="flex min-h-dvh flex-col bg-background text-foreground">
         <NextIntlClientProvider>

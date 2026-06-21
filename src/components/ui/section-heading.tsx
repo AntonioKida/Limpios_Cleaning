@@ -29,21 +29,21 @@ export function SectionHeading({
       )}
     >
       {eyebrow ? (
-        <span className="inline-flex items-center gap-2 text-sm font-semibold tracking-wide text-royal uppercase">
-          <span aria-hidden className="h-px w-6 bg-sky/60" />
+        <span className="inline-flex items-center gap-2.5 text-sm font-bold tracking-[0.1em] text-royal uppercase">
+          <span aria-hidden className="h-0.5 w-7 bg-sky" />
           {eyebrow}
         </span>
       ) : null}
       <Heading
         className={cn(
-          "font-heading text-3xl font-bold tracking-tight text-balance text-navy sm:text-4xl",
+          "font-heading text-4xl font-bold text-balance text-navy",
           titleClassName,
         )}
       >
         {title}
       </Heading>
       {subtitle ? (
-        <p className="text-base text-pretty text-muted-foreground sm:text-lg">
+        <p className="max-w-[60ch] text-lg text-pretty text-muted-foreground">
           {subtitle}
         </p>
       ) : null}

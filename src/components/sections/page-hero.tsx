@@ -16,11 +16,7 @@ export function PageHero({
   children?: React.ReactNode;
 }) {
   return (
-    <section className="relative isolate overflow-hidden border-b border-border bg-cool py-14 sm:py-16 lg:py-20">
-      <div
-        aria-hidden
-        className="pointer-events-none absolute -top-24 right-0 -z-10 size-[30rem] rounded-full bg-[radial-gradient(circle_at_center,color-mix(in_srgb,var(--cyan)_22%,transparent),transparent_62%)]"
-      />
+    <section className="relative isolate border-b border-border bg-cool py-14 sm:py-16 lg:py-20">
       <Container>
         <SectionHeading
           as="h1"
@@ -28,7 +24,7 @@ export function PageHero({
           eyebrow={eyebrow}
           title={title}
           subtitle={subtitle}
-          titleClassName="text-4xl sm:text-5xl"
+          titleClassName="text-5xl"
         />
         {children ? (
           <div
