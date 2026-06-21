@@ -36,7 +36,10 @@ export function HowItWorks() {
                 key={step.id}
                 className="flex gap-5 border-t border-border py-8 first:border-t-0 first:pt-0 sm:gap-7"
               >
-                <span className="font-heading text-5xl leading-none font-bold tabular-nums text-border">
+                <span
+                  aria-hidden
+                  className="font-heading text-5xl leading-none font-bold tabular-nums text-[#6c7d97]"
+                >
                   {String(step.n).padStart(2, "0")}
                 </span>
                 <div className="flex-1 pt-1">
