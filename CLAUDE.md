@@ -14,10 +14,22 @@ Bilingual (EN/ES) marketing site for a veteran-owned cleaning company. See
   Dynamic keys only type-check when the id is a literal union — that's why
   service/city/review/pricing ids are union types in `src/content/*`.
 - **Brand tokens** are CSS variables in `src/app/globals.css`. Orange is the
-  `cta` Button variant ONLY (navy text for AA). Don't add a dark theme.
+  `cta` Button variant ONLY (navy text for AA). Base neutral is warm `#f7f6f3`.
+  No gradient "blob" glows — flat / shield-grid motifs. Don't add a dark theme.
+- **Type:** headings Bricolage Grotesque, body Public Sans (next/font, bound to
+  `--font-heading`/`--font-sans`). Fluid `clamp()` scale in `@theme` (body
+  16→18). Nothing user-facing < 14px; inputs ≥16px; no light body weights.
+- **Motion:** `Reveal` is static by default; only `<Reveal signature>` animates
+  (the hero entrance). Keep reduced-motion + `@media (scripting: none)` fallbacks.
 - **Locale-aware nav:** import `Link`/`redirect` from `@/i18n/navigation`, not
   `next/*`. Routes come from `src/lib/routes.ts`.
-- **Quality gate:** `npm run typecheck && npm run lint && npm run build` must all
-  pass. Reviews are placeholders — keep `reviewsArePlaceholder` true (gates
-  rating structured data) until real Google reviews replace them.
-- All placeholders are marked `// TODO`; the README has the replacement checklist.
+- **Lead pipeline:** `/api/lead` rate-limits, validates (`src/lib/lead-schema.ts`),
+  persists (`src/lib/lead-store.ts`, Upstash/KV env-gated) BEFORE emailing
+  (Resend). Don't make a Resend failure drop the lead or 502 the user.
+- **Quality gate:** `typecheck && lint && test && build` must all pass. The
+  Vitest parity test fails on i18n key drift. Reviews are placeholders — keep
+  `reviewsArePlaceholder` true (gates rating structured data) until real ones land.
+- **Turbopack dev cache** can serve stale CSS after token edits — `rm -rf .next`
+  and restart if a change doesn't show. The production `build` is authoritative.
+- Placeholders are marked `// TODO` (and `(TODO confirm with Papo)` in copy); the
+  README has the replacement checklist. The owner goes by **Papo**.

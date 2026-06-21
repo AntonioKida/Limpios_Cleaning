@@ -35,7 +35,7 @@ Florida. Bilingual (English / Spanish), fast, accessible, and built to convert.
 | UI primitives | **shadcn/ui** (Radix) — accordion, dialog, sheet, form fields |
 | Icons | **lucide-react** |
 | Animation | **motion** (Framer Motion) — reduced‑motion aware |
-| Fonts | **next/font** — Poppins (headings) + Inter (body) |
+| Fonts | **next/font** — Bricolage Grotesque (headings) + Public Sans (body) |
 | Forms | **react-hook-form** + **zod** |
 | Email | **resend** (server‑side, env‑gated) |
 | i18n | **next-intl** (locale routing) |
@@ -71,6 +71,14 @@ npm run dev
 | `npm run start` | Serve the production build. |
 | `npm run lint` | ESLint (flat config). |
 | `npm run typecheck` | `tsc --noEmit` type checking. |
+| `npm run test` | Vitest: EN/ES key+ICU parity, zod lead-schema. |
+| `npm run test:smoke` | Playwright smoke (routes · no-JS · reduced-motion); needs a running server. |
+| `npm run bundle:report` | Client JS size (total + largest gzip chunks); run after a build. |
+| `npm run build:sizes` | Build with the webpack builder for the per-route table. |
+
+> **Turbopack dev cache:** if a token/CSS change isn't reflected by `next dev`,
+> the dev cache is stale — `rm -rf .next` and restart. The production `build` is
+> always authoritative.
 
 ---
 
@@ -86,6 +94,7 @@ are logged to the server console and the UI still shows success. See
 | `LEAD_NOTIFICATION_EMAIL` | Inbox for new quote requests (default `info@limpioscleaning.com`). |
 | `LEAD_FROM_EMAIL` | Verified sender for lead emails (set a real domain sender in prod). |
 | `NEXT_PUBLIC_GA_ID` | Optional GA4 measurement ID (`G-XXXXXXX`). Blank disables GA. |
+| `UPSTASH_REDIS_REST_URL` / `_TOKEN` | Durable lead store + global rate limiting. Also reads Vercel KV's `KV_REST_API_*`. Strongly recommended in prod (see below). |
 
 Never commit real keys — `.env*` is gitignored (except `.env.example`).
 
@@ -185,8 +194,23 @@ All brand colors are CSS variables in `src/app/globals.css` (the `@theme` /
   reserved for primary CTAs only** (`Button variant="cta"`).
 - CTA labels use **navy text on orange** for WCAG AA (~5.5:1; white on orange
   fails). Royal blue links on white are ~7:1.
-- Headings: Poppins. Body: Inter. The gaming‑style "Limpios" logotype is part of
-  the **logo only**, never a UI font.
+- Headings: **Bricolage Grotesque** (humanist, a little hand-drawn). Body:
+  **Public Sans** (USWDS/civic, full ES diacritics). Bound to `--font-heading` /
+  `--font-sans`. The gaming‑style "Limpios" logotype is **logo only**, never a UI font.
+
+### Typography scale
+
+A fluid `clamp()` scale lives in `globals.css` (`@theme`): body **16→18px** at
+line-height ~1.65, H1 40→60, etc. The 16px root is preserved (browser zoom
+works). **Nothing a user reads is below 14px**; form inputs are ≥16px (no iOS
+zoom) with ≥44px tap targets; no light body weights. `xs` (13→14) is reserved
+for ALL-CAPS eyebrows/labels.
+
+### Motion
+
+Restrained: `Reveal` is **static by default** and only animates with a
+`signature` prop (the hero entrance). `prefers-reduced-motion` and no-JS
+(`@media (scripting: none)`) fallbacks keep all content visible.
 
 ---
 
@@ -194,12 +218,28 @@ All brand colors are CSS variables in `src/app/globals.css` (the `@theme` /
 
 - Primary CTAs open the multi‑step **quote form** in a modal (`QuoteCTA` →
   `QuoteDialog`). Without JavaScript, the same CTA is a real link to `/quote`.
-- Submissions `POST` to `/api/lead`, which validates with zod, drops honeypot
-  spam, and emails the lead via **Resend** when `RESEND_API_KEY` is set
-  (otherwise logs to the console and returns `{ dev: true }`).
+- Submissions `POST` to `/api/lead`, which **rate-limits per IP**, validates with
+  zod (`src/lib/lead-schema.ts`), drops honeypot spam, then **persists the lead
+  durably** (Upstash Redis / Vercel KV) **before** emailing via **Resend**. A
+  Resend outage no longer drops the lead (failed sends queue to `leads:retry`)
+  and returns success to the user. With no store/key configured (dev), the lead
+  is console-logged and the UI still shows success (`{ dev: true }`).
 - **Booking seam:** `src/components/booking-embed.tsx` is the single documented
   place to embed a real provider (BookingKoala / Launch27 / Jobber / Housecall
   Pro) later. No provider is integrated now.
+
+---
+
+## ✅ Testing & CI
+
+- **Unit (`npm run test`, Vitest):** EN/ES catalog key + ICU-placeholder parity;
+  zod lead-schema (valid/invalid/honeypot).
+- **Smoke (`npm run test:smoke`, Playwright):** key routes, the no-JS
+  progressive-enhancement path, and reduced-motion.
+- **CI** (`.github/workflows/ci.yml`): typecheck · lint · test · build · bundle
+  report, plus a Playwright smoke job. The parity test fails CI on i18n drift.
+- **Audit harness** (`audit/`): re-runnable UX/a11y crawl (`run.mjs`), form
+  flows (`form.mjs`), and visual captures (`shots.mjs`).
 
 ---
 
