@@ -80,7 +80,7 @@
     "perVisit": "por visita",
     "perService": "por servicio",
     "estimate": "estimado",
-    "estimateNote": "Los precios iniciales son estimados — su cotización exacta es gratis y a la medida de su espacio.",
+    "estimateNote": "Los precios iniciales son solo estimados. Su cotización exacta es gratis y hecha a la medida de su espacio.",
     "licensedInsured": "Con licencia y asegurados",
     "veteranOwned": "De un veterano",
     "ecoFriendly": "Ecológico",
@@ -111,7 +111,7 @@
   },
 
   "Footer": {
-    "blurb": "Limpieza ecológica, de un veterano, para casas y negocios en Clermont, Minneola y el centro de Florida. Siéntese, relájese — nosotros hacemos la limpieza.",
+    "blurb": "Limpieza ecológica, de un veterano, para casas y negocios en Clermont, Minneola y el centro de Florida. Siéntese, relájese, y nosotros hacemos la limpieza.",
     "servicesTitle": "Servicios",
     "areasTitle": "Áreas de Servicio",
     "companyTitle": "Empresa",
@@ -130,7 +130,7 @@
       "eyebrow": "De un veterano · Clermont y el centro de Florida",
       "title": "Limpieza de un veterano en quien puede",
       "titleAccent": "confiar",
-      "subtitle": "Limpieza ecológica, con licencia y asegurada, para casas y negocios en Clermont, Minneola y el centro de Florida. Siéntese, relájese, y nosotros hacemos la limpieza.",
+      "subtitle": "Limpieza con licencia, asegurada y ecológica para casas y oficinas en Clermont, Minneola y el centro de Florida. Siéntese, relájese, y nosotros hacemos la limpieza.",
       "ctaPrimary": "Cotización gratis",
       "ctaSecondary": "Llamar ahora",
       "trust": "Con licencia y asegurados · De un veterano · Productos ecológicos",
@@ -145,32 +145,32 @@
     "services": {
       "eyebrow": "Lo que hacemos",
       "title": "Limpieza para cada espacio",
-      "subtitle": "Desde el mantenimiento semanal hasta limpiezas profundas post-construcción — bien hecho, con productos ecológicos y satisfacción garantizada.",
+      "subtitle": "Mantenimiento semanal, limpiezas profundas, polvo de post-construcción. Llevamos nuestras propias aspiradoras HEPA y productos ecológicos de bajo olor (TODO confirmar con Papo), y no decimos que terminamos hasta que de verdad está terminado.",
       "viewAll": "Ver todos los servicios"
     },
     "steps": {
       "eyebrow": "Cómo funciona",
       "title": "Su tiempo libre, en tres pasos sencillos",
-      "subtitle": "Sin complicaciones ni presión — solo un espacio limpio y más tiempo en su día.",
+      "subtitle": "Sin complicaciones ni presión. Solo un espacio limpio y unas horas de vuelta en su día.",
       "items": {
         "quote": {
           "title": "Pida su cotización",
-          "description": "Cuéntenos sobre su espacio en línea o por teléfono. Le enviamos una cotización gratis y a la medida — rápido."
+          "description": "Cuéntenos sobre su espacio en línea o por teléfono y le enviamos una cotización gratis hecha a su medida. Casi siempre el mismo día."
         },
         "clean": {
           "title": "Limpiamos",
-          "description": "Nuestro equipo verificado y asegurado llega puntual con productos ecológicos y una lista de verificación detallada."
+          "description": "Nuestro equipo verificado y asegurado llega puntual con aspiradoras HEPA, productos ecológicos y una lista de verificación cuarto por cuarto."
         },
         "relax": {
           "title": "Usted se relaja",
-          "description": "Regrese a un espacio impecable. ¿No quedó conforme? Lo corregimos — garantizado."
+          "description": "Regrese a un espacio impecable. Si algo no quedó bien, avísenos dentro de 24 horas y lo volvemos a limpiar gratis."
         }
       }
     },
     "why": {
       "eyebrow": "Por qué Limpios",
       "title": "Local, personal y genuinamente mejor",
-      "subtitle": "La mayoría de las empresas de limpieza no son de un veterano, ecológicas ni bilingües. Nosotros somos las tres — y tratamos su hogar como el nuestro.",
+      "subtitle": "Muchas empresas de limpieza son buenas en una sola cosa. Nosotros somos de un veterano, usamos productos ecológicos y le atendemos en inglés o español. Y tratamos su casa como nos gustaría que trataran la nuestra.",
       "videoLabel": "Conozca al dueño",
       "videoComingSoon": "Video del fundador próximamente",
       "ctaAbout": "Lea nuestra historia"
@@ -178,7 +178,7 @@
     "beforeAfter": {
       "eyebrow": "Vea la diferencia",
       "title": "Antes y después",
-      "subtitle": "Resultados reales, en cada visita. (Imágenes de ejemplo — su hogar es el siguiente.)",
+      "subtitle": "Resultados reales, en cada visita. (Por ahora imágenes de ejemplo. Su hogar es el siguiente.)",
       "beforeLabel": "Antes",
       "afterLabel": "Después",
       "placeholderNote": "Imágenes de ejemplo — se reemplazarán con fotos reales de antes/después de Limpios.",
@@ -189,28 +189,28 @@
       }
     },
     "reviews": {
-      "eyebrow": "Querido por locales",
+      "eyebrow": "Querido por los vecinos",
       "title": "Lo que dice el centro de Florida",
-      "subtitle": "Amables, minuciosos y confiables — esto es lo que piensan los vecinos.",
+      "subtitle": "Esto es lo que dicen los vecinos después de que pasamos por su casa.",
       "viewAll": "Leer más reseñas"
     },
     "serviceArea": {
       "eyebrow": "Dónde limpiamos",
       "title": "Con orgullo en el centro de Florida",
-      "subtitle": "Con base en Minneola, limpiamos casas y negocios en el condado de Lake y el oeste de Orange.",
+      "subtitle": "Tenemos nuestra base en Minneola y limpiamos casas y oficinas en el condado de Lake y el oeste de Orange.",
       "listIntro": "Áreas populares que servimos",
-      "notListed": "¿No ve su vecindario? Es muy probable que lo cubramos — solo pregunte.",
+      "notListed": "¿No ve su vecindario? Hay buenas probabilidades de que lo cubramos. Solo pregunte.",
       "cta": "Ver todas las áreas de servicio",
       "mapPlaceholder": "Mapa de áreas de servicio"
     },
     "faq": {
       "eyebrow": "Bueno saber",
       "title": "Preguntas frecuentes",
-      "subtitle": "Todo lo que necesita para reservar su primera limpieza con confianza."
+      "subtitle": "Lo que la gente suele querer saber antes de su primera limpieza."
     },
     "finalCta": {
       "title": "¿List@ para recuperar su tiempo libre?",
-      "subtitle": "Reciba hoy una cotización gratis y sin compromiso — y déjenos el resto a nosotros.",
+      "subtitle": "Reciba hoy una cotización gratis y sin compromiso, y déjenos el resto a nosotros.",
       "primary": "Quiero mi cotización gratis",
       "secondary": "Llamar ahora"
     }
@@ -220,8 +220,8 @@
     "hub": {
       "eyebrow": "Servicios",
       "title": "Limpieza y cuidado para cada espacio",
-      "subtitle": "Ecológico, asegurado y con lista de verificación — elija el servicio que necesita, o pida una cotización gratis y le orientamos.",
-      "intro": "Ya sea una renovación única o cuidado recurrente, Limpios aporta la misma atención al detalle, de un veterano, en cada trabajo en el centro de Florida."
+      "subtitle": "Asegurado, ecológico y con una lista de verificación de verdad. Elija el servicio que necesita, o pida una cotización gratis y le orientamos.",
+      "intro": "Sea una renovación única o cuidado recurrente, es el mismo equipo y los mismos estándares en cada trabajo que hacemos por el centro de Florida."
     },
     "labels": {
       "included": "Qué incluye",
@@ -238,7 +238,7 @@
       "residential": {
         "name": "Limpieza residencial",
         "tagline": "Una casa impecable, sin mover un dedo.",
-        "description": "Limpieza del hogar recurrente o única, a la medida de su estilo de vida — cocinas, baños, recámaras y áreas comunes, renovadas con productos ecológicos y un equipo constante y verificado.",
+        "description": "Limpieza del hogar, recurrente o única, pensada para cómo vive de verdad. Cocinas, baños, recámaras y áreas comunes, a cargo del mismo equipo verificado y con productos ecológicos en cada visita.",
         "metaDescription": "Limpieza residencial ecológica en Clermont y el centro de Florida. Semanal, quincenal, mensual o única. Con licencia, asegurados, de un veterano. Desde $120 — cotización gratis.",
         "who": [
           "Familias y profesionales ocupados que quieren recuperar su fin de semana",
@@ -262,7 +262,7 @@
       "commercial": {
         "name": "Limpieza comercial",
         "tagline": "Un espacio de trabajo que da la mejor impresión.",
-        "description": "Limpieza confiable de oficinas, comercios e instalaciones programada según su negocio — después de horario o durante el día — para que su equipo y sus clientes siempre lleguen a un espacio fresco y saludable.",
+        "description": "Limpieza confiable de oficinas, comercios e instalaciones programada según su negocio, fuera de horario o durante el día. Su equipo y sus clientes llegan a un espacio fresco y saludable cada vez.",
         "metaDescription": "Limpieza comercial y de oficinas en Clermont y el centro de Florida. Horario flexible, asegurados, ecológicos. Cotizaciones personalizadas para oficinas, comercios e instalaciones.",
         "who": [
           "Oficinas, clínicas, salones y locales comerciales",
@@ -286,7 +286,7 @@
       "deep-cleaning": {
         "name": "Limpieza profunda",
         "tagline": "Una renovación que llega a cada rincón.",
-        "description": "Una limpieza detallada de arriba a abajo para casas que necesitan un cuidado extra — zócalos, lechada y los lugares que una limpieza estándar pasa por alto. La primera limpieza perfecta o una renovación de temporada.",
+        "description": "Una limpieza detallada de arriba a abajo para casas que necesitan un cuidado extra. Zócalos, lechada y esos lugares detrás y dentro de las cosas que una limpieza estándar pasa por alto. Es la opción ideal para una primera limpieza o una renovación de temporada.",
         "metaDescription": "Servicio de limpieza profunda en el centro de Florida — zócalos, lechada, electrodomésticos y detalle de arriba a abajo. Ecológica, asegurados. Desde $200 — cotización gratis.",
         "who": [
           "Clientes nuevos antes de iniciar servicio recurrente",
@@ -310,7 +310,7 @@
       "move-in-out": {
         "name": "Limpieza de mudanza",
         "tagline": "Déjelo impecable. Llegue a algo fresco.",
-        "description": "Limpieza detallada para casas vacías al momento de la mudanza — pensada para satisfacer a propietarios, agentes y su propia tranquilidad, para recuperar su depósito o entregar las llaves con confianza.",
+        "description": "Limpieza detallada para casas vacías al momento de la mudanza, hecha para pasar la revisión de un propietario o un agente. Recupere su depósito, o entregue las llaves sin tener que dudarlo.",
         "metaDescription": "Limpieza de mudanza (move-in/move-out) en Clermont y el centro de Florida. Detallada y de arriba a abajo para casas vacías, lista para el depósito. Asegurados, ecológica. Desde $200.",
         "who": [
           "Inquilinos que quieren recuperar todo su depósito",
@@ -334,7 +334,7 @@
       "post-construction": {
         "name": "Limpieza post-construcción",
         "tagline": "De obra polvorienta a lista para habitar.",
-        "description": "Limpieza especializada después de construcción o remodelación — eliminación de polvo fino, escombros y trabajo de detalle que convierte una obra terminada en un espacio realmente terminado.",
+        "description": "Limpieza especializada después de una obra o remodelación. Eliminación de polvo fino, escombros y el trabajo de detalle que convierte una obra terminada en un espacio listo para habitarse de verdad.",
         "metaDescription": "Limpieza post-construcción en el centro de Florida. Eliminación de polvo fino, escombros y detalle después de obras y remodelaciones. Asegurados, ecológica. Solicite cotización.",
         "who": [
           "Dueños de casa después de una remodelación o renovación",
@@ -358,7 +358,7 @@
       "interior-painting": {
         "name": "Pintura interior",
         "tagline": "Una capa nueva, hecha con pulcritud.",
-        "description": "Pintura interior pulcra y detallista para paredes, molduras y techos — preparada, protegida y con limpieza al terminar, con el mismo cuidado que ponemos en cada limpieza.",
+        "description": "Pintura interior pulcra y detallista para paredes, molduras y techos. Preparamos, protegemos sus pisos y muebles, y limpiamos al terminar, con el mismo cuidado que ponemos en cada trabajo.",
         "metaDescription": "Pintura interior en Clermont y el centro de Florida — paredes, molduras y techos, bien preparados y con limpieza al final. Asegurados, detallistas. Solicite cotización.",
         "who": [
           "Dueños de casa que renuevan una habitación o toda la casa",
@@ -385,8 +385,8 @@
   "Pricing": {
     "eyebrow": "Precios",
     "title": "Precios transparentes, cotizaciones gratis",
-    "subtitle": "Cada espacio es distinto, por eso cada cotización es gratis y a la medida. Aquí tiene puntos de partida honestos — sin sorpresas.",
-    "intro": "Los precios de abajo son estimados iniciales para casas del centro de Florida. Su cotización gratis se basa en su espacio, su condición y la frecuencia con que reserva.",
+    "subtitle": "Cada espacio es distinto, por eso cada cotización es gratis y hecha para el suyo. Los números de abajo son puntos de partida honestos, no un gancho.",
+    "intro": "Los precios de abajo son estimados iniciales para casas del centro de Florida. Lo que paga al final depende de su espacio, de su condición y de la frecuencia con que reserva.",
     "popular": "Más popular",
     "packages": {
       "standard": {
@@ -402,7 +402,7 @@
       },
       "deep": {
         "name": "Limpieza profunda",
-        "description": "Una renovación detallada de arriba a abajo — ideal como primera limpieza o renovación de temporada.",
+        "description": "Una renovación detallada de arriba a abajo. Ideal como primera limpieza o como renovación de temporada.",
         "features": [
           "Todo lo de la Estándar, más detalle",
           "Zócalos, lechada y accesorios",
@@ -413,7 +413,7 @@
       },
       "recurring": {
         "name": "Cuidado recurrente",
-        "description": "Visitas semanales, quincenales o mensuales — la forma más fácil de nunca volver a pensar en la limpieza.",
+        "description": "Visitas semanales, quincenales o mensuales. La forma más fácil de dejar de pensar en la limpieza por completo.",
         "features": [
           "Precio por visita con descuento",
           "El mismo equipo de confianza en cada visita",
@@ -435,7 +435,7 @@
       }
     },
     "factorsTitle": "Qué define su cotización",
-    "factorsIntro": "Unas cuantas cosas sencillas determinan su precio exacto. Cuéntenos sobre ellas y su estimado es gratis.",
+    "factorsIntro": "Unas cuantas cosas marcan su precio exacto. Cuéntenos sobre ellas y el estimado es gratis.",
     "factors": {
       "size": {
         "title": "Tamaño de su espacio",
@@ -443,7 +443,7 @@
       },
       "condition": {
         "title": "Condición actual",
-        "description": "Los espacios nuevos para nosotros y muy habitados necesitan más detalle que una casa mantenida."
+        "description": "Una primera limpieza o una casa muy habitada lleva más trabajo que una que ya se mantiene al día."
       },
       "frequency": {
         "title": "Con qué frecuencia",
@@ -460,7 +460,7 @@
     },
     "disclaimer": "Los precios iniciales son solo estimados y no una cotización final. Su estimado gratis y sin compromiso se adapta a su espacio específico.",
     "ctaTitle": "Reciba su cotización gratis y a la medida",
-    "ctaSubtitle": "Dos minutos en línea, o una llamada rápida — sin compromiso.",
+    "ctaSubtitle": "Dos minutos en línea, o una llamada rápida. Sin compromiso de ninguna forma.",
     "ctaButton": "Cotización gratis"
   },
 
@@ -468,10 +468,10 @@
     "hub": {
       "eyebrow": "Áreas de servicio",
       "title": "Limpieza en todo el centro de Florida",
-      "subtitle": "Con base en Minneola, Limpios sirve a casas y negocios en el condado de Lake y el oeste de Orange — de Clermont a Winter Garden y más allá.",
-      "intro": "Lo local importa. Conocemos estos vecindarios porque vivimos y trabajamos aquí. Elija su ciudad para saber más, o pida una cotización gratis y le confirmamos que lo cubrimos.",
+      "subtitle": "Tenemos nuestra base en Minneola y limpiamos casas y oficinas en el condado de Lake y el oeste de Orange, de Clermont a Winter Garden y los pueblos de en medio.",
+      "intro": "Aquí lo local sí importa. Conocemos estos vecindarios porque vivimos y trabajamos en ellos. Elija su ciudad para saber más, o pida una cotización gratis y le confirmamos que lo cubrimos.",
       "notListedTitle": "¿No ve su ciudad?",
-      "notListedBody": "Siempre estamos creciendo por el centro de Florida. Llámenos o solicite una cotización — es muy probable que ya sirvamos su vecindario."
+      "notListedBody": "Siempre estamos sumando áreas nuevas por el centro de Florida. Llámenos o solicite una cotización. Lo más seguro es que ya sirvamos su vecindario."
     },
     "labels": {
       "servingTitle": "Áreas que servimos",
@@ -485,9 +485,9 @@
     "cityPage": {
       "metaTitle": "Servicios de Limpieza en {city}, FL",
       "metaDescription": "Limpieza ecológica de casas y negocios, de un veterano, en {city}, FL. Con licencia, asegurados y bilingües. Recurrente, profunda, de mudanza y más — cotización gratis.",
-      "intro": "Limpios Cleaning Management ofrece limpieza ecológica, de un veterano, en {city} y sus alrededores. Desde limpieza recurrente del hogar hasta limpiezas profundas, de mudanza y servicio comercial — llevamos un equipo de confianza y asegurado, con satisfacción garantizada.",
+      "intro": "Limpios Cleaning Management ofrece limpieza ecológica, de un veterano, en {city} y sus alrededores. Limpieza recurrente del hogar, limpiezas profundas, de mudanza y servicio comercial, todo a cargo de un equipo de confianza y asegurado, con satisfacción garantizada de respaldo.",
       "whyTitle": "Sus limpiadores locales en {city}",
-      "whyBody": "Estamos justo aquí en el centro de Florida, así que llegamos puntuales y tratamos las casas y negocios de {city} como los nuestros. Con licencia, asegurados, bilingües y ecológicos — la diferencia está en los detalles.",
+      "whyBody": "Estamos justo aquí en el centro de Florida, así que llegamos puntuales y tratamos las casas y negocios de {city} como los nuestros. Con licencia, asegurados, bilingües, ecológicos. La diferencia de verdad está en los detalles.",
       "servicesTitle": "Servicios disponibles en {city}",
       "servicesBody": "Todos los servicios de Limpios están disponibles en {city}:",
       "ctaTitle": "¿List@ para un espacio impecable en {city}?",
@@ -496,12 +496,12 @@
     },
     "cities": {
       "clermont": {
-        "blurb": "Nuestro vecino más cercano — limpieza completa de casas y oficinas en todo Clermont.",
-        "intro": "Las colinas y los vecindarios de rápido crecimiento de Clermont nos mantienen ocupados — y nos encanta. Desde la zona de los lagos hasta los fraccionamientos más nuevos, Limpios mantiene impecables las casas y negocios de Clermont."
+        "blurb": "Nuestro vecino más cercano. Limpieza completa de casas y oficinas en todo Clermont.",
+        "intro": "Las colinas y los vecindarios de rápido crecimiento de Clermont nos mantienen ocupados, y la verdad nos encanta. Desde la zona de los lagos hasta los fraccionamientos más nuevos, Limpios mantiene impecables las casas y negocios de Clermont."
       },
       "minneola": {
-        "blurb": "Como en casa — Limpios tiene su base en Minneola y la sirve todos los días.",
-        "intro": "Minneola es nuestro patio trasero. Ser locales significa programación más rápida y un equipo que realmente conoce la zona — desde Hills of Minneola hasta el centro."
+        "blurb": "Como en casa. Limpios tiene su base en Minneola y la sirve todos los días.",
+        "intro": "Minneola es nuestro patio trasero. Ser locales significa programación más rápida y un equipo que de verdad conoce la zona, desde Hills of Minneola hasta el centro."
       },
       "groveland": {
         "blurb": "Limpieza confiable y ecológica para casas y negocios de Groveland.",
@@ -533,44 +533,44 @@
   "About": {
     "eyebrow": "Sobre Limpios",
     "title": "De un veterano, y con orgullo personal",
-    "subtitle": "Limpios nació de una idea sencilla: llevar una atención al detalle de nivel militar y un cuidado local genuino a cada casa y negocio que limpiamos.",
+    "subtitle": "Limpios nació de una sola idea: llevar la atención al detalle que aprendí en el servicio, más un cuidado local de verdad, a cada casa y negocio que limpiamos.",
     "story": {
       "title": "Nuestra historia",
       "body": [
-        "TODO: Reemplazar con la historia real del fundador. Limpios Cleaning Management fue fundada por un veterano de EE. UU. que trasladó la disciplina, la confiabilidad y el orgullo de servicio del ejército a una empresa local de limpieza.",
-        "Tras años de servir al país, nuestro fundador decidió servir a la comunidad — formando un equipo que trata cada casa y negocio con el mismo respeto y los mismos estándares.",
-        "Hoy, Limpios es una empresa familiar, de confianza y bilingüe, orgullosa de mantener impecable el centro de Florida, un espacio a la vez."
+        "Hola, soy Papo. Empecé Limpios después de salir del ejército (TODO confirmar con Papo) y mudar a mi familia a la zona de Clermont. Ya limpiaba casas y oficinas por mi cuenta para algunos amigos, y la gente me decía siempre lo mismo: que los equipos que habían contratado antes hacían las cosas a medias, llegaban tarde, o de plano dejaban de contestar el teléfono.",
+        "Eso me molestaba. En el servicio uno llega puntual, hace el trabajo completo, y da la cara cuando algo sale mal. Así que armé Limpios para que funcionara igual. El mismo equipo, productos ecológicos que no le ahogan la casa, y una lista de verificación que de verdad seguimos.",
+        "Hoy seguimos siendo un equipo pequeño, familiar y bilingüe, y por lo general yo mismo ando en los trabajos. Mantenemos limpio el centro de Florida una casa a la vez, y así me gusta."
       ]
     },
     "mission": {
       "title": "Nuestra misión",
-      "body": "Devolverle a la gente su tiempo libre — con una limpieza confiable, ecológica y bien hecha desde la primera vez. Cuando reserva con Limpios, confía en vecinos a quienes de verdad les importa."
+      "body": "Devolverle a la gente su fin de semana con una limpieza confiable, ecológica y bien hecha desde la primera vez. Cuando reserva con Limpios, le entrega sus llaves a vecinos a quienes de verdad les importa cómo queda el trabajo."
     },
     "eco": {
       "title": "Nuestro compromiso ecológico",
-      "body": "Usamos productos ecológicos y de bajo olor, duros con la suciedad pero suaves con su familia, sus mascotas y el planeta. Una limpieza más saludable no debería costarle al medio ambiente — ni a la calidad del aire de su hogar."
+      "body": "Usamos productos ecológicos y de bajo olor, duros con la suciedad y suaves con su familia, sus mascotas y el planeta (TODO confirmar marcas específicas con Papo). Una limpieza más saludable no debería costarle el aire de su propia casa."
     },
     "values": {
       "veteran": {
         "title": "De un veterano",
-        "description": "Disciplina, integridad y responsabilidad — los estándares con que servimos, ahora en su hogar."
+        "description": "La misma disciplina, integridad y responsabilidad con que servimos, ahora puesta en su hogar."
       },
       "eco": {
         "title": "Ecológico",
-        "description": "Productos más seguros para su familia, sus mascotas y el medio ambiente del centro de Florida."
+        "description": "Productos más seguros para su familia, sus mascotas y el agua y el aire del centro de Florida."
       },
       "guarantee": {
         "title": "Satisfacción garantizada",
-        "description": "Si algo no quedó bien, avísenos dentro de 24 horas y lo volvemos a limpiar — gratis."
+        "description": "Si algo no quedó bien, avísenos dentro de 24 horas y lo volvemos a limpiar gratis."
       },
       "bilingual": {
         "title": "Servicio bilingüe",
-        "description": "Servimos a nuestra comunidad completamente en inglés y español — cómodo y claro, en cada paso."
+        "description": "Trabajamos completamente en inglés y español, así que cada paso es claro y cómodo."
       }
     },
     "team": {
       "title": "Nuestro equipo",
-      "body": "Cada limpiador de Limpios está verificado, capacitado y asegurado. Las mismas caras amables, puntuales, tratando su espacio como el suyo.",
+      "body": "Cada limpiador de Limpios está verificado, capacitado y asegurado. Verá las mismas caras amables, puntuales, tratando su espacio como si fuera el suyo.",
       "placeholderNote": "TODO: Agregar fotos y biografías reales del equipo."
     },
     "video": {
@@ -589,7 +589,7 @@
   "Reviews": {
     "eyebrow": "Reseñas",
     "title": "Lo que dicen nuestros clientes",
-    "subtitle": "Comentarios reales de las casas y negocios del centro de Florida que cuidamos.",
+    "subtitle": "Comentarios reales de las casas y negocios del centro de Florida que atendemos.",
     "disclaimer": "Nota: las reseñas mostradas son ejemplos de diseño y no son reseñas reales de clientes. Se reemplazarán con reseñas verificadas de Google antes del lanzamiento.",
     "leaveReview": "Dejar una reseña",
     "ratingSummary": "Calificación de {rating} de 5",
@@ -598,7 +598,7 @@
       "r1": { "quote": "El mejor servicio de limpieza que hemos usado en Clermont. Siempre puntuales, increíblemente minuciosos, y los productos ecológicos huelen delicioso. ¡Muy recomendados!" },
       "r2": { "quote": "Limpios limpia nuestra oficina cada semana y ha sido impecable. Profesionales, confiables, y se acomodan a nuestro horario. No podríamos pedir algo mejor." },
       "r3": { "quote": "Me encantó el servicio. Muy profesionales y atentos a cada detalle. Mi casa quedó impecable y el equipo es bilingüe — todo súper fácil." },
-      "r4": { "quote": "Reservé una limpieza profunda antes de mudarme y wow — cada rincón quedó impecable. El equipo fue amable y respetuoso. Vale cada centavo." },
+      "r4": { "quote": "Reservé una limpieza profunda antes de mudarme y wow, cada rincón quedó impecable. El equipo fue amable y respetuoso. Vale cada centavo." },
       "r5": { "quote": "Confiables, puntuales y gente genuinamente amable. Como empresa de un veterano, ponen verdadero orgullo en su trabajo. Ahora somos clientes recurrentes." },
       "r6": { "quote": "Hicieron la limpieza de salida de nuestra renta y recuperamos todo el depósito. Detallados, rápidos y con excelente comunicación." }
     }
@@ -607,10 +607,10 @@
   "Contact": {
     "eyebrow": "Contacto",
     "title": "Reciba su cotización gratis",
-    "subtitle": "Llame, escriba o complete el formulario — le respondemos enseguida, en inglés o español.",
-    "intro": "¿Tiene una pregunta o está list@ para reservar? Con gusto le ayudamos.",
+    "subtitle": "Llame, escriba o complete el formulario, y le respondemos enseguida, en inglés o español.",
+    "intro": "¿Tiene una pregunta, o ya está list@ para reservar? Con gusto le ayudamos.",
     "callTitle": "Línea para llamar",
-    "callBody": "Toque para llamar — la forma más rápida de contactarnos.",
+    "callBody": "Toque para llamar. Es la forma más rápida de contactarnos.",
     "emailTitle": "Escríbanos",
     "emailBody": "Normalmente respondemos en un día hábil.",
     "visitTitle": "Área de servicio",
@@ -628,11 +628,11 @@
   "Quote": {
     "eyebrow": "Cotización gratis",
     "title": "Reciba una cotización gratis",
-    "subtitle": "Un estimado a la medida en unos dos minutos. Sin compromiso.",
+    "subtitle": "Una cotización hecha para su espacio, en unos dos minutos. Sin compromiso.",
     "intro": "Responda unas preguntas rápidas y le contactamos con una cotización gratis y personalizada.",
     "trigger": "Cotización gratis",
     "modalTitle": "Reciba una cotización gratis",
-    "modalDescription": "Cuéntenos sobre su espacio — toma unos dos minutos.",
+    "modalDescription": "Cuéntenos sobre su espacio. Toma unos dos minutos.",
     "stepLabel": "Paso {current} de {total}",
     "steps": {
       "service": { "title": "Servicio", "description": "¿Qué necesita que limpiemos?" },
@@ -704,7 +704,7 @@
     },
     "success": {
       "title": "¡Solicitud recibida!",
-      "body": "Gracias — le contactaremos en breve con su cotización gratis. Para algo urgente, llámenos cuando quiera.",
+      "body": "¡Gracias! Le contactaremos en breve con su cotización gratis. Si algo es urgente, solo llámenos.",
       "callPrompt": "Llamar ahora"
     },
     "error": {
@@ -719,35 +719,35 @@
     "items": {
       "pricing": {
         "q": "¿Cuánto cuesta la limpieza?",
-        "a": "Cada espacio es distinto, así que el precio depende del tamaño, la condición y la frecuencia con que reserva. Las limpiezas estándar de casa comienzan alrededor de $120 y las profundas alrededor de $200. Su cotización siempre es gratis y a la medida — sin sorpresas."
+        "a": "Depende del tamaño del lugar, de en qué condición esté, y de la frecuencia con que reserva. Las limpiezas estándar de casa empiezan alrededor de $120 y las profundas alrededor de $200. La cotización en sí siempre es gratis y hecha para su espacio, así que no hay sorpresas el día del servicio."
       },
       "eco": {
         "q": "¿Sus productos son ecológicos y seguros para mascotas y niños?",
-        "a": "Sí. Usamos productos ecológicos y de bajo olor, duros con la suciedad pero suaves con su familia, sus mascotas y el aire de su hogar. Si tiene sensibilidades específicas, solo avísenos."
+        "a": "Sí. Usamos productos ecológicos y de bajo olor, duros con la suciedad pero suaves con su familia, sus mascotas y el aire de la casa. Si alguien en casa tiene alergias o sensibilidades, avísenos y lo ajustamos."
       },
       "supplies": {
         "q": "¿Tengo que proporcionar productos o equipo?",
-        "a": "No — nuestro equipo llega totalmente equipado con productos profesionales y ecológicos. Si prefiere que usemos un producto específico que ya tiene, con gusto lo hacemos."
+        "a": "No. Llevamos nuestras propias aspiradoras HEPA y productos profesionales y ecológicos (TODO confirmar con Papo). Si prefiere que usemos algún producto específico que ya tenga en casa, no hay ningún problema."
       },
       "pets": {
         "q": "¿Qué hago con mis mascotas durante la limpieza?",
-        "a": "Sus mascotas pueden quedarse en casa. Solo cuéntenos sobre ellas al reservar para que nuestro equipo se organice y las mantenga cómodas y seguras."
+        "a": "Sus mascotas pueden quedarse justo donde están. Solo dénos aviso sobre ellas al reservar para que el equipo trabaje a su alrededor y las mantenga cómodas."
       },
       "satisfaction": {
         "q": "¿Y si no quedo conforme con la limpieza?",
-        "a": "Su satisfacción está garantizada. Si algo no quedó bien, avísenos dentro de 24 horas y regresamos a limpiarlo de nuevo sin costo."
+        "a": "Entonces lo arreglamos. Si algo no quedó bien, llámenos dentro de 24 horas y regresamos a limpiarlo de nuevo, gratis. Ese es el trato, sin discusiones."
       },
       "bilingual": {
         "q": "¿Ofrecen servicio en español?",
-        "a": "Por supuesto. Limpios es completamente bilingüe — con gusto le ayudamos en inglés o español, por teléfono, mensaje o en persona."
+        "a": "Claro que sí. Limpios es completamente bilingüe, así que con gusto le ayudamos en español o inglés, ya sea por teléfono, por mensaje o en persona."
       },
       "insured": {
         "q": "¿Tienen licencia y seguro?",
-        "a": "Sí. Limpios cuenta con licencia y seguro, y nuestro equipo está verificado y con revisión de antecedentes para su tranquilidad."
+        "a": "Sí. Limpios cuenta con licencia y seguro, y todos en el equipo están verificados y con revisión de antecedentes antes de poner un pie en su casa."
       },
       "booking": {
         "q": "¿Cómo reservo o pido una cotización?",
-        "a": "Solicite una cotización gratis en línea en unos dos minutos, o llámenos directamente. Confirmamos los detalles y agendamos una hora que le funcione."
+        "a": "Llene la cotización en línea en unos dos minutos, o simplemente llámenos. De cualquier forma confirmamos los detalles y apartamos una hora que le funcione."
       }
     }
   },
