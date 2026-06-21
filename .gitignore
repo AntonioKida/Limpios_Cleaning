@@ -37,6 +37,10 @@ yarn-error.log*
 # local Claude Code settings (per-user, not shared)
 .claude/settings.local.json
 
+# audit artifacts (keep harness scripts + results.json; ignore heavy screenshots)
+/audit/screenshots
+*.log
+
 # vercel
 .vercel
 
