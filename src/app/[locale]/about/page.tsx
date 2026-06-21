@@ -123,7 +123,7 @@ export default async function AboutPage({
               {t("team.body")}
             </p>
             {/* TODO: add real team photos + bios. */}
-            <p className="text-xs text-muted-foreground/70">
+            <p className="text-xs text-muted-foreground">
               {t("team.placeholderNote")}
             </p>
           </div>

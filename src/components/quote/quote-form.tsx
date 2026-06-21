@@ -59,27 +59,33 @@ export function QuoteForm({
   const schema = useMemo(
     () =>
       z.object({
-        service: z
-          .string()
-          .refine((v) => (serviceSlugs as readonly string[]).includes(v), {
+        // react-hook-form yields `null` for an unselected radio group, so
+        // coerce null/undefined -> "" before validating (otherwise zod reports a
+        // raw "expected string, received null" instead of the friendly message).
+        service: z.preprocess(
+          (v) => v ?? "",
+          z.string().refine((v) => (serviceSlugs as readonly string[]).includes(v), {
             error: tv("serviceRequired"),
           }),
-        propertyType: z
-          .string()
-          .refine((v) => (PROPERTY_TYPES as readonly string[]).includes(v), {
+        ),
+        propertyType: z.preprocess(
+          (v) => v ?? "",
+          z.string().refine((v) => (PROPERTY_TYPES as readonly string[]).includes(v), {
             error: tv("propertyTypeRequired"),
           }),
+        ),
         bedrooms: z.string().optional(),
         bathrooms: z.string().optional(),
         sqft: z.string().optional(),
-        frequency: z
-          .string()
-          .refine((v) => (FREQUENCIES as readonly string[]).includes(v), {
+        frequency: z.preprocess(
+          (v) => v ?? "",
+          z.string().refine((v) => (FREQUENCIES as readonly string[]).includes(v), {
             error: tv("frequencyRequired"),
           }),
-        name: z.string().min(2, tv("nameMin")),
+        ),
+        name: z.string().min(1, tv("nameRequired")).min(2, tv("nameMin")),
         email: z.string().min(1, tv("emailRequired")).email(tv("emailInvalid")),
-        phone: z.string().min(7, tv("phoneInvalid")),
+        phone: z.string().min(1, tv("phoneRequired")).min(7, tv("phoneInvalid")),
         address: z.string().optional(),
         message: z.string().max(1000).optional(),
         consent: z.boolean().refine((v) => v === true, {

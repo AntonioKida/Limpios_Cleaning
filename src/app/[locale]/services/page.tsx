@@ -45,6 +45,8 @@ export default async function ServicesPage({
         <p className="mx-auto mb-12 max-w-2xl text-center text-pretty text-muted-foreground">
           {t("hub.intro")}
         </p>
+        {/* Section label for a correct heading outline (h1 -> h2 -> card h3) */}
+        <h2 className="sr-only">{t("labels.allServices")}</h2>
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {services.map((service, i) => (
             <Reveal key={service.slug} delay={i * 0.05} className="h-full">

@@ -34,6 +34,16 @@ export function buildMetadata({
   }
   languages["x-default"] = `${site.url}/${routing.defaultLocale}${path}`;
 
+  // Reference the per-locale OG image explicitly. A page that sets `openGraph`
+  // without `images` otherwise suppresses the `opengraph-image` file convention,
+  // leaving subpages with no social preview image.
+  const ogImage = {
+    url: `/${locale}/opengraph-image`,
+    width: 1200,
+    height: 630,
+    alt: site.name,
+  };
+
   return {
     title: titleAbsolute ? { absolute: title } : title,
     description,
@@ -45,11 +55,13 @@ export function buildMetadata({
       description,
       siteName: site.name,
       locale: OG_LOCALE[locale],
+      images: [ogImage],
     },
     twitter: {
       card: "summary_large_image",
       title,
       description,
+      images: [`/${locale}/opengraph-image`],
     },
   };
 }
