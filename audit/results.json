@@ -1,20 +1,25 @@
 {
-  "generatedAt": "2026-06-20T23:57:20.559Z",
-  "base": "http://localhost:3000",
+  "generatedAt": "2026-06-24T01:17:51.469Z",
+  "base": "http://localhost:3100",
   "mode": "next dev (perf indicative only)",
   "pages": [
     {
       "route": "/en",
       "device": "desktop",
       "status": 200,
-      "consoleMsgs": [],
+      "consoleMsgs": [
+        {
+          "type": "error",
+          "text": "Failed to load resource: the server responded with a status of 404 (Not Found)"
+        }
+      ],
       "axe": [],
       "title": "Veteran-Owned Cleaning in Clermont & Central Florida",
       "lang": "en",
       "metaDesc": "Limpios Cleaning Management — veteran-owned, eco-friendly residential & commercial cleaning serving Clermont, Minneola and Central Florida. Licensed, insured and bilingual. Get a free quote.",
       "canonical": "https://limpioscleaning.com/en",
       "hreflang": 3,
-      "ogImage": "http://localhost:3000/en/opengraph-image?6c012b306d5dec82",
+      "ogImage": "https://limpioscleaning.com/en/opengraph-image?6c012b306d5dec82",
       "h1Count": 1,
       "headings": [
         {
@@ -71,19 +76,19 @@
         },
         {
           "l": 3,
-          "t": "Veteran-owned"
+          "t": "The same vetted team"
         },
         {
           "l": 3,
-          "t": "Eco-friendly"
+          "t": "A room-by-room checklist"
         },
         {
           "l": 3,
-          "t": "Satisfaction guaranteed"
+          "t": "A fast, no-pressure quote"
         },
         {
           "l": 3,
-          "t": "Bilingual service"
+          "t": "A guarantee we honor"
         },
         {
           "l": 2,
@@ -158,7 +163,7 @@
           "t": "Hours"
         }
       ],
-      "imgCount": 7,
+      "imgCount": 15,
       "imgNoAlt": 0,
       "links": [
         {
@@ -381,11 +386,11 @@
       "buttons": 9,
       "scrollW": 1366,
       "innerW": 1366,
-      "ttfb": 370,
-      "domContentLoaded": 486,
-      "load": 611,
-      "fcp": 492,
-      "lcp": 536,
+      "ttfb": 11,
+      "domContentLoaded": 64,
+      "load": 182,
+      "fcp": 376,
+      "lcp": 376,
       "cls": 0,
       "jsonldBlocks": 1
     },
@@ -393,19 +398,28 @@
       "route": "/en/services",
       "device": "desktop",
       "status": 200,
-      "consoleMsgs": [],
+      "consoleMsgs": [
+        {
+          "type": "error",
+          "text": "Failed to load resource: the server responded with a status of 404 (Not Found)"
+        }
+      ],
       "axe": [],
       "title": "Cleaning Services | Limpios Cleaning Management",
       "lang": "en",
       "metaDesc": "Residential, commercial, deep, move-in/out, post-construction cleaning and interior painting across Clermont and Central Florida. Eco-friendly and insured.",
       "canonical": "https://limpioscleaning.com/en/services",
       "hreflang": 3,
-      "ogImage": null,
+      "ogImage": "https://limpioscleaning.com/en/opengraph-image",
       "h1Count": 1,
       "headings": [
         {
           "l": 1,
           "t": "Cleaning & care for every space"
+        },
+        {
+          "l": 2,
+          "t": "All services"
         },
         {
           "l": 3,
@@ -631,11 +645,11 @@
       "buttons": 1,
       "scrollW": 1366,
       "innerW": 1366,
-      "ttfb": 231,
-      "domContentLoaded": 294,
-      "load": 396,
-      "fcp": 300,
-      "lcp": 300,
+      "ttfb": 11,
+      "domContentLoaded": 33,
+      "load": 104,
+      "fcp": 112,
+      "lcp": 112,
       "cls": 0,
       "jsonldBlocks": 0
     },
@@ -643,14 +657,19 @@
       "route": "/en/services/residential",
       "device": "desktop",
       "status": 200,
-      "consoleMsgs": [],
+      "consoleMsgs": [
+        {
+          "type": "error",
+          "text": "Failed to load resource: the server responded with a status of 404 (Not Found)"
+        }
+      ],
       "axe": [],
       "title": "Residential cleaning | Limpios Cleaning Management",
       "lang": "en",
       "metaDesc": "Eco-friendly residential house cleaning in Clermont & Central Florida. Weekly, biweekly, monthly or one-time. Licensed, insured, veteran-owned. From $120 — free quote.",
       "canonical": "https://limpioscleaning.com/en/services/residential",
       "hreflang": 3,
-      "ogImage": null,
+      "ogImage": "https://limpioscleaning.com/en/opengraph-image",
       "h1Count": 1,
       "headings": [
         {
@@ -668,6 +687,14 @@
         {
           "l": 2,
           "t": "What affects the price"
+        },
+        {
+          "l": 2,
+          "t": "Before & after"
+        },
+        {
+          "l": 2,
+          "t": "Watch us work"
         },
         {
           "l": 2,
@@ -742,7 +769,7 @@
           "t": "Hours"
         }
       ],
-      "imgCount": 0,
+      "imgCount": 5,
       "imgNoAlt": 0,
       "links": [
         {
@@ -913,11 +940,11 @@
       "buttons": 9,
       "scrollW": 1366,
       "innerW": 1366,
-      "ttfb": 682,
-      "domContentLoaded": 829,
-      "load": 840,
-      "fcp": 752,
-      "lcp": 752,
+      "ttfb": 10,
+      "domContentLoaded": 21,
+      "load": 108,
+      "fcp": 116,
+      "lcp": 116,
       "cls": 0,
       "jsonldBlocks": 1
     },
@@ -925,14 +952,19 @@
       "route": "/en/services/commercial",
       "device": "desktop",
       "status": 200,
-      "consoleMsgs": [],
+      "consoleMsgs": [
+        {
+          "type": "error",
+          "text": "Failed to load resource: the server responded with a status of 404 (Not Found)"
+        }
+      ],
       "axe": [],
       "title": "Commercial cleaning | Limpios Cleaning Management",
       "lang": "en",
       "metaDesc": "Commercial & office cleaning in Clermont and Central Florida. Flexible scheduling, insured, eco-friendly. Custom quotes for offices, retail and facilities.",
       "canonical": "https://limpioscleaning.com/en/services/commercial",
       "hreflang": 3,
-      "ogImage": null,
+      "ogImage": "https://limpioscleaning.com/en/opengraph-image",
       "h1Count": 1,
       "headings": [
         {
@@ -950,6 +982,10 @@
         {
           "l": 2,
           "t": "What affects the price"
+        },
+        {
+          "l": 2,
+          "t": "Watch us work"
         },
         {
           "l": 2,
@@ -1024,7 +1060,7 @@
           "t": "Hours"
         }
       ],
-      "imgCount": 0,
+      "imgCount": 3,
       "imgNoAlt": 0,
       "links": [
         {
@@ -1195,11 +1231,11 @@
       "buttons": 9,
       "scrollW": 1366,
       "innerW": 1366,
-      "ttfb": 234,
-      "domContentLoaded": 297,
-      "load": 398,
-      "fcp": 304,
-      "lcp": 304,
+      "ttfb": 9,
+      "domContentLoaded": 22,
+      "load": 70,
+      "fcp": 116,
+      "lcp": 116,
       "cls": 0,
       "jsonldBlocks": 1
     },
@@ -1207,14 +1243,19 @@
       "route": "/en/services/deep-cleaning",
       "device": "desktop",
       "status": 200,
-      "consoleMsgs": [],
+      "consoleMsgs": [
+        {
+          "type": "error",
+          "text": "Failed to load resource: the server responded with a status of 404 (Not Found)"
+        }
+      ],
       "axe": [],
       "title": "Deep cleaning | Limpios Cleaning Management",
       "lang": "en",
       "metaDesc": "Deep cleaning services in Central Florida — baseboards, grout, appliances and detail work top to bottom. Eco-friendly, insured. From $200 — free quote.",
       "canonical": "https://limpioscleaning.com/en/services/deep-cleaning",
       "hreflang": 3,
-      "ogImage": null,
+      "ogImage": "https://limpioscleaning.com/en/opengraph-image",
       "h1Count": 1,
       "headings": [
         {
@@ -1232,6 +1273,14 @@
         {
           "l": 2,
           "t": "What affects the price"
+        },
+        {
+          "l": 2,
+          "t": "Before & after"
+        },
+        {
+          "l": 2,
+          "t": "Watch us work"
         },
         {
           "l": 2,
@@ -1306,7 +1355,7 @@
           "t": "Hours"
         }
       ],
-      "imgCount": 0,
+      "imgCount": 13,
       "imgNoAlt": 0,
       "links": [
         {
@@ -1477,11 +1526,11 @@
       "buttons": 9,
       "scrollW": 1366,
       "innerW": 1366,
-      "ttfb": 226,
-      "domContentLoaded": 292,
-      "load": 390,
-      "fcp": 304,
-      "lcp": 304,
+      "ttfb": 6,
+      "domContentLoaded": 27,
+      "load": 155,
+      "fcp": 132,
+      "lcp": 132,
       "cls": 0,
       "jsonldBlocks": 1
     },
@@ -1489,14 +1538,19 @@
       "route": "/en/services/move-in-out",
       "device": "desktop",
       "status": 200,
-      "consoleMsgs": [],
+      "consoleMsgs": [
+        {
+          "type": "error",
+          "text": "Failed to load resource: the server responded with a status of 404 (Not Found)"
+        }
+      ],
       "axe": [],
       "title": "Move-in / move-out cleaning | Limpios Cleaning Management",
       "lang": "en",
       "metaDesc": "Move-in / move-out cleaning in Clermont & Central Florida. Deposit-ready, detailed top-to-bottom cleaning for empty homes. Insured, eco-friendly. From $200.",
       "canonical": "https://limpioscleaning.com/en/services/move-in-out",
       "hreflang": 3,
-      "ogImage": null,
+      "ogImage": "https://limpioscleaning.com/en/opengraph-image",
       "h1Count": 1,
       "headings": [
         {
@@ -1514,6 +1568,14 @@
         {
           "l": 2,
           "t": "What affects the price"
+        },
+        {
+          "l": 2,
+          "t": "Before & after"
+        },
+        {
+          "l": 2,
+          "t": "Watch us work"
         },
         {
           "l": 2,
@@ -1588,7 +1650,7 @@
           "t": "Hours"
         }
       ],
-      "imgCount": 0,
+      "imgCount": 7,
       "imgNoAlt": 0,
       "links": [
         {
@@ -1759,11 +1821,11 @@
       "buttons": 9,
       "scrollW": 1366,
       "innerW": 1366,
-      "ttfb": 237,
-      "domContentLoaded": 303,
-      "load": 401,
-      "fcp": 312,
-      "lcp": 312,
+      "ttfb": 8,
+      "domContentLoaded": 20,
+      "load": 141,
+      "fcp": 124,
+      "lcp": 124,
       "cls": 0,
       "jsonldBlocks": 1
     },
@@ -1771,14 +1833,19 @@
       "route": "/en/services/post-construction",
       "device": "desktop",
       "status": 200,
-      "consoleMsgs": [],
+      "consoleMsgs": [
+        {
+          "type": "error",
+          "text": "Failed to load resource: the server responded with a status of 404 (Not Found)"
+        }
+      ],
       "axe": [],
       "title": "Post-construction cleaning | Limpios Cleaning Management",
       "lang": "en",
       "metaDesc": "Post-construction cleaning in Central Florida. Fine dust removal, debris and detail cleanup after builds & remodels. Insured, eco-friendly. Request a quote.",
       "canonical": "https://limpioscleaning.com/en/services/post-construction",
       "hreflang": 3,
-      "ogImage": null,
+      "ogImage": "https://limpioscleaning.com/en/opengraph-image",
       "h1Count": 1,
       "headings": [
         {
@@ -2041,11 +2108,11 @@
       "buttons": 9,
       "scrollW": 1366,
       "innerW": 1366,
-      "ttfb": 258,
-      "domContentLoaded": 322,
-      "load": 423,
-      "fcp": 328,
-      "lcp": 328,
+      "ttfb": 9,
+      "domContentLoaded": 23,
+      "load": 78,
+      "fcp": 124,
+      "lcp": 124,
       "cls": 0,
       "jsonldBlocks": 1
     },
@@ -2053,14 +2120,19 @@
       "route": "/en/services/interior-painting",
       "device": "desktop",
       "status": 200,
-      "consoleMsgs": [],
+      "consoleMsgs": [
+        {
+          "type": "error",
+          "text": "Failed to load resource: the server responded with a status of 404 (Not Found)"
+        }
+      ],
       "axe": [],
       "title": "Interior painting | Limpios Cleaning Management",
       "lang": "en",
       "metaDesc": "Interior painting in Clermont & Central Florida — walls, trim and ceilings, neatly prepped and cleaned up. Insured, detail-oriented. Request a quote.",
       "canonical": "https://limpioscleaning.com/en/services/interior-painting",
       "hreflang": 3,
-      "ogImage": null,
+      "ogImage": "https://limpioscleaning.com/en/opengraph-image",
       "h1Count": 1,
       "headings": [
         {
@@ -2323,11 +2395,11 @@
       "buttons": 9,
       "scrollW": 1366,
       "innerW": 1366,
-      "ttfb": 247,
-      "domContentLoaded": 419,
-      "load": 421,
-      "fcp": 320,
-      "lcp": 320,
+      "ttfb": 6,
+      "domContentLoaded": 18,
+      "load": 70,
+      "fcp": 116,
+      "lcp": 116,
       "cls": 0,
       "jsonldBlocks": 1
     },
@@ -2335,14 +2407,19 @@
       "route": "/en/pricing",
       "device": "desktop",
       "status": 200,
-      "consoleMsgs": [],
+      "consoleMsgs": [
+        {
+          "type": "error",
+          "text": "Failed to load resource: the server responded with a status of 404 (Not Found)"
+        }
+      ],
       "axe": [],
       "title": "Pricing & Free Quotes | Limpios Cleaning Management",
       "lang": "en",
       "metaDesc": "Transparent starting prices for home and office cleaning in Central Florida, plus the factors that shape your quote. Get a free, no-obligation estimate.",
       "canonical": "https://limpioscleaning.com/en/pricing",
       "hreflang": 3,
-      "ogImage": null,
+      "ogImage": "https://limpioscleaning.com/en/opengraph-image",
       "h1Count": 1,
       "headings": [
         {
@@ -2581,11 +2658,11 @@
       "buttons": 1,
       "scrollW": 1366,
       "innerW": 1366,
-      "ttfb": 254,
-      "domContentLoaded": 311,
-      "load": 418,
-      "fcp": 316,
-      "lcp": 316,
+      "ttfb": 7,
+      "domContentLoaded": 18,
+      "load": 72,
+      "fcp": 116,
+      "lcp": 116,
       "cls": 0,
       "jsonldBlocks": 0
     },
@@ -2593,14 +2670,19 @@
       "route": "/en/service-areas",
       "device": "desktop",
       "status": 200,
-      "consoleMsgs": [],
+      "consoleMsgs": [
+        {
+          "type": "error",
+          "text": "Failed to load resource: the server responded with a status of 404 (Not Found)"
+        }
+      ],
       "axe": [],
       "title": "Service Areas in Central Florida | Limpios Cleaning Management",
       "lang": "en",
       "metaDesc": "Limpios proudly cleans homes and businesses in Clermont, Minneola, Groveland, Winter Garden, Horizon West, Four Corners and across Lake & west Orange County.",
       "canonical": "https://limpioscleaning.com/en/service-areas",
       "hreflang": 3,
-      "ogImage": null,
+      "ogImage": "https://limpioscleaning.com/en/opengraph-image",
       "h1Count": 1,
       "headings": [
         {
@@ -2721,11 +2803,11 @@
         },
         {
           "href": "/en/service-areas/clermont",
-          "text": "ClermontLake CountyOur home base neighbor — full-s"
+          "text": "ClermontLake CountyOur home-base neighbor. Full-se"
         },
         {
           "href": "/en/service-areas/minneola",
-          "text": "MinneolaLake CountyRight at home — Limpios is base"
+          "text": "MinneolaLake CountyRight at home. Limpios is based"
         },
         {
           "href": "/en/service-areas/groveland",
@@ -2851,11 +2933,11 @@
       "buttons": 1,
       "scrollW": 1366,
       "innerW": 1366,
-      "ttfb": 221,
-      "domContentLoaded": 291,
-      "load": 402,
-      "fcp": 300,
-      "lcp": 300,
+      "ttfb": 8,
+      "domContentLoaded": 19,
+      "load": 74,
+      "fcp": 116,
+      "lcp": 116,
       "cls": 0,
       "jsonldBlocks": 0
     },
@@ -2863,14 +2945,19 @@
       "route": "/en/service-areas/clermont",
       "device": "desktop",
       "status": 200,
-      "consoleMsgs": [],
+      "consoleMsgs": [
+        {
+          "type": "error",
+          "text": "Failed to load resource: the server responded with a status of 404 (Not Found)"
+        }
+      ],
       "axe": [],
       "title": "Cleaning Services in Clermont, FL",
       "lang": "en",
       "metaDesc": "Veteran-owned, eco-friendly home & commercial cleaning in Clermont, FL. Licensed, insured and bilingual. Recurring, deep, move-out and more — get a free quote.",
       "canonical": "https://limpioscleaning.com/en/service-areas/clermont",
       "hreflang": 3,
-      "ogImage": null,
+      "ogImage": "https://limpioscleaning.com/en/opengraph-image",
       "h1Count": 1,
       "headings": [
         {
@@ -3141,11 +3228,11 @@
       "buttons": 1,
       "scrollW": 1366,
       "innerW": 1366,
-      "ttfb": 623,
-      "domContentLoaded": 680,
-      "load": 782,
-      "fcp": 688,
-      "lcp": 688,
+      "ttfb": 17,
+      "domContentLoaded": 37,
+      "load": 115,
+      "fcp": 124,
+      "lcp": 124,
       "cls": 0,
       "jsonldBlocks": 0
     },
@@ -3153,14 +3240,19 @@
       "route": "/en/service-areas/minneola",
       "device": "desktop",
       "status": 200,
-      "consoleMsgs": [],
+      "consoleMsgs": [
+        {
+          "type": "error",
+          "text": "Failed to load resource: the server responded with a status of 404 (Not Found)"
+        }
+      ],
       "axe": [],
       "title": "Cleaning Services in Minneola, FL",
       "lang": "en",
       "metaDesc": "Veteran-owned, eco-friendly home & commercial cleaning in Minneola, FL. Licensed, insured and bilingual. Recurring, deep, move-out and more — get a free quote.",
       "canonical": "https://limpioscleaning.com/en/service-areas/minneola",
       "hreflang": 3,
-      "ogImage": null,
+      "ogImage": "https://limpioscleaning.com/en/opengraph-image",
       "h1Count": 1,
       "headings": [
         {
@@ -3431,11 +3523,11 @@
       "buttons": 1,
       "scrollW": 1366,
       "innerW": 1366,
-      "ttfb": 216,
-      "domContentLoaded": 374,
-      "load": 386,
-      "fcp": 292,
-      "lcp": 292,
+      "ttfb": 5,
+      "domContentLoaded": 16,
+      "load": 93,
+      "fcp": 100,
+      "lcp": 100,
       "cls": 0,
       "jsonldBlocks": 0
     },
@@ -3443,14 +3535,19 @@
       "route": "/en/service-areas/groveland",
       "device": "desktop",
       "status": 200,
-      "consoleMsgs": [],
+      "consoleMsgs": [
+        {
+          "type": "error",
+          "text": "Failed to load resource: the server responded with a status of 404 (Not Found)"
+        }
+      ],
       "axe": [],
       "title": "Cleaning Services in Groveland, FL",
       "lang": "en",
       "metaDesc": "Veteran-owned, eco-friendly home & commercial cleaning in Groveland, FL. Licensed, insured and bilingual. Recurring, deep, move-out and more — get a free quote.",
       "canonical": "https://limpioscleaning.com/en/service-areas/groveland",
       "hreflang": 3,
-      "ogImage": null,
+      "ogImage": "https://limpioscleaning.com/en/opengraph-image",
       "h1Count": 1,
       "headings": [
         {
@@ -3721,11 +3818,11 @@
       "buttons": 1,
       "scrollW": 1366,
       "innerW": 1366,
-      "ttfb": 206,
-      "domContentLoaded": 267,
-      "load": 367,
-      "fcp": 276,
-      "lcp": 276,
+      "ttfb": 9,
+      "domContentLoaded": 21,
+      "load": 105,
+      "fcp": 116,
+      "lcp": 116,
       "cls": 0,
       "jsonldBlocks": 0
     },
@@ -3733,14 +3830,19 @@
       "route": "/en/service-areas/winter-garden",
       "device": "desktop",
       "status": 200,
-      "consoleMsgs": [],
+      "consoleMsgs": [
+        {
+          "type": "error",
+          "text": "Failed to load resource: the server responded with a status of 404 (Not Found)"
+        }
+      ],
       "axe": [],
       "title": "Cleaning Services in Winter Garden, FL",
       "lang": "en",
       "metaDesc": "Veteran-owned, eco-friendly home & commercial cleaning in Winter Garden, FL. Licensed, insured and bilingual. Recurring, deep, move-out and more — get a free quote.",
       "canonical": "https://limpioscleaning.com/en/service-areas/winter-garden",
       "hreflang": 3,
-      "ogImage": null,
+      "ogImage": "https://limpioscleaning.com/en/opengraph-image",
       "h1Count": 1,
       "headings": [
         {
@@ -4011,11 +4113,11 @@
       "buttons": 1,
       "scrollW": 1366,
       "innerW": 1366,
-      "ttfb": 207,
-      "domContentLoaded": 270,
-      "load": 369,
-      "fcp": 280,
-      "lcp": 280,
+      "ttfb": 6,
+      "domContentLoaded": 16,
+      "load": 65,
+      "fcp": 108,
+      "lcp": 108,
       "cls": 0,
       "jsonldBlocks": 0
     },
@@ -4023,14 +4125,19 @@
       "route": "/en/service-areas/horizon-west",
       "device": "desktop",
       "status": 200,
-      "consoleMsgs": [],
+      "consoleMsgs": [
+        {
+          "type": "error",
+          "text": "Failed to load resource: the server responded with a status of 404 (Not Found)"
+        }
+      ],
       "axe": [],
       "title": "Cleaning Services in Horizon West, FL",
       "lang": "en",
       "metaDesc": "Veteran-owned, eco-friendly home & commercial cleaning in Horizon West, FL. Licensed, insured and bilingual. Recurring, deep, move-out and more — get a free quote.",
       "canonical": "https://limpioscleaning.com/en/service-areas/horizon-west",
       "hreflang": 3,
-      "ogImage": null,
+      "ogImage": "https://limpioscleaning.com/en/opengraph-image",
       "h1Count": 1,
       "headings": [
         {
@@ -4301,11 +4408,11 @@
       "buttons": 1,
       "scrollW": 1366,
       "innerW": 1366,
-      "ttfb": 199,
-      "domContentLoaded": 262,
-      "load": 366,
-      "fcp": 268,
-      "lcp": 268,
+      "ttfb": 6,
+      "domContentLoaded": 16,
+      "load": 68,
+      "fcp": 112,
+      "lcp": 112,
       "cls": 0,
       "jsonldBlocks": 0
     },
@@ -4313,14 +4420,19 @@
       "route": "/en/service-areas/four-corners",
       "device": "desktop",
       "status": 200,
-      "consoleMsgs": [],
+      "consoleMsgs": [
+        {
+          "type": "error",
+          "text": "Failed to load resource: the server responded with a status of 404 (Not Found)"
+        }
+      ],
       "axe": [],
       "title": "Cleaning Services in Four Corners, FL",
       "lang": "en",
       "metaDesc": "Veteran-owned, eco-friendly home & commercial cleaning in Four Corners, FL. Licensed, insured and bilingual. Recurring, deep, move-out and more — get a free quote.",
       "canonical": "https://limpioscleaning.com/en/service-areas/four-corners",
       "hreflang": 3,
-      "ogImage": null,
+      "ogImage": "https://limpioscleaning.com/en/opengraph-image",
       "h1Count": 1,
       "headings": [
         {
@@ -4591,11 +4703,11 @@
       "buttons": 1,
       "scrollW": 1366,
       "innerW": 1366,
-      "ttfb": 216,
-      "domContentLoaded": 275,
-      "load": 373,
-      "fcp": 284,
-      "lcp": 284,
+      "ttfb": 14,
+      "domContentLoaded": 27,
+      "load": 87,
+      "fcp": 136,
+      "lcp": 136,
       "cls": 0,
       "jsonldBlocks": 0
     },
@@ -4603,14 +4715,19 @@
       "route": "/en/service-areas/montverde",
       "device": "desktop",
       "status": 200,
-      "consoleMsgs": [],
+      "consoleMsgs": [
+        {
+          "type": "error",
+          "text": "Failed to load resource: the server responded with a status of 404 (Not Found)"
+        }
+      ],
       "axe": [],
       "title": "Cleaning Services in Montverde, FL",
       "lang": "en",
       "metaDesc": "Veteran-owned, eco-friendly home & commercial cleaning in Montverde, FL. Licensed, insured and bilingual. Recurring, deep, move-out and more — get a free quote.",
       "canonical": "https://limpioscleaning.com/en/service-areas/montverde",
       "hreflang": 3,
-      "ogImage": null,
+      "ogImage": "https://limpioscleaning.com/en/opengraph-image",
       "h1Count": 1,
       "headings": [
         {
@@ -4881,11 +4998,11 @@
       "buttons": 1,
       "scrollW": 1366,
       "innerW": 1366,
-      "ttfb": 208,
-      "domContentLoaded": 268,
-      "load": 373,
-      "fcp": 276,
-      "lcp": 276,
+      "ttfb": 11,
+      "domContentLoaded": 23,
+      "load": 106,
+      "fcp": 116,
+      "lcp": 116,
       "cls": 0,
       "jsonldBlocks": 0
     },
@@ -4893,14 +5010,19 @@
       "route": "/en/service-areas/mascotte",
       "device": "desktop",
       "status": 200,
-      "consoleMsgs": [],
+      "consoleMsgs": [
+        {
+          "type": "error",
+          "text": "Failed to load resource: the server responded with a status of 404 (Not Found)"
+        }
+      ],
       "axe": [],
       "title": "Cleaning Services in Mascotte, FL",
       "lang": "en",
       "metaDesc": "Veteran-owned, eco-friendly home & commercial cleaning in Mascotte, FL. Licensed, insured and bilingual. Recurring, deep, move-out and more — get a free quote.",
       "canonical": "https://limpioscleaning.com/en/service-areas/mascotte",
       "hreflang": 3,
-      "ogImage": null,
+      "ogImage": "https://limpioscleaning.com/en/opengraph-image",
       "h1Count": 1,
       "headings": [
         {
@@ -5171,11 +5293,11 @@
       "buttons": 1,
       "scrollW": 1366,
       "innerW": 1366,
-      "ttfb": 204,
-      "domContentLoaded": 264,
-      "load": 371,
-      "fcp": 272,
-      "lcp": 272,
+      "ttfb": 8,
+      "domContentLoaded": 19,
+      "load": 66,
+      "fcp": 108,
+      "lcp": 108,
       "cls": 0,
       "jsonldBlocks": 0
     },
@@ -5183,21 +5305,19 @@
       "route": "/en/about",
       "device": "desktop",
       "status": 200,
-      "consoleMsgs": [],
-      "axe": [
+      "consoleMsgs": [
         {
-          "id": "color-contrast",
-          "impact": "serious",
-          "help": "Elements must meet minimum color contrast ratio thresholds",
-          "nodes": 1
+          "type": "error",
+          "text": "Failed to load resource: the server responded with a status of 404 (Not Found)"
         }
       ],
+      "axe": [],
       "title": "About — Veteran-Owned & Local | Limpios Cleaning Management",
       "lang": "en",
       "metaDesc": "Meet the veteran owner behind Limpios Cleaning Management. Our story, our eco-friendly commitment, and the satisfaction guarantee behind every clean.",
       "canonical": "https://limpioscleaning.com/en/about",
       "hreflang": 3,
-      "ogImage": null,
+      "ogImage": "https://limpioscleaning.com/en/opengraph-image",
       "h1Count": 1,
       "headings": [
         {
@@ -5261,7 +5381,7 @@
           "t": "Hours"
         }
       ],
-      "imgCount": 1,
+      "imgCount": 3,
       "imgNoAlt": 0,
       "links": [
         {
@@ -5412,11 +5532,11 @@
       "buttons": 1,
       "scrollW": 1366,
       "innerW": 1366,
-      "ttfb": 222,
-      "domContentLoaded": 289,
-      "load": 412,
-      "fcp": 300,
-      "lcp": 312,
+      "ttfb": 6,
+      "domContentLoaded": 19,
+      "load": 132,
+      "fcp": 120,
+      "lcp": 120,
       "cls": 0,
       "jsonldBlocks": 0
     },
@@ -5424,14 +5544,19 @@
       "route": "/en/reviews",
       "device": "desktop",
       "status": 200,
-      "consoleMsgs": [],
+      "consoleMsgs": [
+        {
+          "type": "error",
+          "text": "Failed to load resource: the server responded with a status of 404 (Not Found)"
+        }
+      ],
       "axe": [],
       "title": "Reviews | Limpios Cleaning Management",
       "lang": "en",
       "metaDesc": "See what Central Florida homeowners and businesses say about Limpios Cleaning Management.",
       "canonical": "https://limpioscleaning.com/en/reviews",
       "hreflang": 3,
-      "ogImage": null,
+      "ogImage": "https://limpioscleaning.com/en/opengraph-image",
       "h1Count": 1,
       "headings": [
         {
@@ -5618,11 +5743,11 @@
       "buttons": 1,
       "scrollW": 1366,
       "innerW": 1366,
-      "ttfb": 211,
-      "domContentLoaded": 271,
-      "load": 374,
-      "fcp": 280,
-      "lcp": 280,
+      "ttfb": 6,
+      "domContentLoaded": 16,
+      "load": 67,
+      "fcp": 128,
+      "lcp": 128,
       "cls": 0,
       "jsonldBlocks": 0
     },
@@ -5630,14 +5755,19 @@
       "route": "/en/contact",
       "device": "desktop",
       "status": 200,
-      "consoleMsgs": [],
+      "consoleMsgs": [
+        {
+          "type": "error",
+          "text": "Failed to load resource: the server responded with a status of 404 (Not Found)"
+        }
+      ],
       "axe": [],
       "title": "Contact & Free Quote | Limpios Cleaning Management",
       "lang": "en",
       "metaDesc": "Call, email or message Limpios Cleaning Management for a free cleaning quote in Clermont and Central Florida. Bilingual, friendly, and local.",
       "canonical": "https://limpioscleaning.com/en/contact",
       "hreflang": 3,
-      "ogImage": null,
+      "ogImage": "https://limpioscleaning.com/en/opengraph-image",
       "h1Count": 1,
       "headings": [
         {
@@ -5848,11 +5978,11 @@
       "buttons": 2,
       "scrollW": 1366,
       "innerW": 1366,
-      "ttfb": 175,
-      "domContentLoaded": 231,
-      "load": 334,
-      "fcp": 240,
-      "lcp": 240,
+      "ttfb": 11,
+      "domContentLoaded": 22,
+      "load": 96,
+      "fcp": 104,
+      "lcp": 104,
       "cls": 0,
       "jsonldBlocks": 0
     },
@@ -5860,14 +5990,19 @@
       "route": "/en/quote",
       "device": "desktop",
       "status": 200,
-      "consoleMsgs": [],
+      "consoleMsgs": [
+        {
+          "type": "error",
+          "text": "Failed to load resource: the server responded with a status of 404 (Not Found)"
+        }
+      ],
       "axe": [],
       "title": "Get a free quote | Limpios Cleaning Management",
       "lang": "en",
-      "metaDesc": "Answer a few quick questions and we'll get back to you with a free, personalized quote.",
+      "metaDesc": "Answer a few quick questions and we'll come back to you with a free, personalized quote.",
       "canonical": "https://limpioscleaning.com/en/quote",
       "hreflang": 3,
-      "ogImage": null,
+      "ogImage": "https://limpioscleaning.com/en/opengraph-image",
       "h1Count": 1,
       "headings": [
         {
@@ -6038,11 +6173,11 @@
       "buttons": 2,
       "scrollW": 1366,
       "innerW": 1366,
-      "ttfb": 583,
-      "domContentLoaded": 599,
-      "load": 730,
-      "fcp": 644,
-      "lcp": 644,
+      "ttfb": 85,
+      "domContentLoaded": 97,
+      "load": 148,
+      "fcp": 180,
+      "lcp": 180,
       "cls": 0,
       "jsonldBlocks": 0
     },
@@ -6050,14 +6185,19 @@
       "route": "/en",
       "device": "mobile",
       "status": 200,
-      "consoleMsgs": [],
+      "consoleMsgs": [
+        {
+          "type": "error",
+          "text": "Failed to load resource: the server responded with a status of 404 (Not Found)"
+        }
+      ],
       "axe": null,
       "title": "Veteran-Owned Cleaning in Clermont & Central Florida",
       "lang": "en",
       "metaDesc": "Limpios Cleaning Management — veteran-owned, eco-friendly residential & commercial cleaning serving Clermont, Minneola and Central Florida. Licensed, insured and bilingual. Get a free quote.",
       "canonical": "https://limpioscleaning.com/en",
       "hreflang": 3,
-      "ogImage": "http://localhost:3000/en/opengraph-image?6c012b306d5dec82",
+      "ogImage": "https://limpioscleaning.com/en/opengraph-image?6c012b306d5dec82",
       "h1Count": 1,
       "headings": [
         {
@@ -6114,19 +6254,19 @@
         },
         {
           "l": 3,
-          "t": "Veteran-owned"
+          "t": "The same vetted team"
         },
         {
           "l": 3,
-          "t": "Eco-friendly"
+          "t": "A room-by-room checklist"
         },
         {
           "l": 3,
-          "t": "Satisfaction guaranteed"
+          "t": "A fast, no-pressure quote"
         },
         {
           "l": 3,
-          "t": "Bilingual service"
+          "t": "A guarantee we honor"
         },
         {
           "l": 2,
@@ -6201,7 +6341,7 @@
           "t": "Hours"
         }
       ],
-      "imgCount": 7,
+      "imgCount": 15,
       "imgNoAlt": 0,
       "links": [
         {
@@ -6424,11 +6564,11 @@
       "buttons": 9,
       "scrollW": 390,
       "innerW": 390,
-      "ttfb": 369,
-      "domContentLoaded": 586,
-      "load": 605,
-      "fcp": 496,
-      "lcp": 496,
+      "ttfb": 11,
+      "domContentLoaded": 37,
+      "load": 149,
+      "fcp": 156,
+      "lcp": 156,
       "cls": 0,
       "jsonldBlocks": 1
     },
@@ -6436,19 +6576,28 @@
       "route": "/en/services",
       "device": "mobile",
       "status": 200,
-      "consoleMsgs": [],
+      "consoleMsgs": [
+        {
+          "type": "error",
+          "text": "Failed to load resource: the server responded with a status of 404 (Not Found)"
+        }
+      ],
       "axe": null,
       "title": "Cleaning Services | Limpios Cleaning Management",
       "lang": "en",
       "metaDesc": "Residential, commercial, deep, move-in/out, post-construction cleaning and interior painting across Clermont and Central Florida. Eco-friendly and insured.",
       "canonical": "https://limpioscleaning.com/en/services",
       "hreflang": 3,
-      "ogImage": null,
+      "ogImage": "https://limpioscleaning.com/en/opengraph-image",
       "h1Count": 1,
       "headings": [
         {
           "l": 1,
           "t": "Cleaning & care for every space"
+        },
+        {
+          "l": 2,
+          "t": "All services"
         },
         {
           "l": 3,
@@ -6674,11 +6823,11 @@
       "buttons": 1,
       "scrollW": 390,
       "innerW": 390,
-      "ttfb": 191,
-      "domContentLoaded": 245,
-      "load": 348,
-      "fcp": 248,
-      "lcp": 248,
+      "ttfb": 8,
+      "domContentLoaded": 34,
+      "load": 108,
+      "fcp": 108,
+      "lcp": 108,
       "cls": 0,
       "jsonldBlocks": 0
     },
@@ -6686,14 +6835,19 @@
       "route": "/en/services/residential",
       "device": "mobile",
       "status": 200,
-      "consoleMsgs": [],
+      "consoleMsgs": [
+        {
+          "type": "error",
+          "text": "Failed to load resource: the server responded with a status of 404 (Not Found)"
+        }
+      ],
       "axe": null,
       "title": "Residential cleaning | Limpios Cleaning Management",
       "lang": "en",
       "metaDesc": "Eco-friendly residential house cleaning in Clermont & Central Florida. Weekly, biweekly, monthly or one-time. Licensed, insured, veteran-owned. From $120 — free quote.",
       "canonical": "https://limpioscleaning.com/en/services/residential",
       "hreflang": 3,
-      "ogImage": null,
+      "ogImage": "https://limpioscleaning.com/en/opengraph-image",
       "h1Count": 1,
       "headings": [
         {
@@ -6711,6 +6865,14 @@
         {
           "l": 2,
           "t": "What affects the price"
+        },
+        {
+          "l": 2,
+          "t": "Before & after"
+        },
+        {
+          "l": 2,
+          "t": "Watch us work"
         },
         {
           "l": 2,
@@ -6785,7 +6947,7 @@
           "t": "Hours"
         }
       ],
-      "imgCount": 0,
+      "imgCount": 5,
       "imgNoAlt": 0,
       "links": [
         {
@@ -6956,11 +7118,11 @@
       "buttons": 9,
       "scrollW": 390,
       "innerW": 390,
-      "ttfb": 236,
-      "domContentLoaded": 300,
-      "load": 400,
-      "fcp": 304,
-      "lcp": 304,
+      "ttfb": 8,
+      "domContentLoaded": 30,
+      "load": 128,
+      "fcp": 132,
+      "lcp": 132,
       "cls": 0,
       "jsonldBlocks": 1
     },
@@ -6968,14 +7130,19 @@
       "route": "/en/services/commercial",
       "device": "mobile",
       "status": 200,
-      "consoleMsgs": [],
+      "consoleMsgs": [
+        {
+          "type": "error",
+          "text": "Failed to load resource: the server responded with a status of 404 (Not Found)"
+        }
+      ],
       "axe": null,
       "title": "Commercial cleaning | Limpios Cleaning Management",
       "lang": "en",
       "metaDesc": "Commercial & office cleaning in Clermont and Central Florida. Flexible scheduling, insured, eco-friendly. Custom quotes for offices, retail and facilities.",
       "canonical": "https://limpioscleaning.com/en/services/commercial",
       "hreflang": 3,
-      "ogImage": null,
+      "ogImage": "https://limpioscleaning.com/en/opengraph-image",
       "h1Count": 1,
       "headings": [
         {
@@ -6993,6 +7160,10 @@
         {
           "l": 2,
           "t": "What affects the price"
+        },
+        {
+          "l": 2,
+          "t": "Watch us work"
         },
         {
           "l": 2,
@@ -7067,7 +7238,7 @@
           "t": "Hours"
         }
       ],
-      "imgCount": 0,
+      "imgCount": 3,
       "imgNoAlt": 0,
       "links": [
         {
@@ -7238,11 +7409,11 @@
       "buttons": 9,
       "scrollW": 390,
       "innerW": 390,
-      "ttfb": 233,
-      "domContentLoaded": 293,
-      "load": 398,
-      "fcp": 296,
-      "lcp": 296,
+      "ttfb": 13,
+      "domContentLoaded": 32,
+      "load": 140,
+      "fcp": 120,
+      "lcp": 120,
       "cls": 0,
       "jsonldBlocks": 1
     },
@@ -7250,14 +7421,19 @@
       "route": "/en/services/deep-cleaning",
       "device": "mobile",
       "status": 200,
-      "consoleMsgs": [],
+      "consoleMsgs": [
+        {
+          "type": "error",
+          "text": "Failed to load resource: the server responded with a status of 404 (Not Found)"
+        }
+      ],
       "axe": null,
       "title": "Deep cleaning | Limpios Cleaning Management",
       "lang": "en",
       "metaDesc": "Deep cleaning services in Central Florida — baseboards, grout, appliances and detail work top to bottom. Eco-friendly, insured. From $200 — free quote.",
       "canonical": "https://limpioscleaning.com/en/services/deep-cleaning",
       "hreflang": 3,
-      "ogImage": null,
+      "ogImage": "https://limpioscleaning.com/en/opengraph-image",
       "h1Count": 1,
       "headings": [
         {
@@ -7275,6 +7451,14 @@
         {
           "l": 2,
           "t": "What affects the price"
+        },
+        {
+          "l": 2,
+          "t": "Before & after"
+        },
+        {
+          "l": 2,
+          "t": "Watch us work"
         },
         {
           "l": 2,
@@ -7349,7 +7533,7 @@
           "t": "Hours"
         }
       ],
-      "imgCount": 0,
+      "imgCount": 13,
       "imgNoAlt": 0,
       "links": [
         {
@@ -7520,11 +7704,11 @@
       "buttons": 9,
       "scrollW": 390,
       "innerW": 390,
-      "ttfb": 236,
-      "domContentLoaded": 295,
-      "load": 399,
-      "fcp": 296,
-      "lcp": 296,
+      "ttfb": 9,
+      "domContentLoaded": 41,
+      "load": 144,
+      "fcp": 144,
+      "lcp": 144,
       "cls": 0,
       "jsonldBlocks": 1
     },
@@ -7532,14 +7716,19 @@
       "route": "/en/services/move-in-out",
       "device": "mobile",
       "status": 200,
-      "consoleMsgs": [],
+      "consoleMsgs": [
+        {
+          "type": "error",
+          "text": "Failed to load resource: the server responded with a status of 404 (Not Found)"
+        }
+      ],
       "axe": null,
       "title": "Move-in / move-out cleaning | Limpios Cleaning Management",
       "lang": "en",
       "metaDesc": "Move-in / move-out cleaning in Clermont & Central Florida. Deposit-ready, detailed top-to-bottom cleaning for empty homes. Insured, eco-friendly. From $200.",
       "canonical": "https://limpioscleaning.com/en/services/move-in-out",
       "hreflang": 3,
-      "ogImage": null,
+      "ogImage": "https://limpioscleaning.com/en/opengraph-image",
       "h1Count": 1,
       "headings": [
         {
@@ -7557,6 +7746,14 @@
         {
           "l": 2,
           "t": "What affects the price"
+        },
+        {
+          "l": 2,
+          "t": "Before & after"
+        },
+        {
+          "l": 2,
+          "t": "Watch us work"
         },
         {
           "l": 2,
@@ -7631,7 +7828,7 @@
           "t": "Hours"
         }
       ],
-      "imgCount": 0,
+      "imgCount": 7,
       "imgNoAlt": 0,
       "links": [
         {
@@ -7802,11 +7999,11 @@
       "buttons": 9,
       "scrollW": 390,
       "innerW": 390,
-      "ttfb": 261,
-      "domContentLoaded": 428,
-      "load": 435,
-      "fcp": 328,
-      "lcp": 328,
+      "ttfb": 7,
+      "domContentLoaded": 33,
+      "load": 144,
+      "fcp": 136,
+      "lcp": 136,
       "cls": 0,
       "jsonldBlocks": 1
     },
@@ -7814,14 +8011,19 @@
       "route": "/en/services/post-construction",
       "device": "mobile",
       "status": 200,
-      "consoleMsgs": [],
+      "consoleMsgs": [
+        {
+          "type": "error",
+          "text": "Failed to load resource: the server responded with a status of 404 (Not Found)"
+        }
+      ],
       "axe": null,
       "title": "Post-construction cleaning | Limpios Cleaning Management",
       "lang": "en",
       "metaDesc": "Post-construction cleaning in Central Florida. Fine dust removal, debris and detail cleanup after builds & remodels. Insured, eco-friendly. Request a quote.",
       "canonical": "https://limpioscleaning.com/en/services/post-construction",
       "hreflang": 3,
-      "ogImage": null,
+      "ogImage": "https://limpioscleaning.com/en/opengraph-image",
       "h1Count": 1,
       "headings": [
         {
@@ -8084,11 +8286,11 @@
       "buttons": 9,
       "scrollW": 390,
       "innerW": 390,
-      "ttfb": 220,
-      "domContentLoaded": 275,
-      "load": 378,
-      "fcp": 280,
-      "lcp": 280,
+      "ttfb": 6,
+      "domContentLoaded": 26,
+      "load": 122,
+      "fcp": 108,
+      "lcp": 108,
       "cls": 0,
       "jsonldBlocks": 1
     },
@@ -8096,14 +8298,19 @@
       "route": "/en/services/interior-painting",
       "device": "mobile",
       "status": 200,
-      "consoleMsgs": [],
+      "consoleMsgs": [
+        {
+          "type": "error",
+          "text": "Failed to load resource: the server responded with a status of 404 (Not Found)"
+        }
+      ],
       "axe": null,
       "title": "Interior painting | Limpios Cleaning Management",
       "lang": "en",
       "metaDesc": "Interior painting in Clermont & Central Florida — walls, trim and ceilings, neatly prepped and cleaned up. Insured, detail-oriented. Request a quote.",
       "canonical": "https://limpioscleaning.com/en/services/interior-painting",
       "hreflang": 3,
-      "ogImage": null,
+      "ogImage": "https://limpioscleaning.com/en/opengraph-image",
       "h1Count": 1,
       "headings": [
         {
@@ -8366,11 +8573,11 @@
       "buttons": 9,
       "scrollW": 390,
       "innerW": 390,
-      "ttfb": 222,
-      "domContentLoaded": 279,
-      "load": 382,
-      "fcp": 280,
-      "lcp": 280,
+      "ttfb": 6,
+      "domContentLoaded": 33,
+      "load": 111,
+      "fcp": 112,
+      "lcp": 112,
       "cls": 0,
       "jsonldBlocks": 1
     },
@@ -8378,14 +8585,19 @@
       "route": "/en/pricing",
       "device": "mobile",
       "status": 200,
-      "consoleMsgs": [],
+      "consoleMsgs": [
+        {
+          "type": "error",
+          "text": "Failed to load resource: the server responded with a status of 404 (Not Found)"
+        }
+      ],
       "axe": null,
       "title": "Pricing & Free Quotes | Limpios Cleaning Management",
       "lang": "en",
       "metaDesc": "Transparent starting prices for home and office cleaning in Central Florida, plus the factors that shape your quote. Get a free, no-obligation estimate.",
       "canonical": "https://limpioscleaning.com/en/pricing",
       "hreflang": 3,
-      "ogImage": null,
+      "ogImage": "https://limpioscleaning.com/en/opengraph-image",
       "h1Count": 1,
       "headings": [
         {
@@ -8624,11 +8836,11 @@
       "buttons": 1,
       "scrollW": 390,
       "innerW": 390,
-      "ttfb": 243,
-      "domContentLoaded": 302,
-      "load": 405,
-      "fcp": 304,
-      "lcp": 304,
+      "ttfb": 7,
+      "domContentLoaded": 24,
+      "load": 99,
+      "fcp": 100,
+      "lcp": 100,
       "cls": 0,
       "jsonldBlocks": 0
     },
@@ -8636,14 +8848,19 @@
       "route": "/en/service-areas",
       "device": "mobile",
       "status": 200,
-      "consoleMsgs": [],
+      "consoleMsgs": [
+        {
+          "type": "error",
+          "text": "Failed to load resource: the server responded with a status of 404 (Not Found)"
+        }
+      ],
       "axe": null,
       "title": "Service Areas in Central Florida | Limpios Cleaning Management",
       "lang": "en",
       "metaDesc": "Limpios proudly cleans homes and businesses in Clermont, Minneola, Groveland, Winter Garden, Horizon West, Four Corners and across Lake & west Orange County.",
       "canonical": "https://limpioscleaning.com/en/service-areas",
       "hreflang": 3,
-      "ogImage": null,
+      "ogImage": "https://limpioscleaning.com/en/opengraph-image",
       "h1Count": 1,
       "headings": [
         {
@@ -8764,11 +8981,11 @@
         },
         {
           "href": "/en/service-areas/clermont",
-          "text": "ClermontLake CountyOur home base neighbor — full-s"
+          "text": "ClermontLake CountyOur home-base neighbor. Full-se"
         },
         {
           "href": "/en/service-areas/minneola",
-          "text": "MinneolaLake CountyRight at home — Limpios is base"
+          "text": "MinneolaLake CountyRight at home. Limpios is based"
         },
         {
           "href": "/en/service-areas/groveland",
@@ -8894,11 +9111,11 @@
       "buttons": 1,
       "scrollW": 390,
       "innerW": 390,
-      "ttfb": 233,
-      "domContentLoaded": 287,
-      "load": 392,
-      "fcp": 288,
-      "lcp": 288,
+      "ttfb": 8,
+      "domContentLoaded": 28,
+      "load": 97,
+      "fcp": 100,
+      "lcp": 100,
       "cls": 0,
       "jsonldBlocks": 0
     },
@@ -8906,14 +9123,19 @@
       "route": "/en/service-areas/clermont",
       "device": "mobile",
       "status": 200,
-      "consoleMsgs": [],
+      "consoleMsgs": [
+        {
+          "type": "error",
+          "text": "Failed to load resource: the server responded with a status of 404 (Not Found)"
+        }
+      ],
       "axe": null,
       "title": "Cleaning Services in Clermont, FL",
       "lang": "en",
       "metaDesc": "Veteran-owned, eco-friendly home & commercial cleaning in Clermont, FL. Licensed, insured and bilingual. Recurring, deep, move-out and more — get a free quote.",
       "canonical": "https://limpioscleaning.com/en/service-areas/clermont",
       "hreflang": 3,
-      "ogImage": null,
+      "ogImage": "https://limpioscleaning.com/en/opengraph-image",
       "h1Count": 1,
       "headings": [
         {
@@ -9184,11 +9406,11 @@
       "buttons": 1,
       "scrollW": 390,
       "innerW": 390,
-      "ttfb": 218,
-      "domContentLoaded": 279,
-      "load": 378,
-      "fcp": 284,
-      "lcp": 284,
+      "ttfb": 6,
+      "domContentLoaded": 24,
+      "load": 98,
+      "fcp": 100,
+      "lcp": 100,
       "cls": 0,
       "jsonldBlocks": 0
     },
@@ -9196,14 +9418,19 @@
       "route": "/en/service-areas/minneola",
       "device": "mobile",
       "status": 200,
-      "consoleMsgs": [],
+      "consoleMsgs": [
+        {
+          "type": "error",
+          "text": "Failed to load resource: the server responded with a status of 404 (Not Found)"
+        }
+      ],
       "axe": null,
       "title": "Cleaning Services in Minneola, FL",
       "lang": "en",
       "metaDesc": "Veteran-owned, eco-friendly home & commercial cleaning in Minneola, FL. Licensed, insured and bilingual. Recurring, deep, move-out and more — get a free quote.",
       "canonical": "https://limpioscleaning.com/en/service-areas/minneola",
       "hreflang": 3,
-      "ogImage": null,
+      "ogImage": "https://limpioscleaning.com/en/opengraph-image",
       "h1Count": 1,
       "headings": [
         {
@@ -9474,11 +9701,11 @@
       "buttons": 1,
       "scrollW": 390,
       "innerW": 390,
-      "ttfb": 218,
-      "domContentLoaded": 276,
-      "load": 372,
-      "fcp": 280,
-      "lcp": 280,
+      "ttfb": 6,
+      "domContentLoaded": 23,
+      "load": 98,
+      "fcp": 104,
+      "lcp": 104,
       "cls": 0,
       "jsonldBlocks": 0
     },
@@ -9486,14 +9713,19 @@
       "route": "/en/service-areas/groveland",
       "device": "mobile",
       "status": 200,
-      "consoleMsgs": [],
+      "consoleMsgs": [
+        {
+          "type": "error",
+          "text": "Failed to load resource: the server responded with a status of 404 (Not Found)"
+        }
+      ],
       "axe": null,
       "title": "Cleaning Services in Groveland, FL",
       "lang": "en",
       "metaDesc": "Veteran-owned, eco-friendly home & commercial cleaning in Groveland, FL. Licensed, insured and bilingual. Recurring, deep, move-out and more — get a free quote.",
       "canonical": "https://limpioscleaning.com/en/service-areas/groveland",
       "hreflang": 3,
-      "ogImage": null,
+      "ogImage": "https://limpioscleaning.com/en/opengraph-image",
       "h1Count": 1,
       "headings": [
         {
@@ -9764,11 +9996,11 @@
       "buttons": 1,
       "scrollW": 390,
       "innerW": 390,
-      "ttfb": 198,
-      "domContentLoaded": 255,
-      "load": 351,
-      "fcp": 260,
-      "lcp": 260,
+      "ttfb": 7,
+      "domContentLoaded": 29,
+      "load": 102,
+      "fcp": 104,
+      "lcp": 104,
       "cls": 0,
       "jsonldBlocks": 0
     },
@@ -9776,14 +10008,19 @@
       "route": "/en/service-areas/winter-garden",
       "device": "mobile",
       "status": 200,
-      "consoleMsgs": [],
+      "consoleMsgs": [
+        {
+          "type": "error",
+          "text": "Failed to load resource: the server responded with a status of 404 (Not Found)"
+        }
+      ],
       "axe": null,
       "title": "Cleaning Services in Winter Garden, FL",
       "lang": "en",
       "metaDesc": "Veteran-owned, eco-friendly home & commercial cleaning in Winter Garden, FL. Licensed, insured and bilingual. Recurring, deep, move-out and more — get a free quote.",
       "canonical": "https://limpioscleaning.com/en/service-areas/winter-garden",
       "hreflang": 3,
-      "ogImage": null,
+      "ogImage": "https://limpioscleaning.com/en/opengraph-image",
       "h1Count": 1,
       "headings": [
         {
@@ -10054,11 +10291,11 @@
       "buttons": 1,
       "scrollW": 390,
       "innerW": 390,
-      "ttfb": 226,
-      "domContentLoaded": 374,
-      "load": 390,
-      "fcp": 288,
-      "lcp": 288,
+      "ttfb": 5,
+      "domContentLoaded": 25,
+      "load": 98,
+      "fcp": 100,
+      "lcp": 100,
       "cls": 0,
       "jsonldBlocks": 0
     },
@@ -10066,14 +10303,19 @@
       "route": "/en/service-areas/horizon-west",
       "device": "mobile",
       "status": 200,
-      "consoleMsgs": [],
+      "consoleMsgs": [
+        {
+          "type": "error",
+          "text": "Failed to load resource: the server responded with a status of 404 (Not Found)"
+        }
+      ],
       "axe": null,
       "title": "Cleaning Services in Horizon West, FL",
       "lang": "en",
       "metaDesc": "Veteran-owned, eco-friendly home & commercial cleaning in Horizon West, FL. Licensed, insured and bilingual. Recurring, deep, move-out and more — get a free quote.",
       "canonical": "https://limpioscleaning.com/en/service-areas/horizon-west",
       "hreflang": 3,
-      "ogImage": null,
+      "ogImage": "https://limpioscleaning.com/en/opengraph-image",
       "h1Count": 1,
       "headings": [
         {
@@ -10344,11 +10586,11 @@
       "buttons": 1,
       "scrollW": 390,
       "innerW": 390,
-      "ttfb": 218,
-      "domContentLoaded": 279,
-      "load": 380,
-      "fcp": 280,
-      "lcp": 280,
+      "ttfb": 7,
+      "domContentLoaded": 24,
+      "load": 95,
+      "fcp": 100,
+      "lcp": 100,
       "cls": 0,
       "jsonldBlocks": 0
     },
@@ -10356,14 +10598,19 @@
       "route": "/en/service-areas/four-corners",
       "device": "mobile",
       "status": 200,
-      "consoleMsgs": [],
+      "consoleMsgs": [
+        {
+          "type": "error",
+          "text": "Failed to load resource: the server responded with a status of 404 (Not Found)"
+        }
+      ],
       "axe": null,
       "title": "Cleaning Services in Four Corners, FL",
       "lang": "en",
       "metaDesc": "Veteran-owned, eco-friendly home & commercial cleaning in Four Corners, FL. Licensed, insured and bilingual. Recurring, deep, move-out and more — get a free quote.",
       "canonical": "https://limpioscleaning.com/en/service-areas/four-corners",
       "hreflang": 3,
-      "ogImage": null,
+      "ogImage": "https://limpioscleaning.com/en/opengraph-image",
       "h1Count": 1,
       "headings": [
         {
@@ -10634,11 +10881,11 @@
       "buttons": 1,
       "scrollW": 390,
       "innerW": 390,
-      "ttfb": 214,
-      "domContentLoaded": 277,
-      "load": 378,
-      "fcp": 280,
-      "lcp": 280,
+      "ttfb": 7,
+      "domContentLoaded": 24,
+      "load": 100,
+      "fcp": 108,
+      "lcp": 108,
       "cls": 0,
       "jsonldBlocks": 0
     },
@@ -10646,14 +10893,19 @@
       "route": "/en/service-areas/montverde",
       "device": "mobile",
       "status": 200,
-      "consoleMsgs": [],
+      "consoleMsgs": [
+        {
+          "type": "error",
+          "text": "Failed to load resource: the server responded with a status of 404 (Not Found)"
+        }
+      ],
       "axe": null,
       "title": "Cleaning Services in Montverde, FL",
       "lang": "en",
       "metaDesc": "Veteran-owned, eco-friendly home & commercial cleaning in Montverde, FL. Licensed, insured and bilingual. Recurring, deep, move-out and more — get a free quote.",
       "canonical": "https://limpioscleaning.com/en/service-areas/montverde",
       "hreflang": 3,
-      "ogImage": null,
+      "ogImage": "https://limpioscleaning.com/en/opengraph-image",
       "h1Count": 1,
       "headings": [
         {
@@ -10924,11 +11176,11 @@
       "buttons": 1,
       "scrollW": 390,
       "innerW": 390,
-      "ttfb": 250,
-      "domContentLoaded": 313,
-      "load": 419,
-      "fcp": 316,
-      "lcp": 316,
+      "ttfb": 5,
+      "domContentLoaded": 18,
+      "load": 96,
+      "fcp": 100,
+      "lcp": 100,
       "cls": 0,
       "jsonldBlocks": 0
     },
@@ -10936,14 +11188,19 @@
       "route": "/en/service-areas/mascotte",
       "device": "mobile",
       "status": 200,
-      "consoleMsgs": [],
+      "consoleMsgs": [
+        {
+          "type": "error",
+          "text": "Failed to load resource: the server responded with a status of 404 (Not Found)"
+        }
+      ],
       "axe": null,
       "title": "Cleaning Services in Mascotte, FL",
       "lang": "en",
       "metaDesc": "Veteran-owned, eco-friendly home & commercial cleaning in Mascotte, FL. Licensed, insured and bilingual. Recurring, deep, move-out and more — get a free quote.",
       "canonical": "https://limpioscleaning.com/en/service-areas/mascotte",
       "hreflang": 3,
-      "ogImage": null,
+      "ogImage": "https://limpioscleaning.com/en/opengraph-image",
       "h1Count": 1,
       "headings": [
         {
@@ -11214,11 +11471,11 @@
       "buttons": 1,
       "scrollW": 390,
       "innerW": 390,
-      "ttfb": 239,
-      "domContentLoaded": 309,
-      "load": 429,
-      "fcp": 312,
-      "lcp": 312,
+      "ttfb": 5,
+      "domContentLoaded": 26,
+      "load": 99,
+      "fcp": 100,
+      "lcp": 100,
       "cls": 0,
       "jsonldBlocks": 0
     },
@@ -11226,14 +11483,19 @@
       "route": "/en/about",
       "device": "mobile",
       "status": 200,
-      "consoleMsgs": [],
+      "consoleMsgs": [
+        {
+          "type": "error",
+          "text": "Failed to load resource: the server responded with a status of 404 (Not Found)"
+        }
+      ],
       "axe": null,
       "title": "About — Veteran-Owned & Local | Limpios Cleaning Management",
       "lang": "en",
       "metaDesc": "Meet the veteran owner behind Limpios Cleaning Management. Our story, our eco-friendly commitment, and the satisfaction guarantee behind every clean.",
       "canonical": "https://limpioscleaning.com/en/about",
       "hreflang": 3,
-      "ogImage": null,
+      "ogImage": "https://limpioscleaning.com/en/opengraph-image",
       "h1Count": 1,
       "headings": [
         {
@@ -11297,7 +11559,7 @@
           "t": "Hours"
         }
       ],
-      "imgCount": 1,
+      "imgCount": 3,
       "imgNoAlt": 0,
       "links": [
         {
@@ -11448,11 +11710,11 @@
       "buttons": 1,
       "scrollW": 390,
       "innerW": 390,
-      "ttfb": 177,
-      "domContentLoaded": 236,
-      "load": 343,
-      "fcp": 236,
-      "lcp": 248,
+      "ttfb": 6,
+      "domContentLoaded": 24,
+      "load": 123,
+      "fcp": 104,
+      "lcp": 104,
       "cls": 0,
       "jsonldBlocks": 0
     },
@@ -11460,14 +11722,19 @@
       "route": "/en/reviews",
       "device": "mobile",
       "status": 200,
-      "consoleMsgs": [],
+      "consoleMsgs": [
+        {
+          "type": "error",
+          "text": "Failed to load resource: the server responded with a status of 404 (Not Found)"
+        }
+      ],
       "axe": null,
       "title": "Reviews | Limpios Cleaning Management",
       "lang": "en",
       "metaDesc": "See what Central Florida homeowners and businesses say about Limpios Cleaning Management.",
       "canonical": "https://limpioscleaning.com/en/reviews",
       "hreflang": 3,
-      "ogImage": null,
+      "ogImage": "https://limpioscleaning.com/en/opengraph-image",
       "h1Count": 1,
       "headings": [
         {
@@ -11654,11 +11921,11 @@
       "buttons": 1,
       "scrollW": 390,
       "innerW": 390,
-      "ttfb": 224,
-      "domContentLoaded": 370,
-      "load": 383,
-      "fcp": 284,
-      "lcp": 284,
+      "ttfb": 6,
+      "domContentLoaded": 26,
+      "load": 92,
+      "fcp": 100,
+      "lcp": 100,
       "cls": 0,
       "jsonldBlocks": 0
     },
@@ -11666,14 +11933,19 @@
       "route": "/en/contact",
       "device": "mobile",
       "status": 200,
-      "consoleMsgs": [],
+      "consoleMsgs": [
+        {
+          "type": "error",
+          "text": "Failed to load resource: the server responded with a status of 404 (Not Found)"
+        }
+      ],
       "axe": null,
       "title": "Contact & Free Quote | Limpios Cleaning Management",
       "lang": "en",
       "metaDesc": "Call, email or message Limpios Cleaning Management for a free cleaning quote in Clermont and Central Florida. Bilingual, friendly, and local.",
       "canonical": "https://limpioscleaning.com/en/contact",
       "hreflang": 3,
-      "ogImage": null,
+      "ogImage": "https://limpioscleaning.com/en/opengraph-image",
       "h1Count": 1,
       "headings": [
         {
@@ -11884,11 +12156,11 @@
       "buttons": 2,
       "scrollW": 390,
       "innerW": 390,
-      "ttfb": 176,
-      "domContentLoaded": 233,
-      "load": 334,
-      "fcp": 236,
-      "lcp": 236,
+      "ttfb": 8,
+      "domContentLoaded": 26,
+      "load": 97,
+      "fcp": 96,
+      "lcp": 96,
       "cls": 0,
       "jsonldBlocks": 0
     },
@@ -11896,14 +12168,19 @@
       "route": "/en/quote",
       "device": "mobile",
       "status": 200,
-      "consoleMsgs": [],
+      "consoleMsgs": [
+        {
+          "type": "error",
+          "text": "Failed to load resource: the server responded with a status of 404 (Not Found)"
+        }
+      ],
       "axe": null,
       "title": "Get a free quote | Limpios Cleaning Management",
       "lang": "en",
-      "metaDesc": "Answer a few quick questions and we'll get back to you with a free, personalized quote.",
+      "metaDesc": "Answer a few quick questions and we'll come back to you with a free, personalized quote.",
       "canonical": "https://limpioscleaning.com/en/quote",
       "hreflang": 3,
-      "ogImage": null,
+      "ogImage": "https://limpioscleaning.com/en/opengraph-image",
       "h1Count": 1,
       "headings": [
         {
@@ -12074,11 +12351,11 @@
       "buttons": 2,
       "scrollW": 390,
       "innerW": 390,
-      "ttfb": 170,
-      "domContentLoaded": 231,
-      "load": 340,
-      "fcp": 232,
-      "lcp": 232,
+      "ttfb": 27,
+      "domContentLoaded": 36,
+      "load": 89,
+      "fcp": 112,
+      "lcp": 112,
       "cls": 0,
       "jsonldBlocks": 0
     },
@@ -12086,14 +12363,19 @@
       "route": "/es",
       "device": "desktop",
       "status": 200,
-      "consoleMsgs": [],
+      "consoleMsgs": [
+        {
+          "type": "error",
+          "text": "Failed to load resource: the server responded with a status of 404 (Not Found)"
+        }
+      ],
       "axe": [],
       "title": "Limpieza de Veteranos en Clermont y el Centro de Florida",
       "lang": "es",
       "metaDesc": "Limpios Cleaning Management — limpieza residencial y comercial ecológica, de un veterano, en Clermont, Minneola y el centro de Florida. Con licencia, asegurados y bilingües. Cotización gratis.",
       "canonical": "https://limpioscleaning.com/es",
       "hreflang": 3,
-      "ogImage": "http://localhost:3000/es/opengraph-image?6c012b306d5dec82",
+      "ogImage": "https://limpioscleaning.com/es/opengraph-image?6c012b306d5dec82",
       "h1Count": 1,
       "headings": [
         {
@@ -12150,19 +12432,19 @@
         },
         {
           "l": 3,
-          "t": "De un veterano"
+          "t": "El mismo equipo de confianza"
         },
         {
           "l": 3,
-          "t": "Ecológico"
+          "t": "Una lista por habitación"
         },
         {
           "l": 3,
-          "t": "Satisfacción garantizada"
+          "t": "Una cotización rápida y sin presión"
         },
         {
           "l": 3,
-          "t": "Servicio bilingüe"
+          "t": "Una garantía que cumplimos"
         },
         {
           "l": 2,
@@ -12237,7 +12519,7 @@
           "t": "Horario"
         }
       ],
-      "imgCount": 7,
+      "imgCount": 15,
       "imgNoAlt": 0,
       "links": [
         {
@@ -12460,11 +12742,11 @@
       "buttons": 9,
       "scrollW": 1366,
       "innerW": 1366,
-      "ttfb": 397,
-      "domContentLoaded": 511,
-      "load": 628,
-      "fcp": 508,
-      "lcp": 508,
+      "ttfb": 17,
+      "domContentLoaded": 35,
+      "load": 150,
+      "fcp": 168,
+      "lcp": 168,
       "cls": 0,
       "jsonldBlocks": 1
     },
@@ -12472,19 +12754,28 @@
       "route": "/es/services",
       "device": "desktop",
       "status": 200,
-      "consoleMsgs": [],
+      "consoleMsgs": [
+        {
+          "type": "error",
+          "text": "Failed to load resource: the server responded with a status of 404 (Not Found)"
+        }
+      ],
       "axe": [],
       "title": "Servicios de Limpieza | Limpios Cleaning Management",
       "lang": "es",
       "metaDesc": "Limpieza residencial, comercial, profunda, de mudanza, post-construcción y pintura interior en Clermont y el centro de Florida. Ecológica y asegurada.",
       "canonical": "https://limpioscleaning.com/es/services",
       "hreflang": 3,
-      "ogImage": null,
+      "ogImage": "https://limpioscleaning.com/es/opengraph-image",
       "h1Count": 1,
       "headings": [
         {
           "l": 1,
           "t": "Limpieza y cuidado para cada espacio"
+        },
+        {
+          "l": 2,
+          "t": "Todos los servicios"
         },
         {
           "l": 3,
@@ -12710,11 +13001,11 @@
       "buttons": 1,
       "scrollW": 1366,
       "innerW": 1366,
-      "ttfb": 175,
-      "domContentLoaded": 233,
-      "load": 336,
-      "fcp": 240,
-      "lcp": 240,
+      "ttfb": 6,
+      "domContentLoaded": 16,
+      "load": 70,
+      "fcp": 140,
+      "lcp": 140,
       "cls": 0,
       "jsonldBlocks": 0
     },
@@ -12722,14 +13013,19 @@
       "route": "/es/services/deep-cleaning",
       "device": "desktop",
       "status": 200,
-      "consoleMsgs": [],
+      "consoleMsgs": [
+        {
+          "type": "error",
+          "text": "Failed to load resource: the server responded with a status of 404 (Not Found)"
+        }
+      ],
       "axe": [],
       "title": "Limpieza profunda | Limpios Cleaning Management",
       "lang": "es",
       "metaDesc": "Servicio de limpieza profunda en el centro de Florida — zócalos, lechada, electrodomésticos y detalle de arriba a abajo. Ecológica, asegurados. Desde $200 — cotización gratis.",
       "canonical": "https://limpioscleaning.com/es/services/deep-cleaning",
       "hreflang": 3,
-      "ogImage": null,
+      "ogImage": "https://limpioscleaning.com/es/opengraph-image",
       "h1Count": 1,
       "headings": [
         {
@@ -12747,6 +13043,14 @@
         {
           "l": 2,
           "t": "Qué afecta el precio"
+        },
+        {
+          "l": 2,
+          "t": "Antes y después"
+        },
+        {
+          "l": 2,
+          "t": "Míranos trabajar"
         },
         {
           "l": 2,
@@ -12821,7 +13125,7 @@
           "t": "Horario"
         }
       ],
-      "imgCount": 0,
+      "imgCount": 13,
       "imgNoAlt": 0,
       "links": [
         {
@@ -12992,11 +13296,11 @@
       "buttons": 9,
       "scrollW": 1366,
       "innerW": 1366,
-      "ttfb": 202,
-      "domContentLoaded": 366,
-      "load": 373,
-      "fcp": 280,
-      "lcp": 280,
+      "ttfb": 7,
+      "domContentLoaded": 19,
+      "load": 141,
+      "fcp": 120,
+      "lcp": 120,
       "cls": 0,
       "jsonldBlocks": 1
     },
@@ -13004,14 +13308,19 @@
       "route": "/es/pricing",
       "device": "desktop",
       "status": 200,
-      "consoleMsgs": [],
+      "consoleMsgs": [
+        {
+          "type": "error",
+          "text": "Failed to load resource: the server responded with a status of 404 (Not Found)"
+        }
+      ],
       "axe": [],
       "title": "Precios y Cotizaciones Gratis | Limpios Cleaning Management",
       "lang": "es",
       "metaDesc": "Precios iniciales transparentes para limpieza de casas y oficinas en el centro de Florida, y los factores que definen su cotización. Reciba un estimado gratis y sin compromiso.",
       "canonical": "https://limpioscleaning.com/es/pricing",
       "hreflang": 3,
-      "ogImage": null,
+      "ogImage": "https://limpioscleaning.com/es/opengraph-image",
       "h1Count": 1,
       "headings": [
         {
@@ -13250,11 +13559,11 @@
       "buttons": 1,
       "scrollW": 1366,
       "innerW": 1366,
-      "ttfb": 208,
-      "domContentLoaded": 279,
-      "load": 383,
-      "fcp": 288,
-      "lcp": 288,
+      "ttfb": 5,
+      "domContentLoaded": 17,
+      "load": 73,
+      "fcp": 120,
+      "lcp": 120,
       "cls": 0,
       "jsonldBlocks": 0
     },
@@ -13262,14 +13571,19 @@
       "route": "/es/contact",
       "device": "desktop",
       "status": 200,
-      "consoleMsgs": [],
+      "consoleMsgs": [
+        {
+          "type": "error",
+          "text": "Failed to load resource: the server responded with a status of 404 (Not Found)"
+        }
+      ],
       "axe": [],
       "title": "Contacto y Cotización Gratis | Limpios Cleaning Management",
       "lang": "es",
       "metaDesc": "Llame, escriba o envíe un mensaje a Limpios Cleaning Management para una cotización gratis en Clermont y el centro de Florida. Bilingües, amables y locales.",
       "canonical": "https://limpioscleaning.com/es/contact",
       "hreflang": 3,
-      "ogImage": null,
+      "ogImage": "https://limpioscleaning.com/es/opengraph-image",
       "h1Count": 1,
       "headings": [
         {
@@ -13480,11 +13794,11 @@
       "buttons": 2,
       "scrollW": 1366,
       "innerW": 1366,
-      "ttfb": 178,
-      "domContentLoaded": 232,
-      "load": 332,
-      "fcp": 244,
-      "lcp": 244,
+      "ttfb": 11,
+      "domContentLoaded": 22,
+      "load": 99,
+      "fcp": 108,
+      "lcp": 108,
       "cls": 0,
       "jsonldBlocks": 0
     }

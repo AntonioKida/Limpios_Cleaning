@@ -33,10 +33,20 @@ async function shoot(device, vp, routes, fullPage) {
 await shoot(
   "desktop",
   { width: 1366, height: 900 },
-  ["/en", "/en/services", "/en/services/residential", "/en/pricing", "/en/about", "/en/contact", "/es"],
+  [
+    "/en",
+    "/en/services",
+    "/en/services/residential",
+    "/en/services/deep-cleaning", // before/after gallery + standards video
+    "/en/services/commercial", // portrait video trio
+    "/en/pricing",
+    "/en/about", // meet-the-team + standards videos
+    "/en/contact",
+    "/es",
+  ],
   true,
 );
-await shoot("mobile", { width: 390, height: 844 }, ["/en", "/en/pricing"], true);
+await shoot("mobile", { width: 390, height: 844 }, ["/en", "/en/services/deep-cleaning", "/en/pricing"], true);
 
 await browser.close();
 console.log("captured ->", OUT);

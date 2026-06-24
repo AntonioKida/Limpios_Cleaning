@@ -22,16 +22,35 @@ const bad = (name, detail) => {
   console.error(`  ✗ ${name}${detail ? " — " + detail : ""}`);
 };
 
+// Known infra-only failures that never occur in real production. Vercel
+// Analytics injects `/_vercel/insights/script.js`, which is served by Vercel's
+// edge in prod but 404s on a local `next start` — a documented localhost
+// artifact, not a real broken asset. A genuinely missing image/poster (any
+// other 4xx/5xx) still fails the smoke.
+const IGNORE_RESOURCE = [/\/_vercel\/insights\//];
+
 const browser = await chromium.launch();
 
-// 1. Key routes: 200, single h1, no console errors.
+// 1. Key routes: 200, single h1, no JS errors, no real broken resources.
 {
   const ctx = await browser.newContext({ viewport: { width: 1280, height: 800 } });
   for (const route of ROUTES) {
     const page = await ctx.newPage();
     const errors = [];
-    page.on("console", (m) => m.type() === "error" && errors.push(m.text()));
+    const badResources = [];
+    page.on("console", (m) => {
+      if (m.type() !== "error") return;
+      // Generic resource-load errors carry no URL in the text; those are judged
+      // by the response listener below (which can see + whitelist the URL).
+      if (/Failed to load resource/i.test(m.text())) return;
+      errors.push(m.text());
+    });
     page.on("pageerror", (e) => errors.push(String(e)));
+    page.on("response", (r) => {
+      if (r.status() >= 400 && !IGNORE_RESOURCE.some((re) => re.test(r.url()))) {
+        badResources.push(`${r.status()} ${r.url()}`);
+      }
+    });
     const resp = await page.goto(BASE + route, { waitUntil: "load", timeout: 45000 });
     await page.waitForTimeout(400);
     const h1 = await page.locator("h1").count();
@@ -39,6 +58,7 @@ const browser = await chromium.launch();
     if (status !== 200) bad(`route ${route} status`, String(status));
     else if (h1 !== 1) bad(`route ${route} h1 count`, String(h1));
     else if (errors.length) bad(`route ${route} console`, errors[0]?.slice(0, 80));
+    else if (badResources.length) bad(`route ${route} resource`, badResources[0]?.slice(0, 90));
     else ok(`route ${route}`);
     await page.close();
   }
