@@ -4,11 +4,11 @@ import { Container } from "@/components/ui/container";
 import { Reveal } from "@/components/reveal";
 import { Button } from "@/components/ui/button";
 import { Mascot } from "@/components/brand/mascot";
-import { PortraitVideo } from "@/components/sections/portrait-video";
+import { HeroVideo } from "@/components/sections/hero-video";
 import { QuoteCTA } from "@/components/quote/quote-cta";
 import { StarRating } from "@/components/star-rating";
 import { site } from "@/content/site";
-import { heroVideo } from "@/content/media";
+import { heroVideo, heroVideoSrc } from "@/content/media";
 
 export function Hero() {
   const t = useTranslations("Home.hero");
@@ -60,28 +60,32 @@ export function Hero() {
           </Reveal>
         </div>
 
-        {/* Mascot with anchored proof chips (solid, not glassy/floating). */}
-        <div className="relative mx-auto w-full max-w-md lg:max-w-none">
-          <Mascot alt={t("mascotAlt")} priority className="mx-auto max-w-md" />
+        {/* Mascot (brand anchor) + a contained, chrome-free real-footage accent. */}
+        <div className="mx-auto w-full max-w-md lg:max-w-none">
+          <div className="flex flex-col items-center gap-6 lg:flex-row lg:items-end lg:justify-center lg:gap-5">
+            {/* Mascot with the anchored rating chip */}
+            <div className="relative w-full max-w-xs sm:max-w-sm lg:max-w-none lg:flex-1">
+              <Mascot alt={t("mascotAlt")} priority className="mx-auto w-full" />
+              <div className="absolute -top-3 right-1 flex items-center gap-2.5 rounded-xl bg-navy px-4 py-2.5 shadow-md ring-1 ring-white/10">
+                <StarRating rating={5} starClassName="size-4" />
+                <span className="text-sm font-semibold text-white">
+                  {t("chipRating")}
+                </span>
+              </div>
+            </div>
 
-          {/* Rating chip — solid navy, anchored top-right */}
-          <div className="absolute -top-3 -right-1 flex items-center gap-2.5 rounded-xl bg-navy px-4 py-2.5 shadow-md ring-1 ring-white/10 sm:-right-4">
-            <StarRating rating={5} starClassName="size-4" />
-            <span className="text-sm font-semibold text-white">{t("chipRating")}</span>
+            {/* Real-footage portrait accent — self-hosted muted loop, no chrome */}
+            <figure className="w-36 shrink-0 sm:w-44 lg:w-36">
+              <div className="aspect-[9/16] overflow-hidden rounded-2xl border-4 border-surface bg-navy shadow-xl ring-1 ring-black/5">
+                <HeroVideo
+                  src={heroVideoSrc}
+                  poster={heroVideo.poster}
+                  label={tv(`captions.${heroVideo.id}`)}
+                  className="size-full object-cover"
+                />
+              </div>
+            </figure>
           </div>
-
-          {/* Real-footage portrait accent — mascot stays the anchor. */}
-          <PortraitVideo
-            poster={heroVideo.poster}
-            url={heroVideo.url}
-            provider={heroVideo.provider}
-            spokenCaptions={heroVideo.spokenCaptions}
-            caption={tv(`captions.${heroVideo.id}`)}
-            playLabel={tv("playLabel")}
-            compact
-            sizes="160px"
-            className="absolute -bottom-4 -left-2 w-28 sm:-left-4 sm:w-32 [&>div]:rounded-xl [&>div]:shadow-lg [&>div]:ring-2 [&>div]:ring-white"
-          />
         </div>
       </Container>
     </section>

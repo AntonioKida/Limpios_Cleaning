@@ -74,11 +74,20 @@ whitelisted, by URL, via the response listener (`audit/smoke.mjs`).
 - ✓ **Poster-first, click-to-load:** the committed poster shows immediately
   (lazy, not the LCP element), the streamed player (YouTube-nocookie/Vimeo) only
   mounts on click → **never autoplays, reduced-motion safe, never blocks LCP**.
-- ✓ **Live embeds:** all 7 unlisted-YouTube IDs are wired
+- ✓ **Live embeds:** the unlisted-YouTube IDs are wired
   (`youtube-nocookie.com/embed/<id>?autoplay=1&mute=1&rel=0&modestbranding=1&playsinline=1`).
-  Verified the play button → iframe mount on click, and that every page renders
-  exactly its expected number of active play buttons (home 2, about 2, commercial
-  3, residential/deep-cleaning/move-in-out 1) with zero decorative-only stills.
+  Verified the play button → iframe mount on click, and that every facade page
+  renders its expected number of active play buttons (about 2, commercial 3,
+  residential/deep-cleaning/move-in-out 1; homepage Why-us 1) with zero
+  decorative-only stills.
+- ✓ **Hero is self-hosted (chrome-free):** the clips were uploaded as YouTube
+  Shorts, so the `/embed/` player inherits the cramped Shorts UI — unacceptable
+  for the always-visible hero. Vid4 is served as a committed 3.1 MB muted MP4
+  (`/public/video/vid4-hero.mp4`) via a native `<video>` (`hero-video.tsx`): a
+  contained, framed portrait **beside** the mascot (verified `overlap: false`,
+  bottom-aligned), muted autoplay-loop, **poster + no autoplay under
+  reduced-motion** (verified paused at t=0), poster on no-JS. The other placements
+  stay on the YouTube facade.
 - ✓ **Captions:** the clips are silent (muted re-uploads) → no subtitle track
   needed; the `spokenCaptions` cc-param seam remains for any future spoken clip.
 - ✓ Placements per brief: Vid4 hero accent (mascot stays anchor), Vid3 Why-us +

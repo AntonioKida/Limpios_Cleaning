@@ -108,6 +108,15 @@ export const heroVideo = videos.vid4;
 export const standardsVideo = videos.vid3;
 export const teamVideo = videos.vid7;
 
+/**
+ * The hero accent is self-hosted (committed MP4) rather than the YouTube facade:
+ * the clips were uploaded as Shorts, so the embed inherits YouTube's cramped
+ * Shorts player chrome — unacceptable for the always-visible hero. Self-hosting
+ * Vid4 (small, silent) gives a clean, contained, chrome-free muted autoplay loop.
+ * The other placements stay on the click-to-load facade.
+ */
+export const heroVideoSrc = "/video/vid4-hero.mp4";
+
 export function videoForService(slug: string): VideoClip[] {
   return (Object.values(videos) as VideoClip[]).filter((v) =>
     v.services.includes(slug as ServiceSlug),
