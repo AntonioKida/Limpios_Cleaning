@@ -168,8 +168,6 @@
       "eyebrow": "Why Limpios",
       "title": "Local, personal, and genuinely better",
       "subtitle": "Most cleaners are fine. The difference here is in the details: the same vetted faces each visit, a room-by-room checklist, a quote back fast, and a guarantee we actually honor.",
-      "videoLabel": "Meet the owner",
-      "videoComingSoon": "Founder video coming soon",
       "ctaAbout": "Read our story",
       "points": {
         "team": {
@@ -254,7 +252,8 @@
       "allServices": "All services",
       "pricingLabel": "Pricing",
       "galleryTitle": "Before & after",
-      "gallerySubtitle": "Real results from recent jobs — drag any photo to compare."
+      "gallerySubtitle": "Real results from recent jobs — drag any photo to compare.",
+      "videoTitle": "Watch us work"
     },
     "items": {
       "residential": {
@@ -589,12 +588,7 @@
     },
     "team": {
       "title": "Our team",
-      "body": "Every Limpios cleaner is vetted, trained and insured. You'll see the same friendly faces, on time, treating your space like it's theirs.",
-      "placeholderNote": "TODO: Add real team photos and bios."
-    },
-    "video": {
-      "title": "Meet the owner",
-      "comingSoon": "A short founder video is coming soon."
+      "body": "Every Limpios cleaner is vetted, trained and insured. You'll see the same friendly faces, on time, treating your space like it's theirs."
     },
     "cta": {
       "title": "Let's get your space spotless",
@@ -828,5 +822,17 @@
     "body": "The page you're looking for doesn't exist or may have moved.",
     "backHome": "Back to home",
     "browseServices": "Browse services"
+  },
+  "Video": {
+    "playLabel": "Play video",
+    "captions": {
+      "vid1": "Electrostatic disinfection of a commercial office",
+      "vid2": "How we clean a Central Florida home",
+      "vid3": "Our detailing standards, up close",
+      "vid4": "Disinfecting a conference room",
+      "vid5": "A move-in / move-out clean, start to finish",
+      "vid6": "Why electrostatic disinfection works",
+      "vid7": "Meet the team on a move-out clean"
+    }
   }
 }

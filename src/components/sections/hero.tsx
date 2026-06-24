@@ -4,12 +4,15 @@ import { Container } from "@/components/ui/container";
 import { Reveal } from "@/components/reveal";
 import { Button } from "@/components/ui/button";
 import { Mascot } from "@/components/brand/mascot";
+import { PortraitVideo } from "@/components/sections/portrait-video";
 import { QuoteCTA } from "@/components/quote/quote-cta";
 import { StarRating } from "@/components/star-rating";
 import { site } from "@/content/site";
+import { heroVideo } from "@/content/media";
 
 export function Hero() {
   const t = useTranslations("Home.hero");
+  const tv = useTranslations("Video");
 
   return (
     <section className="relative isolate overflow-hidden bg-cool">
@@ -66,6 +69,19 @@ export function Hero() {
             <StarRating rating={5} starClassName="size-4" />
             <span className="text-sm font-semibold text-white">{t("chipRating")}</span>
           </div>
+
+          {/* Real-footage portrait accent — mascot stays the anchor. */}
+          <PortraitVideo
+            poster={heroVideo.poster}
+            url={heroVideo.url}
+            provider={heroVideo.provider}
+            spokenCaptions={heroVideo.spokenCaptions}
+            caption={tv(`captions.${heroVideo.id}`)}
+            playLabel={tv("playLabel")}
+            compact
+            sizes="160px"
+            className="absolute -bottom-4 -left-2 w-28 sm:-left-4 sm:w-32 [&>div]:rounded-xl [&>div]:shadow-lg [&>div]:ring-2 [&>div]:ring-white"
+          />
         </div>
       </Container>
     </section>

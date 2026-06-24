@@ -17,7 +17,9 @@ import { faqIds } from "@/content/faq";
 import { CheckList } from "@/components/check-list";
 import { ServiceCard } from "@/components/sections/service-card";
 import { BeforeAfterSlider } from "@/components/sections/before-after-slider";
+import { PortraitVideo } from "@/components/sections/portrait-video";
 import { galleryForService } from "@/content/gallery";
+import { videoForService } from "@/content/media";
 import { Faq } from "@/components/sections/faq";
 import { CTASection } from "@/components/sections/cta-section";
 import { QuoteCTA } from "@/components/quote/quote-cta";
@@ -68,10 +70,12 @@ export default async function ServiceDetailPage({
   const tc = await getTranslations("Common");
   const tf = await getTranslations("Home.finalCta");
   const tba = await getTranslations("Home.beforeAfter");
+  const tv = await getTranslations("Video");
   const tFaq = await getTranslations("Faq.items");
   const tNav = await getTranslations("Nav");
 
   const gallery = galleryForService(service);
+  const serviceVideos = videoForService(service);
 
   const serviceName = t(`items.${service}.name`);
   const serviceUrl = `${site.url}/${locale}/services/${service}`;
@@ -199,6 +203,29 @@ export default async function ServiceDetailPage({
                 </figure>
               );
             })}
+          </div>
+        </Section>
+      ) : null}
+
+      {serviceVideos.length > 0 ? (
+        <Section surface="white">
+          <h2 className="font-heading text-2xl font-bold text-navy">
+            {t("labels.videoTitle")}
+          </h2>
+          <div className="mt-8 flex flex-wrap justify-center gap-6 sm:justify-start">
+            {serviceVideos.map((v) => (
+              <PortraitVideo
+                key={v.id}
+                className="w-full max-w-[15rem] sm:w-60"
+                poster={v.poster}
+                url={v.url}
+                provider={v.provider}
+                spokenCaptions={v.spokenCaptions}
+                caption={tv(`captions.${v.id}`)}
+                playLabel={tv("playLabel")}
+                sizes="(max-width: 640px) 80vw, 240px"
+              />
+            ))}
           </div>
         </Section>
       ) : null}

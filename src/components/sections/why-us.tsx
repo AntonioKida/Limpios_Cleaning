@@ -1,17 +1,19 @@
-import { Play } from "lucide-react";
 import { useTranslations } from "next-intl";
 import { Section } from "@/components/ui/section";
 import { SectionHeading } from "@/components/ui/section-heading";
 import { Reveal } from "@/components/reveal";
 import { Icon } from "@/components/icon";
+import { PortraitVideo } from "@/components/sections/portrait-video";
 import { Button } from "@/components/ui/button";
 import { Link } from "@/i18n/navigation";
 import { whyPoints } from "@/content/home";
+import { standardsVideo } from "@/content/media";
 import { routes } from "@/lib/routes";
 
 export function WhyUs() {
   const t = useTranslations("Home.why");
   const tp = useTranslations("Home.why.points");
+  const tv = useTranslations("Video");
 
   return (
     <Section id="why" surface="white">
@@ -50,28 +52,17 @@ export function WhyUs() {
           </div>
         </div>
 
-        {/* Founder video placeholder slot */}
-        <Reveal delay={0.1} className="lg:sticky lg:top-28">
-          <div className="relative aspect-video overflow-hidden rounded-[1.75rem] bg-navy shadow-xl ring-1 ring-white/10">
-            <div
-              aria-hidden
-              className="absolute inset-0 opacity-[0.16] [background-image:linear-gradient(rgba(255,255,255,0.4)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.4)_1px,transparent_1px)] [background-size:44px_44px]"
-            />
-            <div className="absolute inset-0 flex flex-col items-center justify-center gap-4 text-center text-white">
-              <span className="grid size-16 place-items-center rounded-full bg-white/15 ring-1 ring-white/30 backdrop-blur transition-transform hover:scale-105">
-                <Play className="size-7 translate-x-0.5 fill-white" aria-hidden />
-              </span>
-              <div>
-                <p className="font-heading text-lg font-semibold">
-                  {t("videoLabel")}
-                </p>
-                {/* TODO: embed the real 30–60s founder video here. */}
-                <p className="mt-1 text-sm text-cool/70">
-                  {t("videoComingSoon")}
-                </p>
-              </div>
-            </div>
-          </div>
+        {/* Real-footage standards clip — replaces the old founder placeholder. */}
+        <Reveal delay={0.1} className="mx-auto w-full max-w-xs lg:sticky lg:top-28">
+          <PortraitVideo
+            poster={standardsVideo.poster}
+            url={standardsVideo.url}
+            provider={standardsVideo.provider}
+            spokenCaptions={standardsVideo.spokenCaptions}
+            caption={tv(`captions.${standardsVideo.id}`)}
+            playLabel={tv("playLabel")}
+            sizes="(max-width: 1024px) 80vw, 320px"
+          />
         </Reveal>
       </div>
     </Section>

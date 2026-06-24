@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import { Play } from "lucide-react";
 import { setRequestLocale, getTranslations } from "next-intl/server";
 import type { Locale } from "@/i18n/routing";
 import { buildMetadata } from "@/lib/metadata";
@@ -7,8 +6,10 @@ import { PageHero } from "@/components/sections/page-hero";
 import { Section } from "@/components/ui/section";
 import { Mascot } from "@/components/brand/mascot";
 import { Icon } from "@/components/icon";
+import { PortraitVideo } from "@/components/sections/portrait-video";
 import { CTASection } from "@/components/sections/cta-section";
 import { valueCards } from "@/content/founder";
+import { teamVideo, standardsVideo } from "@/content/media";
 
 export async function generateMetadata({
   params,
@@ -34,6 +35,7 @@ export default async function AboutPage({
   setRequestLocale(locale);
   const t = await getTranslations("About");
   const th = await getTranslations("Home.hero");
+  const tv = await getTranslations("Video");
 
   const story = t.raw("story.body") as string[];
 
@@ -112,7 +114,7 @@ export default async function AboutPage({
         </div>
       </Section>
 
-      {/* Team + Video */}
+      {/* Team + real footage (Vid7 human moment + Vid3 standards) */}
       <Section surface="cool">
         <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-16">
           <div className="flex flex-col gap-4">
@@ -122,28 +124,26 @@ export default async function AboutPage({
             <p className="leading-relaxed text-pretty text-muted-foreground">
               {t("team.body")}
             </p>
-            {/* TODO: add real team photos + bios. */}
-            <p className="text-sm text-muted-foreground">
-              {t("team.placeholderNote")}
-            </p>
           </div>
-          <div className="relative aspect-video overflow-hidden rounded-[1.75rem] bg-navy shadow-xl ring-1 ring-white/10">
-            <div
-              aria-hidden
-              className="absolute inset-0 opacity-[0.16] [background-image:linear-gradient(rgba(255,255,255,0.4)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.4)_1px,transparent_1px)] [background-size:44px_44px]"
+          <div className="grid grid-cols-2 gap-5">
+            <PortraitVideo
+              poster={teamVideo.poster}
+              url={teamVideo.url}
+              provider={teamVideo.provider}
+              spokenCaptions={teamVideo.spokenCaptions}
+              caption={tv(`captions.${teamVideo.id}`)}
+              playLabel={tv("playLabel")}
+              sizes="(max-width: 1024px) 45vw, 22vw"
             />
-            <div className="absolute inset-0 flex flex-col items-center justify-center gap-4 text-center text-white">
-              <span className="grid size-16 place-items-center rounded-full bg-white/15 ring-1 ring-white/30 backdrop-blur">
-                <Play className="size-7 translate-x-0.5 fill-white" aria-hidden />
-              </span>
-              <div>
-                <p className="font-heading text-lg font-semibold">
-                  {t("video.title")}
-                </p>
-                {/* TODO: embed the real founder video here. */}
-                <p className="mt-1 text-sm text-cool/70">{t("video.comingSoon")}</p>
-              </div>
-            </div>
+            <PortraitVideo
+              poster={standardsVideo.poster}
+              url={standardsVideo.url}
+              provider={standardsVideo.provider}
+              spokenCaptions={standardsVideo.spokenCaptions}
+              caption={tv(`captions.${standardsVideo.id}`)}
+              playLabel={tv("playLabel")}
+              sizes="(max-width: 1024px) 45vw, 22vw"
+            />
           </div>
         </div>
       </Section>

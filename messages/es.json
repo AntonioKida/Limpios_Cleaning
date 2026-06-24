@@ -168,8 +168,6 @@
       "eyebrow": "Por qué Limpios",
       "title": "Local, personal y genuinamente mejor",
       "subtitle": "La mayoría de las empresas de limpieza están bien. Aquí la diferencia está en los detalles: las mismas caras de confianza en cada visita, una lista por habitación, una cotización de vuelta rápido y una garantía que de verdad cumplimos.",
-      "videoLabel": "Conozca al dueño",
-      "videoComingSoon": "Video del fundador próximamente",
       "ctaAbout": "Lea nuestra historia",
       "points": {
         "team": {
@@ -254,7 +252,8 @@
       "allServices": "Todos los servicios",
       "pricingLabel": "Precios",
       "galleryTitle": "Antes y después",
-      "gallerySubtitle": "Resultados reales de trabajos recientes: arrastra cualquier foto para comparar."
+      "gallerySubtitle": "Resultados reales de trabajos recientes: arrastra cualquier foto para comparar.",
+      "videoTitle": "Míranos trabajar"
     },
     "items": {
       "residential": {
@@ -589,12 +588,7 @@
     },
     "team": {
       "title": "Nuestro equipo",
-      "body": "Cada limpiador de Limpios está verificado, capacitado y asegurado. Verá las mismas caras amables, puntuales, tratando su espacio como si fuera el suyo.",
-      "placeholderNote": "TODO: Agregar fotos y biografías reales del equipo."
-    },
-    "video": {
-      "title": "Conozca al dueño",
-      "comingSoon": "Pronto un breve video del fundador."
+      "body": "Cada limpiador de Limpios está verificado, capacitado y asegurado. Verá las mismas caras amables, puntuales, tratando su espacio como si fuera el suyo."
     },
     "cta": {
       "title": "Dejemos su espacio impecable",
@@ -828,5 +822,17 @@
     "body": "La página que busca no existe o pudo haberse movido.",
     "backHome": "Volver al inicio",
     "browseServices": "Ver servicios"
+  },
+  "Video": {
+    "playLabel": "Reproducir video",
+    "captions": {
+      "vid1": "Desinfección electrostática de una oficina comercial",
+      "vid2": "Así limpiamos una casa en Florida Central",
+      "vid3": "Nuestros estándares de detalle, de cerca",
+      "vid4": "Desinfectando una sala de conferencias",
+      "vid5": "Una limpieza de mudanza, de principio a fin",
+      "vid6": "Por qué funciona la desinfección electrostática",
+      "vid7": "Conoce al equipo en una limpieza de mudanza"
+    }
   }
 }
