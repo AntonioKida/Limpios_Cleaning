@@ -233,6 +233,11 @@
       "subtitle": "Reciba hoy una cotización gratis y sin compromiso, y déjenos el resto a nosotros.",
       "primary": "Quiero mi cotización gratis",
       "secondary": "Llamar ahora"
+    },
+    "seeInAction": {
+      "eyebrow": "En el trabajo",
+      "title": "Míranos en acción",
+      "subtitle": "Un equipo real de Limpios en un trabajo real de Florida Central: nada de imágenes de archivo."
     }
   },
   "Services": {

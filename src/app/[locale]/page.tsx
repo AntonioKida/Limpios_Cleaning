@@ -5,6 +5,7 @@ import { localBusinessSchema, faqPageSchema } from "@/lib/json-ld";
 import { faqIds } from "@/content/faq";
 import { Hero } from "@/components/sections/hero";
 import { TrustBar } from "@/components/sections/trust-bar";
+import { SeeInAction } from "@/components/sections/see-in-action";
 import { ServicesOverview } from "@/components/sections/services-overview";
 import { HowItWorks } from "@/components/sections/how-it-works";
 import { WhyUs } from "@/components/sections/why-us";
@@ -41,6 +42,7 @@ export default async function HomePage({
       />
       <Hero />
       <TrustBar />
+      <SeeInAction />
       <ServicesOverview />
       <HowItWorks />
       <WhyUs />
