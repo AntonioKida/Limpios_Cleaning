@@ -6,12 +6,10 @@ import { Button } from "@/components/ui/button";
 import { Mascot } from "@/components/brand/mascot";
 import { QuoteCTA } from "@/components/quote/quote-cta";
 import { StarRating } from "@/components/star-rating";
-import { BrandIcon } from "@/components/brand-icons";
 import { site } from "@/content/site";
 
 export function Hero() {
   const t = useTranslations("Home.hero");
-  const tt = useTranslations("Home.trustBar");
 
   return (
     <section className="relative isolate overflow-hidden bg-cool">
@@ -66,13 +64,7 @@ export function Hero() {
           {/* Rating chip — solid navy, anchored top-right */}
           <div className="absolute -top-3 -right-1 flex items-center gap-2.5 rounded-xl bg-navy px-4 py-2.5 shadow-md ring-1 ring-white/10 sm:-right-4">
             <StarRating rating={5} starClassName="size-4" />
-            <span className="text-sm font-semibold text-white">{tt("rating")}</span>
-          </div>
-
-          {/* Veteran chip — white with a sky accent edge, anchored bottom-left */}
-          <div className="absolute -bottom-3 -left-1 flex items-center gap-2.5 rounded-xl border border-border border-l-[3px] border-l-sky bg-surface px-4 py-2.5 shadow-md sm:-left-4">
-            <BrandIcon name="hat" className="size-7 text-royal" />
-            <span className="text-sm font-semibold text-navy">{tt("veteran")}</span>
+            <span className="text-sm font-semibold text-white">{t("chipRating")}</span>
           </div>
         </div>
       </Container>

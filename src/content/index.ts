@@ -20,6 +20,6 @@ export { beforeAfterPairs } from "./gallery";
 export type { BeforeAfterPair } from "./gallery";
 export { pricePackages, priceFactorIds } from "./pricing";
 export type { PricePackage, PriceFactorId } from "./pricing";
-export { trustBadges, steps } from "./home";
-export type { TrustBadge, Step } from "./home";
+export { trustStats, steps, whyPoints } from "./home";
+export type { TrustStat, Step, WhyPoint } from "./home";
 export type { IconName } from "./icons";

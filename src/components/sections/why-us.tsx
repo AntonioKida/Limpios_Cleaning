@@ -6,12 +6,12 @@ import { Reveal } from "@/components/reveal";
 import { Icon } from "@/components/icon";
 import { Button } from "@/components/ui/button";
 import { Link } from "@/i18n/navigation";
-import { valueCards } from "@/content/founder";
+import { whyPoints } from "@/content/home";
 import { routes } from "@/lib/routes";
 
 export function WhyUs() {
   const t = useTranslations("Home.why");
-  const tv = useTranslations("About.values");
+  const tp = useTranslations("Home.why.points");
 
   return (
     <Section id="why" surface="white">
@@ -24,24 +24,23 @@ export function WhyUs() {
             subtitle={t("subtitle")}
           />
           <div className="grid gap-5 sm:grid-cols-2">
-            {valueCards.map((value, i) => (
-              <Reveal
-                key={value.id}
-                delay={i * 0.06}
+            {whyPoints.map((point) => (
+              <div
+                key={point.id}
                 className="flex gap-4 rounded-2xl border border-border bg-cool/60 p-5"
               >
                 <span className="grid size-11 shrink-0 place-items-center rounded-xl bg-secondary text-royal">
-                  <Icon name={value.icon} className="size-5" />
+                  <Icon name={point.icon} className="size-5" />
                 </span>
                 <div className="flex flex-col gap-1">
                   <h3 className="font-heading font-semibold text-navy">
-                    {tv(`${value.id}.title`)}
+                    {tp(`${point.id}.title`)}
                   </h3>
                   <p className="text-sm leading-relaxed text-muted-foreground">
-                    {tv(`${value.id}.description`)}
+                    {tp(`${point.id}.description`)}
                   </p>
                 </div>
-              </Reveal>
+              </div>
             ))}
           </div>
           <div>

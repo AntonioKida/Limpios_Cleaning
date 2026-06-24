@@ -36,7 +36,6 @@
       }
     }
   },
-
   "Common": {
     "days": {
       "mon": "Lunes",
@@ -92,7 +91,6 @@
     "reviewsCount": "{count, plural, one {# reseña} other {# reseñas}}",
     "placeholderTag": "Contenido de ejemplo — por reemplazar"
   },
-
   "Nav": {
     "home": "Inicio",
     "services": "Servicios",
@@ -109,7 +107,6 @@
     "switchToEn": "Switch to English",
     "switchToEs": "Cambiar a Español"
   },
-
   "Footer": {
     "blurb": "Limpieza ecológica, de un veterano, para casas y negocios en Clermont, Minneola y el centro de Florida. Siéntese, relájese, y nosotros hacemos la limpieza.",
     "servicesTitle": "Servicios",
@@ -124,7 +121,6 @@
     "credit": "Empresa de un veterano, operada en el centro de Florida.",
     "navLabel": "Pie de página"
   },
-
   "Home": {
     "hero": {
       "eyebrow": "De un veterano · Clermont y el centro de Florida",
@@ -133,14 +129,15 @@
       "subtitle": "Limpieza con licencia, asegurada y ecológica para casas y oficinas en Clermont, Minneola y el centro de Florida. Siéntese, relájese, y nosotros hacemos la limpieza.",
       "ctaPrimary": "Cotización gratis",
       "ctaSecondary": "Llamar ahora",
-      "trust": "Con licencia y asegurados · De un veterano · Productos ecológicos",
-      "mascotAlt": "Mascota de Limpios Cleaning — el dueño con sombrero panamá sosteniendo una botella rociadora y saludando amablemente"
+      "trust": "De un veterano, con licencia y asegurados.",
+      "mascotAlt": "Mascota de Limpios Cleaning — el dueño con sombrero panamá sosteniendo una botella rociadora y saludando amablemente",
+      "chipRating": "Calificado con 5 estrellas"
     },
     "trustBar": {
-      "veteran": "De un veterano",
-      "insured": "Con licencia y asegurados",
-      "eco": "Productos ecológicos",
-      "rating": "Servicio calificado con 5 estrellas"
+      "since": "Empresa familiar desde {year}",
+      "eco": "Productos ecológicos de bajo olor",
+      "bilingual": "English & Español",
+      "local": "Locales en el centro de Florida"
     },
     "services": {
       "eyebrow": "Lo que hacemos",
@@ -170,10 +167,28 @@
     "why": {
       "eyebrow": "Por qué Limpios",
       "title": "Local, personal y genuinamente mejor",
-      "subtitle": "Muchas empresas de limpieza son buenas en una sola cosa. Nosotros somos de un veterano, usamos productos ecológicos y le atendemos en inglés o español. Y tratamos su casa como nos gustaría que trataran la nuestra.",
+      "subtitle": "La mayoría de las empresas de limpieza están bien. Aquí la diferencia está en los detalles: las mismas caras de confianza en cada visita, una lista por habitación, una cotización de vuelta rápido y una garantía que de verdad cumplimos.",
       "videoLabel": "Conozca al dueño",
       "videoComingSoon": "Video del fundador próximamente",
-      "ctaAbout": "Lea nuestra historia"
+      "ctaAbout": "Lea nuestra historia",
+      "points": {
+        "team": {
+          "title": "El mismo equipo de confianza",
+          "description": "No es gente rotando. Recibe a los mismos limpiadores verificados, que aprenden su casa y cómo le gustan las cosas."
+        },
+        "checklist": {
+          "title": "Una lista por habitación",
+          "description": "Cada visita sigue una lista por escrito, así no se salta nada y usted sabe exactamente qué cubrimos."
+        },
+        "quote": {
+          "title": "Una cotización rápida y sin presión",
+          "description": "Cuéntenos sobre su espacio y le llega una cotización a la medida, casi siempre el mismo día."
+        },
+        "guarantee": {
+          "title": "Una garantía que cumplimos",
+          "description": "Si algo no quedó bien, avísenos dentro de 24 horas y lo volvemos a limpiar gratis. Sin vueltas."
+        }
+      }
     },
     "beforeAfter": {
       "eyebrow": "Vea la diferencia",
@@ -183,9 +198,15 @@
       "afterLabel": "Después",
       "placeholderNote": "Imágenes de ejemplo — se reemplazarán con fotos reales de antes/después de Limpios.",
       "items": {
-        "kitchen": { "title": "Cocina renovada" },
-        "bathroom": { "title": "Baño con limpieza profunda" },
-        "living": { "title": "Sala renovada" }
+        "kitchen": {
+          "title": "Cocina renovada"
+        },
+        "bathroom": {
+          "title": "Baño con limpieza profunda"
+        },
+        "living": {
+          "title": "Sala renovada"
+        }
       }
     },
     "reviews": {
@@ -215,7 +236,6 @@
       "secondary": "Llamar ahora"
     }
   },
-
   "Services": {
     "hub": {
       "eyebrow": "Servicios",
@@ -381,7 +401,6 @@
       }
     }
   },
-
   "Pricing": {
     "eyebrow": "Precios",
     "title": "Precios transparentes, cotizaciones gratis",
@@ -463,7 +482,6 @@
     "ctaSubtitle": "Dos minutos en línea, o una llamada rápida. Sin compromiso de ninguna forma.",
     "ctaButton": "Cotización gratis"
   },
-
   "ServiceAreas": {
     "hub": {
       "eyebrow": "Áreas de servicio",
@@ -529,7 +547,6 @@
       }
     }
   },
-
   "About": {
     "eyebrow": "Sobre Limpios",
     "title": "De un veterano, y con orgullo personal",
@@ -585,7 +602,6 @@
     "founderRole": "Fundador y Dueño",
     "founderNamePlaceholder": "Nombre del dueño — por agregar"
   },
-
   "Reviews": {
     "eyebrow": "Reseñas",
     "title": "Lo que dicen nuestros clientes",
@@ -595,15 +611,26 @@
     "ratingSummary": "Calificación de {rating} de 5",
     "basedOn": "según {count} reseñas",
     "items": {
-      "r1": { "quote": "El mejor servicio de limpieza que hemos usado en Clermont. Siempre puntuales, increíblemente minuciosos, y los productos ecológicos huelen delicioso. ¡Muy recomendados!" },
-      "r2": { "quote": "Limpios limpia nuestra oficina cada semana y ha sido impecable. Profesionales, confiables, y se acomodan a nuestro horario. No podríamos pedir algo mejor." },
-      "r3": { "quote": "Me encantó el servicio. Muy profesionales y atentos a cada detalle. Mi casa quedó impecable y el equipo es bilingüe — todo súper fácil." },
-      "r4": { "quote": "Reservé una limpieza profunda antes de mudarme y wow, cada rincón quedó impecable. El equipo fue amable y respetuoso. Vale cada centavo." },
-      "r5": { "quote": "Confiables, puntuales y gente genuinamente amable. Como empresa de un veterano, ponen verdadero orgullo en su trabajo. Ahora somos clientes recurrentes." },
-      "r6": { "quote": "Hicieron la limpieza de salida de nuestra renta y recuperamos todo el depósito. Detallados, rápidos y con excelente comunicación." }
+      "r1": {
+        "quote": "El mejor servicio de limpieza que hemos usado en Clermont. Siempre puntuales, increíblemente minuciosos, y los productos ecológicos huelen delicioso. ¡Muy recomendados!"
+      },
+      "r2": {
+        "quote": "Limpios limpia nuestra oficina cada semana y ha sido impecable. Profesionales, confiables, y se acomodan a nuestro horario. No podríamos pedir algo mejor."
+      },
+      "r3": {
+        "quote": "Me encantó el servicio. Muy profesionales y atentos a cada detalle. Mi casa quedó impecable y el equipo es bilingüe — todo súper fácil."
+      },
+      "r4": {
+        "quote": "Reservé una limpieza profunda antes de mudarme y wow, cada rincón quedó impecable. El equipo fue amable y respetuoso. Vale cada centavo."
+      },
+      "r5": {
+        "quote": "Confiables, puntuales y gente genuinamente amable. Como empresa de un veterano, ponen verdadero orgullo en su trabajo. Ahora somos clientes recurrentes."
+      },
+      "r6": {
+        "quote": "Hicieron la limpieza de salida de nuestra renta y recuperamos todo el depósito. Detallados, rápidos y con excelente comunicación."
+      }
     }
   },
-
   "Contact": {
     "eyebrow": "Contacto",
     "title": "Reciba su cotización gratis",
@@ -624,7 +651,6 @@
     },
     "mapPlaceholder": "Mapa del área de servicio — Minneola, FL"
   },
-
   "Quote": {
     "eyebrow": "Cotización gratis",
     "title": "Reciba una cotización gratis",
@@ -635,10 +661,22 @@
     "modalDescription": "Cuéntenos sobre su espacio. Toma unos dos minutos.",
     "stepLabel": "Paso {current} de {total}",
     "steps": {
-      "service": { "title": "Servicio", "description": "¿Qué necesita que limpiemos?" },
-      "property": { "title": "Su espacio", "description": "Unos detalles sobre la propiedad." },
-      "frequency": { "title": "Frecuencia", "description": "¿Con qué frecuencia desea el servicio?" },
-      "contact": { "title": "Contacto", "description": "¿A dónde enviamos su cotización?" }
+      "service": {
+        "title": "Servicio",
+        "description": "¿Qué necesita que limpiemos?"
+      },
+      "property": {
+        "title": "Su espacio",
+        "description": "Unos detalles sobre la propiedad."
+      },
+      "frequency": {
+        "title": "Frecuencia",
+        "description": "¿Con qué frecuencia desea el servicio?"
+      },
+      "contact": {
+        "title": "Contacto",
+        "description": "¿A dónde enviamos su cotización?"
+      }
     },
     "fields": {
       "service": {
@@ -662,9 +700,19 @@
           "other": "Otro"
         }
       },
-      "bedrooms": { "label": "Recámaras", "placeholder": "ej. 3" },
-      "bathrooms": { "label": "Baños", "placeholder": "ej. 2" },
-      "sqft": { "label": "Metros cuadrados aprox.", "placeholder": "ej. 1800", "help": "Opcional — útil para oficinas y casas grandes." },
+      "bedrooms": {
+        "label": "Recámaras",
+        "placeholder": "ej. 3"
+      },
+      "bathrooms": {
+        "label": "Baños",
+        "placeholder": "ej. 2"
+      },
+      "sqft": {
+        "label": "Metros cuadrados aprox.",
+        "placeholder": "ej. 1800",
+        "help": "Opcional — útil para oficinas y casas grandes."
+      },
       "frequency": {
         "label": "¿Con qué frecuencia?",
         "options": {
@@ -674,12 +722,29 @@
           "monthly": "Mensual"
         }
       },
-      "name": { "label": "Nombre completo", "placeholder": "Su nombre" },
-      "email": { "label": "Correo", "placeholder": "usted@correo.com" },
-      "phone": { "label": "Teléfono", "placeholder": "(407) 000-0000" },
-      "address": { "label": "Dirección o ciudad", "placeholder": "Ciudad o dirección completa" },
-      "message": { "label": "¿Algo más?", "placeholder": "Mascotas, estacionamiento, peticiones especiales, fechas preferidas…" },
-      "consent": { "label": "Acepto que me contacten sobre mi cotización por teléfono o correo." }
+      "name": {
+        "label": "Nombre completo",
+        "placeholder": "Su nombre"
+      },
+      "email": {
+        "label": "Correo",
+        "placeholder": "usted@correo.com"
+      },
+      "phone": {
+        "label": "Teléfono",
+        "placeholder": "(407) 000-0000"
+      },
+      "address": {
+        "label": "Dirección o ciudad",
+        "placeholder": "Ciudad o dirección completa"
+      },
+      "message": {
+        "label": "¿Algo más?",
+        "placeholder": "Mascotas, estacionamiento, peticiones especiales, fechas preferidas…"
+      },
+      "consent": {
+        "label": "Acepto que me contacten sobre mi cotización por teléfono o correo."
+      }
     },
     "buttons": {
       "next": "Siguiente",
@@ -714,7 +779,6 @@
     },
     "devNote": "Modo de desarrollo: sin clave de correo configurada — los datos del cliente se registraron en la consola del servidor."
   },
-
   "Faq": {
     "items": {
       "pricing": {
@@ -751,13 +815,11 @@
       }
     }
   },
-
   "Booking": {
     "title": "Reserva en línea — próximamente",
     "body": "Estamos preparando la reserva en línea instantánea. Mientras tanto, solicite una cotización gratis y confirmamos su cita personalmente.",
     "providersNote": "Punto de integración futura para un proveedor de reservas (BookingKoala, Launch27, Jobber o Housecall Pro)."
   },
-
   "NotFound": {
     "title": "Página no encontrada",
     "subtitle": "Volvamos a lo limpio.",

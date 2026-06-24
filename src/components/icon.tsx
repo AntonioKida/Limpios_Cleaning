@@ -20,6 +20,9 @@ import {
   Check,
   ArrowRight,
   Quote,
+  Users,
+  ListChecks,
+  Zap,
   type LucideIcon,
 } from "lucide-react";
 import type { IconName } from "@/content/icons";
@@ -47,6 +50,9 @@ const registry: Record<IconName, LucideIcon> = {
   Check,
   ArrowRight,
   Quote,
+  Users,
+  ListChecks,
+  Zap,
 };
 
 export interface IconProps {

@@ -22,6 +22,10 @@ export type IconName =
   | "CalendarCheck"
   | "SprayCan"
   | "Smile"
+  // Why / proof
+  | "Users"
+  | "ListChecks"
+  | "Zap"
   // Contact / misc
   | "Phone"
   | "Mail"

@@ -36,7 +36,6 @@
       }
     }
   },
-
   "Common": {
     "days": {
       "mon": "Monday",
@@ -92,7 +91,6 @@
     "reviewsCount": "{count, plural, one {# review} other {# reviews}}",
     "placeholderTag": "Sample content — to be replaced"
   },
-
   "Nav": {
     "home": "Home",
     "services": "Services",
@@ -109,7 +107,6 @@
     "switchToEn": "Switch to English",
     "switchToEs": "Cambiar a Español"
   },
-
   "Footer": {
     "blurb": "Veteran-owned, eco-friendly cleaning for homes and businesses across Clermont, Minneola and Central Florida. Sit back, relax, and we'll do the cleaning.",
     "servicesTitle": "Services",
@@ -124,7 +121,6 @@
     "credit": "Veteran-owned & operated in Central Florida.",
     "navLabel": "Footer"
   },
-
   "Home": {
     "hero": {
       "eyebrow": "Veteran-owned · Clermont & Central Florida",
@@ -133,14 +129,15 @@
       "subtitle": "Licensed, insured, eco-friendly cleaning for homes and offices around Clermont, Minneola and Central Florida. Sit back, relax, and we will do the cleaning.",
       "ctaPrimary": "Get a free quote",
       "ctaSecondary": "Call now",
-      "trust": "Licensed & insured · Veteran-owned · Eco-friendly products",
-      "mascotAlt": "Limpios Cleaning mascot — the owner in a Panama hat holding a spray bottle, giving a friendly wave"
+      "trust": "Veteran-owned, licensed and insured.",
+      "mascotAlt": "Limpios Cleaning mascot — the owner in a Panama hat holding a spray bottle, giving a friendly wave",
+      "chipRating": "5-star rated"
     },
     "trustBar": {
-      "veteran": "Veteran-owned & operated",
-      "insured": "Licensed & insured",
-      "eco": "Eco-friendly products",
-      "rating": "5-star rated service"
+      "since": "Family-run since {year}",
+      "eco": "Eco, low-odor products",
+      "bilingual": "English & Español",
+      "local": "Local to Central Florida"
     },
     "services": {
       "eyebrow": "What we do",
@@ -170,10 +167,28 @@
     "why": {
       "eyebrow": "Why Limpios",
       "title": "Local, personal, and genuinely better",
-      "subtitle": "Plenty of cleaners are good at one thing. We're veteran-owned, we use eco products, and we work in English or Spanish. And we treat your home the way we'd want ours treated.",
+      "subtitle": "Most cleaners are fine. The difference here is in the details: the same vetted faces each visit, a room-by-room checklist, a quote back fast, and a guarantee we actually honor.",
       "videoLabel": "Meet the owner",
       "videoComingSoon": "Founder video coming soon",
-      "ctaAbout": "Read our story"
+      "ctaAbout": "Read our story",
+      "points": {
+        "team": {
+          "title": "The same vetted team",
+          "description": "Not a rotating cast. You get the same background-checked cleaners who learn your home and how you like things."
+        },
+        "checklist": {
+          "title": "A room-by-room checklist",
+          "description": "Every visit follows a written checklist, so nothing gets skipped and you know exactly what we cover."
+        },
+        "quote": {
+          "title": "A fast, no-pressure quote",
+          "description": "Tell us about your space and a tailored quote lands in your inbox, usually the same day."
+        },
+        "guarantee": {
+          "title": "A guarantee we honor",
+          "description": "If something is not right, tell us within 24 hours and we re-clean it free. No runaround."
+        }
+      }
     },
     "beforeAfter": {
       "eyebrow": "See the difference",
@@ -183,9 +198,15 @@
       "afterLabel": "After",
       "placeholderNote": "Sample placeholder images — to be replaced with real Limpios before/after photos.",
       "items": {
-        "kitchen": { "title": "Kitchen refresh" },
-        "bathroom": { "title": "Bathroom deep clean" },
-        "living": { "title": "Living room reset" }
+        "kitchen": {
+          "title": "Kitchen refresh"
+        },
+        "bathroom": {
+          "title": "Bathroom deep clean"
+        },
+        "living": {
+          "title": "Living room reset"
+        }
       }
     },
     "reviews": {
@@ -215,7 +236,6 @@
       "secondary": "Call now"
     }
   },
-
   "Services": {
     "hub": {
       "eyebrow": "Services",
@@ -381,7 +401,6 @@
       }
     }
   },
-
   "Pricing": {
     "eyebrow": "Pricing",
     "title": "Transparent pricing, free quotes",
@@ -463,7 +482,6 @@
     "ctaSubtitle": "Two minutes online, or a quick call. No obligation either way.",
     "ctaButton": "Get a free quote"
   },
-
   "ServiceAreas": {
     "hub": {
       "eyebrow": "Service areas",
@@ -529,7 +547,6 @@
       }
     }
   },
-
   "About": {
     "eyebrow": "About Limpios",
     "title": "Veteran-owned, and personal about it",
@@ -585,7 +602,6 @@
     "founderRole": "Founder & Owner",
     "founderNamePlaceholder": "Owner name — to be added"
   },
-
   "Reviews": {
     "eyebrow": "Reviews",
     "title": "What our clients say",
@@ -595,15 +611,26 @@
     "ratingSummary": "Rated {rating} out of 5",
     "basedOn": "based on {count} reviews",
     "items": {
-      "r1": { "quote": "Best cleaning service we've used in Clermont. Always on time, incredibly thorough, and the eco-friendly products smell amazing. Highly recommend!" },
-      "r2": { "quote": "Limpios cleans our office every week and it's been flawless. Professional, reliable, and they work around our hours. Couldn't ask for better." },
-      "r3": { "quote": "Me encantó el servicio. Muy profesionales y atentos a cada detalle. Mi casa quedó impecable y el equipo es bilingüe — todo súper fácil." },
-      "r4": { "quote": "Booked a deep clean before moving in and wow, every corner was spotless. The team was friendly and respectful. Worth every penny." },
-      "r5": { "quote": "Trustworthy, on time, and genuinely kind people. As a veteran-owned business they bring real pride to their work. We're recurring clients now." },
-      "r6": { "quote": "Did a move-out clean for our rental and we got the full deposit back. Detailed, fast, and great communication throughout." }
+      "r1": {
+        "quote": "Best cleaning service we've used in Clermont. Always on time, incredibly thorough, and the eco-friendly products smell amazing. Highly recommend!"
+      },
+      "r2": {
+        "quote": "Limpios cleans our office every week and it's been flawless. Professional, reliable, and they work around our hours. Couldn't ask for better."
+      },
+      "r3": {
+        "quote": "Me encantó el servicio. Muy profesionales y atentos a cada detalle. Mi casa quedó impecable y el equipo es bilingüe — todo súper fácil."
+      },
+      "r4": {
+        "quote": "Booked a deep clean before moving in and wow, every corner was spotless. The team was friendly and respectful. Worth every penny."
+      },
+      "r5": {
+        "quote": "Trustworthy, on time, and genuinely kind people. As a veteran-owned business they bring real pride to their work. We're recurring clients now."
+      },
+      "r6": {
+        "quote": "Did a move-out clean for our rental and we got the full deposit back. Detailed, fast, and great communication throughout."
+      }
     }
   },
-
   "Contact": {
     "eyebrow": "Contact",
     "title": "Get your free quote",
@@ -624,7 +651,6 @@
     },
     "mapPlaceholder": "Service-area map — Minneola, FL"
   },
-
   "Quote": {
     "eyebrow": "Free quote",
     "title": "Get a free quote",
@@ -635,10 +661,22 @@
     "modalDescription": "Tell us about your space. It takes about two minutes.",
     "stepLabel": "Step {current} of {total}",
     "steps": {
-      "service": { "title": "Service", "description": "What do you need cleaned?" },
-      "property": { "title": "Your space", "description": "A few details about the property." },
-      "frequency": { "title": "Frequency", "description": "How often would you like service?" },
-      "contact": { "title": "Contact", "description": "Where should we send your quote?" }
+      "service": {
+        "title": "Service",
+        "description": "What do you need cleaned?"
+      },
+      "property": {
+        "title": "Your space",
+        "description": "A few details about the property."
+      },
+      "frequency": {
+        "title": "Frequency",
+        "description": "How often would you like service?"
+      },
+      "contact": {
+        "title": "Contact",
+        "description": "Where should we send your quote?"
+      }
     },
     "fields": {
       "service": {
@@ -662,9 +700,19 @@
           "other": "Other"
         }
       },
-      "bedrooms": { "label": "Bedrooms", "placeholder": "e.g. 3" },
-      "bathrooms": { "label": "Bathrooms", "placeholder": "e.g. 2" },
-      "sqft": { "label": "Approx. square footage", "placeholder": "e.g. 1800", "help": "Optional — helpful for offices and large homes." },
+      "bedrooms": {
+        "label": "Bedrooms",
+        "placeholder": "e.g. 3"
+      },
+      "bathrooms": {
+        "label": "Bathrooms",
+        "placeholder": "e.g. 2"
+      },
+      "sqft": {
+        "label": "Approx. square footage",
+        "placeholder": "e.g. 1800",
+        "help": "Optional — helpful for offices and large homes."
+      },
       "frequency": {
         "label": "How often?",
         "options": {
@@ -674,12 +722,29 @@
           "monthly": "Monthly"
         }
       },
-      "name": { "label": "Full name", "placeholder": "Your name" },
-      "email": { "label": "Email", "placeholder": "you@email.com" },
-      "phone": { "label": "Phone", "placeholder": "(407) 000-0000" },
-      "address": { "label": "Address or city", "placeholder": "City or full address" },
-      "message": { "label": "Anything else?", "placeholder": "Pets, parking, special requests, preferred dates…" },
-      "consent": { "label": "I agree to be contacted about my quote by phone or email." }
+      "name": {
+        "label": "Full name",
+        "placeholder": "Your name"
+      },
+      "email": {
+        "label": "Email",
+        "placeholder": "you@email.com"
+      },
+      "phone": {
+        "label": "Phone",
+        "placeholder": "(407) 000-0000"
+      },
+      "address": {
+        "label": "Address or city",
+        "placeholder": "City or full address"
+      },
+      "message": {
+        "label": "Anything else?",
+        "placeholder": "Pets, parking, special requests, preferred dates…"
+      },
+      "consent": {
+        "label": "I agree to be contacted about my quote by phone or email."
+      }
     },
     "buttons": {
       "next": "Next",
@@ -714,7 +779,6 @@
     },
     "devNote": "Dev mode: no email key set — lead details were logged to the server console."
   },
-
   "Faq": {
     "items": {
       "pricing": {
@@ -751,13 +815,11 @@
       }
     }
   },
-
   "Booking": {
     "title": "Online booking — coming soon",
     "body": "We're setting up instant online booking. In the meantime, request a free quote and we'll confirm your appointment personally.",
     "providersNote": "Future integration seam for a booking provider (BookingKoala, Launch27, Jobber or Housecall Pro)."
   },
-
   "NotFound": {
     "title": "Page not found",
     "subtitle": "Let's get you back to clean.",
