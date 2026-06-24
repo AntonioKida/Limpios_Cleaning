@@ -16,7 +16,7 @@ import {
 import { faqIds } from "@/content/faq";
 import { CheckList } from "@/components/check-list";
 import { ServiceCard } from "@/components/sections/service-card";
-import { BeforeAfterSlider } from "@/components/sections/before-after-slider";
+import { GalleryGrid } from "@/components/sections/gallery-grid";
 import { PortraitVideo } from "@/components/sections/portrait-video";
 import { galleryForService } from "@/content/gallery";
 import { videoForService } from "@/content/media";
@@ -69,7 +69,6 @@ export default async function ServiceDetailPage({
   const t = await getTranslations("Services");
   const tc = await getTranslations("Common");
   const tf = await getTranslations("Home.finalCta");
-  const tba = await getTranslations("Home.beforeAfter");
   const tv = await getTranslations("Video");
   const tFaq = await getTranslations("Faq.items");
   const tNav = await getTranslations("Nav");
@@ -182,27 +181,8 @@ export default async function ServiceDetailPage({
               {t("labels.gallerySubtitle")}
             </p>
           </div>
-          <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {gallery.map((pair) => {
-              const caption = tba(`captions.${pair.id}`);
-              return (
-                <figure key={pair.id} className="flex flex-col gap-3">
-                  <BeforeAfterSlider
-                    before={pair.before}
-                    after={pair.after}
-                    aspect="3 / 4"
-                    beforeAlt={`${tba("beforeLabel")} — ${caption}`}
-                    afterAlt={`${tba("afterLabel")} — ${caption}`}
-                    beforeLabel={tba("beforeLabel")}
-                    afterLabel={tba("afterLabel")}
-                    dragHint={tba("dragHint")}
-                  />
-                  <figcaption className="font-heading text-sm font-semibold text-navy">
-                    {caption}
-                  </figcaption>
-                </figure>
-              );
-            })}
+          <div className="mt-8">
+            <GalleryGrid lead={gallery.slice(0, 3)} more={gallery.slice(3)} />
           </div>
         </Section>
       ) : null}

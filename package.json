@@ -12,7 +12,9 @@
     "test": "vitest run",
     "test:watch": "vitest",
     "test:smoke": "node audit/smoke.mjs",
-    "bundle:report": "node scripts/bundle-report.mjs"
+    "bundle:report": "node scripts/bundle-report.mjs",
+    "check:placeholders": "node scripts/check-placeholders.mjs",
+    "prepare": "husky"
   },
   "dependencies": {
     "@hookform/resolvers": "^5.4.0",
@@ -43,6 +45,7 @@
     "@types/react-dom": "^19",
     "eslint": "^9",
     "eslint-config-next": "16.2.9",
+    "husky": "^9.1.7",
     "playwright": "^1.61.0",
     "tailwindcss": "^4",
     "typescript": "^5",

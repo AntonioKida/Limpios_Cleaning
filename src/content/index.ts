@@ -18,7 +18,8 @@ export { founder, valueCards } from "./founder";
 export type { ValueCard } from "./founder";
 export {
   galleryPairs,
-  homepageGallery,
+  homepageLead,
+  homepageMore,
   galleryForService,
   GALLERY_W,
   GALLERY_H,

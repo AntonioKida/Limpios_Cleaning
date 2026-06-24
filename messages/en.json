@@ -206,7 +206,9 @@
         "img7": "Cluttered, grimy kitchen to clean and clear",
         "img8": "Filthy toilet and floor to a fresh bathroom",
         "img9": "Cluttered kitchen, cleared and cleaned"
-      }
+      },
+      "seeMore": "See more transformations",
+      "seeLess": "Show fewer"
     },
     "reviews": {
       "eyebrow": "Loved by locals",

@@ -50,17 +50,20 @@ interface Meta {
   services: string[];
 }
 
-// Order = gallery order (flagships first). `services` drives service-page media.
+// Order = gallery order. Flagships are the dramatic-but-CLEAN transformations
+// (lead the gallery with these); the gunkier pairs (caked fridge drawers, etc.)
+// follow and sit behind a "See more transformations" disclosure so the section
+// reads as desire, not disgust. `services` drives service-page media.
 const META: Meta[] = [
-  { id: "img5", room: "bathroom", flagship: true, services: ["deep-cleaning"] },
-  { id: "img2", room: "fridge", flagship: true, services: ["deep-cleaning"] },
-  { id: "img3", room: "fridge", flagship: true, services: ["deep-cleaning"] },
-  { id: "img8", room: "bathroom", flagship: false, services: ["deep-cleaning", "move-in-out"] },
+  { id: "img5", room: "bathroom", flagship: true, services: ["deep-cleaning"] }, // rust tub → bright
+  { id: "img2", room: "fridge", flagship: true, services: ["deep-cleaning"] }, // moldy fridge → spotless
+  { id: "img8", room: "bathroom", flagship: true, services: ["deep-cleaning", "move-in-out"] }, // bathroom → fresh
   { id: "img4", room: "shower", flagship: false, services: ["deep-cleaning"] },
   { id: "img7", room: "kitchen", flagship: false, services: ["residential", "move-in-out"] },
-  { id: "img6", room: "shower", flagship: false, services: ["deep-cleaning"] },
-  { id: "img9", room: "kitchen", flagship: false, services: ["move-in-out"] },
   { id: "img1", room: "patio", flagship: false, services: ["residential"] },
+  { id: "img6", room: "shower", flagship: false, services: ["deep-cleaning"] },
+  { id: "img3", room: "fridge", flagship: false, services: ["deep-cleaning"] }, // caked drawer (disclose)
+  { id: "img9", room: "kitchen", flagship: false, services: ["move-in-out"] },
 ];
 
 export const galleryPairs: GalleryPair[] = META.map((m) => ({
@@ -69,10 +72,11 @@ export const galleryPairs: GalleryPair[] = META.map((m) => ({
   after: { src: `/gallery/${m.id}-after.webp`, blurDataURL: blur[m.id].after },
 }));
 
-/** Curated set shown on the homepage (flagships + variety). */
-export const homepageGallery: GalleryPair[] = galleryPairs.filter((p) =>
-  ["img5", "img2", "img3", "img8", "img4", "img7"].includes(p.id),
-);
+/** Lead the homepage gallery with the dramatic-but-clean flagships. */
+export const homepageLead: GalleryPair[] = galleryPairs.filter((p) => p.flagship);
+
+/** The rest — shown behind the "See more transformations" disclosure. */
+export const homepageMore: GalleryPair[] = galleryPairs.filter((p) => !p.flagship);
 
 export function galleryForService(slug: string): GalleryPair[] {
   return galleryPairs.filter((p) => p.services.includes(slug));

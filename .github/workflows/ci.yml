@@ -16,6 +16,7 @@ jobs:
           node-version: 20
           cache: npm
       - run: npm ci
+      - run: npm run check:placeholders # block new TODO/FIXME/placeholder leakage
       - run: npm run typecheck
       - run: npm run lint
       - run: npm run test # vitest: EN/ES key parity + zod lead schema

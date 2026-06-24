@@ -30,7 +30,7 @@ export function ServiceCard({
     <Link
       href={routes.service(service.slug)}
       className={cn(
-        "group relative flex h-full flex-col gap-4 overflow-hidden rounded-xl border border-border bg-surface p-6 transition-colors hover:border-sky/50 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring",
+        "group relative flex h-full flex-col gap-4 overflow-hidden rounded-xl border border-border bg-surface p-6 transition duration-200 hover:-translate-y-0.5 hover:border-sky/50 hover:shadow-md focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring motion-reduce:hover:translate-y-0",
         className,
       )}
     >

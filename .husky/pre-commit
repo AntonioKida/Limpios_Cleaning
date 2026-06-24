@@ -1,0 +1,3 @@
+# Block placeholder leakage (TODO/FIXME/(TODO confirm/LIC# 000000000) into shipped
+# source/copy. Known owner-content items pass; new ones block. Bypass: PLACEHOLDER_OK=1
+npm run check:placeholders

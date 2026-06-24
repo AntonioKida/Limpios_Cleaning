@@ -206,7 +206,9 @@
         "img7": "Cocina desordenada y sucia a limpia y despejada",
         "img8": "Inodoro y piso sucios a un baño fresco",
         "img9": "Cocina con cosas regadas, despejada y limpia"
-      }
+      },
+      "seeMore": "Ver más transformaciones",
+      "seeLess": "Mostrar menos"
     },
     "reviews": {
       "eyebrow": "Querido por los vecinos",
