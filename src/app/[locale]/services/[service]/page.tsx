@@ -192,7 +192,7 @@ export default async function ServiceDetailPage({
           <h2 className="font-heading text-2xl font-bold text-navy">
             {t("labels.videoTitle")}
           </h2>
-          <div className="mt-8 flex flex-wrap justify-center gap-6 sm:justify-start">
+          <div className="mt-8 flex flex-wrap justify-center gap-6">
             {serviceVideos.map((v) => (
               <PortraitVideo
                 key={v.id}

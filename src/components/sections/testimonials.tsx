@@ -17,7 +17,10 @@ export function Testimonials() {
   const featured = reviews.filter((r) => r.featured).slice(0, 3);
 
   return (
-    <Section id="reviews" surface="cool">
+    // Hairline top border: Before&After is also a `cool` surface, so without a
+    // divider the two cool sections visually merge. Reviews stay `cool` so the
+    // white review cards keep their contrast.
+    <Section id="reviews" surface="cool" className="border-t border-border">
       <SectionHeading
         eyebrow={t("eyebrow")}
         title={t("title")}

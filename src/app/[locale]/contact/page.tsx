@@ -8,6 +8,7 @@ import { Section } from "@/components/ui/section";
 import { QuoteForm } from "@/components/quote/quote-form";
 import { BookingEmbed } from "@/components/booking-embed";
 import { PhoneLink } from "@/components/phone-link";
+import { BreadcrumbJsonLd } from "@/components/breadcrumb-json-ld";
 import { site, dayOrder } from "@/content/site";
 import { formatTime } from "@/lib/format";
 
@@ -35,6 +36,7 @@ export default async function ContactPage({
   setRequestLocale(locale);
   const t = await getTranslations("Contact");
   const tc = await getTranslations("Common");
+  const tNav = await getTranslations("Nav");
 
   const mapsUrl = `https://maps.google.com/?q=${encodeURIComponent(
     `${site.address.street}, ${site.address.suite}, ${site.address.city}, ${site.address.region} ${site.address.postalCode}`,
@@ -42,6 +44,13 @@ export default async function ContactPage({
 
   return (
     <main id="main-content">
+      <BreadcrumbJsonLd
+        locale={locale}
+        crumbs={[
+          { name: tNav("home"), path: "" },
+          { name: tNav("contact"), path: "/contact" },
+        ]}
+      />
       <PageHero eyebrow={t("eyebrow")} title={t("title")} subtitle={t("subtitle")} />
 
       <Section surface="white">

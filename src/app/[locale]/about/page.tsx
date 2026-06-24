@@ -8,6 +8,7 @@ import { Mascot } from "@/components/brand/mascot";
 import { Icon } from "@/components/icon";
 import { PortraitVideo } from "@/components/sections/portrait-video";
 import { CTASection } from "@/components/sections/cta-section";
+import { BreadcrumbJsonLd } from "@/components/breadcrumb-json-ld";
 import { valueCards } from "@/content/founder";
 import { teamVideo, standardsVideo } from "@/content/media";
 
@@ -36,11 +37,19 @@ export default async function AboutPage({
   const t = await getTranslations("About");
   const th = await getTranslations("Home.hero");
   const tv = await getTranslations("Video");
+  const tNav = await getTranslations("Nav");
 
   const story = t.raw("story.body") as string[];
 
   return (
     <main id="main-content">
+      <BreadcrumbJsonLd
+        locale={locale}
+        crumbs={[
+          { name: tNav("home"), path: "" },
+          { name: tNav("about"), path: "/about" },
+        ]}
+      />
       <PageHero
         eyebrow={t("eyebrow")}
         title={t("title")}

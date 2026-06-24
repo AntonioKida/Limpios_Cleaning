@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useMemo, useRef, useState } from "react";
 import { useForm, type Resolver } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
@@ -119,6 +119,9 @@ export function QuoteForm({
   const [step, setStep] = useState(0);
   const [status, setStatus] = useState<Status>("idle");
   const [devMode, setDevMode] = useState(false);
+  // Guards against a same-tick double submit (the disabled attr only applies
+  // after the next render, so two synchronous clicks could otherwise both fire).
+  const submittingRef = useRef(false);
   const totalSteps = STEP_FIELDS.length;
   const { register, formState } = form;
   const { errors } = formState;
@@ -133,11 +136,13 @@ export function QuoteForm({
   }
 
   async function onSubmit(values: QuoteFormValues) {
+    if (submittingRef.current) return; // already in flight (same-tick double click)
     // Honeypot: bots fill hidden fields. Silently "succeed" without sending.
     if (values.company) {
       setStatus("success");
       return;
     }
+    submittingRef.current = true;
     setStatus("submitting");
     try {
       const { company: _omit, ...lead } = values;
@@ -152,6 +157,8 @@ export function QuoteForm({
       setStatus("success");
     } catch {
       setStatus("error");
+    } finally {
+      submittingRef.current = false;
     }
   }
 
@@ -192,6 +199,9 @@ export function QuoteForm({
   const progress = ((step + 1) / totalSteps) * 100;
 
   return (
+    // onSubmit reads submittingRef only inside the deferred submit handler (not
+    // during render); the rule can't see through RHF's handleSubmit wrapper.
+    // eslint-disable-next-line react-hooks/refs
     <form onSubmit={form.handleSubmit(onSubmit)} noValidate className="flex flex-col gap-6">
       {/* Progress */}
       <div className="flex flex-col gap-2">

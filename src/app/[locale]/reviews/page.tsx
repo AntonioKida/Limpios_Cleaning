@@ -10,6 +10,7 @@ import { Button } from "@/components/ui/button";
 import { StarRating } from "@/components/star-rating";
 import { ReviewCard } from "@/components/sections/review-card";
 import { CTASection } from "@/components/sections/cta-section";
+import { BreadcrumbJsonLd } from "@/components/breadcrumb-json-ld";
 import { reviews } from "@/content/reviews";
 import { site } from "@/content/site";
 
@@ -38,9 +39,17 @@ export default async function ReviewsPage({
   const t = await getTranslations("Reviews");
   const ti = await getTranslations("Reviews.items");
   const tf = await getTranslations("Home.finalCta");
+  const tNav = await getTranslations("Nav");
 
   return (
     <main id="main-content">
+      <BreadcrumbJsonLd
+        locale={locale}
+        crumbs={[
+          { name: tNav("home"), path: "" },
+          { name: tNav("reviews"), path: "/reviews" },
+        ]}
+      />
       <PageHero eyebrow={t("eyebrow")} title={t("title")} subtitle={t("subtitle")}>
         <StarRating rating={5} starClassName="size-6" />
         <Button asChild variant="outline" size="lg" className="h-11 px-6">

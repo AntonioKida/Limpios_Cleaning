@@ -27,7 +27,8 @@ export interface VideoClip {
   id: VideoId;
   /** Committed portrait poster (fallback + facade still). */
   poster: string;
-  /** TODO: youtube-nocookie/vimeo *embed* URL once the clip is uploaded. */
+  /** youtube-nocookie / vimeo embed URL — all 7 clips are wired. (The hero clip
+   *  is also self-hosted via heroVideoSrc for a chrome-free loop.) */
   url?: string;
   provider: VideoProvider;
   /** Has spoken content → force EN/ES captions on the embed. */

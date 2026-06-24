@@ -88,8 +88,7 @@
     "backToHome": "Back to home",
     "serviceAreaLabel": "Clermont & Central Florida",
     "ratingOutOf": "{rating} out of 5",
-    "reviewsCount": "{count, plural, one {# review} other {# reviews}}",
-    "placeholderTag": "Sample content — to be replaced"
+    "reviewsCount": "{count, plural, one {# review} other {# reviews}}"
   },
   "Nav": {
     "home": "Home",
@@ -143,7 +142,7 @@
     "services": {
       "eyebrow": "What we do",
       "title": "Cleaning services for every space",
-      "subtitle": "Weekly tidy-ups, deep cleans, post-construction dust. We bring our own HEPA vacuums and eco, low-odor products (TODO confirm with Papo), and we don't call it done until it's actually done.",
+      "subtitle": "Weekly tidy-ups, deep cleans, post-construction dust. We bring our own HEPA vacuums and eco, low-odor products, and we don't call it done until it's actually done.",
       "viewAll": "View all services"
     },
     "steps": {
@@ -563,7 +562,7 @@
     "story": {
       "title": "Our story",
       "body": [
-        "Hi, I'm Papo. I started Limpios after I got out of the military (TODO confirm with Papo) and moved my family to the Clermont area. I'd been cleaning houses and offices on the side for friends, and people kept telling me the same thing: the crews they'd hired before would cut corners, show up late, or just stop answering the phone.",
+        "Hi, I'm Papo. I started Limpios after I got out of the military and moved my family to the Clermont area. I'd been cleaning houses and offices on the side for friends, and people kept telling me the same thing: the crews they'd hired before would cut corners, show up late, or just stop answering the phone.",
         "That bugged me. In the service you show up on time, you do the job all the way, and you own it when something's off. So I built Limpios to run like that. Same crew, eco products that won't choke out your house, and a checklist we actually follow.",
         "These days it's still a small, family-run, bilingual team, and I'm usually out on jobs myself. We keep Central Florida clean one house at a time, and I like it that way."
       ]
@@ -574,7 +573,7 @@
     },
     "eco": {
       "title": "Our eco-friendly commitment",
-      "body": "We use eco-friendly, low-odor products that are hard on dirt and easy on your family, your pets and the planet (TODO confirm specific brands with Papo). A healthier clean shouldn't cost you the air in your own home."
+      "body": "We use eco-friendly, low-odor products that are hard on dirt and easy on your family, your pets and the planet. A healthier clean shouldn't cost you the air in your own home."
     },
     "values": {
       "veteran": {
@@ -795,7 +794,7 @@
       },
       "supplies": {
         "q": "Do I need to provide supplies or equipment?",
-        "a": "No. We bring our own HEPA vacuums and professional, eco-friendly supplies (TODO confirm with Papo). If you'd rather we use a specific product you already keep at home, that's no problem."
+        "a": "No. We bring our own HEPA vacuums and professional, eco-friendly supplies. If you'd rather we use a specific product you already keep at home, that's no problem."
       },
       "pets": {
         "q": "What should I do with my pets during the cleaning?",

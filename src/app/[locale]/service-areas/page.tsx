@@ -7,6 +7,7 @@ import { Section } from "@/components/ui/section";
 import { Reveal } from "@/components/reveal";
 import { CityCard } from "@/components/sections/city-card";
 import { CTASection } from "@/components/sections/cta-section";
+import { BreadcrumbJsonLd } from "@/components/breadcrumb-json-ld";
 import { cities } from "@/content/cities";
 import { routes } from "@/lib/routes";
 
@@ -35,9 +36,17 @@ export default async function ServiceAreasPage({
   const t = await getTranslations("ServiceAreas");
   const tc = await getTranslations("Common");
   const tf = await getTranslations("Home.finalCta");
+  const tNav = await getTranslations("Nav");
 
   return (
     <main id="main-content">
+      <BreadcrumbJsonLd
+        locale={locale}
+        crumbs={[
+          { name: tNav("home"), path: "" },
+          { name: tNav("serviceAreas"), path: "/service-areas" },
+        ]}
+      />
       <PageHero
         eyebrow={t("hub.eyebrow")}
         title={t("hub.title")}

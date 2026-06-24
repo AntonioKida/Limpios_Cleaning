@@ -107,7 +107,7 @@ export function Header() {
             variant="ghost"
             size="icon-lg"
             aria-label={`Call ${site.phone.display}`}
-            className="text-royal"
+            className="size-11 text-royal"
           >
             <a href={site.phone.href}>
               <Phone className="size-5" aria-hidden />
@@ -115,7 +115,12 @@ export function Header() {
           </Button>
           <Sheet open={open} onOpenChange={setOpen}>
             <SheetTrigger asChild>
-              <Button variant="ghost" size="icon-lg" aria-label={t("openMenu")}>
+              <Button
+                variant="ghost"
+                size="icon-lg"
+                aria-label={t("openMenu")}
+                className="size-11"
+              >
                 <Menu className="size-6" aria-hidden />
               </Button>
             </SheetTrigger>

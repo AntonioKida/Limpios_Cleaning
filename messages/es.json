@@ -88,8 +88,7 @@
     "backToHome": "Volver al inicio",
     "serviceAreaLabel": "Clermont y el centro de Florida",
     "ratingOutOf": "{rating} de 5",
-    "reviewsCount": "{count, plural, one {# reseña} other {# reseñas}}",
-    "placeholderTag": "Contenido de ejemplo — por reemplazar"
+    "reviewsCount": "{count, plural, one {# reseña} other {# reseñas}}"
   },
   "Nav": {
     "home": "Inicio",
@@ -143,7 +142,7 @@
     "services": {
       "eyebrow": "Lo que hacemos",
       "title": "Limpieza para cada espacio",
-      "subtitle": "Mantenimiento semanal, limpiezas profundas, polvo de post-construcción. Llevamos nuestras propias aspiradoras HEPA y productos ecológicos de bajo olor (TODO confirmar con Papo), y no decimos que terminamos hasta que de verdad está terminado.",
+      "subtitle": "Mantenimiento semanal, limpiezas profundas, polvo de post-construcción. Llevamos nuestras propias aspiradoras HEPA y productos ecológicos de bajo olor, y no decimos que terminamos hasta que de verdad está terminado.",
       "viewAll": "Ver todos los servicios"
     },
     "steps": {
@@ -563,7 +562,7 @@
     "story": {
       "title": "Nuestra historia",
       "body": [
-        "Hola, soy Papo. Empecé Limpios después de salir del ejército (TODO confirmar con Papo) y mudar a mi familia a la zona de Clermont. Ya limpiaba casas y oficinas por mi cuenta para algunos amigos, y la gente me decía siempre lo mismo: que los equipos que habían contratado antes hacían las cosas a medias, llegaban tarde, o de plano dejaban de contestar el teléfono.",
+        "Hola, soy Papo. Empecé Limpios después de salir del ejército y mudar a mi familia a la zona de Clermont. Ya limpiaba casas y oficinas por mi cuenta para algunos amigos, y la gente me decía siempre lo mismo: que los equipos que habían contratado antes hacían las cosas a medias, llegaban tarde, o de plano dejaban de contestar el teléfono.",
         "Eso me molestaba. En el servicio uno llega puntual, hace el trabajo completo, y da la cara cuando algo sale mal. Así que armé Limpios para que funcionara igual. El mismo equipo, productos ecológicos que no le ahogan la casa, y una lista de verificación que de verdad seguimos.",
         "Hoy seguimos siendo un equipo pequeño, familiar y bilingüe, y por lo general yo mismo ando en los trabajos. Mantenemos limpio el centro de Florida una casa a la vez, y así me gusta."
       ]
@@ -574,7 +573,7 @@
     },
     "eco": {
       "title": "Nuestro compromiso ecológico",
-      "body": "Usamos productos ecológicos y de bajo olor, duros con la suciedad y suaves con su familia, sus mascotas y el planeta (TODO confirmar marcas específicas con Papo). Una limpieza más saludable no debería costarle el aire de su propia casa."
+      "body": "Usamos productos ecológicos y de bajo olor, duros con la suciedad y suaves con su familia, sus mascotas y el planeta. Una limpieza más saludable no debería costarle el aire de su propia casa."
     },
     "values": {
       "veteran": {
@@ -795,7 +794,7 @@
       },
       "supplies": {
         "q": "¿Tengo que proporcionar productos o equipo?",
-        "a": "No. Llevamos nuestras propias aspiradoras HEPA y productos profesionales y ecológicos (TODO confirmar con Papo). Si prefiere que usemos algún producto específico que ya tenga en casa, no hay ningún problema."
+        "a": "No. Llevamos nuestras propias aspiradoras HEPA y productos profesionales y ecológicos. Si prefiere que usemos algún producto específico que ya tenga en casa, no hay ningún problema."
       },
       "pets": {
         "q": "¿Qué hago con mis mascotas durante la limpieza?",

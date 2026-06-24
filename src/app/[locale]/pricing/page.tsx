@@ -11,6 +11,7 @@ import { CheckList } from "@/components/check-list";
 import { Icon } from "@/components/icon";
 import { QuoteCTA } from "@/components/quote/quote-cta";
 import { CTASection } from "@/components/sections/cta-section";
+import { BreadcrumbJsonLd } from "@/components/breadcrumb-json-ld";
 import { pricePackages, priceFactorIds, type PriceFactorId } from "@/content/pricing";
 import type { IconName } from "@/content/icons";
 import { formatCurrency } from "@/lib/format";
@@ -48,9 +49,17 @@ export default async function PricingPage({
   setRequestLocale(locale);
   const t = await getTranslations("Pricing");
   const tc = await getTranslations("Common");
+  const tNav = await getTranslations("Nav");
 
   return (
     <main id="main-content">
+      <BreadcrumbJsonLd
+        locale={locale}
+        crumbs={[
+          { name: tNav("home"), path: "" },
+          { name: tNav("pricing"), path: "/pricing" },
+        ]}
+      />
       <PageHero
         eyebrow={t("eyebrow")}
         title={t("title")}

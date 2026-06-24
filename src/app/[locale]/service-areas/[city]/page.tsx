@@ -11,6 +11,8 @@ import { ServiceCard } from "@/components/sections/service-card";
 import { CTASection } from "@/components/sections/cta-section";
 import { QuoteCTA } from "@/components/quote/quote-cta";
 import { Button } from "@/components/ui/button";
+import { JsonLd } from "@/components/json-ld";
+import { localBusinessSchema, breadcrumbSchema } from "@/lib/json-ld";
 import { Link } from "@/i18n/navigation";
 import { citySlugs, getCity } from "@/content/cities";
 import { services } from "@/content/services";
@@ -51,13 +53,27 @@ export default async function CityPage({
 
   const t = await getTranslations("ServiceAreas");
   const tc = await getTranslations("Common");
+  const tNav = await getTranslations("Nav");
   const cityName = data.name;
+  const cityUrl = `${site.url}/${locale}/service-areas/${city}`;
   const nearby = data.nearby
     .map((slug) => getCity(slug))
     .filter((c): c is NonNullable<typeof c> => Boolean(c));
 
   return (
     <main id="main-content">
+      <JsonLd
+        data={[
+          localBusinessSchema({
+            description: t("cityPage.metaDescription", { city: cityName }),
+          }),
+          breadcrumbSchema([
+            { name: tNav("home"), url: `${site.url}/${locale}` },
+            { name: tNav("serviceAreas"), url: `${site.url}/${locale}/service-areas` },
+            { name: cityName, url: cityUrl },
+          ]),
+        ]}
+      />
       <PageHero
         align="left"
         eyebrow={tc(`counties.${data.county}`)}
@@ -67,8 +83,9 @@ export default async function CityPage({
         <QuoteCTA
           label={t("labels.getQuoteIn", { city: cityName })}
           service="residential"
+          className="w-full whitespace-normal sm:w-auto sm:whitespace-nowrap"
         />
-        <Button asChild variant="outline" size="xl">
+        <Button asChild variant="outline" size="xl" className="w-full sm:w-auto">
           <a href={site.phone.href}>
             <Phone className="size-5" aria-hidden />
             {tc("callNow")}

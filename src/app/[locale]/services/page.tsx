@@ -7,6 +7,7 @@ import { Section } from "@/components/ui/section";
 import { Reveal } from "@/components/reveal";
 import { ServiceCard } from "@/components/sections/service-card";
 import { CTASection } from "@/components/sections/cta-section";
+import { BreadcrumbJsonLd } from "@/components/breadcrumb-json-ld";
 import { services } from "@/content/services";
 
 export async function generateMetadata({
@@ -33,9 +34,17 @@ export default async function ServicesPage({
   setRequestLocale(locale);
   const t = await getTranslations("Services");
   const tc = await getTranslations("Home.finalCta");
+  const tNav = await getTranslations("Nav");
 
   return (
     <main id="main-content">
+      <BreadcrumbJsonLd
+        locale={locale}
+        crumbs={[
+          { name: tNav("home"), path: "" },
+          { name: tNav("services"), path: "/services" },
+        ]}
+      />
       <PageHero
         eyebrow={t("hub.eyebrow")}
         title={t("hub.title")}

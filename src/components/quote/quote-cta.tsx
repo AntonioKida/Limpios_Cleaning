@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { ArrowRight } from "lucide-react";
 import { useTranslations } from "next-intl";
 import type { VariantProps } from "class-variance-authority";
@@ -43,6 +43,7 @@ export function QuoteCTA({
 }: QuoteCTAProps) {
   const t = useTranslations("Quote");
   const [open, setOpen] = useState(false);
+  const triggerRef = useRef<HTMLAnchorElement>(null);
   const href = service ? `${routes.quote}?service=${service}` : routes.quote;
 
   function handleClick(e: React.MouseEvent) {
@@ -62,6 +63,7 @@ export function QuoteCTA({
         className={cn(fullWidth && "w-full", className)}
       >
         <Link
+          ref={triggerRef}
           href={href}
           onClick={handleClick}
           data-analytics="quote-cta"
@@ -73,7 +75,12 @@ export function QuoteCTA({
           ) : null}
         </Link>
       </Button>
-      <QuoteDialog open={open} onOpenChange={setOpen} defaultService={service} />
+      <QuoteDialog
+        open={open}
+        onOpenChange={setOpen}
+        defaultService={service}
+        triggerRef={triggerRef}
+      />
     </>
   );
 }
