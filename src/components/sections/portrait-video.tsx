@@ -52,11 +52,12 @@ export function PortraitVideo({
     : provider === "youtube"
       ? join(
           url,
-          `autoplay=1&rel=0&modestbranding=1&playsinline=1${
+          // mute=1 → the on-click autoplay always plays (clips are silent anyway).
+          `autoplay=1&mute=1&rel=0&modestbranding=1&playsinline=1${
             spokenCaptions ? `&cc_load_policy=1&cc_lang_pref=${locale}` : ""
           }`,
         )
-      : join(url, `autoplay=1${spokenCaptions ? "&texttrack=" + locale : ""}`);
+      : join(url, `autoplay=1&muted=1${spokenCaptions ? "&texttrack=" + locale : ""}`);
 
   const circle = compact ? "size-12" : "size-16";
   const glyph = compact ? "size-5" : "size-7";

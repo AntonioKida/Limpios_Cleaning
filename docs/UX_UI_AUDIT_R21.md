@@ -74,10 +74,13 @@ whitelisted, by URL, via the response listener (`audit/smoke.mjs`).
 - ✓ **Poster-first, click-to-load:** the committed poster shows immediately
   (lazy, not the LCP element), the streamed player (YouTube-nocookie/Vimeo) only
   mounts on click → **never autoplays, reduced-motion safe, never blocks LCP**.
-- ✓ **Captions seam:** spoken clips append `cc_load_policy=1&cc_lang_pref=<locale>`
-  (YouTube) / `texttrack=<locale>` (Vimeo) so EN/ES subtitles load with the embed.
-- ✓ **No "coming soon" leak:** with no URL yet the poster is a clean still with a
-  decorative (non-interactive) play glyph — no dead control, no placeholder text.
+- ✓ **Live embeds:** all 7 unlisted-YouTube IDs are wired
+  (`youtube-nocookie.com/embed/<id>?autoplay=1&mute=1&rel=0&modestbranding=1&playsinline=1`).
+  Verified the play button → iframe mount on click, and that every page renders
+  exactly its expected number of active play buttons (home 2, about 2, commercial
+  3, residential/deep-cleaning/move-in-out 1) with zero decorative-only stills.
+- ✓ **Captions:** the clips are silent (muted re-uploads) → no subtitle track
+  needed; the `spokenCaptions` cc-param seam remains for any future spoken clip.
 - ✓ Placements per brief: Vid4 hero accent (mascot stays anchor), Vid3 Why-us +
   About standards, Vid7 About team, Vid1/4/6 commercial, Vid2 residential, Vid5
   move-in/out, Vid3 deep-cleaning.
@@ -161,8 +164,8 @@ No video "coming soon", no "founder video coming soon", no lorem, no broken medi
    military service, HEPA vacuums, specific eco brands (Home/About/FAQ catalogs).
 3. Swap sample reviews for verified Google reviews, then flip
    `reviewsArePlaceholder` to `false` (re-enables AggregateRating).
-4. Paste the unlisted YouTube/Vimeo embed URLs into `src/content/media.ts`
-   (`url:` per clip); the facade's play affordance activates automatically.
+4. ~~Paste the unlisted YouTube embed URLs into `src/content/media.ts`~~ —
+   **done:** all 7 IDs wired; facades are live click-to-play (silent clips).
 5. Set `NEXT_PUBLIC_CLARITY_ID` (+ `NEXT_PUBLIC_GA_ID`) in Vercel and re-run
    Lighthouse on the preview to confirm Perf/BP/SEO ≥ 95.
 
