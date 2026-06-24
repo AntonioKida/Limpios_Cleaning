@@ -97,7 +97,7 @@ export function Header() {
             className="text-sm font-semibold text-foreground/80 transition-colors hover:text-royal"
           />
           <LocaleToggle />
-          <QuoteCTA size="lg" className="h-10 px-5" withIcon />
+          <QuoteCTA size="lg" className="h-10 px-5" withIcon location="nav" />
         </div>
 
         {/* Mobile actions */}
@@ -160,7 +160,7 @@ export function Header() {
               </nav>
               <div className="mt-auto flex flex-col gap-4 border-t border-border px-6 py-6">
                 <SheetClose asChild>
-                  <QuoteCTA fullWidth withIcon />
+                  <QuoteCTA fullWidth withIcon location="nav-mobile" />
                 </SheetClose>
                 <PhoneLink
                   showIcon

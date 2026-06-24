@@ -206,6 +206,11 @@ export async function Footer() {
             </span>
           </p>
         </div>
+
+        {/* Analytics / privacy disclosure */}
+        <p className="mt-4 text-xs leading-relaxed text-cool/55">
+          {t("privacyNote")}
+        </p>
       </Container>
     </footer>
   );

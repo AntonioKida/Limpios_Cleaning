@@ -42,7 +42,7 @@ export function Hero() {
 
           <Reveal signature delay={0.1} className="w-full">
             <div className="flex flex-col gap-3 sm:flex-row sm:items-center">
-              <QuoteCTA size="2xl" withIcon className="w-full sm:w-auto" />
+              <QuoteCTA size="2xl" withIcon className="w-full sm:w-auto" location="hero" />
               <Button asChild variant="outline" size="2xl" className="w-full sm:w-auto">
                 <a href={site.phone.href}>
                   <Phone className="size-5" aria-hidden />

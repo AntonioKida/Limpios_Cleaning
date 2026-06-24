@@ -13,6 +13,7 @@ import { Testimonials } from "@/components/sections/testimonials";
 import { ServiceAreaSection } from "@/components/sections/service-area";
 import { Faq } from "@/components/sections/faq";
 import { CTASection } from "@/components/sections/cta-section";
+import { ScrollTracker } from "@/components/analytics/scroll-tracker";
 
 export default async function HomePage({
   params,
@@ -31,6 +32,7 @@ export default async function HomePage({
 
   return (
     <main id="main-content">
+      <ScrollTracker page="home" />
       <JsonLd
         data={[
           localBusinessSchema({ description: tMeta("defaultDescription") }),

@@ -22,6 +22,8 @@ interface QuoteCTAProps {
   className?: string;
   /** Optional service slug to prefill the quote form. */
   service?: string;
+  /** Where this CTA lives, for conversion analytics (e.g. "hero", "service"). */
+  location?: string;
 }
 
 /**
@@ -37,6 +39,7 @@ export function QuoteCTA({
   fullWidth = false,
   className,
   service,
+  location = "page",
 }: QuoteCTAProps) {
   const t = useTranslations("Quote");
   const [open, setOpen] = useState(false);
@@ -58,7 +61,12 @@ export function QuoteCTA({
         size={size}
         className={cn(fullWidth && "w-full", className)}
       >
-        <Link href={href} onClick={handleClick}>
+        <Link
+          href={href}
+          onClick={handleClick}
+          data-analytics="quote-cta"
+          data-location={location}
+        >
           {label ?? t("trigger")}
           {withIcon ? (
             <ArrowRight className="transition-transform group-hover/button:translate-x-0.5" />

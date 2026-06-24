@@ -119,7 +119,8 @@
     "allAreas": "All service areas",
     "rights": "© {year} Limpios Cleaning Management. All rights reserved.",
     "credit": "Veteran-owned & operated in Central Florida.",
-    "navLabel": "Footer"
+    "navLabel": "Footer",
+    "privacyNote": "We use cookies and privacy-friendly analytics (Vercel Analytics and Microsoft Clarity) to understand how the site is used and improve it."
   },
   "Home": {
     "hero": {

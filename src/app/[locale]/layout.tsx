@@ -9,6 +9,8 @@ import { site } from "@/content/site";
 import { Header } from "@/components/layout/header";
 import { Footer } from "@/components/layout/footer";
 import { GoogleAnalytics } from "@/components/analytics/google-analytics";
+import { MicrosoftClarity } from "@/components/analytics/clarity";
+import { ConversionTracker } from "@/components/analytics/conversion-tracker";
 import "../globals.css";
 
 // Headings: Bricolage Grotesque — a humanist grotesque with a little hand-drawn
@@ -103,6 +105,8 @@ export default async function LocaleLayout({
         </NextIntlClientProvider>
         <Analytics />
         <GoogleAnalytics />
+        <MicrosoftClarity />
+        <ConversionTracker />
       </body>
     </html>
   );

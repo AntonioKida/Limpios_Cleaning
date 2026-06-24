@@ -119,7 +119,8 @@
     "allAreas": "Todas las áreas de servicio",
     "rights": "© {year} Limpios Cleaning Management. Todos los derechos reservados.",
     "credit": "Empresa de un veterano, operada en el centro de Florida.",
-    "navLabel": "Pie de página"
+    "navLabel": "Pie de página",
+    "privacyNote": "Usamos cookies y analíticas respetuosas con la privacidad (Vercel Analytics y Microsoft Clarity) para entender cómo se usa el sitio y mejorarlo."
   },
   "Home": {
     "hero": {

@@ -45,6 +45,7 @@ export function CTASection({
               label={primaryLabel}
               service={service}
               className="w-full sm:w-auto"
+              location="final-cta"
             />
             <Button
               asChild

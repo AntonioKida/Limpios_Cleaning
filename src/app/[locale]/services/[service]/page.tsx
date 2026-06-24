@@ -122,7 +122,7 @@ export default async function ServiceDetailPage({
         title={serviceName}
         subtitle={t(`items.${service}.description`)}
       >
-        <QuoteCTA service={service} />
+        <QuoteCTA service={service} location="service" />
         <Button asChild variant="outline" size="xl">
           <a href={site.phone.href}>
             <Phone className="size-5" aria-hidden />
