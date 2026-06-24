@@ -51,3 +51,10 @@ next-env.d.ts
 # lighthouse run artifacts
 .lh-*.json
 .next-start.log
+
+# Round 2.1 source media (kept out of Git per brief; optimized derivatives live in /public)
+/Media
+# Raw/source video clips — uploaded to YouTube/Vimeo, NOT served from the repo
+# (facade embeds via TODO URLs). Posters in /public/video-posters ARE committed.
+/public/Youtube
+/public/trimmed

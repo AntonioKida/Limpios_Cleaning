@@ -16,6 +16,8 @@ import {
 import { faqIds } from "@/content/faq";
 import { CheckList } from "@/components/check-list";
 import { ServiceCard } from "@/components/sections/service-card";
+import { BeforeAfterSlider } from "@/components/sections/before-after-slider";
+import { galleryForService } from "@/content/gallery";
 import { Faq } from "@/components/sections/faq";
 import { CTASection } from "@/components/sections/cta-section";
 import { QuoteCTA } from "@/components/quote/quote-cta";
@@ -65,8 +67,11 @@ export default async function ServiceDetailPage({
   const t = await getTranslations("Services");
   const tc = await getTranslations("Common");
   const tf = await getTranslations("Home.finalCta");
+  const tba = await getTranslations("Home.beforeAfter");
   const tFaq = await getTranslations("Faq.items");
   const tNav = await getTranslations("Nav");
+
+  const gallery = galleryForService(service);
 
   const serviceName = t(`items.${service}.name`);
   const serviceUrl = `${site.url}/${locale}/services/${service}`;
@@ -162,6 +167,41 @@ export default async function ServiceDetailPage({
           </aside>
         </div>
       </Section>
+
+      {gallery.length > 0 ? (
+        <Section surface="cool">
+          <div className="flex flex-col gap-2">
+            <h2 className="font-heading text-2xl font-bold text-navy">
+              {t("labels.galleryTitle")}
+            </h2>
+            <p className="max-w-prose text-muted-foreground">
+              {t("labels.gallerySubtitle")}
+            </p>
+          </div>
+          <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            {gallery.map((pair) => {
+              const caption = tba(`captions.${pair.id}`);
+              return (
+                <figure key={pair.id} className="flex flex-col gap-3">
+                  <BeforeAfterSlider
+                    before={pair.before}
+                    after={pair.after}
+                    aspect="3 / 4"
+                    beforeAlt={`${tba("beforeLabel")} — ${caption}`}
+                    afterAlt={`${tba("afterLabel")} — ${caption}`}
+                    beforeLabel={tba("beforeLabel")}
+                    afterLabel={tba("afterLabel")}
+                    dragHint={tba("dragHint")}
+                  />
+                  <figcaption className="font-heading text-sm font-semibold text-navy">
+                    {caption}
+                  </figcaption>
+                </figure>
+              );
+            })}
+          </div>
+        </Section>
+      ) : null}
 
       {related.length > 0 ? (
         <Section surface="white">

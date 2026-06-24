@@ -1,0 +1,101 @@
+[
+  {
+    "id": "img1",
+    "content": "Screened patio with concrete floor",
+    "room": "patio",
+    "orientationOk": true,
+    "flagship": false,
+    "captionEn": "Stained patio concrete back to clean",
+    "captionEs": "Concreto manchado del patio de nuevo limpio",
+    "placement": "patio",
+    "notes": "Screened lanai/patio. Same speckled concrete texture and gray color on both sides, just dirt and stains lifted. No fresh paint sheen or new color, so this reads as CLEANED concrete, not a painted/coated floor. Verdict: patio/outdoor, not interior-painting."
+  },
+  {
+    "id": "img2",
+    "content": "Refrigerator interior",
+    "room": "fridge",
+    "orientationOk": true,
+    "flagship": true,
+    "captionEn": "Grimy moldy fridge to spotless shelves",
+    "captionEs": "Refri sucio y con moho a estantes impecables",
+    "placement": "deep-cleaning",
+    "notes": "Frigidaire interior. Before has food, sticky shelves and black mold along the bottom gasket; after is emptied and gleaming white. One of the strongest transformations. Flagship."
+  },
+  {
+    "id": "img3",
+    "content": "Refrigerator crisper drawer assembly",
+    "room": "fridge",
+    "orientationOk": true,
+    "flagship": true,
+    "captionEn": "Caked spill to bright clean drawers",
+    "captionEs": "Derrame pegado a cajones limpios y blancos",
+    "placement": "deep-cleaning",
+    "notes": "Pull-out crisper/drawer rack. Before has a dried yellow spill, food crust and gunk; after is pristine white. High-impact closeup. Flagship."
+  },
+  {
+    "id": "img4",
+    "content": "Glass shower door",
+    "room": "shower",
+    "orientationOk": true,
+    "flagship": false,
+    "captionEn": "Cloudy soap scum to clear glass",
+    "captionEs": "Vidrio opaco por jabon a vidrio transparente",
+    "placement": "deep-cleaning",
+    "notes": "Framed glass shower door with squeegee in before shot. Before is fogged with hard-water and soap-scum film; after is clear enough to see the tile and door handle through it."
+  },
+  {
+    "id": "img5",
+    "content": "Bathtub, tile surround and toilet",
+    "room": "bathroom",
+    "orientationOk": true,
+    "flagship": true,
+    "captionEn": "Rust-stained tub to bright white bathroom",
+    "captionEs": "Tina con oxido a bano blanco y reluciente",
+    "placement": "deep-cleaning",
+    "notes": "Tub, tiled wall and toilet. Before is heavy with rust and orange staining, mildew on grout and a filthy toilet rim; after is clean white throughout. Most dramatic single image. Flagship."
+  },
+  {
+    "id": "img6",
+    "content": "Shower tile wall with handheld showerheads",
+    "room": "shower",
+    "orientationOk": true,
+    "flagship": false,
+    "captionEn": "Dingy grout and tile freshened up",
+    "captionEs": "Lechada y azulejo opacos quedan frescos",
+    "placement": "deep-cleaning",
+    "notes": "Tiled shower wall with two handheld heads and hoses. Before grout is dingy and a hose is corroded; after tile and grout are noticeably brighter. Real but more modest improvement, so not a flagship."
+  },
+  {
+    "id": "img7",
+    "content": "Kitchen counters, sink and tile floor",
+    "room": "kitchen",
+    "orientationOk": true,
+    "flagship": false,
+    "captionEn": "Cluttered grimy kitchen to clean and clear",
+    "captionEs": "Cocina desordenada y sucia a limpia y despejada",
+    "placement": "move-in-out",
+    "notes": "Kitchen with cabinets, double sink, dishwasher and tile floor. Before is cluttered with a grimy floor and an open broken cabinet; after is cleared, wiped down and the floor is clean. Reads as a move-out/turnover clean."
+  },
+  {
+    "id": "img8",
+    "content": "Bathroom toilet, tub and tile floor",
+    "room": "bathroom",
+    "orientationOk": true,
+    "flagship": false,
+    "captionEn": "Filthy toilet and floor to fresh bathroom",
+    "captionEs": "Inodoro y piso sucios a bano fresco",
+    "placement": "move-in-out",
+    "notes": "Toilet, tub and tiled floor. Before has heavy staining around the toilet base, a stained bowl and dirty grout; after is clean with a fresh vanity in view. Strong transformation and a close runner-up to flagship status."
+  },
+  {
+    "id": "img9",
+    "content": "Kitchen with electric range and tile floor",
+    "room": "kitchen",
+    "orientationOk": true,
+    "flagship": false,
+    "captionEn": "Cluttered kitchen cleared and cleaned",
+    "captionEs": "Cocina con cosas regadas queda despejada y limpia",
+    "placement": "move-in-out",
+    "notes": "Galley kitchen with white electric range, cabinets and tile floor. Before has counter clutter and grime; after is cleared and wiped. Modest improvement; reads as a move-out/turnover clean."
+  }
+]

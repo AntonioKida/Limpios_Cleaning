@@ -193,20 +193,20 @@
     "beforeAfter": {
       "eyebrow": "Vea la diferencia",
       "title": "Antes y después",
-      "subtitle": "Resultados reales, en cada visita. (Por ahora imágenes de ejemplo. Su hogar es el siguiente.)",
+      "subtitle": "Casas reales del centro de Florida, fotografiadas antes y después. Arrastre cualquier foto para ver la diferencia.",
       "beforeLabel": "Antes",
       "afterLabel": "Después",
-      "placeholderNote": "Imágenes de ejemplo — se reemplazarán con fotos reales de antes/después de Limpios.",
-      "items": {
-        "kitchen": {
-          "title": "Cocina renovada"
-        },
-        "bathroom": {
-          "title": "Baño con limpieza profunda"
-        },
-        "living": {
-          "title": "Sala renovada"
-        }
+      "dragHint": "Arrastre para comparar",
+      "captions": {
+        "img1": "Concreto manchado del patio, de nuevo limpio",
+        "img2": "Refri sucio y con moho a estantes impecables",
+        "img3": "Derrame pegado a cajones limpios y blancos",
+        "img4": "Vidrio opaco por jabón a vidrio transparente",
+        "img5": "Tina con óxido a un baño blanco y reluciente",
+        "img6": "Lechada y azulejo opacos quedan frescos",
+        "img7": "Cocina desordenada y sucia a limpia y despejada",
+        "img8": "Inodoro y piso sucios a un baño fresco",
+        "img9": "Cocina con cosas regadas, despejada y limpia"
       }
     },
     "reviews": {
@@ -252,7 +252,9 @@
       "getQuote": "Cotización gratis",
       "viewService": "Ver detalles",
       "allServices": "Todos los servicios",
-      "pricingLabel": "Precios"
+      "pricingLabel": "Precios",
+      "galleryTitle": "Antes y después",
+      "gallerySubtitle": "Resultados reales de trabajos recientes: arrastra cualquier foto para comparar."
     },
     "items": {
       "residential": {

@@ -193,20 +193,20 @@
     "beforeAfter": {
       "eyebrow": "See the difference",
       "title": "Before & after",
-      "subtitle": "Real results, every visit. (Sample images for now. Your home is next.)",
+      "subtitle": "Real Central Florida homes, photographed before and after. Drag any photo to see the difference.",
       "beforeLabel": "Before",
       "afterLabel": "After",
-      "placeholderNote": "Sample placeholder images — to be replaced with real Limpios before/after photos.",
-      "items": {
-        "kitchen": {
-          "title": "Kitchen refresh"
-        },
-        "bathroom": {
-          "title": "Bathroom deep clean"
-        },
-        "living": {
-          "title": "Living room reset"
-        }
+      "dragHint": "Drag to compare",
+      "captions": {
+        "img1": "Stained patio concrete back to clean",
+        "img2": "Grimy, moldy fridge to spotless shelves",
+        "img3": "Caked spill to bright, clean drawers",
+        "img4": "Cloudy soap scum to clear glass",
+        "img5": "Rust-stained tub to a bright white bathroom",
+        "img6": "Dingy grout and tile, freshened up",
+        "img7": "Cluttered, grimy kitchen to clean and clear",
+        "img8": "Filthy toilet and floor to a fresh bathroom",
+        "img9": "Cluttered kitchen, cleared and cleaned"
       }
     },
     "reviews": {
@@ -252,7 +252,9 @@
       "getQuote": "Get a free quote",
       "viewService": "View details",
       "allServices": "All services",
-      "pricingLabel": "Pricing"
+      "pricingLabel": "Pricing",
+      "galleryTitle": "Before & after",
+      "gallerySubtitle": "Real results from recent jobs — drag any photo to compare."
     },
     "items": {
       "residential": {
