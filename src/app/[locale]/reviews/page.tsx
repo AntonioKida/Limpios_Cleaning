@@ -7,7 +7,6 @@ import { PageHero } from "@/components/sections/page-hero";
 import { Section } from "@/components/ui/section";
 import { Reveal } from "@/components/reveal";
 import { Button } from "@/components/ui/button";
-import { StarRating } from "@/components/star-rating";
 import { ReviewCard } from "@/components/sections/review-card";
 import { CTASection } from "@/components/sections/cta-section";
 import { BreadcrumbJsonLd } from "@/components/breadcrumb-json-ld";
@@ -50,8 +49,9 @@ export default async function ReviewsPage({
           { name: tNav("reviews"), path: "/reviews" },
         ]}
       />
+      {/* No star glyphs in the hero — the samples below are disclaimed, and no
+          real rating exists yet to summarize (honesty gate). */}
       <PageHero eyebrow={t("eyebrow")} title={t("title")} subtitle={t("subtitle")}>
-        <StarRating rating={5} starClassName="size-6" />
         <Button asChild variant="outline" size="lg" className="h-11 px-6">
           {/* TODO: replace with the real Google "leave a review" URL. */}
           <a href={site.rating.reviewUrl} target="_blank" rel="noopener noreferrer">

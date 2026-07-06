@@ -2,37 +2,37 @@
   "Meta": {
     "siteName": "Limpios Cleaning Management",
     "tagline": "Sit back, relax, and we will do the cleaning.",
-    "defaultTitle": "Veteran-Owned Cleaning in Clermont & Central Florida",
-    "defaultDescription": "Limpios Cleaning Management — veteran-owned, eco-friendly residential & commercial cleaning serving Clermont, Minneola and Central Florida. Licensed, insured and bilingual. Get a free quote.",
-    "ogAlt": "Limpios Cleaning Management — veteran-owned cleaning in Central Florida",
+    "defaultTitle": "Commercial Cleaning in Central Florida | Veteran-Owned",
+    "defaultDescription": "Limpios Cleaning Management — veteran-owned commercial cleaning across Central Florida, based in Lake County. Offices, post-construction, move-outs, windows and carpets. Licensed, insured and bilingual. Free walkthrough & estimate.",
+    "ogAlt": "Limpios Cleaning Management — veteran-owned commercial cleaning in Central Florida",
     "pages": {
       "home": {
-        "title": "Veteran-Owned Cleaning in Clermont & Central Florida",
-        "description": "Eco-friendly, licensed and insured home & office cleaning across Clermont, Minneola and Central Florida. Veteran-owned, bilingual, satisfaction guaranteed. Get a free quote."
+        "title": "Commercial Cleaning in Central Florida | Veteran-Owned",
+        "description": "Veteran-owned commercial cleaning for businesses, property managers, HOAs and builders across Central Florida. Licensed, insured, bilingual. Schedule a free walkthrough and estimate."
       },
       "services": {
-        "title": "Cleaning Services",
-        "description": "Residential, commercial, deep, move-in/out, post-construction cleaning and interior painting across Clermont and Central Florida. Eco-friendly and insured."
+        "title": "Commercial Cleaning Services",
+        "description": "Commercial, post-construction, move-in/move-out, window and carpet cleaning across Central Florida. Licensed, insured, veteran-owned. Every job starts with a free walkthrough."
       },
       "pricing": {
-        "title": "Pricing & Free Quotes",
-        "description": "Transparent starting prices for home and office cleaning in Central Florida, plus the factors that shape your quote. Get a free, no-obligation estimate."
+        "title": "Pricing — Free Walkthrough & Estimate",
+        "description": "No flat rates and no surprises: your price is built from a free walkthrough of your space — square footage, scope, condition and crew. Get a written estimate at no cost."
       },
       "serviceAreas": {
         "title": "Service Areas in Central Florida",
-        "description": "Limpios proudly cleans homes and businesses in Clermont, Minneola, Groveland, Winter Garden, Horizon West, Four Corners and across Lake & west Orange County."
+        "description": "Limpios serves businesses and properties throughout Central Florida from our Lake County base — Clermont, Minneola, Winter Garden and beyond. Free walkthroughs across the area."
       },
       "about": {
         "title": "About — Veteran-Owned & Local",
-        "description": "Meet the veteran owner behind Limpios Cleaning Management. Our story, our eco-friendly commitment, and the satisfaction guarantee behind every clean."
+        "description": "Meet the veteran owner behind Limpios Cleaning Management. South Lake Chamber of Commerce member, licensed and insured, and personal about every space we clean."
       },
       "reviews": {
         "title": "Reviews",
-        "description": "See what Central Florida homeowners and businesses say about Limpios Cleaning Management."
+        "description": "See what Central Florida businesses and property owners say about Limpios Cleaning Management."
       },
       "contact": {
-        "title": "Contact & Free Quote",
-        "description": "Call, email or message Limpios Cleaning Management for a free cleaning quote in Clermont and Central Florida. Bilingual, friendly, and local."
+        "title": "Contact — Free Walkthrough & Estimate",
+        "description": "Call, email or message Limpios Cleaning Management to schedule a free walkthrough anywhere in Central Florida. Bilingual, friendly, and local to Lake County."
       }
     }
   },
@@ -67,26 +67,27 @@
     "hoursLabel": "Hours",
     "callNow": "Call now",
     "callUs": "Call {phone}",
-    "getQuote": "Get a quote",
-    "getFreeQuote": "Get a free quote",
+    "getQuote": "Get an estimate",
+    "getFreeQuote": "Get a free estimate",
     "bookNow": "Book now",
     "learnMore": "Learn more",
     "viewAll": "View all",
     "readMore": "Read more",
     "from": "from {amount}",
-    "customQuote": "Custom quote",
-    "requestQuote": "Request a quote",
+    "customQuote": "Custom proposal",
+    "requestQuote": "Free estimate",
     "perVisit": "per visit",
     "perService": "per service",
     "estimate": "estimate",
-    "estimateNote": "Starting prices are estimates. Your exact quote is free and built for your space.",
+    "estimateNote": "Every estimate starts with a free walkthrough of your space — no flat rates, no obligation.",
     "licensedInsured": "Licensed & insured",
     "veteranOwned": "Veteran-owned",
     "ecoFriendly": "Eco-friendly",
     "bilingual": "Bilingual (EN/ES)",
+    "chamberMember": "South Lake Chamber of Commerce member",
     "skipToContent": "Skip to content",
     "backToHome": "Back to home",
-    "serviceAreaLabel": "Clermont & Central Florida",
+    "serviceAreaLabel": "Central Florida · Based in Lake County",
     "ratingOutOf": "{rating} out of 5",
     "reviewsCount": "{count, plural, one {# review} other {# reviews}}"
   },
@@ -107,7 +108,7 @@
     "switchToEs": "Cambiar a Español"
   },
   "Footer": {
-    "blurb": "Veteran-owned, eco-friendly cleaning for homes and businesses across Clermont, Minneola and Central Florida. Sit back, relax, and we'll do the cleaning.",
+    "blurb": "Veteran-owned commercial cleaning for businesses, property managers, HOAs and builders across Central Florida — based in Lake County. Sit back, relax, and we'll do the cleaning.",
     "servicesTitle": "Services",
     "areasTitle": "Service Areas",
     "companyTitle": "Company",
@@ -116,71 +117,97 @@
     "hoursTitle": "Hours",
     "licenseLabel": "License",
     "allAreas": "All service areas",
+    "allServicesLink": "All services",
     "rights": "© {year} Limpios Cleaning Management. All rights reserved.",
     "credit": "Veteran-owned & operated in Central Florida.",
+    "chamberLine": "Member, South Lake Chamber of Commerce",
     "navLabel": "Footer",
     "privacyNote": "We use cookies and privacy-friendly analytics (Vercel Analytics and Microsoft Clarity) to understand how the site is used and improve it."
   },
   "Home": {
     "hero": {
-      "eyebrow": "Veteran-owned · Clermont & Central Florida",
-      "title": "Veteran-owned cleaning you can",
-      "titleAccent": "trust",
-      "subtitle": "Licensed, insured, eco-friendly cleaning for homes and offices around Clermont, Minneola and Central Florida. Sit back, relax, and we will do the cleaning.",
-      "ctaPrimary": "Get a free quote",
+      "eyebrow": "Veteran-owned · Central Florida",
+      "title": "Commercial cleaning your business can",
+      "titleAccent": "count on",
+      "subtitle": "Offices, post-construction sites, turnovers, windows and carpets — cleaned to a written scope by a licensed, insured, veteran-owned crew. Based in Lake County, serving all of Central Florida.",
+      "ctaPrimary": "Get a free estimate",
       "ctaSecondary": "Call now",
       "trust": "Veteran-owned, licensed and insured.",
       "mascotAlt": "Limpios Cleaning mascot — the owner in a Panama hat holding a spray bottle, giving a friendly wave",
-      "chipRating": "5-star rated"
+      "chipChamber": "Chamber of Commerce member"
     },
     "trustBar": {
-      "since": "Family-run since {year}",
-      "eco": "Eco, low-odor products",
+      "since": "Veteran-owned since {year}",
+      "chamber": "South Lake Chamber member",
       "bilingual": "English & Español",
-      "local": "Local to Central Florida"
+      "local": "Lake County based · Central Florida wide"
     },
     "services": {
       "eyebrow": "What we do",
-      "title": "Cleaning services for every space",
-      "subtitle": "Weekly tidy-ups, deep cleans, post-construction dust. We bring our own HEPA vacuums and eco, low-odor products, and we don't call it done until it's actually done.",
+      "title": "Five services, one standard",
+      "subtitle": "Recurring commercial care, post-construction cleanup, unit turnovers, windows and carpets. Every job runs on a written checklist, and we don't call it done until it's actually done.",
       "viewAll": "View all services"
+    },
+    "audiences": {
+      "eyebrow": "Who we work with",
+      "title": "Built for the people responsible for a space",
+      "subtitle": "Whether you manage one storefront or a portfolio of properties, you get a crew that shows up, follows the scope, and answers the phone.",
+      "cta": "See how we help",
+      "items": {
+        "commercial": {
+          "title": "Commercial businesses",
+          "description": "Offices, clinics, retail and facilities — recurring or one-time, scheduled around your hours."
+        },
+        "property-managers": {
+          "title": "Property managers",
+          "description": "Reliable move-out turnovers and common-area cleaning, with photos and clear communication on every unit."
+        },
+        "hoa": {
+          "title": "Homeowners associations",
+          "description": "Clubhouses, amenity centers and common areas kept resident-ready on a schedule your board approves."
+        },
+        "construction": {
+          "title": "Construction companies",
+          "description": "Rough and final cleans that turn a finished build into a handover-ready space, on your timeline."
+        }
+      }
     },
     "steps": {
       "eyebrow": "How it works",
-      "title": "Your free time, in three easy steps",
-      "subtitle": "No hassle and no pressure. Just a clean space and a few hours back in your day.",
+      "title": "A free walkthrough, then a clear estimate",
+      "subtitle": "Every space is different, so we price from a walkthrough — not a rate card. No obligation, no surprises.",
       "items": {
-        "quote": {
-          "title": "Get a quote",
-          "description": "Tell us about your space online or over the phone, and we'll send a free quote built for it. Usually same day."
+        "walkthrough": {
+          "title": "Schedule a walkthrough",
+          "description": "We visit your space, walk the scope with you, and note square footage, condition and access. It's free."
+        },
+        "estimate": {
+          "title": "Get your estimate",
+          "description": "You get a clear written estimate built on scope, size, condition and crew — usually within a day."
         },
         "clean": {
           "title": "We clean",
-          "description": "Our vetted, insured team shows up on time with HEPA vacuums, eco supplies and a room-by-room checklist."
-        },
-        "relax": {
-          "title": "You relax",
-          "description": "Come home to a spotless space. If something's off, tell us within 24 hours and we re-clean it free."
+          "description": "Our vetted, insured team works the checklist — after-hours if that's what your schedule needs."
         }
       }
     },
     "why": {
       "eyebrow": "Why Limpios",
-      "title": "Local, personal, and genuinely better",
-      "subtitle": "Most cleaners are fine. The difference here is in the details: the same vetted faces each visit, a room-by-room checklist, a quote back fast, and a guarantee we actually honor.",
+      "title": "Local, accountable, and genuinely thorough",
+      "subtitle": "Most crews are fine. The difference here is in the follow-through: the same vetted faces, a written scope, an estimate back fast, and a guarantee we actually honor.",
       "ctaAbout": "Read our story",
       "points": {
         "team": {
           "title": "The same vetted team",
-          "description": "Not a rotating cast. You get the same background-checked cleaners who learn your home and how you like things."
+          "description": "Not a rotating cast. You get the same background-checked cleaners who learn your space and your standards."
         },
         "checklist": {
-          "title": "A room-by-room checklist",
+          "title": "A written scope & checklist",
           "description": "Every visit follows a written checklist, so nothing gets skipped and you know exactly what we cover."
         },
-        "quote": {
-          "title": "A fast, no-pressure quote",
-          "description": "Tell us about your space and a tailored quote lands in your inbox, usually the same day."
+        "estimate": {
+          "title": "A fast, no-pressure estimate",
+          "description": "Walk us through your space and a written estimate lands in your inbox, usually the same day."
         },
         "guarantee": {
           "title": "A guarantee we honor",
@@ -191,7 +218,7 @@
     "beforeAfter": {
       "eyebrow": "See the difference",
       "title": "Before & after",
-      "subtitle": "Real Central Florida homes, photographed before and after. Drag any photo to see the difference.",
+      "subtitle": "Real jobs, photographed before and after. Drag any photo to see the standard we hold on every space.",
       "beforeLabel": "Before",
       "afterLabel": "After",
       "dragHint": "Drag to compare",
@@ -204,35 +231,37 @@
         "img6": "Dingy grout and tile, freshened up",
         "img7": "Cluttered, grimy kitchen to clean and clear",
         "img8": "Filthy toilet and floor to a fresh bathroom",
-        "img9": "Cluttered kitchen, cleared and cleaned"
+        "img9": "Cluttered kitchen, cleared and cleaned",
+        "img27": "Grimy fixture base and tile, detailed to spotless",
+        "img28": "Toilet base and floor, hand-detailed for turnover"
       },
       "seeMore": "See more transformations",
       "seeLess": "Show fewer"
     },
     "reviews": {
-      "eyebrow": "Loved by locals",
+      "eyebrow": "Word gets around",
       "title": "What Central Florida says",
-      "subtitle": "Here's what neighbors have to say after we've come through.",
+      "subtitle": "Here's what clients have to say after we've come through.",
       "viewAll": "Read more reviews"
     },
     "serviceArea": {
-      "eyebrow": "Where we clean",
-      "title": "Proudly serving Central Florida",
-      "subtitle": "We're based in Minneola and clean homes and offices across Lake County and west Orange.",
-      "listIntro": "Popular areas we serve",
-      "notListed": "Don't see your neighborhood? There's a good chance we cover it. Just ask.",
+      "eyebrow": "Where we work",
+      "title": "Serving all of Central Florida",
+      "subtitle": "We're based in Lake County and run jobs throughout Central Florida — if your property is in the region, we can walk it.",
+      "listIntro": "Areas we're in most often",
+      "notListed": "Don't see your area? If it's in Central Florida, there's a good chance we cover it. Just ask.",
       "cta": "See all service areas",
       "mapPlaceholder": "Service-area map"
     },
     "faq": {
       "eyebrow": "Good to know",
       "title": "Frequently asked questions",
-      "subtitle": "The things people usually want to know before their first clean."
+      "subtitle": "The things facility and property folks usually ask before the first walkthrough."
     },
     "finalCta": {
-      "title": "Ready to get your free time back?",
-      "subtitle": "Grab a free, no-obligation quote today and let us handle the rest.",
-      "primary": "Get my free quote",
+      "title": "Ready to hand off the cleaning?",
+      "subtitle": "Schedule your free walkthrough today — the estimate is written, clear, and yours to keep.",
+      "primary": "Get my free estimate",
       "secondary": "Call now"
     },
     "seeInAction": {
@@ -244,57 +273,38 @@
   "Services": {
     "hub": {
       "eyebrow": "Services",
-      "title": "Cleaning & care for every space",
-      "subtitle": "Insured, eco-friendly, and done to a real checklist. Pick the service that fits, or get a free quote and we'll point you the right way.",
-      "intro": "One-time refresh or recurring care, it's the same crew and the same standards on every job we run across Central Florida."
+      "title": "Commercial-grade cleaning, five ways",
+      "subtitle": "Insured, veteran-owned, and done to a written scope. Pick the service that fits, or request a free walkthrough and we'll point you the right way.",
+      "intro": "One-time project or recurring contract, it's the same crew and the same standards on every job we run across Central Florida.",
+      "alsoAvailableTitle": "Also available",
+      "alsoAvailableBody": "We also take on home cleaning and interior painting for select clients — ask during your walkthrough."
     },
     "labels": {
       "included": "What's included",
       "whoFor": "Who it's for",
-      "priceFactors": "What affects the price",
+      "priceFactors": "What shapes the estimate",
       "related": "Related services",
       "startingAt": "Starting at",
-      "getQuote": "Get a free quote",
+      "getQuote": "Get a free estimate",
       "viewService": "View details",
       "allServices": "All services",
       "pricingLabel": "Pricing",
       "galleryTitle": "Before & after",
       "gallerySubtitle": "Real results from recent jobs — drag any photo to compare.",
+      "photosTitle": "On the job",
+      "photosSubtitle": "Real photos from recent Limpios jobs — no stock imagery.",
       "videoTitle": "Watch us work"
     },
     "items": {
-      "residential": {
-        "name": "Residential cleaning",
-        "tagline": "A spotless home, without lifting a finger.",
-        "description": "Recurring or one-time home cleaning built around how you actually live. Kitchens, baths, bedrooms and living spaces, handled by the same vetted team with eco-friendly products each visit.",
-        "metaDescription": "Eco-friendly residential house cleaning in Clermont & Central Florida. Weekly, biweekly, monthly or one-time. Licensed, insured, veteran-owned. From $120 — free quote.",
-        "who": [
-          "Busy families and professionals who want their weekends back",
-          "Homeowners who like a consistent, trusted team",
-          "Anyone who prefers eco-friendly, low-odor products"
-        ],
-        "included": [
-          "Kitchens: counters, sinks, exterior of appliances, stovetop",
-          "Bathrooms: toilets, showers, tubs, sinks, mirrors",
-          "Dusting of reachable surfaces, sills and fixtures",
-          "Floors vacuumed and mopped throughout",
-          "Trash emptied and beds made on request"
-        ],
-        "factors": [
-          "Home size (bedrooms, bathrooms, square footage)",
-          "Current condition and clutter level",
-          "How often you book (recurring saves you more)",
-          "Add-ons like inside-oven, fridge, or windows"
-        ]
-      },
       "commercial": {
         "name": "Commercial cleaning",
         "tagline": "A workspace that makes the right impression.",
-        "description": "Reliable office, retail and facility cleaning scheduled around your business, after-hours or daytime. Your team and your customers walk into a fresh, healthy space every time.",
-        "metaDescription": "Commercial & office cleaning in Clermont and Central Florida. Flexible scheduling, insured, eco-friendly. Custom quotes for offices, retail and facilities.",
+        "description": "Reliable office, retail and facility cleaning on a schedule built around your business — after-hours or daytime. Your team and your customers walk into a fresh, healthy space every time.",
+        "metaDescription": "Commercial & office cleaning across Central Florida. Recurring or one-time, after-hours available, licensed & insured, veteran-owned. Free walkthrough and estimate.",
         "who": [
           "Offices, clinics, salons and retail storefronts",
-          "Property managers and small facilities",
+          "Property managers and facility directors",
+          "HOAs with clubhouses and amenity centers",
           "Businesses that need flexible, after-hours service"
         ],
         "included": [
@@ -311,63 +321,15 @@
           "Daytime vs. after-hours service"
         ]
       },
-      "deep-cleaning": {
-        "name": "Deep cleaning",
-        "tagline": "A reset that reaches every corner.",
-        "description": "A top-to-bottom detail clean for homes that need some extra love. Baseboards, grout, and the spots behind and inside things that a standard clean skips. It's the right call for a first clean or a seasonal refresh.",
-        "metaDescription": "Deep cleaning services in Central Florida — baseboards, grout, appliances and detail work top to bottom. Eco-friendly, insured. From $200 — free quote.",
-        "who": [
-          "First-time clients before starting recurring service",
-          "Spring/seasonal refreshes",
-          "Homes that haven't had a professional clean in a while"
-        ],
-        "included": [
-          "Everything in a standard clean, with extra detail",
-          "Baseboards, door frames and trim hand-wiped",
-          "Tile and grout, fixtures and vents detailed",
-          "Inside appliances on request (oven, fridge, microwave)",
-          "Edge-to-edge floor care and high-dusting"
-        ],
-        "factors": [
-          "Home size and overall condition",
-          "Build-up level (grease, soap scum, dust)",
-          "Add-ons like interior windows or cabinets",
-          "Whether it becomes recurring service afterward"
-        ]
-      },
-      "move-in-out": {
-        "name": "Move-in / move-out cleaning",
-        "tagline": "Leave it spotless. Arrive to fresh.",
-        "description": "Detailed cleaning for empty homes at move time, built to pass a landlord or agent walk-through. Get your deposit back, or hand over the keys without second-guessing it.",
-        "metaDescription": "Move-in / move-out cleaning in Clermont & Central Florida. Deposit-ready, detailed top-to-bottom cleaning for empty homes. Insured, eco-friendly. From $200.",
-        "who": [
-          "Renters wanting their full deposit back",
-          "Landlords and realtors prepping a listing",
-          "Buyers who want a fresh start in a new home"
-        ],
-        "included": [
-          "Full deep clean of an empty home",
-          "Inside cabinets, drawers and closets",
-          "Inside oven, fridge and appliances",
-          "Baseboards, doors, switches and fixtures",
-          "Floors detailed throughout"
-        ],
-        "factors": [
-          "Square footage and number of rooms",
-          "Condition at move time",
-          "Appliance and interior-cabinet detailing",
-          "Same-day or tight-deadline scheduling"
-        ]
-      },
       "post-construction": {
         "name": "Post-construction cleaning",
-        "tagline": "From dusty build to move-in ready.",
-        "description": "Specialized cleanup after a build or remodel. Fine dust removal, debris, and the detail work that turns a finished build into a space that's actually ready to live in.",
-        "metaDescription": "Post-construction cleaning in Central Florida. Fine dust removal, debris and detail cleanup after builds & remodels. Insured, eco-friendly. Request a quote.",
+        "tagline": "From dusty build to handover-ready.",
+        "description": "Specialized cleanup after a build or remodel. Fine dust removal, debris, and the detail work that turns a finished build into a space that's ready to hand over — on your schedule, coordinated with your trades.",
+        "metaDescription": "Post-construction cleaning in Central Florida for builders and remodelers. Fine dust, debris and final-clean detail work. Licensed & insured. Free walkthrough and estimate.",
         "who": [
-          "Homeowners after a remodel or renovation",
           "Contractors and builders needing a final clean",
-          "New-construction handoffs"
+          "New-construction handoffs and model homes",
+          "Remodels that need to be client-ready"
         ],
         "included": [
           "Fine construction-dust removal from all surfaces",
@@ -383,20 +345,140 @@
           "Phase (rough vs. final clean)"
         ]
       },
+      "move-in-out": {
+        "name": "Move-in / move-out cleaning",
+        "tagline": "Turnovers that pass the walk-through.",
+        "description": "Detailed cleaning for empty units and homes at turnover time, built to pass a property manager's or agent's inspection. Fast scheduling between tenants, and photo-documented results when you need them.",
+        "metaDescription": "Move-in / move-out and turnover cleaning across Central Florida for property managers, landlords and movers. Inspection-ready detail. Free walkthrough and estimate.",
+        "who": [
+          "Property managers turning units between tenants",
+          "Landlords and realtors prepping a listing",
+          "Owners and tenants at move time"
+        ],
+        "included": [
+          "Full deep clean of an empty unit or home",
+          "Inside cabinets, drawers and closets",
+          "Inside oven, fridge and appliances",
+          "Baseboards, doors, switches and fixtures",
+          "Floors detailed throughout"
+        ],
+        "factors": [
+          "Square footage and number of rooms",
+          "Condition at move time",
+          "Appliance and interior-cabinet detailing",
+          "Same-day or tight-deadline scheduling"
+        ]
+      },
+      "window-cleaning": {
+        "name": "Window cleaning",
+        "tagline": "Glass so clean it disappears.",
+        "description": "Interior and exterior window cleaning for storefronts, offices and homes — glass, frames, sills and tracks, done streak-free. A finished space isn't finished until the windows are.",
+        "metaDescription": "Window cleaning in Central Florida — storefronts, offices and homes. Glass, frames, sills and tracks, streak-free. Licensed & insured. Free walkthrough and estimate.",
+        "who": [
+          "Storefronts and offices that live on first impressions",
+          "Post-construction builds with labeled or dusty glass",
+          "Property turnovers and homes due for a refresh"
+        ],
+        "included": [
+          "Interior and exterior glass, streak-free",
+          "Frames, sills and tracks wiped and detailed",
+          "Screens dusted and wiped",
+          "Sticker and paint-speck removal on request",
+          "Reachable skylights and transoms on request"
+        ],
+        "factors": [
+          "Number, size and height of windows",
+          "Interior, exterior or both sides",
+          "Construction residue (stickers, paint, mortar)",
+          "Access (ladder work, upper floors)"
+        ]
+      },
+      "carpet-cleaning": {
+        "name": "Carpet cleaning",
+        "tagline": "Fresh floors, longer carpet life.",
+        "description": "Professional carpet cleaning for offices, common areas and homes. We lift the traffic lanes, spots and odors that regular vacuuming leaves behind — and help your carpet last longer between replacements.",
+        "metaDescription": "Carpet cleaning in Central Florida — offices, common areas and homes. Traffic lanes, spots and odors handled by an insured, veteran-owned crew. Free estimate.",
+        "who": [
+          "Offices and commercial suites with heavy foot traffic",
+          "HOA clubhouses and community common areas",
+          "Property turnovers and homes due for a refresh"
+        ],
+        "included": [
+          "Pre-inspection and spot treatment",
+          "Deep cleaning of carpeted areas",
+          "High-traffic lane attention",
+          "Deodorizing on request",
+          "Faster-dry finishing so you're back in use sooner"
+        ],
+        "factors": [
+          "Carpeted square footage and layout",
+          "Soil level and traffic-lane wear",
+          "Spot and odor treatment needs",
+          "Furniture moving and access"
+        ]
+      },
+      "deep-cleaning": {
+        "name": "Deep cleaning",
+        "tagline": "A reset that reaches every corner.",
+        "description": "A top-to-bottom detail clean for spaces that need extra attention. Baseboards, grout, and the spots behind and inside things that a standard clean skips — the right call before recurring service starts or after a long gap.",
+        "metaDescription": "Deep cleaning in Central Florida — baseboards, grout, fixtures and detail work top to bottom, for offices and homes. Insured, veteran-owned. Free estimate.",
+        "who": [
+          "First-time clients before starting recurring service",
+          "Offices and homes overdue for a professional clean",
+          "Seasonal or handover resets"
+        ],
+        "included": [
+          "Everything in a standard clean, with extra detail",
+          "Baseboards, door frames and trim hand-wiped",
+          "Tile and grout, fixtures and vents detailed",
+          "Inside appliances on request (oven, fridge, microwave)",
+          "Edge-to-edge floor care and high-dusting"
+        ],
+        "factors": [
+          "Size and overall condition of the space",
+          "Build-up level (grease, soap scum, dust)",
+          "Add-ons like interior windows or cabinets",
+          "Whether it becomes recurring service afterward"
+        ]
+      },
+      "residential": {
+        "name": "Residential cleaning",
+        "tagline": "The same standards, at home.",
+        "description": "Recurring or one-time home cleaning with the same written checklist and vetted crew we bring to commercial work. Kitchens, baths, bedrooms and living spaces, done properly.",
+        "metaDescription": "Residential house cleaning in Central Florida by a licensed, insured, veteran-owned crew. Recurring or one-time — free walkthrough and estimate.",
+        "who": [
+          "Homeowners who want a consistent, trusted team",
+          "Busy families and professionals",
+          "Anyone who prefers low-odor, carefully chosen products"
+        ],
+        "included": [
+          "Kitchens: counters, sinks, exterior of appliances, stovetop",
+          "Bathrooms: toilets, showers, tubs, sinks, mirrors",
+          "Dusting of reachable surfaces, sills and fixtures",
+          "Floors vacuumed and mopped throughout",
+          "Trash emptied and beds made on request"
+        ],
+        "factors": [
+          "Home size (bedrooms, bathrooms, square footage)",
+          "Current condition and clutter level",
+          "How often you book (recurring saves you more)",
+          "Add-ons like inside-oven, fridge, or windows"
+        ]
+      },
       "interior-painting": {
         "name": "Interior painting",
         "tagline": "A fresh coat, cleanly done.",
-        "description": "Tidy, detail-oriented interior painting for walls, trim and ceilings. We prep, we protect your floors and furniture, and we clean up after, with the same care we bring to every job.",
-        "metaDescription": "Interior painting in Clermont & Central Florida — walls, trim and ceilings, neatly prepped and cleaned up. Insured, detail-oriented. Request a quote.",
+        "description": "Tidy, detail-oriented interior painting for walls, trim and ceilings. We prep, we protect floors and furniture, and we clean up after — with the same care we bring to every job.",
+        "metaDescription": "Interior painting in Central Florida — walls, trim and ceilings, neatly prepped and cleaned up after. Insured, detail-oriented. Free estimate.",
         "who": [
-          "Homeowners refreshing a room or whole home",
-          "Move-in or move-out repainting",
-          "Anyone who wants painting + cleanup handled together"
+          "Turnovers that need paint touch-ups plus cleaning",
+          "Offices refreshing a space between tenants",
+          "Homeowners repainting a room or a whole home"
         ],
         "included": [
           "Surface prep, patching and taping",
           "Floor and furniture protection",
-          "Premium low-VOC paint application",
+          "Low-VOC paint application",
           "Trim, doors and ceilings as needed",
           "Full cleanup when we're done"
         ],
@@ -411,178 +493,181 @@
   },
   "Pricing": {
     "eyebrow": "Pricing",
-    "title": "Transparent pricing, free quotes",
-    "subtitle": "Every space is different, so every quote is free and built for yours. The numbers below are honest starting points, not bait.",
-    "intro": "The prices below are starting estimates for Central Florida homes. What you actually pay comes down to your space, its condition, and how often you book.",
-    "popular": "Most popular",
+    "title": "Priced from a walkthrough, not a rate card",
+    "subtitle": "Square footage, scope, condition and crew are different on every job — so we look before we quote. The walkthrough and the written estimate are always free.",
+    "intro": "Tell us about your space and we'll schedule a walkthrough at your convenience. You'll get a clear written estimate — usually within a day — with the scope spelled out line by line.",
+    "popular": "Most requested",
     "packages": {
-      "standard": {
-        "name": "Standard clean",
-        "description": "Our recurring or one-time maintenance clean to keep a home consistently fresh.",
-        "features": [
-          "Kitchens & bathrooms",
-          "Dusting, vacuuming & mopping",
-          "Eco-friendly products",
-          "Trusted, insured team"
-        ],
-        "cta": "Get a quote"
-      },
-      "deep": {
-        "name": "Deep clean",
-        "description": "A detailed top-to-bottom reset. Ideal as a first clean or a seasonal refresh.",
-        "features": [
-          "Everything in Standard, plus detail",
-          "Baseboards, grout & fixtures",
-          "Inside appliances on request",
-          "High-dusting & edge-to-edge floors"
-        ],
-        "cta": "Get a quote"
-      },
-      "recurring": {
-        "name": "Recurring care",
-        "description": "Weekly, biweekly or monthly visits. The easiest way to stop thinking about cleaning at all.",
-        "features": [
-          "Discounted per-visit pricing",
-          "Same trusted team each visit",
-          "Flexible scheduling",
-          "Priority booking"
-        ],
-        "cta": "Get a quote"
-      },
       "commercial": {
-        "name": "Commercial",
-        "description": "Offices, retail and facilities cleaned around your schedule, billed to fit your needs.",
+        "name": "Commercial & recurring",
+        "description": "Offices, retail and facilities on a recurring schedule — nightly, weekly or custom.",
         "features": [
           "Custom scope & schedule",
           "After-hours available",
           "Restroom & touchpoint sanitizing",
-          "Reliable, insured crew"
+          "Same insured crew each visit"
         ],
-        "cta": "Request a quote"
+        "cta": "Request an estimate"
+      },
+      "post-construction": {
+        "name": "Post-construction",
+        "description": "Rough and final cleans for builders and remodelers, coordinated with your timeline.",
+        "features": [
+          "Fine-dust removal throughout",
+          "Debris & residue handling",
+          "Fixture, glass & frame detailing",
+          "Final walk-through touch-ups"
+        ],
+        "cta": "Request an estimate"
+      },
+      "move-in-out": {
+        "name": "Turnovers & move-outs",
+        "description": "Inspection-ready cleans between tenants or owners, scheduled to your deadline.",
+        "features": [
+          "Empty-unit deep clean",
+          "Inside appliances & cabinets",
+          "Baseboards, doors & fixtures",
+          "Tight-deadline scheduling"
+        ],
+        "cta": "Request an estimate"
+      },
+      "specialty": {
+        "name": "Windows & carpets",
+        "description": "Streak-free glass and refreshed carpet, standalone or added to any job above.",
+        "features": [
+          "Interior & exterior glass",
+          "Frames, sills & tracks",
+          "Carpet deep cleaning & spots",
+          "Bundle with any service"
+        ],
+        "cta": "Request an estimate"
       }
     },
-    "factorsTitle": "What shapes your quote",
-    "factorsIntro": "A handful of things set your exact price. Tell us about them and the estimate is free.",
+    "factorsTitle": "What shapes your estimate",
+    "factorsIntro": "Five things set the price. We measure them at the walkthrough so the estimate is real — not a guess.",
     "factors": {
       "size": {
-        "title": "Size of your space",
-        "description": "Bedrooms, bathrooms and square footage are the biggest drivers of time and price."
+        "title": "Square footage",
+        "description": "The size of the space is the biggest driver of time and price — we measure it on the walkthrough."
+      },
+      "scope": {
+        "title": "Scope of work",
+        "description": "A nightly office clean, a final construction clean and a turnover are different jobs. The scope is written down so the price matches it."
       },
       "condition": {
-        "title": "Current condition",
-        "description": "A first-time clean or a heavily lived-in home takes more work than one that's already kept up."
+        "title": "Condition of the space",
+        "description": "Construction dust, heavy traffic or a long gap since the last clean takes more work than maintained space."
+      },
+      "crew": {
+        "title": "Crew & equipment",
+        "description": "How many people and what gear the job needs — ladders for glass, machines for carpet — shapes the estimate."
       },
       "frequency": {
-        "title": "How often",
-        "description": "Recurring visits (weekly, biweekly, monthly) lower your per-visit price."
-      },
-      "addons": {
-        "title": "Add-ons",
-        "description": "Extras like inside-oven, fridge, interior windows or cabinets are easy to include."
-      },
-      "access": {
-        "title": "Access & scheduling",
-        "description": "Same-day, after-hours and tight-deadline jobs may affect the quote."
+        "title": "Frequency",
+        "description": "Recurring contracts (nightly, weekly, monthly) price lower per visit than one-time projects."
       }
     },
-    "disclaimer": "Starting prices are estimates only and not a final quote. Your free, no-obligation estimate is tailored to your specific space.",
-    "ctaTitle": "Get your free, tailored quote",
+    "disclaimer": "Every estimate is free, written, and specific to your space. No obligation — and no surprises on invoice day.",
+    "ctaTitle": "Get your free walkthrough & estimate",
     "ctaSubtitle": "Two minutes online, or a quick call. No obligation either way.",
-    "ctaButton": "Get a free quote"
+    "ctaButton": "Get a free estimate"
   },
   "ServiceAreas": {
     "hub": {
       "eyebrow": "Service areas",
-      "title": "Cleaning across Central Florida",
-      "subtitle": "We're based in Minneola and clean homes and offices throughout Lake County and west Orange, from Clermont to Winter Garden and the towns in between.",
-      "intro": "Being local actually matters here. We know these neighborhoods because we live and work in them. Pick your city to learn more, or get a free quote and we'll confirm we cover you.",
+      "title": "Central Florida–wide, Lake County–based",
+      "subtitle": "We're based in Lake County and run commercial and property cleaning throughout Central Florida — from Clermont and Minneola across the region.",
+      "intro": "Being local matters: we can walk your space quickly, schedule around your hours, and show up when we said we would. Pick an area to learn more, or request a free walkthrough and we'll confirm we cover you.",
       "notListedTitle": "Don't see your city?",
-      "notListedBody": "We're always picking up new areas across Central Florida. Give us a call or request a quote. Odds are we already serve your neighborhood."
+      "notListedBody": "If your property is in Central Florida, there's a good chance we already cover it. Give us a call or request an estimate — we'll confirm right away."
     },
     "labels": {
       "servingTitle": "Areas we serve",
       "nearbyTitle": "Nearby areas",
-      "zipsLabel": "ZIP codes",
-      "cityCta": "Get a quote",
+      "cityCta": "Get an estimate",
       "viewCity": "View area",
       "backToAreas": "All service areas",
-      "getQuoteIn": "Get a free quote in {city}"
+      "getQuoteIn": "Get a free estimate in {city}"
     },
     "cityPage": {
       "metaTitle": "Cleaning Services in {city}, FL",
-      "metaDescription": "Veteran-owned, eco-friendly home & commercial cleaning in {city}, FL. Licensed, insured and bilingual. Recurring, deep, move-out and more — get a free quote.",
-      "intro": "Limpios Cleaning Management provides veteran-owned, eco-friendly cleaning in {city} and the surrounding area. Recurring home cleaning, deep cleans, move-in/out and commercial service, all handled by a trusted, insured team with a satisfaction guarantee behind it.",
-      "whyTitle": "Your local cleaners in {city}",
-      "whyBody": "We're based right here in Central Florida, so we show up on time and treat {city} homes and businesses like our own. Licensed, insured, bilingual, eco-friendly. The difference really is in the details.",
+      "metaDescription": "Veteran-owned commercial & property cleaning in {city}, FL — offices, post-construction, turnovers, windows and carpets. Licensed and insured. Free walkthrough & estimate.",
+      "intro": "Limpios Cleaning Management provides veteran-owned commercial and property cleaning in {city} and across Central Florida. Offices, post-construction cleanup, move-out turnovers, window and carpet care — handled by a licensed, insured team with a written scope behind every job.",
+      "whyTitle": "Your local crew in {city}",
+      "whyBody": "We're based in Lake County, so {city} is home turf — we show up on time and treat its businesses and properties like our own. Licensed, insured, bilingual, and accountable to a written checklist.",
       "servicesTitle": "Services available in {city}",
       "servicesBody": "Every Limpios service is available in {city}:",
       "ctaTitle": "Ready for a spotless space in {city}?",
-      "ctaBody": "Get a free, no-obligation quote today.",
+      "ctaBody": "Schedule a free walkthrough today — the estimate is on us.",
       "mapPlaceholder": "Map of {city} service area"
     },
     "cities": {
       "clermont": {
-        "blurb": "Our home-base neighbor. Full-service home and office cleaning across Clermont.",
-        "intro": "Clermont's rolling hills and fast-growing neighborhoods keep us busy, and honestly we love it. From the lakefront to the newest subdivisions, Limpios keeps Clermont homes and businesses spotless."
+        "blurb": "Our home-base neighbor. Full commercial and property cleaning across Clermont.",
+        "intro": "Clermont's fast-growing business corridors and new construction keep us busy, and honestly we love it. From storefronts to new builds, Limpios keeps Clermont's spaces spotless."
       },
       "minneola": {
         "blurb": "Right at home. Limpios is based in Minneola and serves it daily.",
-        "intro": "Minneola is our backyard. Being local means faster scheduling and a team that genuinely knows the area, from Hills of Minneola to downtown."
+        "intro": "Minneola is our backyard. Being local means faster walkthroughs and a crew that genuinely knows the area, from Hills of Minneola to downtown."
       },
       "groveland": {
-        "blurb": "Reliable, eco-friendly cleaning for Groveland homes and businesses.",
-        "intro": "As Groveland grows, so do we. Limpios brings consistent, insured cleaning to new builds and established homes alike across the city."
+        "blurb": "Reliable, insured cleaning for Groveland businesses and properties.",
+        "intro": "As Groveland grows, so do we. Limpios brings consistent, insured cleaning to new construction and established properties alike across the city."
       },
       "winter-garden": {
-        "blurb": "Detailed home and commercial cleaning throughout Winter Garden.",
-        "intro": "From historic downtown Winter Garden to the newer communities off Avalon, Limpios delivers the same careful, eco-friendly clean every visit."
+        "blurb": "Detailed commercial and property cleaning throughout Winter Garden.",
+        "intro": "From historic downtown Winter Garden's storefronts to the newer communities off Avalon, Limpios delivers the same careful clean every visit."
       },
       "horizon-west": {
         "blurb": "Serving Horizon West's villages with dependable, insured cleaning.",
-        "intro": "Horizon West is one of Central Florida's fastest-growing communities — and Limpios is proud to keep its homes and offices fresh, from Hamlin to Bridgewater."
+        "intro": "Horizon West is one of Central Florida's fastest-growing communities — and Limpios is proud to keep its offices, amenity centers and new builds fresh, from Hamlin to Bridgewater."
       },
       "four-corners": {
-        "blurb": "Cleaning homes, rentals and businesses across the Four Corners area.",
-        "intro": "Four Corners sits where Lake, Orange, Polk and Osceola meet — including plenty of vacation homes and rentals. Limpios handles turnovers, deep cleans and recurring care with ease."
+        "blurb": "Cleaning offices, rentals and properties across the Four Corners area.",
+        "intro": "Four Corners sits where Lake, Orange, Polk and Osceola meet — including plenty of vacation rentals and managed properties. Limpios handles turnovers, deep cleans and recurring care with ease."
       },
       "montverde": {
-        "blurb": "Careful, personal cleaning for Montverde's homes and estates.",
-        "intro": "Montverde's quiet, established character deserves a careful touch. Limpios brings detailed, trustworthy cleaning to homes throughout the area."
+        "blurb": "Careful, personal cleaning for Montverde's properties and estates.",
+        "intro": "Montverde's quiet, established character deserves a careful touch. Limpios brings detailed, trustworthy cleaning to properties throughout the area."
       },
       "mascotte": {
-        "blurb": "Friendly, insured cleaning for Mascotte households and offices.",
-        "intro": "Limpios is glad to serve Mascotte with the same veteran-owned, eco-friendly care we bring across Lake County — reliable and local."
+        "blurb": "Friendly, insured cleaning for Mascotte businesses and households.",
+        "intro": "Limpios is glad to serve Mascotte with the same veteran-owned care we bring across Lake County — reliable and local."
       }
     }
   },
   "About": {
     "eyebrow": "About Limpios",
     "title": "Veteran-owned, and personal about it",
-    "subtitle": "Limpios started from one idea: bring the attention to detail I learned in the service, plus real local care, to every home and business we clean.",
+    "subtitle": "Limpios started from one idea: bring the attention to detail I learned in the service, plus real local care, to every business and property we clean.",
     "story": {
       "title": "Our story",
       "body": [
-        "Hi, I'm Papo. I started Limpios after I got out of the military and moved my family to the Clermont area. I'd been cleaning houses and offices on the side for friends, and people kept telling me the same thing: the crews they'd hired before would cut corners, show up late, or just stop answering the phone.",
-        "That bugged me. In the service you show up on time, you do the job all the way, and you own it when something's off. So I built Limpios to run like that. Same crew, eco products that won't choke out your house, and a checklist we actually follow.",
-        "These days it's still a small, family-run, bilingual team, and I'm usually out on jobs myself. We keep Central Florida clean one house at a time, and I like it that way."
+        "Hi, I'm Papo. I started Limpios after I got out of the military and moved my family to the Clermont area. I'd been cleaning offices and houses on the side, and the people who hired me kept telling me the same thing: the crews they'd used before would cut corners, show up late, or just stop answering the phone.",
+        "That bugged me. In the service you show up on time, you do the job all the way, and you own it when something's off. So I built Limpios to run like that. Same crew, a written checklist we actually follow, and a phone that gets answered.",
+        "These days we work with businesses, property managers, builders and homeowners across Central Florida — and I'm usually out on jobs myself. I like it that way."
       ]
     },
     "mission": {
       "title": "Our mission",
-      "body": "Give people their weekends back with cleaning that's reliable, eco-friendly, and done right the first time. When you book Limpios, you're handing your keys to neighbors who actually care how the job turns out."
+      "body": "Take cleaning off your plate with work that's reliable, accountable, and done right the first time. When you bring in Limpios, you're handing your space to people who actually care how the job turns out."
     },
     "eco": {
       "title": "Our eco-friendly commitment",
-      "body": "We use eco-friendly, low-odor products that are hard on dirt and easy on your family, your pets and the planet. A healthier clean shouldn't cost you the air in your own home."
+      "body": "We use eco-friendly, low-odor products that are hard on dirt and easy on the people who use the space every day. A healthier clean shouldn't cost you the air in your own building."
+    },
+    "chamber": {
+      "title": "Part of the local business community",
+      "body": "Limpios is a member of the South Lake Chamber of Commerce — we're building this company alongside the same local businesses we serve."
     },
     "values": {
       "veteran": {
         "title": "Veteran-owned",
-        "description": "The same discipline, integrity and accountability we served by, now pointed at your home."
+        "description": "The same discipline, integrity and accountability we served by, now pointed at your space."
       },
       "eco": {
         "title": "Eco-friendly",
-        "description": "Safer products for your family, your pets and Central Florida's water and air."
+        "description": "Safer products for your people, your clients and Central Florida's water and air."
       },
       "guarantee": {
         "title": "Satisfaction guaranteed",
@@ -595,12 +680,15 @@
     },
     "team": {
       "title": "Our team",
-      "body": "Every Limpios cleaner is vetted, trained and insured. You'll see the same friendly faces, on time, treating your space like it's theirs."
+      "body": "Every Limpios cleaner is vetted, trained and insured. You'll see the same faces on your site, on time, treating your space like it's theirs."
+    },
+    "teamPhotos": {
+      "title": "The crew, on real jobs"
     },
     "cta": {
       "title": "Let's get your space spotless",
-      "body": "Get a free quote and see the veteran-owned difference.",
-      "button": "Get a free quote"
+      "body": "Schedule a free walkthrough and see the veteran-owned difference.",
+      "button": "Get a free estimate"
     },
     "founderRole": "Founder & Owner",
     "founderNamePlaceholder": "Owner name — to be added"
@@ -608,59 +696,59 @@
   "Reviews": {
     "eyebrow": "Reviews",
     "title": "What our clients say",
-    "subtitle": "Real feedback from the Central Florida homes and businesses we look after.",
+    "subtitle": "Real feedback from the Central Florida businesses and properties we look after.",
     "disclaimer": "Note: the reviews shown are sample placeholders for design purposes and are not real customer reviews. They will be replaced with verified Google reviews before launch.",
     "leaveReview": "Leave a review",
     "ratingSummary": "Rated {rating} out of 5",
     "basedOn": "based on {count} reviews",
     "items": {
       "r1": {
-        "quote": "Best cleaning service we've used in Clermont. Always on time, incredibly thorough, and the eco-friendly products smell amazing. Highly recommend!"
-      },
-      "r2": {
         "quote": "Limpios cleans our office every week and it's been flawless. Professional, reliable, and they work around our hours. Couldn't ask for better."
       },
+      "r2": {
+        "quote": "I manage several rental units and their move-out turnovers are the best I've used — inspection-ready every time, with photos when I ask."
+      },
       "r3": {
-        "quote": "Me encantó el servicio. Muy profesionales y atentos a cada detalle. Mi casa quedó impecable y el equipo es bilingüe — todo súper fácil."
+        "quote": "Me encantó el servicio. Muy profesionales y atentos a cada detalle. La oficina quedó impecable y el equipo es bilingüe — todo súper fácil."
       },
       "r4": {
-        "quote": "Booked a deep clean before moving in and wow, every corner was spotless. The team was friendly and respectful. Worth every penny."
+        "quote": "They did the final clean on two of our builds this spring. Dust-free, glass spotless, zero punch-list items on cleaning. We'll keep using them."
       },
       "r5": {
-        "quote": "Trustworthy, on time, and genuinely kind people. As a veteran-owned business they bring real pride to their work. We're recurring clients now."
+        "quote": "Trustworthy, on time, and genuinely kind people. As a veteran-owned business they bring real pride to their work. We're on a recurring contract now."
       },
       "r6": {
-        "quote": "Did a move-out clean for our rental and we got the full deposit back. Detailed, fast, and great communication throughout."
+        "quote": "Booked a move-out clean for our rental and the walkthrough estimate was spot-on. Detailed, fast, and great communication throughout."
       }
     }
   },
   "Contact": {
     "eyebrow": "Contact",
-    "title": "Get your free quote",
+    "title": "Schedule your free walkthrough",
     "subtitle": "Call, message, or fill out the form, and we'll get right back to you in English or Spanish.",
-    "intro": "Got a question, or ready to book? We're happy to help.",
+    "intro": "Got a question, or ready to book a walkthrough? We're happy to help.",
     "callTitle": "Call or text-free line",
     "callBody": "Tap to call. It's the fastest way to reach us.",
     "emailTitle": "Email us",
     "emailBody": "We typically reply within one business day.",
     "visitTitle": "Service area",
     "hoursTitle": "Hours",
-    "formTitle": "Request a free quote",
-    "formIntro": "Tell us a little about your space and we'll send a tailored quote.",
+    "formTitle": "Request a free estimate",
+    "formIntro": "Tell us a little about your space and we'll schedule a walkthrough and send a written estimate.",
     "booking": {
       "title": "Online booking",
-      "body": "Instant online booking is coming soon. For now, request a quote and we'll confirm your appointment personally.",
+      "body": "Instant online booking is coming soon. For now, request an estimate and we'll confirm your walkthrough personally.",
       "note": "Booking integration placeholder"
     },
-    "mapPlaceholder": "Service-area map — Minneola, FL"
+    "mapPlaceholder": "Service-area map — Lake County, FL"
   },
   "Quote": {
-    "eyebrow": "Free quote",
-    "title": "Get a free quote",
-    "subtitle": "A quote built for your space, in about two minutes. No obligation.",
-    "intro": "Answer a few quick questions and we'll come back to you with a free, personalized quote.",
-    "trigger": "Get a free quote",
-    "modalTitle": "Get a free quote",
+    "eyebrow": "Free estimate",
+    "title": "Get a free estimate",
+    "subtitle": "Tell us about your space in about two minutes — we'll schedule a free walkthrough and send a written estimate. No obligation.",
+    "intro": "Answer a few quick questions and we'll come back to you to schedule your free walkthrough.",
+    "trigger": "Get a free estimate",
+    "modalTitle": "Get a free estimate",
     "modalDescription": "Tell us about your space. It takes about two minutes.",
     "stepLabel": "Step {current} of {total}",
     "steps": {
@@ -678,7 +766,7 @@
       },
       "contact": {
         "title": "Contact",
-        "description": "Where should we send your quote?"
+        "description": "Where should we send your estimate?"
       }
     },
     "fields": {
@@ -686,20 +774,24 @@
         "label": "Service needed",
         "placeholder": "Choose a service",
         "options": {
-          "residential": "Residential cleaning",
           "commercial": "Commercial cleaning",
-          "deep-cleaning": "Deep cleaning",
-          "move-in-out": "Move-in / move-out",
           "post-construction": "Post-construction",
+          "move-in-out": "Move-in / move-out",
+          "window-cleaning": "Window cleaning",
+          "carpet-cleaning": "Carpet cleaning",
+          "residential": "Residential cleaning",
+          "deep-cleaning": "Deep cleaning",
           "interior-painting": "Interior painting"
         }
       },
       "propertyType": {
         "label": "Property type",
         "options": {
+          "office": "Office / commercial space",
+          "construction": "Construction site / new build",
+          "community": "HOA / community facility",
           "house": "House",
           "apartment": "Apartment / condo",
-          "office": "Office / commercial",
           "other": "Other"
         }
       },
@@ -708,18 +800,18 @@
         "placeholder": "e.g. 3"
       },
       "bathrooms": {
-        "label": "Bathrooms",
+        "label": "Bathrooms / restrooms",
         "placeholder": "e.g. 2"
       },
       "sqft": {
         "label": "Approx. square footage",
         "placeholder": "e.g. 1800",
-        "help": "Optional — helpful for offices and large homes."
+        "help": "Optional — helpful for offices and larger spaces."
       },
       "frequency": {
         "label": "How often?",
         "options": {
-          "onetime": "One-time",
+          "onetime": "One-time project",
           "weekly": "Weekly",
           "biweekly": "Every 2 weeks",
           "monthly": "Monthly"
@@ -738,21 +830,21 @@
         "placeholder": "(407) 000-0000"
       },
       "address": {
-        "label": "Address or city",
+        "label": "Property address or city",
         "placeholder": "City or full address"
       },
       "message": {
         "label": "Anything else?",
-        "placeholder": "Pets, parking, special requests, preferred dates…"
+        "placeholder": "Scope notes, access, preferred walkthrough times…"
       },
       "consent": {
-        "label": "I agree to be contacted about my quote by phone or email."
+        "label": "I agree to be contacted about my estimate by phone or email."
       }
     },
     "buttons": {
       "next": "Next",
       "back": "Back",
-      "submit": "Get my free quote",
+      "submit": "Get my free estimate",
       "submitting": "Sending…",
       "close": "Close",
       "done": "Done"
@@ -768,11 +860,11 @@
       "phoneRequired": "Please enter your phone number.",
       "phoneInvalid": "Please enter a valid phone number.",
       "numberInvalid": "Please enter a valid number.",
-      "consentRequired": "Please agree to be contacted so we can send your quote."
+      "consentRequired": "Please agree to be contacted so we can send your estimate."
     },
     "success": {
       "title": "Request received!",
-      "body": "Thanks! We'll get back to you shortly with your free quote. If anything's urgent, just call us.",
+      "body": "Thanks! We'll get back to you shortly to schedule your free walkthrough. If anything's urgent, just call us.",
       "callPrompt": "Call now"
     },
     "error": {
@@ -786,19 +878,27 @@
     "items": {
       "pricing": {
         "q": "How much does cleaning cost?",
-        "a": "It depends on the size of the place, what kind of shape it's in, and how often you book. Standard home cleans start around $120 and deep cleans around $200. The quote itself is always free and built for your space, so there are no surprises on the day."
+        "a": "It depends on the space — square footage, scope, condition, and the crew the job needs. That's why we don't publish flat rates: we walk your space free of charge, then send a written estimate, usually within a day. No obligation and no surprises."
+      },
+      "walkthrough": {
+        "q": "What happens during the walkthrough?",
+        "a": "We visit your space at a time that works for you, walk the scope together, and note the square footage, condition and access. It takes 15–30 minutes for most spaces, it's completely free, and you'll have a written estimate shortly after — usually the same day."
+      },
+      "area": {
+        "q": "What areas do you serve?",
+        "a": "We're based in Lake County and work throughout Central Florida — Clermont, Minneola, Winter Garden and well beyond. If your property is in the region, call us or request an estimate and we'll confirm right away."
+      },
+      "insured": {
+        "q": "Are you licensed and insured?",
+        "a": "Yes. Limpios holds a business license and carries insurance, and everyone on the team is vetted and background-checked before they ever set foot on your site. (Florida doesn't require a specialty trade license for cleaning services — our license is the standard business license to operate.)"
       },
       "eco": {
-        "q": "Are your products eco-friendly and safe for pets and kids?",
-        "a": "Yes. We use eco-friendly, low-odor products that are tough on dirt but gentle on your family, your pets and the air inside. If anyone in the house has allergies or sensitivities, tell us and we'll adjust."
+        "q": "Are your products safe for offices, kids and pets?",
+        "a": "Yes. We use eco-friendly, low-odor products that are tough on dirt but gentle on the people — and pets — who use the space. If anyone on site has allergies or sensitivities, tell us and we'll adjust."
       },
       "supplies": {
         "q": "Do I need to provide supplies or equipment?",
-        "a": "No. We bring our own HEPA vacuums and professional, eco-friendly supplies. If you'd rather we use a specific product you already keep at home, that's no problem."
-      },
-      "pets": {
-        "q": "What should I do with my pets during the cleaning?",
-        "a": "Your pets are welcome to stay right where they are. Just give us a heads-up about them when you book so the team can work around them and keep them comfortable."
+        "a": "No. We bring our own professional equipment and eco-friendly supplies. If your facility requires a specific product, that's no problem — just let us know during the walkthrough."
       },
       "satisfaction": {
         "q": "What if I'm not happy with the cleaning?",
@@ -806,21 +906,17 @@
       },
       "bilingual": {
         "q": "Do you offer service in Spanish?",
-        "a": "Claro que sí. Limpios is fully bilingual, so we're glad to help you in English or Spanish, whether that's by phone, by message, or in person."
-      },
-      "insured": {
-        "q": "Are you licensed and insured?",
-        "a": "Yes. Limpios is licensed and insured, and everyone on the team is vetted and background-checked before they ever set foot in your home."
+        "a": "Claro que sí. Limpios is fully bilingual, so we're glad to help you in English or Spanish, whether that's by phone, by message, or on site."
       },
       "booking": {
-        "q": "How do I book or get a quote?",
-        "a": "Fill out the online quote in about two minutes, or just call us. Either way we'll confirm the details and lock in a time that works for you."
+        "q": "How do I book or get an estimate?",
+        "a": "Fill out the online estimate request in about two minutes, or just call us. Either way we'll schedule a free walkthrough and lock in a time that works for you."
       }
     }
   },
   "Booking": {
     "title": "Online booking — coming soon",
-    "body": "We're setting up instant online booking. In the meantime, request a free quote and we'll confirm your appointment personally.",
+    "body": "We're setting up instant online booking. In the meantime, request a free estimate and we'll confirm your walkthrough personally.",
     "providersNote": "Future integration seam for a booking provider (BookingKoala, Launch27, Jobber or Housecall Pro)."
   },
   "NotFound": {
@@ -839,7 +935,24 @@
       "vid4": "Disinfecting a conference room",
       "vid5": "A move-in / move-out clean, start to finish",
       "vid6": "Why electrostatic disinfection works",
-      "vid7": "Meet the team on a move-out clean"
+      "vid7": "Meet the team on a move-out clean",
+      "vid8": "Walking a move-in clean, room by room",
+      "vid9": "Window cleaning: scrub and squeegee, up close"
+    }
+  },
+  "Photos": {
+    "alts": {
+      "img10": "New-build bedroom mid move-in, with a ladder and wardrobe rack staged",
+      "img11": "Marble bathroom with freestanding tub before its post-construction clean",
+      "img14": "Limpios crew member detailing a wall and window area with a pole pad",
+      "img15": "Limpios crew member cleaning a window frame from a step ladder",
+      "img16": "Limpios crew member in mask and gloves high-dusting a ceiling fan",
+      "img18": "Empty room mid-clean with ladders and a vacuum staged",
+      "img19": "Limpios crew member hand-detailing a toilet with gloves and microfiber",
+      "img20": "Limpios crew member in a branded shirt detailing tall cabinets from a ladder",
+      "img25": "Finished marble bathroom after post-construction cleaning, floors gleaming",
+      "img26": "Cleaned bedroom with glossy wood floors after post-construction cleaning",
+      "img29": "Limpios Cleaning Management branded cap on a workbench"
     }
   }
 }

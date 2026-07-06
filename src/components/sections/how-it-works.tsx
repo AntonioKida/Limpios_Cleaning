@@ -6,17 +6,18 @@ import { BrandIcon, type BrandIconName } from "@/components/brand-icons";
 import { steps } from "@/content/home";
 
 // Mix brand-drawn + lucide icons (the "clean" step gets the brand spray bottle).
-const STEP_ICON: Record<string, { brand?: BrandIconName; lucide?: "CalendarCheck" | "Smile" }> = {
-  quote: { lucide: "CalendarCheck" },
+const STEP_ICON: Record<string, { brand?: BrandIconName; lucide?: "ClipboardList" | "FileText" }> = {
+  walkthrough: { lucide: "ClipboardList" },
+  estimate: { lucide: "FileText" },
   clean: { brand: "spray" },
-  relax: { lucide: "Smile" },
 };
 
 export function HowItWorks() {
   const t = useTranslations("Home.steps");
 
+  // border-t separates this from the (also cool) audiences section above.
   return (
-    <Section id="how-it-works" surface="cool">
+    <Section id="how-it-works" surface="cool" className="border-t border-border">
       <div className="grid gap-12 lg:grid-cols-[0.85fr_1.15fr] lg:gap-20">
         {/* Editorial: heading sits to the left, list flows to the right. */}
         <div className="lg:sticky lg:top-28 lg:self-start">

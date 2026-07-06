@@ -2,10 +2,13 @@
 // center divider) + generate blur placeholders. Source = /Media (gitignored);
 // output = /public/gallery + src/content/gallery-blur.json. Run: node scripts/process-gallery.mjs
 import sharp from "sharp";
-import { writeFileSync, mkdirSync } from "node:fs";
+import { writeFileSync, mkdirSync, existsSync } from "node:fs";
 
 mkdirSync("public/gallery", { recursive: true });
-const ids = ["img1","img2","img3","img4","img5","img6","img7","img8","img9"];
+// img1–9 = round-2.1 batch (files "ImgN.jpeg"); img27–28 = round-3 batch
+// (files "imgN.jpeg" — lowercase). Only pre-composited before/after squares
+// belong here; single job-site shots go through process-photos.mjs instead.
+const ids = ["img1","img2","img3","img4","img5","img6","img7","img8","img9","img27","img28"];
 // composite is 1024 wide; crop ~12px center divider; halves are equal (506 wide)
 const HALF = 506, GAP = 12, H = 1024;
 const blur = {};
@@ -23,7 +26,8 @@ async function blurDataUrl(buf) {
 }
 
 for (const id of ids) {
-  const src = `Media/${id.replace("img","Img")}.jpeg`;
+  const cap = `Media/${id.replace("img","Img")}.jpeg`;
+  const src = existsSync(cap) ? cap : `Media/${id}.jpeg`;
   const beforeBuf = await half(src, 0);
   const afterBuf = await half(src, HALF + GAP); // 518
   await toWebp(beforeBuf, `public/gallery/${id}-before.webp`);

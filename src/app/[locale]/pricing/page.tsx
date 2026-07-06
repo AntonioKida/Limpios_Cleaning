@@ -18,11 +18,11 @@ import { formatCurrency } from "@/lib/format";
 import { cn } from "@/lib/utils";
 
 const FACTOR_ICON: Record<PriceFactorId, IconName> = {
-  size: "House",
+  size: "Building2",
+  scope: "ListChecks",
   condition: "Sparkles",
+  crew: "Users",
   frequency: "CalendarCheck",
-  addons: "BadgeCheck",
-  access: "Clock",
 };
 
 export async function generateMetadata({

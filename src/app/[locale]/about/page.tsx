@@ -9,8 +9,11 @@ import { Icon } from "@/components/icon";
 import { PortraitVideo } from "@/components/sections/portrait-video";
 import { CTASection } from "@/components/sections/cta-section";
 import { BreadcrumbJsonLd } from "@/components/breadcrumb-json-ld";
+import { JobPhotos } from "@/components/sections/job-photos";
 import { valueCards } from "@/content/founder";
 import { teamVideo, standardsVideo } from "@/content/media";
+import { aboutPhotos } from "@/content/photos";
+import { site } from "@/content/site";
 
 export async function generateMetadata({
   params,
@@ -76,9 +79,9 @@ export default async function AboutPage({
         </div>
       </Section>
 
-      {/* Mission + Eco */}
+      {/* Mission + Eco + Chamber (verified membership) */}
       <Section surface="cool">
-        <div className="grid gap-6 md:grid-cols-2">
+        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           <div className="rounded-2xl border border-border bg-surface p-8">
             <h2 className="font-heading text-xl font-bold text-navy">
               {t("mission.title")}
@@ -97,6 +100,25 @@ export default async function AboutPage({
             <p className="mt-3 leading-relaxed text-pretty text-muted-foreground">
               {t("eco.body")}
             </p>
+          </div>
+          <div className="rounded-2xl border border-border bg-surface p-8 md:col-span-2 lg:col-span-1">
+            <h2 className="flex items-center gap-2 font-heading text-xl font-bold text-navy">
+              <span className="grid size-9 place-items-center rounded-lg bg-secondary text-royal">
+                <Icon name="Landmark" className="size-5" />
+              </span>
+              {t("chamber.title")}
+            </h2>
+            <p className="mt-3 leading-relaxed text-pretty text-muted-foreground">
+              {t("chamber.body")}
+            </p>
+            <a
+              href={site.chamber.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-3 inline-block text-sm font-semibold text-royal hover:underline"
+            >
+              {site.chamber.name}
+            </a>
           </div>
         </div>
       </Section>
@@ -153,6 +175,16 @@ export default async function AboutPage({
               playLabel={tv("playLabel")}
               sizes="(max-width: 1024px) 45vw, 22vw"
             />
+          </div>
+        </div>
+
+        {/* Crew on real jobs — round-3 stills (branded shirt, cap, detail work). */}
+        <div className="mt-14 border-t border-border pt-10">
+          <h3 className="font-heading text-xl font-bold text-navy">
+            {t("teamPhotos.title")}
+          </h3>
+          <div className="mt-6">
+            <JobPhotos photos={aboutPhotos} />
           </div>
         </div>
       </Section>

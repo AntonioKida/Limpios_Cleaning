@@ -21,7 +21,8 @@ export type GalleryRoom =
   | "kitchen"
   | "patio";
 
-/** Literal union so `captions.${GalleryId}` type-checks against the catalogs. */
+/** Literal union so `captions.${GalleryId}` type-checks against the catalogs.
+ *  img27/img28 = round-3 composites (docs/fable-audit/10-media-catalog.md). */
 export type GalleryId =
   | "img1"
   | "img2"
@@ -31,7 +32,9 @@ export type GalleryId =
   | "img6"
   | "img7"
   | "img8"
-  | "img9";
+  | "img9"
+  | "img27"
+  | "img28";
 
 export interface GalleryPair {
   id: GalleryId; // also the caption key
@@ -64,6 +67,10 @@ const META: Meta[] = [
   { id: "img6", room: "shower", flagship: false, services: ["deep-cleaning"] },
   { id: "img3", room: "fridge", flagship: false, services: ["deep-cleaning"] }, // caked drawer (disclose)
   { id: "img9", room: "kitchen", flagship: false, services: ["move-in-out"] },
+  // Round-3 pairs — bathroom detail work (toilet base + tile), modest drama →
+  // behind the disclosure; strong proof for turnover/detail standards.
+  { id: "img27", room: "bathroom", flagship: false, services: ["deep-cleaning", "move-in-out"] },
+  { id: "img28", room: "bathroom", flagship: false, services: ["move-in-out", "commercial"] },
 ];
 
 export const galleryPairs: GalleryPair[] = META.map((m) => ({

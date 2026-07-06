@@ -1,9 +1,11 @@
 /**
- * Video content layer. All seven clips are vertical 9:16 (Papo's real footage),
- * hosted as **unlisted YouTube** videos and streamed via a click-to-load
- * youtube-nocookie facade — NOT served as raw MP4 from the repo. The clips are
- * **silent** (muted re-uploads), so no subtitle track is needed (`spokenCaptions`
- * stays false; the seam remains for any future spoken clip).
+ * Video content layer. All clips are vertical 9:16 (Papo's real footage).
+ * Vid1–7 are hosted as **unlisted YouTube** videos streamed via a click-to-load
+ * youtube-nocookie facade — NOT served as raw MP4 from the repo. Exceptions:
+ * small muted clips committed via `selfSrc` (vid4 hero loop, vid9 window
+ * proof). vid8 is a poster-only seam until the owner re-uploads it clean
+ * (see its TODO). All clips are **silent** (muted), so no subtitle track is
+ * needed (`spokenCaptions` stays false; the seam remains for spoken clips).
  *
  * The descriptive labels in `Video.captions.<id>` (translatable) are the visible
  * caption + accessible name — not subtitle tracks.
@@ -19,7 +21,9 @@ export type VideoId =
   | "vid4"
   | "vid5"
   | "vid6"
-  | "vid7";
+  | "vid7"
+  | "vid8"
+  | "vid9";
 
 export type VideoProvider = "youtube" | "vimeo";
 
@@ -27,9 +31,12 @@ export interface VideoClip {
   id: VideoId;
   /** Committed portrait poster (fallback + facade still). */
   poster: string;
-  /** youtube-nocookie / vimeo embed URL — all 7 clips are wired. (The hero clip
-   *  is also self-hosted via heroVideoSrc for a chrome-free loop.) */
+  /** youtube-nocookie / vimeo embed URL. Absent → the facade renders the
+   *  poster as a clean still (no dead control) until the owner wires an ID. */
   url?: string;
+  /** Small muted self-hosted MP4 (committed) — plays natively on click instead
+   *  of a streamed embed. The vid4 hero loop + vid9 window clip use this. */
+  selfSrc?: string;
   provider: VideoProvider;
   /** Has spoken content → force EN/ES captions on the embed. */
   spokenCaptions: boolean;
@@ -102,6 +109,29 @@ export const videos: Record<VideoId, VideoClip> = {
     spokenCaptions: false,
     durationSec: 19,
     services: [],
+  },
+  vid8: {
+    id: "vid8",
+    poster: "/video-posters/Vid8_poster.jpg",
+    // Move-in job walkthrough (bedroom → marble bath → toilet detailing).
+    // TODO: owner re-uploads the CLEAN original (the on-hand copy is an
+    // Instagram repost with a baked-in overlay + copyrighted music credit),
+    // muted, to unlisted YouTube — then paste the ID here like Vid1–7.
+    provider: "youtube",
+    spokenCaptions: false,
+    durationSec: 19,
+    services: ["move-in-out"],
+  },
+  vid9: {
+    id: "vid9",
+    poster: "/video-posters/Vid9_poster.jpg",
+    // Window-cleaning close-up (scrub + squeegee on a soaped pane). Muted
+    // trimmed clip self-hosted below — clean footage, no embed needed.
+    selfSrc: "/video/vid9-window.mp4",
+    provider: "youtube",
+    spokenCaptions: false,
+    durationSec: 10,
+    services: ["window-cleaning"],
   },
 };
 

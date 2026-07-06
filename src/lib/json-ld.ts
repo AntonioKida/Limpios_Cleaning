@@ -60,6 +60,12 @@ export function localBusinessSchema({ description }: { description: string }) {
         };
       }),
     sameAs: [site.social.instagram, site.social.facebook],
+    // Verified membership (South Lake Chamber directory, 2026-07-06).
+    memberOf: {
+      "@type": "Organization",
+      name: site.chamber.name,
+      url: site.chamber.url,
+    },
     // aggregateRating: gated — only when real reviews exist.
     ...(reviewsArePlaceholder
       ? {}

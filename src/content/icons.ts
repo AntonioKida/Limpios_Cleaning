@@ -12,14 +12,22 @@ export type IconName =
   | "KeyRound"
   | "HardHat"
   | "PaintRoller"
+  | "Grid2x2" // window cleaning (four-pane window)
+  | "Waves" // carpet cleaning (fibers / extraction)
   // Value props / trust
   | "ShieldCheck"
   | "Leaf"
   | "BadgeCheck"
   | "Languages"
   | "Star"
+  | "Landmark" // South Lake Chamber of Commerce membership
+  // Audiences (who we work with)
+  | "Handshake" // property managers
+  | "Building" // HOAs / communities
   // How it works
   | "CalendarCheck"
+  | "ClipboardList" // walkthrough
+  | "FileText" // written estimate
   | "SprayCan"
   | "Smile"
   // Why / proof

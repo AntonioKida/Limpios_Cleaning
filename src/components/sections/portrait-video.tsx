@@ -11,6 +11,9 @@ interface Props {
   poster: string;
   /** youtube-nocookie / vimeo embed URL. Absent → poster renders as a still. */
   url?: string;
+  /** Small muted self-hosted MP4 — plays natively on click (no embed).
+   *  Takes precedence over `url`. */
+  selfSrc?: string;
   provider?: VideoProvider;
   /** Visible + accessible label for the clip. */
   caption: string;
@@ -33,6 +36,7 @@ interface Props {
 export function PortraitVideo({
   poster,
   url,
+  selfSrc,
   provider = "youtube",
   caption,
   playLabel,
@@ -43,7 +47,7 @@ export function PortraitVideo({
 }: Props) {
   const locale = useLocale();
   const [playing, setPlaying] = useState(false);
-  const playable = Boolean(url);
+  const playable = Boolean(selfSrc || url);
 
   const join = (base: string, params: string) =>
     `${base}${base.includes("?") ? "&" : "?"}${params}`;
@@ -65,7 +69,20 @@ export function PortraitVideo({
   return (
     <figure className={cn("flex flex-col gap-3", className)}>
       <div className="relative aspect-[9/16] overflow-hidden rounded-2xl border border-border bg-navy shadow-md ring-1 ring-black/5">
-        {playing && playable ? (
+        {playing && selfSrc ? (
+          // Committed muted clip → native playback, no third-party player.
+          <video
+            src={selfSrc}
+            poster={poster}
+            autoPlay
+            muted
+            loop
+            playsInline
+            controls
+            aria-label={caption}
+            className="absolute inset-0 size-full object-cover"
+          />
+        ) : playing && playable ? (
           <iframe
             src={embedSrc}
             title={caption}

@@ -15,7 +15,9 @@ import { serviceSlugs, getService } from "@/content/services";
 import { site } from "@/content/site";
 import { cn } from "@/lib/utils";
 
-const PROPERTY_TYPES = ["house", "apartment", "office", "other"] as const;
+// B2B-first order (matches the repositioned audience); values map to
+// Quote.fields.propertyType.options.* in the catalogs.
+const PROPERTY_TYPES = ["office", "construction", "community", "house", "apartment", "other"] as const;
 const FREQUENCIES = ["onetime", "weekly", "biweekly", "monthly"] as const;
 
 type QuoteFormValues = {

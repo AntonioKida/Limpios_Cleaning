@@ -7,6 +7,7 @@ import { Hero } from "@/components/sections/hero";
 import { TrustBar } from "@/components/sections/trust-bar";
 import { SeeInAction } from "@/components/sections/see-in-action";
 import { ServicesOverview } from "@/components/sections/services-overview";
+import { Audiences } from "@/components/sections/audiences";
 import { HowItWorks } from "@/components/sections/how-it-works";
 import { WhyUs } from "@/components/sections/why-us";
 import { BeforeAfterGallery } from "@/components/sections/before-after";
@@ -44,6 +45,7 @@ export default async function HomePage({
       <TrustBar />
       <SeeInAction />
       <ServicesOverview />
+      <Audiences />
       <HowItWorks />
       <WhyUs />
       <BeforeAfterGallery />

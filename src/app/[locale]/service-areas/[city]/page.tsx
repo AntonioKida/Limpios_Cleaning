@@ -15,7 +15,7 @@ import { JsonLd } from "@/components/json-ld";
 import { localBusinessSchema, breadcrumbSchema } from "@/lib/json-ld";
 import { Link } from "@/i18n/navigation";
 import { citySlugs, getCity } from "@/content/cities";
-import { services } from "@/content/services";
+import { primaryServices } from "@/content/services";
 import { site } from "@/content/site";
 import { routes } from "@/lib/routes";
 
@@ -82,7 +82,7 @@ export default async function CityPage({
       >
         <QuoteCTA
           label={t("labels.getQuoteIn", { city: cityName })}
-          service="residential"
+          service="commercial"
           className="w-full whitespace-normal sm:w-auto sm:whitespace-nowrap"
         />
         <Button asChild variant="outline" size="xl" className="w-full sm:w-auto">
@@ -113,21 +113,23 @@ export default async function CityPage({
               {t("cityPage.whyBody", { city: cityName })}
             </p>
           </div>
+          {/* G2: broad-area framing — no ZIP enumeration (data stays in
+              cities.ts for reversibility). The aside sells the walkthrough. */}
           <aside className="rounded-2xl border border-border bg-cool p-6">
             <h3 className="flex items-center gap-2 font-heading font-semibold text-navy">
               <MapPin className="size-4 text-sky" aria-hidden />
-              {t("labels.zipsLabel")}
+              {tc("serviceAreaLabel")}
             </h3>
-            <ul className="mt-3 flex flex-wrap gap-2">
-              {data.zips.map((zip) => (
-                <li
-                  key={zip}
-                  className="rounded-full border border-border bg-surface px-3 py-1 text-sm font-medium text-navy tabular-nums"
-                >
-                  {zip}
-                </li>
-              ))}
-            </ul>
+            <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
+              {tc("estimateNote")}
+            </p>
+            <a
+              href={site.phone.href}
+              className="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-royal hover:underline"
+            >
+              <Phone className="size-4" aria-hidden />
+              {tc("callUs", { phone: site.phone.display })}
+            </a>
           </aside>
         </div>
       </Section>
@@ -140,7 +142,7 @@ export default async function CityPage({
           {t("cityPage.servicesBody", { city: cityName })}
         </p>
         <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {services.map((service) => (
+          {primaryServices.map((service) => (
             <ServiceCard key={service.slug} service={service} />
           ))}
         </div>

@@ -8,7 +8,11 @@ import { Reveal } from "@/components/reveal";
 import { ServiceCard } from "@/components/sections/service-card";
 import { CTASection } from "@/components/sections/cta-section";
 import { BreadcrumbJsonLd } from "@/components/breadcrumb-json-ld";
-import { services } from "@/content/services";
+import { Icon } from "@/components/icon";
+import { Link } from "@/i18n/navigation";
+import { ArrowRight } from "lucide-react";
+import { routes } from "@/lib/routes";
+import { primaryServices, secondaryServices } from "@/content/services";
 
 export async function generateMetadata({
   params,
@@ -57,11 +61,35 @@ export default async function ServicesPage({
         {/* Section label for a correct heading outline (h1 -> h2 -> card h3) */}
         <h2 className="sr-only">{t("labels.allServices")}</h2>
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {services.map((service, i) => (
+          {primaryServices.map((service, i) => (
             <Reveal key={service.slug} delay={i * 0.05} className="h-full">
               <ServiceCard service={service} />
             </Reveal>
           ))}
+        </div>
+
+        {/* G1: demoted offerings — reachable, but visibly secondary. */}
+        <div className="mt-14 rounded-2xl border border-border bg-cool p-6 sm:p-8">
+          <h2 className="font-heading text-lg font-bold text-navy">
+            {t("hub.alsoAvailableTitle")}
+          </h2>
+          <p className="mt-2 max-w-2xl text-sm leading-relaxed text-muted-foreground">
+            {t("hub.alsoAvailableBody")}
+          </p>
+          <ul className="mt-5 flex flex-wrap gap-3">
+            {secondaryServices.map((service) => (
+              <li key={service.slug}>
+                <Link
+                  href={routes.service(service.slug)}
+                  className="group inline-flex items-center gap-2 rounded-full border border-border bg-surface px-4 py-2 text-sm font-semibold text-navy transition-colors hover:border-sky/50 hover:bg-secondary"
+                >
+                  <Icon name={service.icon} className="size-4 text-royal" />
+                  {t(`items.${service.slug}.name`)}
+                  <ArrowRight className="size-3.5 text-royal transition-transform group-hover:translate-x-0.5" />
+                </Link>
+              </li>
+            ))}
+          </ul>
         </div>
       </Section>
       <CTASection title={tc("title")} subtitle={tc("subtitle")} />

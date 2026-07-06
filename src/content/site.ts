@@ -40,9 +40,19 @@ export const site = {
   social: {
     instagram: "https://www.instagram.com/limpioscleaning",
     instagramHandle: "@limpioscleaning",
-    // TODO: replace with the real Facebook page URL.
-    facebook: "https://www.facebook.com/limpioscleaning",
+    // Verified 2026-07-06 via web research (audit/fable/research/).
+    facebook: "https://www.facebook.com/LimpiosCleaningManagement",
     facebookName: "Limpios Cleaning Management",
+  },
+
+  /**
+   * South Lake Chamber of Commerce membership — verified 2026-07-06 in the
+   * chamber's member directory (audit/fable/research/web-research-raw.md).
+   * Rendered as a trust credential (footer/About) + JSON-LD `memberOf`.
+   */
+  chamber: {
+    name: "South Lake Chamber of Commerce",
+    url: "https://www.southlakechamber-fl.com/",
   },
 
   /**
@@ -74,8 +84,13 @@ export const site = {
     reviewUrl: "https://g.page/r/limpios-cleaning/review", // TODO: real GBP link
   },
 
-  /** TODO: confirm founding year (used in About / copyright baseline). */
-  foundedYear: 2021,
+  /**
+   * Judean Services LLC (the legal entity) filed 2023-09-18; the "Limpios
+   * Cleaning Management" fictitious name followed 2023-10-14 (Florida
+   * registries, verified 2026-07-06 — audit/fable/research/). The previous
+   * placeholder (2021) contradicted the registry. TODO: owner confirms.
+   */
+  foundedYear: 2023,
 } as const;
 
 export type DayKey = keyof typeof site.hours;

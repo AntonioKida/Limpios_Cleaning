@@ -1,11 +1,10 @@
-import { Phone, ShieldCheck } from "lucide-react";
+import { Landmark, Phone, ShieldCheck } from "lucide-react";
 import { useTranslations } from "next-intl";
 import { Container } from "@/components/ui/container";
 import { Reveal } from "@/components/reveal";
 import { Button } from "@/components/ui/button";
 import { Mascot } from "@/components/brand/mascot";
 import { QuoteCTA } from "@/components/quote/quote-cta";
-import { StarRating } from "@/components/star-rating";
 import { site } from "@/content/site";
 
 export function Hero() {
@@ -50,8 +49,9 @@ export function Hero() {
           </Reveal>
 
           <Reveal signature delay={0.18}>
+            {/* Honest trust line — no star glyphs until real reviews exist. */}
             <div className="flex flex-wrap items-center gap-x-3 gap-y-1 text-sm text-muted-foreground">
-              <StarRating rating={5} />
+              <ShieldCheck className="size-4 text-royal" aria-hidden />
               <span className="font-medium text-foreground">{t("trust")}</span>
             </div>
           </Reveal>
@@ -61,10 +61,10 @@ export function Hero() {
         <div className="relative mx-auto w-full max-w-md lg:max-w-none">
           <Mascot alt={t("mascotAlt")} priority className="mx-auto max-w-md" />
 
-          {/* Rating chip — solid navy, anchored top-right */}
+          {/* Verified-credential chip (chamber membership) — solid navy, anchored top-right */}
           <div className="absolute -top-3 -right-1 flex items-center gap-2.5 rounded-xl bg-navy px-4 py-2.5 shadow-md ring-1 ring-white/10 sm:-right-4">
-            <StarRating rating={5} starClassName="size-4" />
-            <span className="text-sm font-semibold text-white">{t("chipRating")}</span>
+            <Landmark className="size-4 text-white" aria-hidden />
+            <span className="text-sm font-semibold text-white">{t("chipChamber")}</span>
           </div>
         </div>
       </Container>
