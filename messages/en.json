@@ -114,7 +114,7 @@
     "companyTitle": "Company",
     "contactTitle": "Contact",
     "followUs": "Follow us",
-    "hoursTitle": "Hours",
+    "hoursTitle": "Phone & office hours",
     "licenseLabel": "License",
     "allAreas": "All service areas",
     "allServicesLink": "All services",
@@ -160,7 +160,7 @@
         },
         "property-managers": {
           "title": "Property managers",
-          "description": "Reliable move-out turnovers and common-area cleaning, with photos and clear communication on every unit."
+          "description": "Reliable move-out turnovers and common-area cleaning, with clear communication on every unit."
         },
         "hoa": {
           "title": "Homeowners associations",
@@ -256,7 +256,7 @@
     "faq": {
       "eyebrow": "Good to know",
       "title": "Frequently asked questions",
-      "subtitle": "The things facility and property folks usually ask before the first walkthrough."
+      "subtitle": "The things clients usually ask before the first walkthrough."
     },
     "finalCta": {
       "title": "Ready to hand off the cleaning?",
@@ -277,7 +277,7 @@
       "subtitle": "Insured, veteran-owned, and done to a written scope. Pick the service that fits, or request a free walkthrough and we'll point you the right way.",
       "intro": "One-time project or recurring contract, it's the same crew and the same standards on every job we run across Central Florida.",
       "alsoAvailableTitle": "Also available",
-      "alsoAvailableBody": "We also take on home cleaning and interior painting for select clients — ask during your walkthrough."
+      "alsoAvailableBody": "We also take on home cleaning, deep cleans and interior painting — request a free estimate and we'll set up a walkthrough."
     },
     "labels": {
       "included": "What's included",
@@ -348,7 +348,7 @@
       "move-in-out": {
         "name": "Move-in / move-out cleaning",
         "tagline": "Turnovers that pass the walk-through.",
-        "description": "Detailed cleaning for empty units and homes at turnover time, built to pass a property manager's or agent's inspection. Fast scheduling between tenants, and photo-documented results when you need them.",
+        "description": "Detailed cleaning for empty units and homes at turnover time, built to pass a property manager's or agent's inspection. Fast scheduling between tenants, and a clean that holds up at the walk-through.",
         "metaDescription": "Move-in / move-out and turnover cleaning across Central Florida for property managers, landlords and movers. Inspection-ready detail. Free walkthrough and estimate.",
         "who": [
           "Property managers turning units between tenants",
@@ -564,10 +564,11 @@
       },
       "frequency": {
         "title": "Frequency",
-        "description": "Recurring contracts (nightly, weekly, monthly) price lower per visit than one-time projects."
+        "description": "Recurring contracts (nightly, weekly, biweekly, monthly) price lower per visit than one-time projects."
       }
     },
     "disclaimer": "Every estimate is free, written, and specific to your space. No obligation — and no surprises on invoice day.",
+    "volumeNote": "Managing multiple properties, units or builds? Mention it in your request and we'll shape the estimate around your portfolio and schedule.",
     "ctaTitle": "Get your free walkthrough & estimate",
     "ctaSubtitle": "Two minutes online, or a quick call. No obligation either way.",
     "ctaButton": "Get a free estimate"
@@ -596,7 +597,7 @@
       "whyTitle": "Your local crew in {city}",
       "whyBody": "We're based in Lake County, so {city} is home turf — we show up on time and treat its businesses and properties like our own. Licensed, insured, bilingual, and accountable to a written checklist.",
       "servicesTitle": "Services available in {city}",
-      "servicesBody": "Every Limpios service is available in {city}:",
+      "servicesBody": "Our core services are all available in {city} — and the rest of the catalog is too, on request:",
       "ctaTitle": "Ready for a spotless space in {city}?",
       "ctaBody": "Schedule a free walkthrough today — the estimate is on us.",
       "mapPlaceholder": "Map of {city} service area"
@@ -727,12 +728,12 @@
     "title": "Schedule your free walkthrough",
     "subtitle": "Call, message, or fill out the form, and we'll get right back to you in English or Spanish.",
     "intro": "Got a question, or ready to book a walkthrough? We're happy to help.",
-    "callTitle": "Call or text-free line",
-    "callBody": "Tap to call. It's the fastest way to reach us.",
+    "callTitle": "Call us",
+    "callBody": "Tap to call — it's the fastest way to reach us. (Phone calls only on this line, no texts.)",
     "emailTitle": "Email us",
     "emailBody": "We typically reply within one business day.",
     "visitTitle": "Service area",
-    "hoursTitle": "Hours",
+    "hoursTitle": "Phone & office hours",
     "formTitle": "Request a free estimate",
     "formIntro": "Tell us a little about your space and we'll schedule a walkthrough and send a written estimate.",
     "booking": {
@@ -814,12 +815,18 @@
           "onetime": "One-time project",
           "weekly": "Weekly",
           "biweekly": "Every 2 weeks",
-          "monthly": "Monthly"
+          "monthly": "Monthly",
+          "custom": "Custom schedule (nightly, 2–3× a week…)",
+          "turnover": "Per turnover / as needed"
         }
       },
       "name": {
         "label": "Full name",
         "placeholder": "Your name"
+      },
+      "company": {
+        "label": "Company / organization (optional)",
+        "placeholder": "Business, HOA or builder name"
       },
       "email": {
         "label": "Email",
@@ -903,6 +910,10 @@
       "satisfaction": {
         "q": "What if I'm not happy with the cleaning?",
         "a": "Then we make it right. If anything's off, call us within 24 hours and we'll come back and re-clean it, free. That's the deal, no arguing about it."
+      },
+      "homes": {
+        "q": "Do you also clean homes?",
+        "a": "Yes — home cleaning, deep cleans and interior painting are available alongside our commercial work, with the same crew and the same written checklist. Request a free estimate and we'll set up a walkthrough."
       },
       "bilingual": {
         "q": "Do you offer service in Spanish?",

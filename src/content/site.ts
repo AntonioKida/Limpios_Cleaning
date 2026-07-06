@@ -71,6 +71,12 @@ export const site = {
 
   /** TODO: replace with the real Florida license/registration number. */
   license: "LIC# 000000000",
+  /**
+   * Gates the footer license line: a visibly fake number erodes trust with
+   * vendor-vetting buyers (role-audit P1, all three B2B personas). Flip to
+   * false when the real number lands above.
+   */
+  licenseIsPlaceholder: true,
 
   /**
    * Google rating. PLACEHOLDER values — gate AggregateRating JSON-LD on real

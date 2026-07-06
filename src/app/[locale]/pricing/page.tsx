@@ -150,6 +150,10 @@ export default async function PricingPage({
           <Info className="mt-0.5 size-3.5 shrink-0" aria-hidden />
           <span>{t("disclaimer")}</span>
         </p>
+        {/* Portfolio/volume invitation (role-audit: PM + builder personas). */}
+        <p className="mx-auto mt-3 max-w-2xl text-center text-sm font-medium text-navy">
+          {t("volumeNote")}
+        </p>
       </Section>
 
       <Section surface="cool">

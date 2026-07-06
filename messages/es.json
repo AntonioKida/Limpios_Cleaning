@@ -114,7 +114,7 @@
     "companyTitle": "Empresa",
     "contactTitle": "Contacto",
     "followUs": "Síganos",
-    "hoursTitle": "Horario",
+    "hoursTitle": "Horario de teléfono y oficina",
     "licenseLabel": "Licencia",
     "allAreas": "Todas las áreas de servicio",
     "allServicesLink": "Todos los servicios",
@@ -160,7 +160,7 @@
         },
         "property-managers": {
           "title": "Administradores de propiedades",
-          "description": "Limpiezas de mudanza confiables y áreas comunes impecables, con fotos y comunicación clara en cada unidad."
+          "description": "Limpiezas de mudanza confiables y áreas comunes impecables, con comunicación clara en cada unidad."
         },
         "hoa": {
           "title": "Asociaciones de propietarios (HOA)",
@@ -256,7 +256,7 @@
     "faq": {
       "eyebrow": "Bueno saberlo",
       "title": "Preguntas frecuentes",
-      "subtitle": "Lo que administradores y encargados suelen preguntar antes de la primera visita."
+      "subtitle": "Lo que los clientes suelen preguntar antes de la primera visita."
     },
     "finalCta": {
       "title": "¿Listo para delegar la limpieza?",
@@ -277,7 +277,7 @@
       "subtitle": "Asegurados, de propiedad de un veterano y con alcance por escrito. Elija el servicio que necesita, o pida una visita gratuita y le orientamos.",
       "intro": "Proyecto puntual o contrato recurrente: es el mismo equipo y el mismo estándar en cada trabajo que hacemos en Florida Central.",
       "alsoAvailableTitle": "También disponibles",
-      "alsoAvailableBody": "También hacemos limpieza de casas y pintura interior para clientes selectos — pregunte durante su visita."
+      "alsoAvailableBody": "También hacemos limpieza de casas, limpiezas profundas y pintura interior — pida un presupuesto gratis y agendamos una visita."
     },
     "labels": {
       "included": "Qué incluye",
@@ -348,7 +348,7 @@
       "move-in-out": {
         "name": "Limpieza de mudanza",
         "tagline": "Entregas que pasan la inspección.",
-        "description": "Limpieza detallada de unidades y casas vacías al momento de la mudanza, hecha para pasar la inspección del administrador o del agente. Agenda rápida entre inquilinos y resultados documentados con fotos cuando los necesite.",
+        "description": "Limpieza detallada de unidades y casas vacías al momento de la mudanza, hecha para pasar la inspección del administrador o del agente. Agenda rápida entre inquilinos y una limpieza que aguanta el recorrido de inspección.",
         "metaDescription": "Limpieza de mudanza y entrega de unidades en toda Florida Central para administradores, propietarios y quienes se mudan. Detalle listo para inspección. Visita y presupuesto gratis.",
         "who": [
           "Administradores que entregan unidades entre inquilinos",
@@ -564,10 +564,11 @@
       },
       "frequency": {
         "title": "Frecuencia",
-        "description": "Los contratos recurrentes (nocturno, semanal, mensual) cuestan menos por visita que los proyectos puntuales."
+        "description": "Los contratos recurrentes (nocturno, semanal, quincenal, mensual) cuestan menos por visita que los proyectos puntuales."
       }
     },
     "disclaimer": "Cada presupuesto es gratis, por escrito y específico para su espacio. Sin compromiso — y sin sorpresas el día de la factura.",
+    "volumeNote": "¿Administra varias propiedades, unidades u obras? Menciónelo en su solicitud y armamos el presupuesto alrededor de su cartera y su calendario.",
     "ctaTitle": "Reciba su visita y presupuesto gratis",
     "ctaSubtitle": "Dos minutos en línea, o una llamada rápida. Sin compromiso de ninguna forma.",
     "ctaButton": "Presupuesto gratis"
@@ -596,7 +597,7 @@
       "whyTitle": "Su equipo local en {city}",
       "whyBody": "Nuestra base está en el condado de Lake, así que {city} es terreno conocido — llegamos a tiempo y tratamos sus negocios y propiedades como propios. Con licencia, seguro, bilingües y responsables ante una lista por escrito.",
       "servicesTitle": "Servicios disponibles en {city}",
-      "servicesBody": "Todos los servicios de Limpios están disponibles en {city}:",
+      "servicesBody": "Nuestros servicios principales están disponibles en {city} — y el resto del catálogo también, a pedido:",
       "ctaTitle": "¿Listo para un espacio impecable en {city}?",
       "ctaBody": "Agende hoy una visita gratuita — el presupuesto va por nuestra cuenta.",
       "mapPlaceholder": "Mapa del área de servicio de {city}"
@@ -727,12 +728,12 @@
     "title": "Agende su visita gratuita",
     "subtitle": "Llame, envíe un mensaje o complete el formulario, y le respondemos enseguida en inglés o español.",
     "intro": "¿Tiene una pregunta o quiere agendar una visita? Con gusto le ayudamos.",
-    "callTitle": "Línea para llamadas",
-    "callBody": "Toque para llamar. Es la forma más rápida de contactarnos.",
+    "callTitle": "Llámenos",
+    "callBody": "Toque para llamar — es la forma más rápida de contactarnos. (Esta línea recibe solo llamadas, no mensajes de texto.)",
     "emailTitle": "Escríbanos",
     "emailBody": "Normalmente respondemos dentro de un día hábil.",
     "visitTitle": "Área de servicio",
-    "hoursTitle": "Horario",
+    "hoursTitle": "Horario de teléfono y oficina",
     "formTitle": "Pida un presupuesto gratis",
     "formIntro": "Cuéntenos un poco sobre su espacio y agendamos una visita para enviarle un presupuesto por escrito.",
     "booking": {
@@ -814,12 +815,18 @@
           "onetime": "Proyecto único",
           "weekly": "Semanal",
           "biweekly": "Cada 2 semanas",
-          "monthly": "Mensual"
+          "monthly": "Mensual",
+          "custom": "Calendario a medida (nocturno, 2–3× por semana…)",
+          "turnover": "Por entrega / según se necesite"
         }
       },
       "name": {
         "label": "Nombre completo",
         "placeholder": "Su nombre"
+      },
+      "company": {
+        "label": "Empresa / organización (opcional)",
+        "placeholder": "Nombre del negocio, HOA o constructora"
       },
       "email": {
         "label": "Correo",
@@ -903,6 +910,10 @@
       "satisfaction": {
         "q": "¿Y si no quedo satisfecho con la limpieza?",
         "a": "Lo corregimos. Si algo no quedó bien, llámenos dentro de las 24 horas y volvemos a limpiarlo gratis. Ese es el trato, sin discusiones."
+      },
+      "homes": {
+        "q": "¿También limpian casas?",
+        "a": "Sí — la limpieza de casas, las limpiezas profundas y la pintura interior están disponibles junto con nuestro trabajo comercial, con el mismo equipo y la misma lista por escrito. Pida un presupuesto gratis y agendamos una visita."
       },
       "bilingual": {
         "q": "¿Ofrecen servicio en español?",

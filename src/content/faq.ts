@@ -16,6 +16,7 @@ export const faqIds = [
   "eco",
   "supplies",
   "satisfaction",
+  "homes",
   "bilingual",
   "booking",
 ] as const;

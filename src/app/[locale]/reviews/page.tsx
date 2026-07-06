@@ -52,12 +52,16 @@ export default async function ReviewsPage({
       {/* No star glyphs in the hero — the samples below are disclaimed, and no
           real rating exists yet to summarize (honesty gate). */}
       <PageHero eyebrow={t("eyebrow")} title={t("title")} subtitle={t("subtitle")}>
-        <Button asChild variant="outline" size="lg" className="h-11 px-6">
-          {/* TODO: replace with the real Google "leave a review" URL. */}
-          <a href={site.rating.reviewUrl} target="_blank" rel="noopener noreferrer">
-            {t("leaveReview")}
-          </a>
-        </Button>
+        {/* TODO: replace with the real Google "leave a review" URL. Hidden
+            while the URL is a placeholder — a dead review link is a failed
+            verification path for vendor-vetting buyers (role-audit P2). */}
+        {!site.rating.isPlaceholder ? (
+          <Button asChild variant="outline" size="lg" className="h-11 px-6">
+            <a href={site.rating.reviewUrl} target="_blank" rel="noopener noreferrer">
+              {t("leaveReview")}
+            </a>
+          </Button>
+        ) : null}
       </PageHero>
 
       <Section surface="white">

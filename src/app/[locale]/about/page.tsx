@@ -83,7 +83,10 @@ export default async function AboutPage({
       <Section surface="cool">
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           <div className="rounded-2xl border border-border bg-surface p-8">
-            <h2 className="font-heading text-xl font-bold text-navy">
+            <h2 className="flex items-center gap-2 font-heading text-xl font-bold text-navy">
+              <span className="grid size-9 place-items-center rounded-lg bg-secondary text-royal">
+                <Icon name="ShieldCheck" className="size-5" />
+              </span>
               {t("mission.title")}
             </h2>
             <p className="mt-3 leading-relaxed text-pretty text-muted-foreground">
