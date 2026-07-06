@@ -31,6 +31,7 @@ function buildEmail(lead: LeadInput) {
   const rows: [string, string | undefined][] = [
     ["Service", lead.service],
     ["Property type", lead.propertyType],
+    ["Company / organization", lead.company],
     ["Bedrooms", lead.bedrooms],
     ["Bathrooms", lead.bathrooms],
     ["Square footage", lead.sqft],
@@ -96,7 +97,7 @@ export async function POST(request: NextRequest) {
   }
 
   // 3. Persist durably BEFORE attempting email.
-  const { company: _honeypot, ...cleanLead } = lead;
+  const { website: _honeypot, ...cleanLead } = lead;
   void _honeypot;
   const { id, persisted } = await persistLead({ ...cleanLead, ip });
 

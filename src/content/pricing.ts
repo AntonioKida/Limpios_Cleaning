@@ -1,17 +1,25 @@
 /**
- * Pricing packages + the "factors that affect price" list. All amounts are
- * PLACEHOLDER market estimates — favor transparency but mark as estimates.
- * TODO: replace with the pricing the client is willing to publish.
+ * Pricing STRUCTURE for the estimate model. Since the 2026-07 repositioning
+ * there are NO published amounts anywhere: every engagement is priced from a
+ * free walkthrough + written estimate (owner brief — price depends on square
+ * footage, scope, manpower, and the condition of the space).
+ * TODO: if the owner ever decides to publish starting prices again, amounts
+ * are owner-provided and the `from` model below re-activates them.
  * Names/descriptions/feature lists are translatable (messages `Pricing.*`).
  */
 import type { IconName } from "./icons";
 import type { ServiceSlug } from "./services";
 
-export type PricePackageId = "standard" | "deep" | "recurring" | "commercial";
+export type PricePackageId =
+  | "commercial"
+  | "post-construction"
+  | "move-in-out"
+  | "specialty";
 
 export interface PricePackage {
   id: PricePackageId;
   icon: IconName;
+  /** "custom" → walkthrough + written estimate (the only model in use). */
   model: "from" | "custom";
   amount?: number;
   /** Billing unit, when applicable (e.g. per visit). */
@@ -21,46 +29,48 @@ export interface PricePackage {
   serviceSlug: ServiceSlug;
 }
 
+/**
+ * Engagement types, not price tiers: how businesses actually buy cleaning.
+ * All quote-based — the card CTA routes to the estimate form prefilled.
+ */
 export const pricePackages: PricePackage[] = [
-  {
-    id: "standard",
-    icon: "House",
-    model: "from",
-    amount: 120,
-    unit: "service",
-    serviceSlug: "residential",
-  },
-  {
-    id: "deep",
-    icon: "Sparkles",
-    model: "from",
-    amount: 200,
-    unit: "service",
-    popular: true,
-    serviceSlug: "deep-cleaning",
-  },
-  {
-    id: "recurring",
-    icon: "CalendarCheck",
-    model: "from",
-    amount: 99,
-    unit: "visit",
-    serviceSlug: "residential",
-  },
   {
     id: "commercial",
     icon: "Building2",
     model: "custom",
+    popular: true,
     serviceSlug: "commercial",
+  },
+  {
+    id: "post-construction",
+    icon: "HardHat",
+    model: "custom",
+    serviceSlug: "post-construction",
+  },
+  {
+    id: "move-in-out",
+    icon: "KeyRound",
+    model: "custom",
+    serviceSlug: "move-in-out",
+  },
+  {
+    id: "specialty",
+    icon: "Grid2x2",
+    model: "custom",
+    serviceSlug: "window-cleaning",
   },
 ];
 
+/**
+ * What shapes an estimate — mirrors the owner's own list: square footage,
+ * scope, condition, manpower, frequency.
+ */
 export const priceFactorIds = [
   "size",
+  "scope",
   "condition",
+  "crew",
   "frequency",
-  "addons",
-  "access",
 ] as const;
 
 export type PriceFactorId = (typeof priceFactorIds)[number];

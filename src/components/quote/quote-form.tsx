@@ -1,7 +1,7 @@
 "use client";
 
 import { useMemo, useRef, useState } from "react";
-import { useForm, type Resolver } from "react-hook-form";
+import { useForm, useWatch, type Resolver } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 import { useLocale, useTranslations } from "next-intl";
@@ -15,12 +15,19 @@ import { serviceSlugs, getService } from "@/content/services";
 import { site } from "@/content/site";
 import { cn } from "@/lib/utils";
 
-const PROPERTY_TYPES = ["house", "apartment", "office", "other"] as const;
-const FREQUENCIES = ["onetime", "weekly", "biweekly", "monthly"] as const;
+// B2B-first order (matches the repositioned audience); values map to
+// Quote.fields.propertyType.options.* in the catalogs.
+const PROPERTY_TYPES = ["office", "construction", "community", "house", "apartment", "other"] as const;
+// "custom" covers nightly / several-times-weekly contracts; "turnover" covers
+// property managers' per-unit, as-needed cadence (role-audit findings).
+const FREQUENCIES = ["onetime", "weekly", "biweekly", "monthly", "custom", "turnover"] as const;
+/** Property types where a bedroom count makes no sense (offices, sites, amenity buildings). */
+const NON_RESIDENTIAL = new Set(["office", "construction", "community"]);
 
 type QuoteFormValues = {
   service: string;
   propertyType: string;
+  company?: string; // real field — business / association / builder name
   bedrooms?: string;
   bathrooms?: string;
   sqft?: string;
@@ -31,14 +38,14 @@ type QuoteFormValues = {
   address?: string;
   message?: string;
   consent: boolean;
-  company?: string; // honeypot
+  website?: string; // honeypot
 };
 
 const STEP_FIELDS: (keyof QuoteFormValues)[][] = [
   ["service"],
   ["propertyType", "bedrooms", "bathrooms", "sqft"],
   ["frequency"],
-  ["name", "email", "phone", "address", "message", "consent"],
+  ["name", "company", "email", "phone", "address", "message", "consent"],
 ];
 
 type Status = "idle" | "submitting" | "success" | "error";
@@ -84,6 +91,7 @@ export function QuoteForm({
           }),
         ),
         name: z.string().min(1, tv("nameRequired")).min(2, tv("nameMin")),
+        company: z.string().max(160).optional(),
         email: z.string().min(1, tv("emailRequired")).email(tv("emailInvalid")),
         phone: z.string().min(1, tv("phoneRequired")).min(7, tv("phoneInvalid")),
         address: z.string().optional(),
@@ -91,7 +99,7 @@ export function QuoteForm({
         consent: z.boolean().refine((v) => v === true, {
           error: tv("consentRequired"),
         }),
-        company: z.string().max(0).optional(),
+        website: z.string().max(0).optional(),
       }),
     [tv],
   );
@@ -102,6 +110,7 @@ export function QuoteForm({
     defaultValues: {
       service: defaultService,
       propertyType: "",
+      company: "",
       bedrooms: "",
       bathrooms: "",
       sqft: "",
@@ -112,7 +121,7 @@ export function QuoteForm({
       address: "",
       message: "",
       consent: false,
-      company: "",
+      website: "",
     },
   });
 
@@ -125,6 +134,9 @@ export function QuoteForm({
   const totalSteps = STEP_FIELDS.length;
   const { register, formState } = form;
   const { errors } = formState;
+  // Reactive subscription (render-safe, unlike form.watch()) — drives the
+  // bedrooms-field gating for non-residential property types.
+  const propertyType = useWatch({ control: form.control, name: "propertyType" });
 
   async function next() {
     const valid = await form.trigger(STEP_FIELDS[step]);
@@ -138,14 +150,14 @@ export function QuoteForm({
   async function onSubmit(values: QuoteFormValues) {
     if (submittingRef.current) return; // already in flight (same-tick double click)
     // Honeypot: bots fill hidden fields. Silently "succeed" without sending.
-    if (values.company) {
+    if (values.website) {
       setStatus("success");
       return;
     }
     submittingRef.current = true;
     setStatus("submitting");
     try {
-      const { company: _omit, ...lead } = values;
+      const { website: _omit, ...lead } = values;
       const res = await fetch("/api/lead", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -217,11 +229,12 @@ export function QuoteForm({
         </div>
       </div>
 
-      {/* Honeypot (hidden from users & assistive tech) */}
+      {/* Honeypot (hidden from users & assistive tech). Named "website" — the
+          visible business-name field below owns "company" now. */}
       <div aria-hidden className="hidden">
         <label>
-          Company
-          <input type="text" tabIndex={-1} autoComplete="off" {...register("company")} />
+          Website
+          <input type="text" tabIndex={-1} autoComplete="off" {...register("website")} />
         </label>
       </div>
 
@@ -263,15 +276,19 @@ export function QuoteForm({
                   />
                 ))}
               </div>
+              {/* Bedrooms only make sense for homes/units — offices, sites and
+                  amenity buildings get restrooms + sqft (role-audit finding). */}
               <div className="grid grid-cols-2 gap-4">
-                <Field label={tf("bedrooms.label")} htmlFor="bedrooms">
-                  <Input
-                    id="bedrooms"
-                    inputMode="numeric"
-                    placeholder={tf("bedrooms.placeholder")}
-                    {...register("bedrooms")}
-                  />
-                </Field>
+                {!NON_RESIDENTIAL.has(propertyType) ? (
+                  <Field label={tf("bedrooms.label")} htmlFor="bedrooms">
+                    <Input
+                      id="bedrooms"
+                      inputMode="numeric"
+                      placeholder={tf("bedrooms.placeholder")}
+                      {...register("bedrooms")}
+                    />
+                  </Field>
+                ) : null}
                 <Field label={tf("bathrooms.label")} htmlFor="bathrooms">
                   <Input
                     id="bathrooms"
@@ -318,9 +335,14 @@ export function QuoteForm({
             description={ts("contact.description")}
           >
             <div className="flex flex-col gap-4">
-              <Field label={tf("name.label")} htmlFor="name" error={errors.name?.message}>
-                <Input id="name" autoComplete="name" placeholder={tf("name.placeholder")} {...register("name")} />
-              </Field>
+              <div className="grid gap-4 sm:grid-cols-2">
+                <Field label={tf("name.label")} htmlFor="name" error={errors.name?.message}>
+                  <Input id="name" autoComplete="name" placeholder={tf("name.placeholder")} {...register("name")} />
+                </Field>
+                <Field label={tf("company.label")} htmlFor="company">
+                  <Input id="company" autoComplete="organization" placeholder={tf("company.placeholder")} {...register("company")} />
+                </Field>
+              </div>
               <div className="grid gap-4 sm:grid-cols-2">
                 <Field label={tf("email.label")} htmlFor="email" error={errors.email?.message}>
                   <Input id="email" type="email" autoComplete="email" placeholder={tf("email.placeholder")} {...register("email")} />

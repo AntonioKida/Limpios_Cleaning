@@ -6,7 +6,7 @@ import { Reveal } from "@/components/reveal";
 import { Button } from "@/components/ui/button";
 import { Link } from "@/i18n/navigation";
 import { ServiceCard } from "./service-card";
-import { services } from "@/content/services";
+import { primaryServices } from "@/content/services";
 import { routes } from "@/lib/routes";
 
 export function ServicesOverview() {
@@ -19,8 +19,9 @@ export function ServicesOverview() {
         title={t("title")}
         subtitle={t("subtitle")}
       />
+      {/* The five-service primary offer (G1: demoted services live on the hub). */}
       <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-        {services.map((service, i) => (
+        {primaryServices.map((service, i) => (
           <Reveal key={service.slug} delay={i * 0.06} className="h-full">
             <ServiceCard service={service} />
           </Reveal>

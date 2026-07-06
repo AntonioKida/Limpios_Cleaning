@@ -18,11 +18,11 @@ import { formatCurrency } from "@/lib/format";
 import { cn } from "@/lib/utils";
 
 const FACTOR_ICON: Record<PriceFactorId, IconName> = {
-  size: "House",
+  size: "Building2",
+  scope: "ListChecks",
   condition: "Sparkles",
+  crew: "Users",
   frequency: "CalendarCheck",
-  addons: "BadgeCheck",
-  access: "Clock",
 };
 
 export async function generateMetadata({
@@ -149,6 +149,10 @@ export default async function PricingPage({
         <p className="mx-auto mt-8 flex max-w-2xl items-start justify-center gap-2 text-center text-sm text-muted-foreground">
           <Info className="mt-0.5 size-3.5 shrink-0" aria-hidden />
           <span>{t("disclaimer")}</span>
+        </p>
+        {/* Portfolio/volume invitation (role-audit: PM + builder personas). */}
+        <p className="mx-auto mt-3 max-w-2xl text-center text-sm font-medium text-navy">
+          {t("volumeNote")}
         </p>
       </Section>
 

@@ -18,8 +18,10 @@ import { CheckList } from "@/components/check-list";
 import { ServiceCard } from "@/components/sections/service-card";
 import { GalleryGrid } from "@/components/sections/gallery-grid";
 import { PortraitVideo } from "@/components/sections/portrait-video";
+import { JobPhotos } from "@/components/sections/job-photos";
 import { galleryForService } from "@/content/gallery";
 import { videoForService } from "@/content/media";
+import { photosForService } from "@/content/photos";
 import { Faq } from "@/components/sections/faq";
 import { CTASection } from "@/components/sections/cta-section";
 import { QuoteCTA } from "@/components/quote/quote-cta";
@@ -75,6 +77,7 @@ export default async function ServiceDetailPage({
 
   const gallery = galleryForService(service);
   const serviceVideos = videoForService(service);
+  const servicePhotos = photosForService(service);
 
   const serviceName = t(`items.${service}.name`);
   const serviceUrl = `${site.url}/${locale}/services/${service}`;
@@ -187,6 +190,23 @@ export default async function ServiceDetailPage({
         </Section>
       ) : null}
 
+      {servicePhotos.length > 0 ? (
+        /* border-t separates this from the (also cool) gallery when both render. */
+        <Section surface="cool" className={gallery.length > 0 ? "border-t border-border" : undefined}>
+          <div className="flex flex-col gap-2">
+            <h2 className="font-heading text-2xl font-bold text-navy">
+              {t("labels.photosTitle")}
+            </h2>
+            <p className="max-w-prose text-muted-foreground">
+              {t("labels.photosSubtitle")}
+            </p>
+          </div>
+          <div className="mt-8">
+            <JobPhotos photos={servicePhotos} />
+          </div>
+        </Section>
+      ) : null}
+
       {serviceVideos.length > 0 ? (
         <Section surface="white">
           <h2 className="font-heading text-2xl font-bold text-navy">
@@ -199,6 +219,7 @@ export default async function ServiceDetailPage({
                 className="w-full max-w-[15rem] sm:w-60"
                 poster={v.poster}
                 url={v.url}
+                selfSrc={v.selfSrc}
                 provider={v.provider}
                 spokenCaptions={v.spokenCaptions}
                 caption={tv(`captions.${v.id}`)}

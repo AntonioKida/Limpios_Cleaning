@@ -19,6 +19,7 @@ describe("leadSchema", () => {
   it("accepts optional fields", () => {
     const r = leadSchema.safeParse({
       ...valid,
+      company: "Acme Property Group",
       bedrooms: "3",
       bathrooms: "2",
       sqft: "1800",
@@ -50,10 +51,15 @@ describe("leadSchema", () => {
 
 describe("honeypot", () => {
   it("detects a filled honeypot", () => {
-    expect(isHoneypotTripped({ company: "spammybot" })).toBe(true);
+    expect(isHoneypotTripped({ website: "https://spammybot.example" })).toBe(true);
   });
   it("passes an empty/absent honeypot", () => {
-    expect(isHoneypotTripped({ company: "" })).toBe(false);
+    expect(isHoneypotTripped({ website: "" })).toBe(false);
     expect(isHoneypotTripped({})).toBe(false);
+  });
+  it("treats company as a REAL field, not the honeypot", () => {
+    // Regression guard for the rename: a business name must never drop a lead.
+    expect(isHoneypotTripped({ company: "Acme Property Group" } as never)).toBe(false);
+    expect(leadSchema.safeParse({ ...valid, company: "Acme Property Group" }).success).toBe(true);
   });
 });

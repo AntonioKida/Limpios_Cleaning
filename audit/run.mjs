@@ -10,7 +10,7 @@ const OUT = "audit";
 const SHOTS = path.join(OUT, "screenshots");
 for (const d of ["desktop", "mobile"]) fs.mkdirSync(path.join(SHOTS, d), { recursive: true });
 
-const services = ["residential", "commercial", "deep-cleaning", "move-in-out", "post-construction", "interior-painting"];
+const services = ["commercial", "post-construction", "move-in-out", "window-cleaning", "carpet-cleaning", "residential", "deep-cleaning", "interior-painting"];
 const cities = ["clermont", "minneola", "groveland", "winter-garden", "horizon-west", "four-corners", "montverde", "mascotte"];
 const paths = [
   "", "/services", ...services.map((s) => `/services/${s}`),
@@ -109,19 +109,20 @@ async function testQuoteFlow(ctx) {
     await page.waitForTimeout(500);
     out.step1Validation = (await dialog.locator("text=/choose a service/i").count()) > 0;
 
-    // Walk steps
-    await dialog.locator('input[type=radio][value="deep-cleaning"]').check();
+    // Walk steps — click the visible label card (the radio itself is sr-only;
+    // with 8 service options the clipped input is no longer auto-actionable).
+    await dialog.locator('label:has(input[type=radio][value="commercial"])').click();
     await dialog.getByRole("button", { name: /^Next$/i }).click();
     await page.waitForTimeout(400);
-    await dialog.locator('input[type=radio][value="house"]').check();
+    await dialog.locator('label:has(input[type=radio][value="office"])').click();
     await dialog.getByRole("button", { name: /^Next$/i }).click();
     await page.waitForTimeout(400);
-    await dialog.locator('input[type=radio][value="biweekly"]').check();
+    await dialog.locator('label:has(input[type=radio][value="biweekly"])').click();
     await dialog.getByRole("button", { name: /^Next$/i }).click();
     await page.waitForTimeout(400);
 
     // Step 4 validation (submit empty)
-    await dialog.getByRole("button", { name: /free quote/i }).last().click();
+    await dialog.getByRole("button", { name: /free estimate/i }).last().click();
     await page.waitForTimeout(500);
     out.step4Validation = (await dialog.locator("text=/enter your name/i").count()) > 0;
 
@@ -130,7 +131,7 @@ async function testQuoteFlow(ctx) {
     await dialog.locator("#email").fill("audit@example.com");
     await dialog.locator("#phone").fill("4075551234");
     await dialog.locator('input[type=checkbox]').check();
-    await dialog.getByRole("button", { name: /free quote/i }).last().click();
+    await dialog.getByRole("button", { name: /free estimate/i }).last().click();
     await page.waitForTimeout(2000);
     out.success = (await dialog.locator("text=/Request received/i").count()) > 0;
     try { await page.screenshot({ path: path.join(SHOTS, "desktop", "_quote-success.png") }); } catch {}

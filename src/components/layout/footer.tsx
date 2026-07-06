@@ -1,4 +1,4 @@
-import { Mail, MapPin } from "lucide-react";
+import { Landmark, Mail, MapPin } from "lucide-react";
 import { getLocale, getTranslations } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
 import { Container } from "@/components/ui/container";
@@ -6,7 +6,7 @@ import { Logo } from "@/components/brand/logo";
 import { PhoneLink } from "@/components/phone-link";
 import { routes } from "@/lib/routes";
 import { site, dayOrder } from "@/content/site";
-import { services } from "@/content/services";
+import { primaryServices } from "@/content/services";
 import { cities } from "@/content/cities";
 import { formatTime } from "@/lib/format";
 
@@ -78,14 +78,20 @@ export async function Footer() {
             <h2 className="font-heading text-sm font-semibold tracking-wide text-white uppercase">
               {t("servicesTitle")}
             </h2>
+            {/* G1: primary five only — demoted services stay reachable from the hub. */}
             <ul className="mt-4 space-y-2.5 text-sm">
-              {services.map((s) => (
+              {primaryServices.map((s) => (
                 <li key={s.slug}>
                   <Link href={routes.service(s.slug)} className={linkClass}>
                     {ts(`${s.slug}.name`)}
                   </Link>
                 </li>
               ))}
+              <li>
+                <Link href={routes.services} className={linkClass}>
+                  {t("allServicesLink")}
+                </Link>
+              </li>
             </ul>
           </nav>
 
@@ -194,16 +200,35 @@ export async function Footer() {
           </div>
         </div>
 
+        {/* Chamber membership — verified credential (see content/site.ts). */}
+        <p className="mt-10 flex items-center gap-2.5 text-sm text-cool/75">
+          <Landmark className="size-4 shrink-0 text-sky" aria-hidden />
+          <a
+            href={site.chamber.url}
+            target="_blank"
+            rel="noopener noreferrer"
+            className={linkClass}
+          >
+            {t("chamberLine")}
+          </a>
+        </p>
+
         {/* Bottom bar */}
-        <div className="mt-12 flex flex-col gap-2 border-t border-white/10 pt-6 text-sm text-cool/75 sm:flex-row sm:items-center sm:justify-between">
+        <div className="mt-6 flex flex-col gap-2 border-t border-white/10 pt-6 text-sm text-cool/75 sm:flex-row sm:items-center sm:justify-between">
           <p>{t("rights", { year })}</p>
           <p className="flex flex-wrap items-center gap-x-3 gap-y-1">
             <span>{t("credit")}</span>
-            <span aria-hidden>·</span>
-            {/* TODO: replace with the real license number. */}
-            <span>
-              {t("licenseLabel")}: {site.license}
-            </span>
+            {/* TODO: replace with the real license number. Hidden while the
+                number is a placeholder — a visibly fake "LIC# 000000000"
+                erodes trust with vendor-vetting buyers (role-audit P1). */}
+            {!site.licenseIsPlaceholder ? (
+              <>
+                <span aria-hidden>·</span>
+                <span>
+                  {t("licenseLabel")}: {site.license}
+                </span>
+              </>
+            ) : null}
           </p>
         </div>
 

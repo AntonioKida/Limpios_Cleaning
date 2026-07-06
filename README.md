@@ -266,6 +266,14 @@ off** until real reviews replace the placeholders (`reviewsArePlaceholder`).
 
 ## ✅ Placeholder replacement checklist
 
+> **2026-07 repositioning note:** the site was repositioned B2B-first
+> (commercial · post-construction · move-in/out · window · carpet; walkthrough
+> + free-estimate pricing; "Central Florida, based in Lake County"). The
+> **refreshed, prioritized owner list** — including three decision gates
+> awaiting Papo's sign-off — lives in
+> [`docs/fable-audit/FABLE_FINAL_REPORT.md`](docs/fable-audit/FABLE_FINAL_REPORT.md)
+> (§6–7). The items below still apply unless superseded there.
+
 Everything below is clearly marked `// TODO` in code. Replace before launch:
 
 **Brand & media**
