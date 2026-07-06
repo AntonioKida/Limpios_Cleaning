@@ -57,9 +57,12 @@ export function Hero() {
           </Reveal>
         </div>
 
-        {/* Mascot with anchored proof chip (solid, not glassy/floating). */}
+        {/* Mascot with anchored proof chip (solid, not glassy/floating).
+            No `priority`: the LCP is the hero copy (text) now, so preloading the
+            mascot only steals slow-network bandwidth from the font the text needs.
+            On mobile it's below the fold; on desktop it loads in-viewport. */}
         <div className="relative mx-auto w-full max-w-md lg:max-w-none">
-          <Mascot alt={t("mascotAlt")} priority className="mx-auto max-w-md" />
+          <Mascot alt={t("mascotAlt")} className="mx-auto max-w-md" />
 
           {/* Verified-credential chip (chamber membership) — solid navy, anchored top-right */}
           <div className="absolute -top-3 -right-1 flex items-center gap-2.5 rounded-xl bg-navy px-4 py-2.5 shadow-md ring-1 ring-white/10 sm:-right-4">

@@ -158,7 +158,7 @@ export default async function CityPage({
               <li key={c.slug}>
                 <Link
                   href={routes.city(c.slug)}
-                  className="inline-flex items-center gap-1.5 rounded-full border border-border bg-surface px-3.5 py-1.5 text-sm font-medium text-navy transition-colors hover:border-sky/50 hover:bg-secondary"
+                  className="inline-flex min-h-11 items-center gap-1.5 rounded-full border border-border bg-surface px-4 py-1.5 text-sm font-medium text-navy transition-colors hover:border-sky/50 hover:bg-secondary"
                 >
                   <MapPin className="size-3.5 text-sky" aria-hidden />
                   {c.name}

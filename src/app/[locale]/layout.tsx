@@ -4,6 +4,7 @@ import { hasLocale, NextIntlClientProvider } from "next-intl";
 import { setRequestLocale, getTranslations } from "next-intl/server";
 import { Bricolage_Grotesque, Public_Sans } from "next/font/google";
 import { Analytics } from "@vercel/analytics/next";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 import { routing, type Locale } from "@/i18n/routing";
 import { site } from "@/content/site";
 import { Header } from "@/components/layout/header";
@@ -104,6 +105,7 @@ export default async function LocaleLayout({
           <Footer />
         </NextIntlClientProvider>
         <Analytics />
+        <SpeedInsights />
         <GoogleAnalytics />
         <MicrosoftClarity />
         <ConversionTracker />

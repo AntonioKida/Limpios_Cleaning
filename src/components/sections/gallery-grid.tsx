@@ -52,7 +52,7 @@ export function GalleryGrid({
 
       {more.length > 0 ? (
         <details className="group mt-8">
-          <summary className="mx-auto flex w-fit cursor-pointer list-none items-center gap-2 rounded-full border border-border bg-surface px-5 py-2.5 text-sm font-semibold text-royal shadow-sm transition-colors hover:border-sky/50 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring">
+          <summary className="mx-auto flex min-h-11 w-fit cursor-pointer list-none items-center gap-2 rounded-full border border-border bg-surface px-5 py-2.5 text-sm font-semibold text-royal shadow-sm transition-colors hover:border-sky/50 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring">
             <span className="group-open:hidden">{t("seeMore")}</span>
             <span className="hidden group-open:inline">{t("seeLess")}</span>
             <ChevronDown

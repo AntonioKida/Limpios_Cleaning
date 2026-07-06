@@ -97,7 +97,7 @@ export function Header() {
             className="text-sm font-semibold text-foreground/80 transition-colors hover:text-royal"
           />
           <LocaleToggle />
-          <QuoteCTA size="lg" className="h-10 px-5" withIcon location="nav" />
+          <QuoteCTA size="lg" className="h-11 px-5" withIcon location="nav" />
         </div>
 
         {/* Mobile actions */}

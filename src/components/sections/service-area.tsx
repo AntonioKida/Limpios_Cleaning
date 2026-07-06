@@ -30,7 +30,7 @@ export function ServiceAreaSection() {
                 <li key={city.slug}>
                   <Link
                     href={routes.city(city.slug)}
-                    className="inline-flex items-center gap-1.5 rounded-full border border-border bg-cool px-3.5 py-1.5 text-sm font-medium text-navy transition-colors hover:border-sky/50 hover:bg-secondary focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring"
+                    className="inline-flex min-h-11 items-center gap-1.5 rounded-full border border-border bg-cool px-4 py-1.5 text-sm font-medium text-navy transition-colors hover:border-sky/50 hover:bg-secondary focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring"
                   >
                     <MapPin className="size-3.5 text-sky" aria-hidden />
                     {city.name}

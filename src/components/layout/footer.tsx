@@ -29,7 +29,7 @@ function FacebookGlyph() {
 }
 
 const linkClass =
-  "text-cool/70 transition-colors hover:text-white focus-visible:text-white focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky rounded-sm";
+  "py-1 text-cool/70 transition-colors hover:text-white focus-visible:text-white focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky rounded-sm";
 
 export async function Footer() {
   const locale = await getLocale();

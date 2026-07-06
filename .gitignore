@@ -58,3 +58,7 @@ next-env.d.ts
 # (facade embeds via TODO URLs). Posters in /public/video-posters ARE committed.
 /public/Youtube
 /public/trimmed
+
+.vercel
+.env*
+deno.lock
