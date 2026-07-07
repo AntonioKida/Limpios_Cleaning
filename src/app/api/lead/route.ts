@@ -27,43 +27,169 @@ function escapeHtml(value: string): string {
     .replace(/"/g, "&quot;");
 }
 
+// Display labels for the internal notification (English — the lead stores slugs).
+// Unmapped ids fall back to a humanized slug, so the email keeps working if the
+// content enums grow (it just won't be as polished until the label is added here).
+const SERVICE_LABELS: Record<string, string> = {
+  commercial: "Commercial cleaning",
+  "post-construction": "Post-construction",
+  "move-in-out": "Move-in / move-out",
+  "window-cleaning": "Window cleaning",
+  "carpet-cleaning": "Carpet cleaning",
+  residential: "Residential cleaning",
+  "deep-cleaning": "Deep cleaning",
+  "interior-painting": "Interior painting",
+};
+const PROPERTY_LABELS: Record<string, string> = {
+  office: "Office / retail / facility",
+  construction: "Construction site",
+  community: "HOA / community",
+  house: "House",
+  apartment: "Apartment / unit",
+  other: "Other",
+};
+const FREQUENCY_LABELS: Record<string, string> = {
+  onetime: "One-time",
+  weekly: "Weekly",
+  biweekly: "Every 2 weeks",
+  monthly: "Monthly",
+  custom: "Custom schedule",
+  turnover: "Turnover / as-needed",
+};
+
+function humanize(value: string): string {
+  return value.replace(/[-_]/g, " ").replace(/\b\w/g, (c) => c.toUpperCase());
+}
+function labelFor(map: Record<string, string>, value?: string): string | undefined {
+  if (!value) return undefined;
+  return map[value] ?? humanize(value);
+}
+
+/**
+ * The internal "new lead" notification to the Limpios team. Optimized to be
+ * scanned + acted on: the service and prospect are up top, one-tap Call / Email
+ * buttons, then the job details, then the message. Email-client-safe (table
+ * layout, inline styles only, system fonts, no external assets); Resend sets
+ * `replyTo` to the lead's address so a plain reply reaches them.
+ */
 function buildEmail(lead: LeadInput) {
-  const rows: [string, string | undefined][] = [
-    ["Service", lead.service],
-    ["Property type", lead.propertyType],
-    ["Company / organization", lead.company],
-    ["Bedrooms", lead.bedrooms],
-    ["Bathrooms", lead.bathrooms],
-    ["Square footage", lead.sqft],
-    ["Frequency", lead.frequency],
-    ["Name", lead.name],
-    ["Email", lead.email],
-    ["Phone", lead.phone],
-    ["Address / city", lead.address],
-    ["Message", lead.message],
-    ["Submitted in", lead.locale === "es" ? "Spanish" : "English"],
+  const e = escapeHtml;
+  const service = labelFor(SERVICE_LABELS, lead.service);
+  const property = labelFor(PROPERTY_LABELS, lead.propertyType);
+  const frequency = labelFor(FREQUENCY_LABELS, lead.frequency);
+  const firstName = lead.name?.trim().split(/\s+/)[0] || lead.name;
+  const language = lead.locale === "es" ? "Spanish" : "English";
+  const telHref = lead.phone ? lead.phone.replace(/[^\d+]/g, "") : "";
+
+  // Detail rows: [label, safe-HTML value]. Empty values are dropped.
+  const detailRows: [string, string | undefined][] = [
+    ["Property type", property && e(property)],
+    ["Bedrooms", lead.bedrooms && e(lead.bedrooms)],
+    ["Bathrooms", lead.bathrooms && e(lead.bathrooms)],
+    ["Square footage", lead.sqft && e(lead.sqft)],
+    ["Frequency", frequency && e(frequency)],
+    ["Address / city", lead.address && e(lead.address)],
+    [
+      "Email",
+      lead.email &&
+        `<a href="mailto:${e(lead.email)}" style="color:#1b5a9d;text-decoration:none;font-weight:600;">${e(lead.email)}</a>`,
+    ],
+    [
+      "Phone",
+      lead.phone &&
+        `<a href="tel:${e(telHref)}" style="color:#1b5a9d;text-decoration:none;font-weight:600;">${e(lead.phone)}</a>`,
+    ],
   ];
-  const visible = rows.filter(([, v]) => v && v.trim().length > 0);
+  const rows = detailRows.filter(([, v]) => Boolean(v));
+  const rowsHtml = rows
+    .map(([label, value], i) => {
+      const sep = i === rows.length - 1 ? "" : "border-bottom:1px solid #f0ede8;";
+      return `<tr>
+        <td style="padding:12px 0;${sep}font-size:13px;color:#50607a;width:42%;vertical-align:top;">${e(label)}</td>
+        <td style="padding:12px 0;${sep}font-size:14px;color:#0a2359;font-weight:600;vertical-align:top;">${value}</td>
+      </tr>`;
+    })
+    .join("");
 
-  const html = `<!doctype html><html><body style="font-family:Arial,Helvetica,sans-serif;color:#0a2359;background:#f7f6f3;padding:24px">
-    <div style="max-width:560px;margin:0 auto;background:#ffffff;border-radius:14px;overflow:hidden;border:1px solid #d8e3ee">
-      <div style="background:#0a2359;color:#fff;padding:18px 24px;font-size:18px;font-weight:700">New quote request</div>
-      <table style="width:100%;border-collapse:collapse">
-        ${visible
-          .map(
-            ([label, value], i) =>
-              `<tr style="background:${i % 2 ? "#f7f6f3" : "#ffffff"}">
-                 <td style="padding:10px 24px;font-weight:600;width:38%;vertical-align:top">${escapeHtml(label)}</td>
-                 <td style="padding:10px 24px;vertical-align:top">${escapeHtml(value ?? "")}</td>
-               </tr>`,
-          )
-          .join("")}
+  const servicePill = service
+    ? `<span style="display:inline-block;background:#e8f1fa;color:#1b5a9d;font-size:11px;font-weight:700;letter-spacing:.5px;text-transform:uppercase;padding:5px 12px;border-radius:999px;">${e(service)}</span>`
+    : "";
+  const companyLine = lead.company
+    ? `<div style="font-size:14px;color:#50607a;margin-top:4px;">${e(lead.company)}</div>`
+    : "";
+  const callBtn = lead.phone
+    ? `<td style="padding-right:10px;"><a href="tel:${e(telHref)}" style="display:inline-block;background:#f47b20;color:#0a2359;font-size:14px;font-weight:700;text-decoration:none;padding:11px 20px;border-radius:10px;">Call ${e(lead.phone)}</a></td>`
+    : "";
+  const emailBtn = lead.email
+    ? `<td><a href="mailto:${e(lead.email)}" style="display:inline-block;background:#0a2359;color:#ffffff;font-size:14px;font-weight:700;text-decoration:none;padding:11px 20px;border-radius:10px;">Email ${e(firstName)}</a></td>`
+    : "";
+  const buttons =
+    callBtn || emailBtn
+      ? `<table role="presentation" cellpadding="0" cellspacing="0" style="margin-top:20px;"><tr>${callBtn}${emailBtn}</tr></table>`
+      : "";
+  const messageBlock = lead.message
+    ? `<tr><td style="padding:6px 32px 12px;">
+        <div style="font-size:13px;color:#50607a;margin-bottom:7px;">Message</div>
+        <div style="background:#f7f6f3;border-left:3px solid #1b5a9d;border-radius:0 8px 8px 0;padding:14px 16px;font-size:14px;color:#0a2359;line-height:1.55;white-space:pre-wrap;">${e(lead.message)}</div>
+      </td></tr>`
+    : "";
+
+  const preheader = `New estimate request from ${lead.name}${service ? ` — ${service}` : ""}`;
+
+  const html = `<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="color-scheme" content="light only"><title>New estimate request</title></head>
+<body style="margin:0;padding:0;background:#f7f6f3;-webkit-font-smoothing:antialiased;">
+  <div style="display:none;max-height:0;overflow:hidden;opacity:0;color:#f7f6f3;">${e(preheader)}</div>
+  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background:#f7f6f3;">
+    <tr><td align="center" style="padding:28px 14px;">
+      <table role="presentation" width="600" cellpadding="0" cellspacing="0" style="width:600px;max-width:600px;background:#ffffff;border:1px solid #e7e1d8;border-radius:16px;overflow:hidden;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;">
+        <tr><td style="background:#0a2359;padding:26px 32px;">
+          <div style="font-size:12px;letter-spacing:2px;font-weight:700;color:#7f9cc4;text-transform:uppercase;">Limpios Cleaning</div>
+          <div style="font-size:21px;font-weight:700;color:#ffffff;margin-top:7px;">New estimate request</div>
+          <div style="font-size:13px;color:#9db4d4;margin-top:3px;">via limpioscleaning.com</div>
+        </td></tr>
+        <tr><td style="padding:28px 32px 4px;">
+          ${servicePill}
+          <div style="font-size:22px;font-weight:700;color:#0a2359;margin-top:${service ? "14px" : "0"};line-height:1.25;">${e(lead.name)}</div>
+          ${companyLine}
+          ${buttons}
+        </td></tr>
+        <tr><td style="padding:22px 32px 6px;">
+          <table role="presentation" width="100%" cellpadding="0" cellspacing="0">${rowsHtml}</table>
+        </td></tr>
+        ${messageBlock}
+        <tr><td style="background:#f7f6f3;padding:18px 32px;border-top:1px solid #ece9e3;">
+          <div style="font-size:13px;color:#50607a;line-height:1.5;">Reply to this email to reach ${e(firstName)} directly · Submitted in ${language}</div>
+        </td></tr>
       </table>
-    </div>
-  </body></html>`;
+      <div style="font-size:12px;color:#9aa2af;margin-top:14px;font-family:-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;">Limpios Cleaning Management · Veteran-owned · Central Florida</div>
+    </td></tr>
+  </table>
+</body></html>`;
 
-  const text = visible.map(([l, v]) => `${l}: ${v}`).join("\n");
-  return { html, text };
+  const text = [
+    "NEW ESTIMATE REQUEST",
+    "",
+    `${lead.name}${lead.company ? ` — ${lead.company}` : ""}`,
+    service ? `Service: ${service}` : "",
+    "",
+    property ? `Property type: ${property}` : "",
+    lead.bedrooms ? `Bedrooms: ${lead.bedrooms}` : "",
+    lead.bathrooms ? `Bathrooms: ${lead.bathrooms}` : "",
+    lead.sqft ? `Square footage: ${lead.sqft}` : "",
+    frequency ? `Frequency: ${frequency}` : "",
+    lead.address ? `Address / city: ${lead.address}` : "",
+    lead.email ? `Email: ${lead.email}` : "",
+    lead.phone ? `Phone: ${lead.phone}` : "",
+    lead.message ? `\nMessage:\n${lead.message}` : "",
+    "",
+    `Reply to this email to reach ${firstName}. Submitted in ${language}.`,
+  ]
+    .filter((line) => line !== "")
+    .join("\n");
+
+  const subject = `New estimate request · ${lead.name}${lead.company ? ` (${lead.company})` : ""}`;
+  return { subject, html, text };
 }
 
 export async function POST(request: NextRequest) {
@@ -115,13 +241,13 @@ export async function POST(request: NextRequest) {
     // TODO: set LEAD_FROM_EMAIL to a verified-domain sender in production.
     const from =
       process.env.LEAD_FROM_EMAIL ?? "Limpios Cleaning <onboarding@resend.dev>";
-    const { html, text } = buildEmail(lead);
+    const { subject, html, text } = buildEmail(lead);
 
     const { error } = await resend.emails.send({
       from,
       to,
       replyTo: lead.email,
-      subject: `New quote request — ${lead.name}`,
+      subject,
       html,
       text,
     });
