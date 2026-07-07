@@ -11,11 +11,12 @@ interface Props {
 }
 
 /**
- * Self-hosted, chrome-free hero accent: a muted, looping `<video>` with a poster.
- * No `autoPlay` attribute — the poster shows on the server / with no JS, and we
- * only call `.play()` after mount when the user hasn't asked for reduced motion
- * (so reduced-motion users get a still poster, never an autoplaying clip).
- * Silent footage, so no captions track is needed.
+ * Self-hosted, chrome-free accent: a muted, looping `<video>` with a poster.
+ * `preload="none"` + no `autoPlay` — the poster shows on the server / with no JS
+ * and nothing downloads until needed. It only plays (and thus loads) once it
+ * scrolls into view AND the user hasn't asked for reduced motion, so the ~3MB
+ * clip never competes with the initial page load and reduced-motion users get a
+ * still poster. Pauses when scrolled away. Silent footage → no captions track.
  */
 export function HeroVideo({ src, poster, label, className }: Props) {
   const ref = useRef<HTMLVideoElement>(null);
@@ -23,8 +24,16 @@ export function HeroVideo({ src, poster, label, className }: Props) {
   useEffect(() => {
     const video = ref.current;
     if (!video) return;
-    const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    if (!reduce) video.play().catch(() => {});
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    const io = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) video.play().catch(() => {});
+        else video.pause();
+      },
+      { threshold: 0.25 },
+    );
+    io.observe(video);
+    return () => io.disconnect();
   }, []);
 
   return (
@@ -34,7 +43,7 @@ export function HeroVideo({ src, poster, label, className }: Props) {
       muted
       loop
       playsInline
-      preload="metadata"
+      preload="none"
       aria-label={label}
       className={className}
     >
