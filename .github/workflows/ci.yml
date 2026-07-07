@@ -1,9 +1,16 @@
 name: CI
 
+# CI now runs LOCALLY on a self-hosted VM via `act` (GitHub-hosted minutes are exhausted).
+# The two jobs below are reproduced by `npm run gate:full` (act -j checks ‖ act -j smoke) and
+# enforced on every push by the `.husky/pre-push` fast gate. See docs/CI-LOCAL-VM.md.
+#
+# Kept as `workflow_dispatch` so the workflow stays valid + act can drive it, while GitHub spends
+# no minutes on push/PR. To restore automatic GitHub-hosted runs, re-add:
+#   push:
+#     branches: [main]
+#   pull_request:
 on:
-  push:
-    branches: [main]
-  pull_request:
+  workflow_dispatch:
 
 jobs:
   checks:

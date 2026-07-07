@@ -14,6 +14,9 @@
     "test:smoke": "node audit/smoke.mjs",
     "bundle:report": "node scripts/bundle-report.mjs",
     "check:placeholders": "node scripts/check-placeholders.mjs",
+    "gate:fast": "sh scripts/gate/remote-gate.sh fast",
+    "gate:full": "sh scripts/gate/remote-gate.sh full",
+    "gate:selftest": "sh scripts/gate/selftest.sh",
     "prepare": "husky"
   },
   "dependencies": {
