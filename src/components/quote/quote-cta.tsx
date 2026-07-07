@@ -1,6 +1,7 @@
 "use client";
 
 import { useRef, useState } from "react";
+import dynamic from "next/dynamic";
 import { ArrowRight } from "lucide-react";
 import { useTranslations } from "next-intl";
 import type { VariantProps } from "class-variance-authority";
@@ -8,7 +9,13 @@ import { Button, type buttonVariants } from "@/components/ui/button";
 import { Link } from "@/i18n/navigation";
 import { routes } from "@/lib/routes";
 import { cn } from "@/lib/utils";
-import { QuoteDialog } from "./quote-dialog";
+
+// Lazy: the quote dialog pulls in react-hook-form + zod + the multi-step form.
+// It only ever opens on click, so defer that JS off the initial page load.
+const QuoteDialog = dynamic(
+  () => import("./quote-dialog").then((m) => ({ default: m.QuoteDialog })),
+  { ssr: false },
+);
 
 type ButtonVariant = VariantProps<typeof buttonVariants>["variant"];
 type ButtonSize = VariantProps<typeof buttonVariants>["size"];
@@ -43,6 +50,8 @@ export function QuoteCTA({
 }: QuoteCTAProps) {
   const t = useTranslations("Quote");
   const [open, setOpen] = useState(false);
+  // Only mount (and thus load) the dialog after the first open.
+  const [mounted, setMounted] = useState(false);
   const triggerRef = useRef<HTMLAnchorElement>(null);
   const href = service ? `${routes.quote}?service=${service}` : routes.quote;
 
@@ -51,6 +60,7 @@ export function QuoteCTA({
       return; // let new-tab / modified clicks navigate to /quote
     }
     e.preventDefault();
+    setMounted(true);
     setOpen(true);
   }
 
@@ -75,12 +85,14 @@ export function QuoteCTA({
           ) : null}
         </Link>
       </Button>
-      <QuoteDialog
-        open={open}
-        onOpenChange={setOpen}
-        defaultService={service}
-        triggerRef={triggerRef}
-      />
+      {mounted ? (
+        <QuoteDialog
+          open={open}
+          onOpenChange={setOpen}
+          defaultService={service}
+          triggerRef={triggerRef}
+        />
+      ) : null}
     </>
   );
 }

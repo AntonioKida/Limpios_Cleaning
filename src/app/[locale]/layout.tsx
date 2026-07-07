@@ -18,7 +18,10 @@ import "../globals.css";
 // irregularity (reads "drawn by a person," not generated). Variable, with the
 // optical-size axis so large display headings get the right treatment.
 const fontHeading = Bricolage_Grotesque({
-  subsets: ["latin", "latin-ext"],
+  // `latin` (Latin-1) already covers all Spanish diacritics (á é í ó ú ñ ü ¿ ¡);
+  // latin-ext is Eastern-European glyphs we never use — dropping it removes a
+  // preloaded font file and the slow-network preload contention it caused.
+  subsets: ["latin"],
   display: "swap",
   axes: ["opsz"],
   variable: "--font-bricolage",
@@ -28,7 +31,8 @@ const fontHeading = Bricolage_Grotesque({
 // quiet civic undertone that suits a veteran-owned business, and full Spanish
 // diacritic coverage.
 const fontBody = Public_Sans({
-  subsets: ["latin", "latin-ext"],
+  // See note above — `latin` covers Spanish; latin-ext dropped for perf.
+  subsets: ["latin"],
   display: "swap",
   variable: "--font-public-sans",
 });
