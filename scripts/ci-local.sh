@@ -40,17 +40,25 @@ if [ "$MODE" = "fast" ]; then
   # HUSKY=0: don't let the repo's `prepare` script re-install git hooks inside this throwaway workdir.
   HUSKY=0 npm ci --no-audit --no-fund >/tmp/lg-install.log 2>&1 \
     || { echo "✗ npm ci"; tail -20 /tmp/lg-install.log; exit 1; }
+  # The quick checks run in parallel. Only `typecheck` writes .next (its own `next typegen` — self-contained
+  # and idempotent); placeholders/lint/test don't touch it, so there's no cross-write here.
   npm run check:placeholders >/tmp/lg-ph.log    2>&1 & P_PH=$!
-  npm run typecheck          >/tmp/lg-tc.log    2>&1 & P_TC=$!
+  npm run typecheck          >/tmp/lg-tc.log    2>&1 & P_TC=$!   # = next typegen && tsc --noEmit
   npm run lint               >/tmp/lg-lint.log  2>&1 & P_LINT=$!
   npm run test               >/tmp/lg-test.log  2>&1 & P_TEST=$!
-  npm run build              >/tmp/lg-build.log 2>&1 & P_BUILD=$!
   FAIL=0
   wait $P_PH    || { FAIL=1; echo "✗ check:placeholders"; tail -20 /tmp/lg-ph.log; }
   wait $P_TC    || { FAIL=1; echo "✗ typecheck";          tail -30 /tmp/lg-tc.log; }
   wait $P_LINT  || { FAIL=1; echo "✗ lint";               tail -30 /tmp/lg-lint.log; }
   wait $P_TEST  || { FAIL=1; echo "✗ test";               tail -30 /tmp/lg-test.log; }
-  wait $P_BUILD || { FAIL=1; echo "✗ build";              tail -30 /tmp/lg-build.log; }
+  # Build LAST and on its own: `next build` rewrites all of .next, so it must not run concurrently with
+  # typecheck's tsc (which reads .next/types) — a race the sequential GitHub job never has. Skip it if a
+  # cheaper check already failed (the push is blocked regardless).
+  if [ $FAIL -eq 0 ]; then
+    npm run build >/tmp/lg-build.log 2>&1 || { FAIL=1; echo "✗ build"; tail -30 /tmp/lg-build.log; }
+  else
+    echo "· build skipped (an earlier check already failed)"
+  fi
   echo
   if [ $FAIL -eq 0 ]; then echo "✅ FAST GATE green. Push allowed."; exit 0; fi
   echo "❌ FAST GATE failed. Push aborted. (escape: git push --no-verify)"; exit 1
