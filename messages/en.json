@@ -867,7 +867,8 @@
       "phoneRequired": "Please enter your phone number.",
       "phoneInvalid": "Please enter a valid phone number.",
       "numberInvalid": "Please enter a valid number.",
-      "consentRequired": "Please agree to be contacted so we can send your estimate."
+      "consentRequired": "Please agree to be contacted so we can send your estimate.",
+      "incompleteForm": "Please complete the required fields to send your request."
     },
     "success": {
       "title": "Request received!",

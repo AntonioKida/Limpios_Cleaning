@@ -867,7 +867,8 @@
       "phoneRequired": "Por favor escriba su teléfono.",
       "phoneInvalid": "Escriba un teléfono válido.",
       "numberInvalid": "Escriba un número válido.",
-      "consentRequired": "Acepte ser contactado para poder enviarle su presupuesto."
+      "consentRequired": "Acepte ser contactado para poder enviarle su presupuesto.",
+      "incompleteForm": "Complete los campos obligatorios para enviar su solicitud."
     },
     "success": {
       "title": "¡Solicitud recibida!",

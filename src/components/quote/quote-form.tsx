@@ -133,7 +133,13 @@ export function QuoteForm({
   const submittingRef = useRef(false);
   const totalSteps = STEP_FIELDS.length;
   const { register, formState } = form;
-  const { errors } = formState;
+  const { errors, touchedFields, isSubmitted } = formState;
+  // Show a contact-field error only after the user has actually engaged with that
+  // field (blur), so arriving at the contact step never greets them with a wall of
+  // red. A premature submit focuses the first empty field and shows the calm summary
+  // below the buttons — it never lights up every field at once.
+  const fieldError = (name: keyof QuoteFormValues) =>
+    touchedFields[name] ? errors[name]?.message : undefined;
   // Reactive subscription (render-safe, unlike form.watch()) — drives the
   // bedrooms-field gating for non-residential property types.
   const propertyType = useWatch({ control: form.control, name: "propertyType" });
@@ -336,7 +342,7 @@ export function QuoteForm({
           >
             <div className="flex flex-col gap-4">
               <div className="grid gap-4 sm:grid-cols-2">
-                <Field label={tf("name.label")} htmlFor="name" error={errors.name?.message}>
+                <Field label={tf("name.label")} htmlFor="name" error={fieldError("name")}>
                   <Input id="name" autoComplete="name" placeholder={tf("name.placeholder")} {...register("name")} />
                 </Field>
                 <Field label={tf("company.label")} htmlFor="company">
@@ -344,10 +350,10 @@ export function QuoteForm({
                 </Field>
               </div>
               <div className="grid gap-4 sm:grid-cols-2">
-                <Field label={tf("email.label")} htmlFor="email" error={errors.email?.message}>
+                <Field label={tf("email.label")} htmlFor="email" error={fieldError("email")}>
                   <Input id="email" type="email" autoComplete="email" placeholder={tf("email.placeholder")} {...register("email")} />
                 </Field>
-                <Field label={tf("phone.label")} htmlFor="phone" error={errors.phone?.message}>
+                <Field label={tf("phone.label")} htmlFor="phone" error={fieldError("phone")}>
                   <Input id="phone" type="tel" autoComplete="tel" placeholder={tf("phone.placeholder")} {...register("phone")} />
                 </Field>
               </div>
@@ -365,8 +371,8 @@ export function QuoteForm({
                 />
                 <span>{tf("consent.label")}</span>
               </label>
-              {errors.consent?.message ? (
-                <p className="text-sm text-destructive">{errors.consent.message}</p>
+              {fieldError("consent") ? (
+                <p className="text-sm text-destructive">{fieldError("consent")}</p>
               ) : null}
               {status === "error" ? (
                 <div className="rounded-lg border border-destructive/30 bg-destructive/10 px-3 py-2 text-sm text-destructive">
@@ -378,6 +384,14 @@ export function QuoteForm({
           </Fieldset>
         ) : null}
       </div>
+
+      {/* After a failed submit: one calm line + focus on the first empty field —
+          never a per-field wall of red on arrival. */}
+      {step === totalSteps - 1 && isSubmitted && Object.keys(errors).length > 0 ? (
+        <p role="alert" className="text-sm font-medium text-destructive">
+          {tv("incompleteForm")}
+        </p>
+      ) : null}
 
       {/* Controls */}
       <div className="flex items-center justify-between gap-3 border-t border-border pt-4">
