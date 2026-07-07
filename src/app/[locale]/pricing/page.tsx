@@ -90,9 +90,12 @@ export default async function PricingPage({
                   )}
                 >
                   {pkg.popular ? (
+                    // Opaque fill (not the translucent `cta` tint) + a hairline ring
+                    // and shadow so the pill reads as sitting ON the card's top edge
+                    // instead of letting the royal border bleed through it.
                     <Badge
                       variant="cta"
-                      className="absolute -top-3 left-6 px-3 py-1"
+                      className="absolute -top-3 left-6 px-3 py-1 bg-[color-mix(in_srgb,var(--cta)_16%,white)] shadow-sm ring-1 ring-[color-mix(in_srgb,var(--cta)_30%,white)]"
                     >
                       {t("popular")}
                     </Badge>
