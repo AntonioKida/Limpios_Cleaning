@@ -22,12 +22,12 @@ const bad = (name, detail) => {
   console.error(`  ✗ ${name}${detail ? " — " + detail : ""}`);
 };
 
-// Known infra-only failures that never occur in real production. Vercel
-// Analytics injects `/_vercel/insights/script.js`, which is served by Vercel's
-// edge in prod but 404s on a local `next start` — a documented localhost
-// artifact, not a real broken asset. A genuinely missing image/poster (any
+// Known infra-only failures that never occur in real production. Vercel Analytics
+// (`/_vercel/insights/script.js`) and Speed Insights (`/_vercel/speed-insights/script.js`)
+// are served by Vercel's edge in prod but 404 on a local `next start` — documented
+// localhost artifacts, not real broken assets. A genuinely missing image/poster (any
 // other 4xx/5xx) still fails the smoke.
-const IGNORE_RESOURCE = [/\/_vercel\/insights\//];
+const IGNORE_RESOURCE = [/\/_vercel\/insights\//, /\/_vercel\/speed-insights\//];
 
 const browser = await chromium.launch();
 
