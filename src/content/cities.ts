@@ -25,8 +25,6 @@ export interface City {
   county: CountyKey;
   /** Show in the homepage service-area shortlist. */
   featured: boolean;
-  /** Representative ZIP codes. TODO: confirm exact coverage + ZIPs with client. */
-  zips: string[];
   /** Nearby city slugs for internal linking. */
   nearby: CitySlug[];
 }
@@ -37,7 +35,6 @@ export const cities: City[] = [
     name: "Clermont",
     county: "lake",
     featured: true,
-    zips: ["34711", "34714", "34715"],
     nearby: ["minneola", "groveland", "montverde"],
   },
   {
@@ -45,7 +42,6 @@ export const cities: City[] = [
     name: "Minneola",
     county: "lake",
     featured: true,
-    zips: ["34715"],
     nearby: ["clermont", "montverde", "groveland"],
   },
   {
@@ -53,7 +49,6 @@ export const cities: City[] = [
     name: "Groveland",
     county: "lake",
     featured: true,
-    zips: ["34736"],
     nearby: ["clermont", "mascotte", "minneola"],
   },
   {
@@ -61,7 +56,6 @@ export const cities: City[] = [
     name: "Winter Garden",
     county: "orange",
     featured: true,
-    zips: ["34787"],
     nearby: ["horizon-west", "clermont", "montverde"],
   },
   {
@@ -69,7 +63,6 @@ export const cities: City[] = [
     name: "Horizon West",
     county: "orange",
     featured: true,
-    zips: ["34787"],
     nearby: ["winter-garden", "four-corners", "clermont"],
   },
   {
@@ -77,7 +70,6 @@ export const cities: City[] = [
     name: "Four Corners",
     county: "multi",
     featured: true,
-    zips: ["34747", "33896"],
     nearby: ["horizon-west", "clermont", "groveland"],
   },
   {
@@ -85,7 +77,6 @@ export const cities: City[] = [
     name: "Montverde",
     county: "lake",
     featured: false,
-    zips: ["34756"],
     nearby: ["minneola", "clermont", "winter-garden"],
   },
   {
@@ -93,7 +84,6 @@ export const cities: City[] = [
     name: "Mascotte",
     county: "lake",
     featured: false,
-    zips: ["34753"],
     nearby: ["groveland", "clermont", "minneola"],
   },
 ];

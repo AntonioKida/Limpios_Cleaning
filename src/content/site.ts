@@ -23,18 +23,14 @@ export const site = {
     href: "tel:+14076802945",
   },
 
-  /** Mailing/registered address (UPS-style suite). Used verbatim in NAP. */
-  address: {
-    street: "1683 N Hancock Rd",
-    suite: "Suite 103-272",
-    city: "Minneola",
-    region: "FL",
-    regionName: "Florida",
-    postalCode: "34715",
-    country: "US",
-  },
+  /**
+   * SERVICE-AREA business — NO published street address. The old suite was a UPS
+   * mailbox; removed per owner (2026-07). Reachable by phone + email only; the
+   * service area is all of Central Florida, based in Lake County. Do NOT
+   * reintroduce a PostalAddress here or in the JSON-LD.
+   */
 
-  /** Approx. coordinates for Minneola, FL. TODO: confirm exact geo if needed. */
+  /** Approx. service-area center, Lake County FL (not a street address). */
   geo: { latitude: 28.5853, longitude: -81.7459 },
 
   social: {

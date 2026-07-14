@@ -121,6 +121,7 @@
     "rights": "© {year} Limpios Cleaning Management. Todos los derechos reservados.",
     "credit": "Propiedad de un veterano y operado en Florida Central.",
     "chamberLine": "Miembro de la Cámara de Comercio de South Lake",
+    "serviceArea": "Servicio en toda Florida Central · Con base en el condado de Lake",
     "navLabel": "Pie de página",
     "privacyNote": "Usamos cookies y analíticas respetuosas con la privacidad (Vercel Analytics y Microsoft Clarity) para entender cómo se usa el sitio y mejorarlo."
   },
@@ -732,7 +733,8 @@
     "callBody": "Toque para llamar — es la forma más rápida de contactarnos. (Esta línea recibe solo llamadas, no mensajes de texto.)",
     "emailTitle": "Escríbanos",
     "emailBody": "Normalmente respondemos dentro de un día hábil.",
-    "visitTitle": "Área de servicio",
+    "serviceAreaTitle": "Área de servicio",
+    "serviceAreaBody": "Vamos a usted — servicio en toda Florida Central, con base en el condado de Lake. Cada trabajo empieza con una visita gratuita en el sitio.",
     "hoursTitle": "Horario de teléfono y oficina",
     "formTitle": "Pida un presupuesto gratis",
     "formIntro": "Cuéntenos un poco sobre su espacio y agendamos una visita para enviarle un presupuesto por escrito.",
@@ -740,8 +742,7 @@
       "title": "Reservas en línea",
       "body": "Las reservas instantáneas en línea llegan pronto. Por ahora, pida un presupuesto y confirmamos su visita personalmente.",
       "note": "Marcador de integración de reservas"
-    },
-    "mapPlaceholder": "Mapa del área de servicio — Condado de Lake, FL"
+    }
   },
   "Quote": {
     "eyebrow": "Presupuesto gratis",

@@ -151,22 +151,12 @@ export async function Footer() {
                 {t("contactTitle")}
               </h2>
               <address className="mt-4 space-y-3 text-cool/70 not-italic">
-                <a
-                  href={`https://maps.google.com/?q=${encodeURIComponent(
-                    `${site.address.street}, ${site.address.suite}, ${site.address.city}, ${site.address.region} ${site.address.postalCode}`,
-                  )}`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className={`flex items-start gap-2.5 ${linkClass}`}
-                >
+                {/* Service-area business — no street address published (phone +
+                    email only). Coverage stated in place of a mailing address. */}
+                <p className="flex items-start gap-2.5">
                   <MapPin className="mt-0.5 size-4 shrink-0 text-sky" aria-hidden />
-                  <span>
-                    {site.address.street}, {site.address.suite}
-                    <br />
-                    {site.address.city}, {site.address.region}{" "}
-                    {site.address.postalCode}
-                  </span>
-                </a>
+                  <span>{t("serviceArea")}</span>
+                </p>
                 <PhoneLink
                   showIcon
                   iconClassName="text-sky"

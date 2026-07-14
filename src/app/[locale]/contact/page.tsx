@@ -38,10 +38,6 @@ export default async function ContactPage({
   const tc = await getTranslations("Common");
   const tNav = await getTranslations("Nav");
 
-  const mapsUrl = `https://maps.google.com/?q=${encodeURIComponent(
-    `${site.address.street}, ${site.address.suite}, ${site.address.city}, ${site.address.region} ${site.address.postalCode}`,
-  )}`;
-
   return (
     <main id="main-content">
       <BreadcrumbJsonLd
@@ -88,25 +84,18 @@ export default async function ContactPage({
               </div>
             </div>
 
+            {/* Service-area business — no walk-in office / mailing address shown. */}
             <div className="flex items-start gap-4 rounded-2xl border border-border bg-cool/50 p-5">
               <span className="grid size-11 shrink-0 place-items-center rounded-xl bg-secondary text-royal">
                 <MapPin className="size-5" aria-hidden />
               </span>
               <div>
                 <h2 className="font-heading font-semibold text-navy">
-                  {t("visitTitle")}
+                  {t("serviceAreaTitle")}
                 </h2>
-                <a
-                  href={mapsUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="mt-1 inline-block text-sm text-muted-foreground hover:text-royal hover:underline"
-                >
-                  {site.address.street}, {site.address.suite}
-                  <br />
-                  {site.address.city}, {site.address.region}{" "}
-                  {site.address.postalCode}
-                </a>
+                <p className="mt-1 text-sm text-muted-foreground">
+                  {t("serviceAreaBody")}
+                </p>
               </div>
             </div>
 
@@ -152,28 +141,6 @@ export default async function ContactPage({
             </div>
           </div>
         </div>
-      </Section>
-
-      {/* Map placeholder. TODO: replace with a real embedded map. */}
-      <Section surface="cool" className="pt-0">
-        <a
-          href={mapsUrl}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="relative block aspect-[21/9] overflow-hidden rounded-[1.75rem] border border-border bg-gradient-to-br from-cool to-secondary shadow-sm focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring"
-        >
-          <div
-            aria-hidden
-            className="absolute inset-0 opacity-60 [background-image:linear-gradient(color-mix(in_srgb,var(--royal)_10%,transparent)_1px,transparent_1px),linear-gradient(90deg,color-mix(in_srgb,var(--royal)_10%,transparent)_1px,transparent_1px)] [background-size:42px_42px]"
-          />
-          <span className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-full text-sky drop-shadow">
-            <MapPin className="size-10 fill-sky/20" aria-hidden />
-          </span>
-          <span className="absolute inset-x-0 bottom-0 flex items-center gap-2 bg-surface/80 px-5 py-3 text-sm font-medium text-navy backdrop-blur">
-            <MapPin className="size-4 text-royal" aria-hidden />
-            {t("mapPlaceholder")}
-          </span>
-        </a>
       </Section>
     </main>
   );

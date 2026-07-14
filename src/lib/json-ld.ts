@@ -14,19 +14,12 @@ const SCHEMA_DAY: Record<DayKey, string> = {
   sun: "Sunday",
 };
 
-const postalAddress = {
-  "@type": "PostalAddress",
-  streetAddress: `${site.address.street}, ${site.address.suite}`,
-  addressLocality: site.address.city,
-  addressRegion: site.address.region,
-  postalCode: site.address.postalCode,
-  addressCountry: site.address.country,
-};
-
 /**
- * LocalBusiness with full NAP, geo, hours, areaServed and social profiles.
- * AggregateRating is intentionally OMITTED while reviews are placeholders
- * (`reviewsArePlaceholder`) — never emit structured data for sample reviews.
+ * LocalBusiness as a SERVICE-AREA business: NO PostalAddress is published (the
+ * old suite was a UPS mailbox, removed per owner 2026-07). The coverage is
+ * declared via `areaServed`; contact is phone + email only. AggregateRating is
+ * intentionally OMITTED while reviews are placeholders (`reviewsArePlaceholder`)
+ * — never emit structured data for sample reviews.
  */
 export function localBusinessSchema({ description }: { description: string }) {
   return {
@@ -41,7 +34,7 @@ export function localBusinessSchema({ description }: { description: string }) {
     image: `${site.url}/brand/logo.jpeg`,
     logo: `${site.url}/brand/logo.jpeg`,
     priceRange: "$$",
-    address: postalAddress,
+    // Service-area business — no `address`/PostalAddress. Coverage via areaServed.
     geo: {
       "@type": "GeoCoordinates",
       latitude: site.geo.latitude,
@@ -101,7 +94,6 @@ export function serviceSchema({
       name: site.name,
       telephone: site.phone.e164,
       url: site.url,
-      address: postalAddress,
     },
     areaServed: { "@type": "State", name: "Florida" },
   };

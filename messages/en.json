@@ -121,6 +121,7 @@
     "rights": "© {year} Limpios Cleaning Management. All rights reserved.",
     "credit": "Veteran-owned & operated in Central Florida.",
     "chamberLine": "Member, South Lake Chamber of Commerce",
+    "serviceArea": "Serving all of Central Florida · Based in Lake County",
     "navLabel": "Footer",
     "privacyNote": "We use cookies and privacy-friendly analytics (Vercel Analytics and Microsoft Clarity) to understand how the site is used and improve it."
   },
@@ -732,7 +733,8 @@
     "callBody": "Tap to call — it's the fastest way to reach us. (Phone calls only on this line, no texts.)",
     "emailTitle": "Email us",
     "emailBody": "We typically reply within one business day.",
-    "visitTitle": "Service area",
+    "serviceAreaTitle": "Service area",
+    "serviceAreaBody": "We come to you — serving all of Central Florida, based in Lake County. Every job starts with a free on-site walkthrough.",
     "hoursTitle": "Phone & office hours",
     "formTitle": "Request a free estimate",
     "formIntro": "Tell us a little about your space and we'll schedule a walkthrough and send a written estimate.",
@@ -740,8 +742,7 @@
       "title": "Online booking",
       "body": "Instant online booking is coming soon. For now, request an estimate and we'll confirm your walkthrough personally.",
       "note": "Booking integration placeholder"
-    },
-    "mapPlaceholder": "Service-area map — Lake County, FL"
+    }
   },
   "Quote": {
     "eyebrow": "Free estimate",
