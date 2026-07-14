@@ -48,6 +48,10 @@ export async function Footer() {
           {/* Brand */}
           <div className="flex flex-col gap-5 lg:col-span-4">
             <Logo tone="white" />
+            {/* Brand slogan echoed from the hero (Papo's signature hook). */}
+            <p className="-mt-1 font-heading text-lg font-bold tracking-tight text-white">
+              {t("slogan")}
+            </p>
             <p className="max-w-sm text-sm leading-relaxed text-cool/70">
               {t("blurb")}
             </p>

@@ -22,10 +22,17 @@ export function Hero() {
         {/* Copy — the one signature entrance on the site. */}
         <div className="flex flex-col items-start gap-6 text-left">
           <Reveal signature>
-            <span className="inline-flex items-center gap-2 rounded-full border border-sky/30 bg-surface px-3.5 py-1.5 text-sm font-semibold text-royal shadow-sm">
-              <ShieldCheck className="size-4 text-sky" aria-hidden />
-              {t("eyebrow")}
-            </span>
+            {/* Signature slogan (Papo's brand hook) — real weight, with the
+                credibility line beneath it. Absorbs the old veteran pill. */}
+            <div className="flex flex-col gap-1.5">
+              <p className="inline-flex items-center gap-2 font-heading text-xl font-bold tracking-tight text-royal sm:text-2xl">
+                <ShieldCheck className="size-5 text-sky" aria-hidden />
+                {t("slogan")}
+              </p>
+              <p className="text-sm font-medium text-muted-foreground">
+                {t("sloganProof")}
+              </p>
+            </div>
           </Reveal>
 
           <h1 className="font-heading text-6xl font-bold text-balance text-navy">

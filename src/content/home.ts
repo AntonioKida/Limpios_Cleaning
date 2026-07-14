@@ -3,7 +3,7 @@
  * translatable and live in the message catalogs (`Home.stats`, `Home.steps`,
  * `Home.why.points`, `Home.audiences`). Each list carries DISTINCT proof so the
  * homepage's trust touchpoints don't restate each other:
- *   - hero star line  -> veteran-owned, licensed & insured
+ *   - hero star line  -> veteran owned, licensed & insured
  *   - trust stats      -> since/chamber/bilingual/local (credentials)
  *   - audiences        -> who we work with (B2B buyer segments)
  *   - why points       -> service differentiators (team, scope, estimate, guarantee)

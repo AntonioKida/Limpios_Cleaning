@@ -28,7 +28,7 @@ const fontHeading = Bricolage_Grotesque({
 });
 
 // Body: Public Sans — the USWDS/government typeface. Clear and credible, with a
-// quiet civic undertone that suits a veteran-owned business, and full Spanish
+// quiet civic undertone that suits a veteran owned business, and full Spanish
 // diacritic coverage.
 const fontBody = Public_Sans({
   // See note above — `latin` covers Spanish; latin-ext dropped for perf.

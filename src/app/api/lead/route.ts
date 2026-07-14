@@ -162,7 +162,7 @@ function buildEmail(lead: LeadInput) {
           <div style="font-size:13px;color:#50607a;line-height:1.5;">Reply to this email to reach ${e(firstName)} directly · Submitted in ${language}</div>
         </td></tr>
       </table>
-      <div style="font-size:12px;color:#9aa2af;margin-top:14px;font-family:-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;">Limpios Cleaning Management · Veteran-owned · Central Florida</div>
+      <div style="font-size:12px;color:#9aa2af;margin-top:14px;font-family:-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;">Limpios Cleaning Management · Veteran Owned Business · Central Florida</div>
     </td></tr>
   </table>
 </body></html>`;

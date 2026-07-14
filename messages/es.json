@@ -109,6 +109,7 @@
   },
   "Footer": {
     "blurb": "Limpieza comercial de propiedad de un veterano para negocios, administradores de propiedades, HOAs y constructoras en toda Florida Central — con base en el condado de Lake. Siéntese, relájese, y nosotros hacemos la limpieza.",
+    "slogan": "Empresa de un veterano",
     "servicesTitle": "Servicios",
     "areasTitle": "Áreas de Servicio",
     "companyTitle": "Empresa",
@@ -129,6 +130,8 @@
   "Home": {
     "hero": {
       "eyebrow": "Empresa de un veterano · Florida Central",
+      "slogan": "Empresa de un veterano",
+      "sloganProof": "Certificado por la SBA · 28 años de experiencia militar",
       "title": "Limpieza comercial en la que su negocio puede",
       "titleAccent": "confiar",
       "subtitle": "Oficinas, obras recién terminadas, mudanzas, ventanas y alfombras — limpiadas según un alcance por escrito por un equipo con licencia, seguro y de propiedad de un veterano. Con base en el condado de Lake, servimos toda Florida Central.",
@@ -139,7 +142,7 @@
       "chipChamber": "Miembro de la Cámara de Comercio"
     },
     "trustBar": {
-      "since": "Empresa de un veterano desde {year}",
+      "since": "Certificado por la SBA · 28 años de experiencia militar",
       "chamber": "Miembro de la Cámara de South Lake",
       "bilingual": "English y Español",
       "local": "Base en el condado de Lake · Toda Florida Central"

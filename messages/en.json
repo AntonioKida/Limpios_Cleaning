@@ -2,17 +2,17 @@
   "Meta": {
     "siteName": "Limpios Cleaning Management",
     "tagline": "Sit back, relax, and we will do the cleaning.",
-    "defaultTitle": "Commercial Cleaning in Central Florida | Veteran-Owned",
-    "defaultDescription": "Limpios Cleaning Management — veteran-owned commercial cleaning across Central Florida, based in Lake County. Offices, post-construction, move-outs, windows and carpets. Licensed, insured and bilingual. Free walkthrough & estimate.",
-    "ogAlt": "Limpios Cleaning Management — veteran-owned commercial cleaning in Central Florida",
+    "defaultTitle": "Commercial Cleaning in Central Florida | Veteran Owned",
+    "defaultDescription": "Limpios Cleaning Management — veteran owned commercial cleaning across Central Florida, based in Lake County. Offices, post-construction, move-outs, windows and carpets. Licensed, insured and bilingual. Free walkthrough & estimate.",
+    "ogAlt": "Limpios Cleaning Management — veteran owned commercial cleaning in Central Florida",
     "pages": {
       "home": {
-        "title": "Commercial Cleaning in Central Florida | Veteran-Owned",
-        "description": "Veteran-owned commercial cleaning for businesses, property managers, HOAs and builders across Central Florida. Licensed, insured, bilingual. Schedule a free walkthrough and estimate."
+        "title": "Commercial Cleaning in Central Florida | Veteran Owned",
+        "description": "Veteran Owned commercial cleaning for businesses, property managers, HOAs and builders across Central Florida. Licensed, insured, bilingual. Schedule a free walkthrough and estimate."
       },
       "services": {
         "title": "Commercial Cleaning Services",
-        "description": "Commercial, post-construction, move-in/move-out, window and carpet cleaning across Central Florida. Licensed, insured, veteran-owned. Every job starts with a free walkthrough."
+        "description": "Commercial, post-construction, move-in/move-out, window and carpet cleaning across Central Florida. Licensed, insured, veteran owned. Every job starts with a free walkthrough."
       },
       "pricing": {
         "title": "Pricing — Free Walkthrough & Estimate",
@@ -23,7 +23,7 @@
         "description": "Limpios serves businesses and properties throughout Central Florida from our Lake County base — Clermont, Minneola, Winter Garden and beyond. Free walkthroughs across the area."
       },
       "about": {
-        "title": "About — Veteran-Owned & Local",
+        "title": "About — Veteran Owned & Local",
         "description": "Meet the veteran owner behind Limpios Cleaning Management. South Lake Chamber of Commerce member, licensed and insured, and personal about every space we clean."
       },
       "reviews": {
@@ -81,7 +81,7 @@
     "estimate": "estimate",
     "estimateNote": "Every estimate starts with a free walkthrough of your space — no flat rates, no obligation.",
     "licensedInsured": "Licensed & insured",
-    "veteranOwned": "Veteran-owned",
+    "veteranOwned": "Veteran Owned Business",
     "ecoFriendly": "Eco-friendly",
     "bilingual": "Bilingual (EN/ES)",
     "chamberMember": "South Lake Chamber of Commerce member",
@@ -108,7 +108,8 @@
     "switchToEs": "Cambiar a Español"
   },
   "Footer": {
-    "blurb": "Veteran-owned commercial cleaning for businesses, property managers, HOAs and builders across Central Florida — based in Lake County. Sit back, relax, and we'll do the cleaning.",
+    "blurb": "Veteran Owned commercial cleaning for businesses, property managers, HOAs and builders across Central Florida — based in Lake County. Sit back, relax, and we'll do the cleaning.",
+    "slogan": "Veteran Owned Business",
     "servicesTitle": "Services",
     "areasTitle": "Service Areas",
     "companyTitle": "Company",
@@ -120,7 +121,7 @@
     "allAreas": "All service areas",
     "allServicesLink": "All services",
     "rights": "© {year} Limpios Cleaning Management. All rights reserved.",
-    "credit": "Veteran-owned & operated in Central Florida.",
+    "credit": "Veteran Owned & operated in Central Florida.",
     "chamberLine": "Member, South Lake Chamber of Commerce",
     "serviceArea": "Serving all of Central Florida · Based in Lake County",
     "navLabel": "Footer",
@@ -128,18 +129,20 @@
   },
   "Home": {
     "hero": {
-      "eyebrow": "Veteran-owned · Central Florida",
+      "eyebrow": "Veteran Owned · Central Florida",
+      "slogan": "Veteran Owned Business",
+      "sloganProof": "SBA-certified · 28 years of military experience",
       "title": "Commercial cleaning your business can",
       "titleAccent": "count on",
-      "subtitle": "Offices, post-construction sites, turnovers, windows and carpets — cleaned to a written scope by a licensed, insured, veteran-owned crew. Based in Lake County, serving all of Central Florida.",
+      "subtitle": "Offices, post-construction sites, turnovers, windows and carpets — cleaned to a written scope by a licensed, insured, veteran owned crew. Based in Lake County, serving all of Central Florida.",
       "ctaPrimary": "Get a free estimate",
       "ctaSecondary": "Call now",
-      "trust": "Veteran-owned, licensed and insured.",
+      "trust": "Veteran Owned, licensed and insured.",
       "mascotAlt": "Limpios Cleaning mascot — the owner in a Panama hat holding a spray bottle, giving a friendly wave",
       "chipChamber": "Chamber of Commerce member"
     },
     "trustBar": {
-      "since": "Veteran-owned since {year}",
+      "since": "SBA-certified · 28 years of military experience",
       "chamber": "South Lake Chamber member",
       "bilingual": "English & Español",
       "local": "Lake County based · Central Florida wide"
@@ -276,7 +279,7 @@
     "hub": {
       "eyebrow": "Services",
       "title": "Commercial-grade cleaning, five ways",
-      "subtitle": "Insured, veteran-owned, and done to a written scope. Pick the service that fits, or request a free walkthrough and we'll point you the right way.",
+      "subtitle": "Insured, veteran owned, and done to a written scope. Pick the service that fits, or request a free walkthrough and we'll point you the right way.",
       "intro": "One-time project or recurring contract, it's the same crew and the same standards on every job we run across Central Florida.",
       "alsoAvailableTitle": "For property managers",
       "alsoAvailableBody": "Move-in/move-out turnovers on empty units between tenants, plus deep cleans to pass inspection — request a free estimate and we'll set up a walkthrough."
@@ -302,7 +305,7 @@
         "name": "Commercial cleaning",
         "tagline": "A workspace that makes the right impression.",
         "description": "Reliable office, retail and facility cleaning on a schedule built around your business — after-hours or daytime. Your team and your customers walk into a fresh, healthy space every time.",
-        "metaDescription": "Commercial & office cleaning across Central Florida. Recurring or one-time, after-hours available, licensed & insured, veteran-owned. Free walkthrough and estimate.",
+        "metaDescription": "Commercial & office cleaning across Central Florida. Recurring or one-time, after-hours available, licensed & insured, veteran owned. Free walkthrough and estimate.",
         "who": [
           "Offices, clinics, salons and retail storefronts",
           "Property managers and facility directors",
@@ -399,7 +402,7 @@
         "name": "Carpet cleaning",
         "tagline": "Fresh floors, longer carpet life.",
         "description": "Professional carpet cleaning for offices, common areas and homes. We lift the traffic lanes, spots and odors that regular vacuuming leaves behind — and help your carpet last longer between replacements.",
-        "metaDescription": "Carpet cleaning in Central Florida — offices, common areas and homes. Traffic lanes, spots and odors handled by an insured, veteran-owned crew. Free estimate.",
+        "metaDescription": "Carpet cleaning in Central Florida — offices, common areas and homes. Traffic lanes, spots and odors handled by an insured, veteran owned crew. Free estimate.",
         "who": [
           "Offices and commercial suites with heavy foot traffic",
           "HOA clubhouses and community common areas",
@@ -423,7 +426,7 @@
         "name": "Deep cleaning",
         "tagline": "A reset that reaches every corner.",
         "description": "A top-to-bottom detail clean for spaces that need extra attention. Baseboards, grout, and the spots behind and inside things that a standard clean skips — the right call before recurring service starts or after a long gap.",
-        "metaDescription": "Deep cleaning in Central Florida — baseboards, grout, fixtures and detail work top to bottom, for offices and homes. Insured, veteran-owned. Free estimate.",
+        "metaDescription": "Deep cleaning in Central Florida — baseboards, grout, fixtures and detail work top to bottom, for offices and homes. Insured, veteran owned. Free estimate.",
         "who": [
           "First-time clients before starting recurring service",
           "Offices and homes overdue for a professional clean",
@@ -447,7 +450,7 @@
         "name": "Residential cleaning",
         "tagline": "The same standards, at home.",
         "description": "Recurring or one-time home cleaning with the same written checklist and vetted crew we bring to commercial work. Kitchens, baths, bedrooms and living spaces, done properly.",
-        "metaDescription": "Residential house cleaning in Central Florida by a licensed, insured, veteran-owned crew. Recurring or one-time — free walkthrough and estimate.",
+        "metaDescription": "Residential house cleaning in Central Florida by a licensed, insured, veteran owned crew. Recurring or one-time — free walkthrough and estimate.",
         "who": [
           "Homeowners who want a consistent, trusted team",
           "Busy families and professionals",
@@ -594,8 +597,8 @@
     },
     "cityPage": {
       "metaTitle": "Cleaning Services in {city}, FL",
-      "metaDescription": "Veteran-owned commercial & property cleaning in {city}, FL — offices, post-construction, turnovers, windows and carpets. Licensed and insured. Free walkthrough & estimate.",
-      "intro": "Limpios Cleaning Management provides veteran-owned commercial and property cleaning in {city} and across Central Florida. Offices, post-construction cleanup, move-out turnovers, window and carpet care — handled by a licensed, insured team with a written scope behind every job.",
+      "metaDescription": "Veteran Owned commercial & property cleaning in {city}, FL — offices, post-construction, turnovers, windows and carpets. Licensed and insured. Free walkthrough & estimate.",
+      "intro": "Limpios Cleaning Management provides veteran owned commercial and property cleaning in {city} and across Central Florida. Offices, post-construction cleanup, move-out turnovers, window and carpet care — handled by a licensed, insured team with a written scope behind every job.",
       "whyTitle": "Your local crew in {city}",
       "whyBody": "We're based in Lake County, so {city} is home turf — we show up on time and treat its businesses and properties like our own. Licensed, insured, bilingual, and accountable to a written checklist.",
       "servicesTitle": "Services available in {city}",
@@ -635,13 +638,13 @@
       },
       "mascotte": {
         "blurb": "Friendly, insured cleaning for Mascotte businesses and households.",
-        "intro": "Limpios is glad to serve Mascotte with the same veteran-owned care we bring across Lake County — reliable and local."
+        "intro": "Limpios is glad to serve Mascotte with the same veteran owned care we bring across Lake County — reliable and local."
       }
     }
   },
   "About": {
     "eyebrow": "About Limpios",
-    "title": "Veteran-owned, and personal about it",
+    "title": "Veteran Owned, and personal about it",
     "subtitle": "Limpios started from one idea: bring the attention to detail I learned in the service, plus real local care, to every business and property we clean.",
     "story": {
       "title": "Our story",
@@ -665,7 +668,7 @@
     },
     "values": {
       "veteran": {
-        "title": "Veteran-owned",
+        "title": "Veteran Owned",
         "description": "The same discipline, integrity and accountability we served by, now pointed at your space."
       },
       "eco": {
@@ -690,7 +693,7 @@
     },
     "cta": {
       "title": "Let's get your space spotless",
-      "body": "Schedule a free walkthrough and see the veteran-owned difference.",
+      "body": "Schedule a free walkthrough and see the veteran owned difference.",
       "button": "Get a free estimate"
     },
     "founderRole": "Founder & Owner",
@@ -718,7 +721,7 @@
         "quote": "They did the final clean on two of our builds this spring. Dust-free, glass spotless, zero punch-list items on cleaning. We'll keep using them."
       },
       "r5": {
-        "quote": "Trustworthy, on time, and genuinely kind people. As a veteran-owned business they bring real pride to their work. We're on a recurring contract now."
+        "quote": "Trustworthy, on time, and genuinely kind people. As a veteran owned business they bring real pride to their work. We're on a recurring contract now."
       },
       "r6": {
         "quote": "Booked a move-out clean for our rental and the walkthrough estimate was spot-on. Detailed, fast, and great communication throughout."
