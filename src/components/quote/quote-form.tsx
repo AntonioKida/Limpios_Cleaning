@@ -176,10 +176,14 @@ export function QuoteForm({
   const [step, setStep] = useState(0);
   const [status, setStatus] = useState<Status>("idle");
   const [devMode, setDevMode] = useState(false);
+  // Scoped to ONE submit attempt on the current step. RHF's global `isSubmitted`
+  // never resets, so it would re-show the summary every time you came back to the
+  // contact step. This resets on any navigation, so a freshly-entered step is clean.
+  const [submitAttempted, setSubmitAttempted] = useState(false);
   const submittingRef = useRef(false);
   const totalSteps = STEP_FIELDS.length;
   const { register, formState } = form;
-  const { errors, touchedFields, isSubmitted } = formState;
+  const { errors, touchedFields } = formState;
   // Contact-field errors show only after the user engages that field (blur) — a
   // premature submit focuses the first empty field + shows one calm summary line.
   const fieldError = (name: keyof QuoteFormValues) =>
@@ -189,9 +193,13 @@ export function QuoteForm({
   async function next() {
     const fields = STEP_FIELDS[step];
     const valid = fields.length === 0 ? true : await form.trigger(fields);
-    if (valid) setStep((s) => Math.min(s + 1, totalSteps - 1));
+    if (valid) {
+      setSubmitAttempted(false); // a newly-entered step always renders clean
+      setStep((s) => Math.min(s + 1, totalSteps - 1));
+    }
   }
   function back() {
+    setSubmitAttempted(false);
     setStep((s) => Math.max(s - 1, 0));
   }
 
@@ -256,7 +264,7 @@ export function QuoteForm({
   return (
     // onSubmit reads submittingRef only inside the deferred submit handler.
     // eslint-disable-next-line react-hooks/refs
-    <form onSubmit={form.handleSubmit(onSubmit)} noValidate className="flex flex-col gap-6">
+    <form onSubmit={form.handleSubmit(onSubmit, () => setSubmitAttempted(true))} noValidate className="flex flex-col gap-8">
       {/* Progress */}
       <div className="flex flex-col gap-2">
         <div className="flex items-center justify-between text-sm font-semibold text-muted-foreground">
@@ -293,14 +301,22 @@ export function QuoteForm({
                 sublabel={tf("audience.hint.business")}
                 value="business"
                 icon={<Building2 className="size-5" />}
-                {...register("audience")}
+                {...register("audience", {
+                  // Clear the "who are you?" error the moment they pick one —
+                  // otherwise it stays stuck on screen after they've fixed it.
+                  onChange: () => form.clearErrors("audience"),
+                })}
               />
               <OptionCard
                 label={tf("audience.options.property-manager")}
                 sublabel={tf("audience.hint.property-manager")}
                 value="property-manager"
                 icon={<KeyRound className="size-5" />}
-                {...register("audience")}
+                {...register("audience", {
+                  // Clear the "who are you?" error the moment they pick one —
+                  // otherwise it stays stuck on screen after they've fixed it.
+                  onChange: () => form.clearErrors("audience"),
+                })}
               />
             </div>
           </Fieldset>
@@ -310,7 +326,7 @@ export function QuoteForm({
         {step === 1 ? (
           <Fieldset legend={ts("details.title")} description={ts("details.description")}>
             {audience === "business" ? (
-              <div className="flex flex-col gap-6">
+              <div className="flex flex-col gap-7">
                 <FieldGroup label={tf("spaceType.label")}>
                   <div className="grid gap-2.5 sm:grid-cols-2">
                     {SPACE_TYPES.map((s) => (
@@ -341,11 +357,11 @@ export function QuoteForm({
                   </div>
                 </FieldGroup>
 
-                <div className="grid grid-cols-2 gap-4 sm:grid-cols-4">
-                  <NumberField id="restrooms" label={tf("restrooms.label")} reg={register("restrooms")} />
-                  <NumberField id="offices" label={tf("offices.label")} reg={register("offices")} />
-                  <NumberField id="conferenceRooms" label={tf("conferenceRooms.label")} reg={register("conferenceRooms")} />
-                  <NumberField id="windows" label={tf("windows.label")} reg={register("windows")} />
+                <div className="grid grid-cols-2 gap-5 sm:grid-cols-4">
+                  <NumberField id="restrooms" label={tf("restrooms.label")} placeholder={tf("restrooms.placeholder")} reg={register("restrooms")} />
+                  <NumberField id="offices" label={tf("offices.label")} placeholder={tf("offices.placeholder")} reg={register("offices")} />
+                  <NumberField id="conferenceRooms" label={tf("conferenceRooms.label")} placeholder={tf("conferenceRooms.placeholder")} reg={register("conferenceRooms")} />
+                  <NumberField id="windows" label={tf("windows.label")} placeholder={tf("windows.placeholder")} reg={register("windows")} />
                 </div>
 
                 <FieldGroup label={tf("flooring.label")}>
@@ -356,7 +372,7 @@ export function QuoteForm({
                   </div>
                 </FieldGroup>
 
-                <div className="grid gap-4 sm:grid-cols-2">
+                <div className="grid gap-5 sm:grid-cols-2">
                   <Field label={tf("lastCleaning.label")} htmlFor="lastCleaning">
                     <Input id="lastCleaning" placeholder={tf("lastCleaning.placeholder")} {...register("lastCleaning")} />
                   </Field>
@@ -371,11 +387,11 @@ export function QuoteForm({
                 <Toggle label={tf("firstTimeDeepClean.label")} hint={tf("firstTimeDeepClean.hint")} {...register("firstTimeDeepClean")} />
               </div>
             ) : (
-              <div className="flex flex-col gap-6">
-                <div className="grid grid-cols-3 gap-4">
-                  <NumberField id="bedrooms" label={tf("bedrooms.label")} reg={register("bedrooms")} />
-                  <NumberField id="bathrooms" label={tf("bathrooms.label")} reg={register("bathrooms")} />
-                  <NumberField id="sqft" label={tf("sqft.label")} reg={register("sqft")} />
+              <div className="flex flex-col gap-7">
+                <div className="grid grid-cols-3 gap-5">
+                  <NumberField id="bedrooms" label={tf("bedrooms.label")} placeholder={tf("bedrooms.placeholder")} reg={register("bedrooms")} />
+                  <NumberField id="bathrooms" label={tf("bathrooms.label")} placeholder={tf("bathrooms.placeholder")} reg={register("bathrooms")} />
+                  <NumberField id="sqft" label={tf("sqft.label")} placeholder={tf("sqft.placeholder")} reg={register("sqft")} />
                 </div>
 
                 <FieldGroup label={tf("carpetCleaning.label")}>
@@ -402,8 +418,8 @@ export function QuoteForm({
         {/* STEP 2 — contact (shared) */}
         {step === 2 ? (
           <Fieldset legend={ts("contact.title")} description={ts("contact.description")}>
-            <div className="flex flex-col gap-4">
-              <div className="grid gap-4 sm:grid-cols-2">
+            <div className="flex flex-col gap-5">
+              <div className="grid gap-5 sm:grid-cols-2">
                 <Field label={tf("name.label")} htmlFor="name" error={fieldError("name")}>
                   <Input id="name" autoComplete="name" placeholder={tf("name.placeholder")} {...register("name")} />
                 </Field>
@@ -411,7 +427,7 @@ export function QuoteForm({
                   <Input id="company" autoComplete="organization" placeholder={tf("company.placeholder")} {...register("company")} />
                 </Field>
               </div>
-              <div className="grid gap-4 sm:grid-cols-2">
+              <div className="grid gap-5 sm:grid-cols-2">
                 <Field label={tf("email.label")} htmlFor="email" error={fieldError("email")}>
                   <Input id="email" type="email" autoComplete="email" placeholder={tf("email.placeholder")} {...register("email")} />
                 </Field>
@@ -452,7 +468,7 @@ export function QuoteForm({
       </div>
 
       {/* Calm summary after a failed submit — never a per-field wall on arrival. */}
-      {step === totalSteps - 1 && isSubmitted && Object.keys(errors).length > 0 ? (
+      {step === totalSteps - 1 && submitAttempted && Object.keys(errors).length > 0 ? (
         <p role="alert" className="text-sm font-medium text-destructive">
           {tv("incompleteForm")}
         </p>
@@ -551,7 +567,11 @@ function Field({
 }) {
   return (
     <div className="flex flex-col gap-1.5">
-      <Label htmlFor={htmlFor}>{label}</Label>
+      {/* Reserve a consistent label height so side-by-side fields keep their
+          inputs on the same line even if one label wraps. */}
+      <Label htmlFor={htmlFor} className="min-h-6 leading-tight">
+        {label}
+      </Label>
       {children}
       {hint ? <p className="text-sm text-muted-foreground">{hint}</p> : null}
       {error ? <p className="text-sm text-destructive">{error}</p> : null}
@@ -563,18 +583,22 @@ function Field({
 function NumberField({
   id,
   label,
+  placeholder,
   reg,
 }: {
   id: string;
   label: string;
+  placeholder?: string;
   reg: React.ComponentProps<"input">;
 }) {
   return (
     <div className="flex flex-col gap-1.5">
-      <Label htmlFor={id} className="text-xs">
+      {/* min-h reserves a consistent label height so the inputs in a row stay
+          aligned even when one label wraps to two lines. */}
+      <Label htmlFor={id} className="min-h-8 text-xs leading-tight">
         {label}
       </Label>
-      <Input id={id} inputMode="numeric" placeholder="—" {...reg} />
+      <Input id={id} inputMode="numeric" placeholder={placeholder} {...reg} />
     </div>
   );
 }

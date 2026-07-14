@@ -816,10 +816,10 @@
       "businessFrequency": {
         "label": "How often?"
       },
-      "restrooms": { "label": "Restrooms" },
-      "offices": { "label": "Offices" },
-      "conferenceRooms": { "label": "Conf. rooms" },
-      "windows": { "label": "Windows" },
+      "restrooms": { "label": "Restrooms", "placeholder": "e.g. 4" },
+      "offices": { "label": "Offices", "placeholder": "e.g. 6" },
+      "conferenceRooms": { "label": "Conf. rooms", "placeholder": "e.g. 2" },
+      "windows": { "label": "Windows", "placeholder": "e.g. 12" },
       "flooring": {
         "label": "Flooring",
         "options": { "carpet": "Carpet", "lvt": "LVT", "lvp": "LVP", "marble": "Marble" }
@@ -914,7 +914,7 @@
         "placeholder": "Your name"
       },
       "company": {
-        "label": "Company / organization (optional)",
+        "label": "Company (optional)",
         "placeholder": "Business, HOA or builder name"
       },
       "email": {
