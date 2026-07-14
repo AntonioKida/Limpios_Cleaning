@@ -5,6 +5,7 @@ import { localBusinessSchema, faqPageSchema } from "@/lib/json-ld";
 import { faqIds } from "@/content/faq";
 import { Hero } from "@/components/sections/hero";
 import { TrustBar } from "@/components/sections/trust-bar";
+import { ClientsServed } from "@/components/sections/clients-served";
 import { SeeInAction } from "@/components/sections/see-in-action";
 import { ServicesOverview } from "@/components/sections/services-overview";
 import { Audiences } from "@/components/sections/audiences";
@@ -43,6 +44,9 @@ export default async function HomePage({
       />
       <Hero />
       <TrustBar />
+      {/* Built but DISABLED (clientsServedEnabled=false) — renders nothing until
+          Papo has written permission from each named client. One-flag flip. */}
+      <ClientsServed />
       <SeeInAction />
       <ServicesOverview />
       <Audiences />
