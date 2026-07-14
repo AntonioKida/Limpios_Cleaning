@@ -87,9 +87,7 @@
     "chamberMember": "Miembro de la Cámara de Comercio de South Lake",
     "skipToContent": "Saltar al contenido",
     "backToHome": "Volver al inicio",
-    "serviceAreaLabel": "Florida Central · Con base en el condado de Lake",
-    "ratingOutOf": "{rating} de 5",
-    "reviewsCount": "{count, plural, one {# reseña} other {# reseñas}}"
+    "serviceAreaLabel": "Florida Central · Con base en el condado de Lake"
   },
   "Nav": {
     "home": "Inicio",
@@ -134,7 +132,7 @@
       "sloganProof": "Certificado por la SBA · 28 años de experiencia militar",
       "title": "Limpieza comercial en la que su negocio puede",
       "titleAccent": "confiar",
-      "subtitle": "Oficinas, obras recién terminadas, mudanzas, ventanas y alfombras, limpiadas según un alcance por escrito por un equipo con licencia, seguro y de propiedad de un veterano. Con base en el condado de Lake, servimos toda Florida Central.",
+      "subtitle": "Oficinas, obras recién terminadas, mudanzas, ventanas y alfombras, limpiadas según un alcance por escrito por un equipo verificado y de propiedad de un veterano. Con licencia y seguro, con base en el condado de Lake, servimos toda Florida Central.",
       "ctaPrimary": "Presupuesto gratis",
       "ctaSecondary": "Llamar ahora",
       "trust": "Empresa de un veterano, con licencia y seguro.",
@@ -195,7 +193,7 @@
         },
         "clean": {
           "title": "Nosotros limpiamos",
-          "description": "Nuestro equipo verificado y asegurado sigue la lista de verificación, incluso fuera de horario si su agenda lo requiere."
+          "description": "Nuestro equipo verificado, con antecedentes revisados, sigue la lista de verificación, incluso fuera de horario si su agenda lo requiere."
         }
       }
     },
@@ -449,7 +447,7 @@
         "name": "Limpieza residencial",
         "tagline": "El mismo estándar, en casa.",
         "description": "Limpieza del hogar recurrente o puntual con la misma lista de verificación por escrito y el mismo equipo verificado que llevamos al trabajo comercial. Cocinas, baños, habitaciones y áreas comunes, bien hechos.",
-        "metaDescription": "Limpieza de casas en Florida Central por un equipo con licencia, seguro y de propiedad de un veterano. Recurrente o puntual. Visita y presupuesto gratis.",
+        "metaDescription": "Limpieza de casas en Florida Central de una empresa con licencia, seguro y de propiedad de un veterano. Recurrente o puntual. Visita y presupuesto gratis.",
         "who": [
           "Propietarios que quieren un equipo constante y de confianza",
           "Familias y profesionales ocupados",
@@ -597,7 +595,7 @@
     "cityPage": {
       "metaTitle": "Servicios de Limpieza en {city}, FL",
       "metaDescription": "Limpieza comercial y de propiedades en {city}, FL, de una empresa de veterano. Oficinas, post-construcción, entregas, ventanas y alfombras. Con licencia y seguro. Visita y presupuesto gratis.",
-      "intro": "Limpios Cleaning Management ofrece limpieza comercial y de propiedades, de propiedad de un veterano, en {city} y en toda Florida Central. Oficinas, limpieza post-construcción, entregas de mudanza, ventanas y alfombras, todo a cargo de un equipo con licencia y seguro, con un alcance por escrito detrás de cada trabajo.",
+      "intro": "Limpios Cleaning Management ofrece limpieza comercial y de propiedades, de propiedad de un veterano, en {city} y en toda Florida Central. Oficinas, limpieza post-construcción, entregas de mudanza, ventanas y alfombras, todo a cargo de un equipo verificado de una empresa con licencia y seguro, con un alcance por escrito detrás de cada trabajo.",
       "whyTitle": "Su equipo local en {city}",
       "whyBody": "Nuestra base está en el condado de Lake, así que {city} es terreno conocido. Llegamos a tiempo y tratamos sus negocios y propiedades como propios. Con licencia, seguro, bilingües y responsables ante una lista por escrito.",
       "servicesTitle": "Servicios disponibles en {city}",

@@ -200,6 +200,42 @@ async function testQuoteFlow(ctx) {
   return out;
 }
 
+/**
+ * The MODAL path, which is what every CTA on the site actually opens. The /quote
+ * page is the no-JS fallback and behaves differently, so testing it alone proved
+ * nothing: a QC pass caught the reported bug still reproducing here after the page
+ * flow was green. Radix autofocuses the first tabbable node on open — the sr-only
+ * audience radio — and blurring it marked the field touched, so onTouched
+ * validation painted an error at someone who had done nothing. Asserts three
+ * things: clean on open, clean after an innocent click, and STILL errors when the
+ * user actually tries to advance with nothing selected.
+ */
+async function testQuoteModal(ctx, locale, errorRe) {
+  const out = { opens: false, cleanOnOpen: false, cleanAfterNeutralClick: false, errorsWhenEarned: false, autofocus: null };
+  const page = await ctx.newPage();
+  try {
+    await page.goto(`${BASE}/${locale}`, { waitUntil: "load" });
+    await page.waitForTimeout(1200);
+    await page.locator('a[data-analytics="quote-cta"]').first().click();
+    const dlg = page.locator("[role=dialog]");
+    await dlg.waitFor({ state: "visible", timeout: 10000 });
+    await page.waitForTimeout(600);
+    out.opens = true;
+    out.autofocus = await page.evaluate(() => document.activeElement?.tagName ?? "none");
+    out.cleanOnOpen = (await dlg.locator(`text=${errorRe}`).count()) === 0;
+    await dlg.getByRole("heading").first().click({ force: true });
+    await page.waitForTimeout(400);
+    out.cleanAfterNeutralClick = (await dlg.locator(`text=${errorRe}`).count()) === 0;
+    await dlg.getByRole("button", { name: /^(Next|Siguiente)$/i }).click();
+    await page.waitForTimeout(500);
+    out.errorsWhenEarned = (await dlg.locator(`text=${errorRe}`).count()) > 0;
+  } catch (e) {
+    out.error = String(e).slice(0, 160);
+  }
+  await page.close();
+  return out;
+}
+
 function buildGraph(pages) {
   // Use desktop EN pages
   const enPages = pages.filter((p) => p.device === "desktop" && p.route.startsWith("/en"));
@@ -254,9 +290,16 @@ function buildGraph(pages) {
   console.log("== Mobile ES crawl ==");
   for (const r of esRoutes) { const res = await auditPage(mobCtx, r, "mobile"); results.pages.push(res); console.log(`  ${res.status} ${r} overflow:${res.scrollW > res.innerW}`); }
 
-  console.log("== Quote form flow ==");
+  console.log("== Quote form flow (page) ==");
   results.quoteForm = await testQuoteFlow(deskCtx);
   console.log("  ", JSON.stringify(results.quoteForm));
+
+  console.log("== Quote modal (the path every CTA opens) ==");
+  results.quoteModal = {
+    en: await testQuoteModal(deskCtx, "en", /Please tell us who you are/i),
+    es: await testQuoteModal(deskCtx, "es", /qui[eé]n es usted/i),
+  };
+  console.log("  ", JSON.stringify(results.quoteModal));
 
   results.graph = buildGraph(results.pages);
 

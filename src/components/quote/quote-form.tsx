@@ -176,10 +176,16 @@ export function QuoteForm({
   const [step, setStep] = useState(0);
   const [status, setStatus] = useState<Status>("idle");
   const [devMode, setDevMode] = useState(false);
-  // Scoped to ONE submit attempt on the current step. RHF's global `isSubmitted`
-  // never resets, so it would re-show the summary every time you came back to the
-  // contact step. This resets on any navigation, so a freshly-entered step is clean.
-  const [submitAttempted, setSubmitAttempted] = useState(false);
+  // "The user tried to move on and could not." Scoped to the CURRENT step and reset
+  // by any navigation, so a freshly-entered step is always clean. RHF's global
+  // `isSubmitted` never resets, which is why it cannot be used here.
+  //
+  // This gates the step-0 audience error too. That error cannot gate on
+  // `touchedFields` like the contact fields do: `trigger()` does not mark a field
+  // touched, so the Next-with-nothing-selected error would never appear. Left
+  // ungated it had the opposite bug — merely focusing and blurring the radio (which
+  // the dialog used to do on open, all by itself) was enough to paint it red.
+  const [attemptedAdvance, setAttemptedAdvance] = useState(false);
   const submittingRef = useRef(false);
   const totalSteps = STEP_FIELDS.length;
   const { register, formState } = form;
@@ -193,13 +199,15 @@ export function QuoteForm({
   async function next() {
     const fields = STEP_FIELDS[step];
     const valid = fields.length === 0 ? true : await form.trigger(fields);
-    if (valid) {
-      setSubmitAttempted(false); // a newly-entered step always renders clean
-      setStep((s) => Math.min(s + 1, totalSteps - 1));
+    if (!valid) {
+      setAttemptedAdvance(true); // now the error is earned, so show it
+      return;
     }
+    setAttemptedAdvance(false); // a newly-entered step always renders clean
+    setStep((s) => Math.min(s + 1, totalSteps - 1));
   }
   function back() {
-    setSubmitAttempted(false);
+    setAttemptedAdvance(false);
     setStep((s) => Math.max(s - 1, 0));
   }
 
@@ -264,7 +272,7 @@ export function QuoteForm({
   return (
     // onSubmit reads submittingRef only inside the deferred submit handler.
     // eslint-disable-next-line react-hooks/refs
-    <form onSubmit={form.handleSubmit(onSubmit, () => setSubmitAttempted(true))} noValidate className="flex flex-col gap-8">
+    <form onSubmit={form.handleSubmit(onSubmit, () => setAttemptedAdvance(true))} noValidate className="flex flex-col gap-8">
       {/* Progress */}
       <div className="flex flex-col gap-2">
         <div className="flex items-center justify-between text-sm font-semibold text-muted-foreground">
@@ -293,7 +301,7 @@ export function QuoteForm({
           <Fieldset
             legend={tf("audience.label")}
             description={ts("audience.description")}
-            error={errors.audience?.message}
+            error={attemptedAdvance ? errors.audience?.message : undefined}
           >
             <div className="grid gap-3 sm:grid-cols-2">
               <OptionCard
@@ -468,7 +476,7 @@ export function QuoteForm({
       </div>
 
       {/* Calm summary after a failed submit — never a per-field wall on arrival. */}
-      {step === totalSteps - 1 && submitAttempted && Object.keys(errors).length > 0 ? (
+      {step === totalSteps - 1 && attemptedAdvance && Object.keys(errors).length > 0 ? (
         <p role="alert" className="text-sm font-medium text-destructive">
           {tv("incompleteForm")}
         </p>

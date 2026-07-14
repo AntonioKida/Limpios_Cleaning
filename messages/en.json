@@ -87,9 +87,7 @@
     "chamberMember": "South Lake Chamber of Commerce member",
     "skipToContent": "Skip to content",
     "backToHome": "Back to home",
-    "serviceAreaLabel": "Central Florida · Based in Lake County",
-    "ratingOutOf": "{rating} out of 5",
-    "reviewsCount": "{count, plural, one {# review} other {# reviews}}"
+    "serviceAreaLabel": "Central Florida · Based in Lake County"
   },
   "Nav": {
     "home": "Home",
@@ -134,7 +132,7 @@
       "sloganProof": "SBA-certified · 28 years of military experience",
       "title": "Commercial cleaning your business can",
       "titleAccent": "count on",
-      "subtitle": "Offices, post-construction sites, turnovers, windows and carpets, cleaned to a written scope by a licensed, insured, veteran owned crew. Based in Lake County, serving all of Central Florida.",
+      "subtitle": "Offices, post-construction sites, turnovers, windows and carpets, cleaned to a written scope by a vetted, veteran owned crew. Licensed and insured, based in Lake County, serving all of Central Florida.",
       "ctaPrimary": "Get a free estimate",
       "ctaSecondary": "Call now",
       "trust": "Veteran Owned, licensed and insured.",
@@ -195,7 +193,7 @@
         },
         "clean": {
           "title": "We clean",
-          "description": "Our vetted, insured team works the checklist, after-hours if that's what your schedule needs."
+          "description": "Our vetted, background-checked team works the checklist, after-hours if that's what your schedule needs."
         }
       }
     },
@@ -449,7 +447,7 @@
         "name": "Residential cleaning",
         "tagline": "The same standards, at home.",
         "description": "Recurring or one-time home cleaning with the same written checklist and vetted crew we bring to commercial work. Kitchens, baths, bedrooms and living spaces, done properly.",
-        "metaDescription": "Residential house cleaning in Central Florida by a licensed, insured, veteran owned crew. Recurring or one-time. Free walkthrough and estimate.",
+        "metaDescription": "Residential house cleaning in Central Florida from a licensed, insured, veteran owned company. Recurring or one-time. Free walkthrough and estimate.",
         "who": [
           "Homeowners who want a consistent, trusted team",
           "Busy families and professionals",
@@ -597,7 +595,7 @@
     "cityPage": {
       "metaTitle": "Cleaning Services in {city}, FL",
       "metaDescription": "Veteran Owned commercial & property cleaning in {city}, FL. Offices, post-construction, turnovers, windows and carpets. Licensed and insured. Free walkthrough & estimate.",
-      "intro": "Limpios Cleaning Management provides veteran owned commercial and property cleaning in {city} and across Central Florida. Offices, post-construction cleanup, move-out turnovers, window and carpet care, all handled by a licensed, insured team with a written scope behind every job.",
+      "intro": "Limpios Cleaning Management provides veteran owned commercial and property cleaning in {city} and across Central Florida. Offices, post-construction cleanup, move-out turnovers, window and carpet care, all handled by a vetted team from a licensed, insured company, with a written scope behind every job.",
       "whyTitle": "Your local crew in {city}",
       "whyBody": "We're based in Lake County, so {city} is home turf. We show up on time and treat its businesses and properties like our own. Licensed, insured, bilingual, and accountable to a written checklist.",
       "servicesTitle": "Services available in {city}",
