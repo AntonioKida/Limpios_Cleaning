@@ -13,6 +13,7 @@ export const faqIds = [
   "walkthrough",
   "area",
   "insured",
+  "security",
   "eco",
   "supplies",
   "satisfaction",

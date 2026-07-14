@@ -208,14 +208,11 @@ export async function Footer() {
           <p>{t("rights", { year })}</p>
           <p className="flex flex-wrap items-center gap-x-3 gap-y-1">
             <span>{t("credit")}</span>
-            {/* TODO: replace with the real license number. Hidden while the
-                number is a placeholder — a visibly fake "LIC# 000000000"
-                erodes trust with vendor-vetting buyers (role-audit P1). */}
             {!site.licenseIsPlaceholder ? (
               <>
                 <span aria-hidden>·</span>
                 <span>
-                  {t("licenseLabel")}: {site.license}
+                  {t("licensedInsured")} · {site.license}
                 </span>
               </>
             ) : null}

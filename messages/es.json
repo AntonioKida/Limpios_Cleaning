@@ -116,6 +116,7 @@
     "followUs": "Síganos",
     "hoursTitle": "Horario de teléfono y oficina",
     "licenseLabel": "Licencia",
+    "licensedInsured": "Con licencia y asegurado",
     "allAreas": "Todas las áreas de servicio",
     "allServicesLink": "Todos los servicios",
     "rights": "© {year} Limpios Cleaning Management. Todos los derechos reservados.",
@@ -212,7 +213,7 @@
         },
         "guarantee": {
           "title": "Una garantía que cumplimos",
-          "description": "Si algo no quedó bien, avísenos dentro de las 24 horas y lo volvemos a limpiar gratis. Sin excusas."
+          "description": "Si algo no quedó bien, avísenos dentro de las 48 horas y lo volvemos a limpiar gratis. Sin excusas."
         }
       }
     },
@@ -277,8 +278,8 @@
       "title": "Limpieza de nivel comercial, cinco especialidades",
       "subtitle": "Asegurados, de propiedad de un veterano y con alcance por escrito. Elija el servicio que necesita, o pida una visita gratuita y le orientamos.",
       "intro": "Proyecto puntual o contrato recurrente: es el mismo equipo y el mismo estándar en cada trabajo que hacemos en Florida Central.",
-      "alsoAvailableTitle": "También disponibles",
-      "alsoAvailableBody": "También hacemos limpieza de casas, limpiezas profundas y pintura interior — pida un presupuesto gratis y agendamos una visita."
+      "alsoAvailableTitle": "Para administradores de propiedades",
+      "alsoAvailableBody": "Limpieza de mudanzas (entrada/salida) en unidades vacías entre inquilinos, además de limpiezas profundas para pasar la inspección — pida un presupuesto gratis y agendamos una visita."
     },
     "labels": {
       "included": "Qué incluye",
@@ -673,7 +674,7 @@
       },
       "guarantee": {
         "title": "Satisfacción garantizada",
-        "description": "Si algo no quedó bien, avísenos dentro de las 24 horas y lo volvemos a limpiar gratis."
+        "description": "Si algo no quedó bien, avísenos dentro de las 48 horas y lo volvemos a limpiar gratis."
       },
       "bilingual": {
         "title": "Servicio bilingüe",
@@ -899,7 +900,11 @@
       },
       "insured": {
         "q": "¿Tienen licencia y seguro?",
-        "a": "Sí. Limpios cuenta con licencia comercial y seguro, y todo el equipo está verificado con antecedentes antes de pisar su sitio. (Florida no exige una licencia de oficio especial para servicios de limpieza — nuestra licencia es la licencia comercial estándar para operar.)"
+        "a": "Sí. Limpios cuenta con licencia y seguro de responsabilidad civil general — un Certificado de Seguro (COI) está disponible a pedido, y podemos gestionar límites de cobertura más altos si su propiedad los requiere. Todo el equipo está verificado con antecedentes antes de pisar su sitio."
+      },
+      "security": {
+        "q": "¿Cómo manejan las llaves y el acceso?",
+        "a": "Las llaves y cualquier código de alarma o de entrada se guardan en una caja de seguridad con acceso limitado únicamente a la gerencia — nunca se entregan a limpiadores individuales. Coordinamos el acceso con usted durante la visita."
       },
       "eco": {
         "q": "¿Sus productos son seguros para oficinas, niños y mascotas?",
@@ -911,11 +916,11 @@
       },
       "satisfaction": {
         "q": "¿Y si no quedo satisfecho con la limpieza?",
-        "a": "Lo corregimos. Si algo no quedó bien, llámenos dentro de las 24 horas y volvemos a limpiarlo gratis. Ese es el trato, sin discusiones."
+        "a": "Lo corregimos. Si algo no quedó bien, llámenos dentro de las 48 horas y volvemos a limpiarlo gratis. Ese es el trato, sin discusiones."
       },
       "homes": {
-        "q": "¿También limpian casas?",
-        "a": "Sí — la limpieza de casas, las limpiezas profundas y la pintura interior están disponibles junto con nuestro trabajo comercial, con el mismo equipo y la misma lista por escrito. Pida un presupuesto gratis y agendamos una visita."
+        "q": "¿Limpian casas para mudanzas (entrada/salida)?",
+        "a": "Para mudanzas de entrada/salida, sí — limpiamos unidades vacías entre inquilinos para que pasen la inspección del administrador o del agente. Nos enfocamos en unidades vacías y espacios comerciales, no en la limpieza rutinaria de casas habitadas. Pida un presupuesto gratis y agendamos una visita."
       },
       "bilingual": {
         "q": "¿Ofrecen servicio en español?",
