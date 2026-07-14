@@ -92,7 +92,13 @@ async function auditPage(ctx, route, device) {
   let axe = null;
   if (device === "desktop") {
     try {
-      const r = await new AxeBuilder({ page }).withTags(["wcag2a", "wcag2aa", "wcag21a", "wcag21aa"]).analyze();
+      // wcag22aa is here because its absence hid a real bug: `target-size` is a
+      // WCAG 2.2 rule, so axe reported 0 violations while 90 controls sat under
+      // 44px and some under the 24x24 AA floor. Only the geometry harness caught
+      // it. axe now checks it too, so the two agree.
+      const r = await new AxeBuilder({ page })
+        .withTags(["wcag2a", "wcag2aa", "wcag21a", "wcag21aa", "wcag22aa"])
+        .analyze();
       axe = r.violations.map((v) => ({ id: v.id, impact: v.impact, help: v.help, nodes: v.nodes.length }));
     } catch (e) {
       axe = [{ id: "axe-error", impact: "n/a", help: String(e).slice(0, 140), nodes: 0 }];

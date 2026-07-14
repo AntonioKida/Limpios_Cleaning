@@ -52,8 +52,10 @@ export const site = {
   },
 
   /**
-   * Business hours in 24h local time; `null` = closed.
-   * Day labels are localized in messages (Common.days). TODO: confirm real hours.
+   * Business hours in 24h local time; `null` = closed. Confirmed by the owner
+   * (2026-07). These are the PHONE/OFFICE hours; the cleaning itself is done
+   * evenings and weekends, because the cleaners hold day jobs with the county
+   * schools. Day labels are localized in messages (Common.days).
    */
   hours: {
     mon: { open: "08:00", close: "18:00" },

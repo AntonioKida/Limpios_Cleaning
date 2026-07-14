@@ -392,11 +392,11 @@ export function QuoteForm({
                   </div>
                 </FieldGroup>
 
-                <div className="grid gap-5 sm:grid-cols-2">
-                  <Field label={tf("lastCleaning.label")} htmlFor="lastCleaning">
+                <div className="grid gap-5 sm:grid-cols-2 sm:grid-rows-[auto_auto_auto] sm:gap-y-1.5">
+                  <Field paired label={tf("lastCleaning.label")} htmlFor="lastCleaning">
                     <Input id="lastCleaning" placeholder={tf("lastCleaning.placeholder")} {...register("lastCleaning")} />
                   </Field>
-                  <Field label={tf("blindsType.label")} htmlFor="blindsType">
+                  <Field paired label={tf("blindsType.label")} htmlFor="blindsType">
                     <Input id="blindsType" placeholder={tf("blindsType.placeholder")} {...register("blindsType")} />
                   </Field>
                 </div>
@@ -439,19 +439,19 @@ export function QuoteForm({
         {step === 2 ? (
           <Fieldset legend={ts("contact.title")} description={ts("contact.description")}>
             <div className="flex flex-col gap-5">
-              <div className="grid gap-5 sm:grid-cols-2">
-                <Field label={tf("name.label")} htmlFor="name" error={fieldError("name")}>
+              <div className="grid gap-5 sm:grid-cols-2 sm:grid-rows-[auto_auto_auto] sm:gap-y-1.5">
+                <Field paired label={tf("name.label")} htmlFor="name" error={fieldError("name")}>
                   <Input id="name" autoComplete="name" placeholder={tf("name.placeholder")} {...errorProps("name")} {...register("name")} />
                 </Field>
-                <Field label={tf("company.label")} htmlFor="company">
+                <Field paired label={tf("company.label")} htmlFor="company">
                   <Input id="company" autoComplete="organization" placeholder={tf("company.placeholder")} {...register("company")} />
                 </Field>
               </div>
-              <div className="grid gap-5 sm:grid-cols-2">
-                <Field label={tf("email.label")} htmlFor="email" error={fieldError("email")}>
+              <div className="grid gap-5 sm:grid-cols-2 sm:grid-rows-[auto_auto_auto] sm:gap-y-1.5">
+                <Field paired label={tf("email.label")} htmlFor="email" error={fieldError("email")}>
                   <Input id="email" type="email" autoComplete="email" placeholder={tf("email.placeholder")} {...errorProps("email")} {...register("email")} />
                 </Field>
-                <Field label={tf("phone.label")} htmlFor="phone" error={fieldError("phone")}>
+                <Field paired label={tf("phone.label")} htmlFor="phone" error={fieldError("phone")}>
                   <Input id="phone" type="tel" autoComplete="tel" placeholder={tf("phone.placeholder")} {...errorProps("phone")} {...register("phone")} />
                 </Field>
               </div>
@@ -583,32 +583,58 @@ function FieldGroup({
   );
 }
 
+/**
+ * `paired` opts a field into CSS subgrid so two side-by-side fields keep their
+ * inputs on the same line no matter how many lines either LABEL takes.
+ *
+ * The previous approach reserved a fixed label height (`min-h-6`), which is a
+ * guess: it holds exactly one line of text-sm, so the first label that wraps to
+ * two pushes its input down and the row goes crooked again. It only survived
+ * because "Company (optional)" happened to fit. Subgrid makes the label row, the
+ * input row and the message row shared tracks of the PARENT grid, so the fields
+ * align structurally instead of by coincidence, for any label length.
+ *
+ * Requires the parent to declare the three rows:
+ *   grid gap-5 sm:grid-cols-2 sm:grid-rows-[auto_auto_auto] sm:gap-y-1.5
+ * Only at `sm` and up, where the two-column layout actually exists; stacked on
+ * mobile it is a plain flex column and none of this matters. Hint and error share
+ * one row so a field never has more than the three children the span allows.
+ */
 function Field({
   label,
   htmlFor,
   hint,
   error,
+  paired = false,
   children,
 }: {
   label: string;
   htmlFor: string;
   hint?: string;
   error?: string;
+  paired?: boolean;
   children: React.ReactNode;
 }) {
   return (
-    <div className="flex flex-col gap-1.5">
-      {/* Reserve a consistent label height so side-by-side fields keep their
-          inputs on the same line even if one label wraps. */}
-      <Label htmlFor={htmlFor} className="min-h-6 leading-tight">
+    <div
+      className={cn(
+        "flex flex-col gap-1.5",
+        paired && "sm:grid sm:row-span-3 sm:grid-rows-subgrid",
+      )}
+    >
+      <Label htmlFor={htmlFor} className="leading-tight">
         {label}
       </Label>
       {children}
-      {hint ? <p className="text-sm text-muted-foreground">{hint}</p> : null}
-      {error ? (
-        <p id={`${htmlFor}-error`} className="text-sm text-destructive">
-          {error}
-        </p>
+      {hint || error ? (
+        <div className="flex flex-col gap-1">
+          {hint ? <p className="text-sm text-muted-foreground">{hint}</p> : null}
+          {error ? (
+            <p id={`${htmlFor}-error`} className="text-sm text-destructive">
+              {error}
+            </p>
+          ) : null}
+        </div>
       ) : null}
     </div>
   );
@@ -627,13 +653,22 @@ function NumberField({
   reg: React.ComponentProps<"input">;
 }) {
   return (
-    <div className="flex flex-col gap-1.5">
-      {/* min-h reserves a consistent label height so the inputs in a row stay
-          aligned even when one label wraps to two lines. */}
-      <Label htmlFor={id} className="min-h-8 text-xs leading-tight">
+    // These sit 3-4 across, so their labels are the ones most likely to wrap. The
+    // input is bottom-anchored (`h-full` + `mt-auto`) rather than given a guessed
+    // label height: grid items stretch to the row, so pushing every input to the
+    // bottom of its cell aligns them exactly, whether a label takes one line or
+    // three. Nothing here can go crooked from a copy change.
+    <div className="flex h-full flex-col gap-1.5">
+      <Label htmlFor={id} className="text-xs leading-tight">
         {label}
       </Label>
-      <Input id={id} inputMode="numeric" placeholder={placeholder} {...reg} />
+      <Input
+        id={id}
+        inputMode="numeric"
+        placeholder={placeholder}
+        className="mt-auto"
+        {...reg}
+      />
     </div>
   );
 }
