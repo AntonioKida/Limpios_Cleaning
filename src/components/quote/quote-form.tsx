@@ -5,47 +5,74 @@ import { useForm, useWatch, type Resolver } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 import { useLocale, useTranslations } from "next-intl";
-import { ArrowLeft, ArrowRight, CheckCircle2, Loader2, Phone } from "lucide-react";
+import {
+  ArrowLeft,
+  ArrowRight,
+  Building2,
+  CheckCircle2,
+  KeyRound,
+  Loader2,
+  Phone,
+} from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { Icon } from "@/components/icon";
-import { serviceSlugs, getService } from "@/content/services";
+import { getService } from "@/content/services";
 import { site } from "@/content/site";
 import { cn } from "@/lib/utils";
 
-// B2B-first order (matches the repositioned audience); values map to
-// Quote.fields.propertyType.options.* in the catalogs.
-const PROPERTY_TYPES = ["office", "construction", "community", "house", "apartment", "other"] as const;
-// "custom" covers nightly / several-times-weekly contracts; "turnover" covers
-// property managers' per-unit, as-needed cadence (role-audit findings).
-const FREQUENCIES = ["onetime", "weekly", "biweekly", "monthly", "custom", "turnover"] as const;
-/** Property types where a bedroom count makes no sense (offices, sites, amenity buildings). */
-const NON_RESIDENTIAL = new Set(["office", "construction", "community"]);
+// The form forks on the first question. Values map to Quote.fields.*.options.* keys.
+const AUDIENCES = ["business", "property-manager"] as const;
+const SPACE_TYPES = ["office", "retail", "medical", "construction", "other"] as const;
+// Business services — a subset of the catalog; labels reuse Quote.fields.service.options.*.
+const BUSINESS_SERVICES = ["commercial", "post-construction", "window-cleaning", "carpet-cleaning"] as const;
+const BUSINESS_FREQ = ["daily", "weekly", "monthly", "onetime"] as const;
+const FLOORING = ["carpet", "lvt", "lvp", "marble"] as const;
+const PM_CARPET = ["none", "steam", "steam-deodorizer"] as const;
+const PREFERRED_CONTACT = ["phone", "email", "text"] as const;
 
 type QuoteFormValues = {
-  service: string;
-  propertyType: string;
-  company?: string; // real field — business / association / builder name
+  audience: string;
+  // business
+  spaceType?: string;
+  services?: string[];
+  restrooms?: string;
+  offices?: string;
+  conferenceRooms?: string;
+  windows?: string;
+  flooring?: string;
+  lastCleaning?: string;
+  firstTimeDeepClean?: boolean;
+  blindsType?: string;
+  specialSurfaces?: string;
+  // property-manager
   bedrooms?: string;
   bathrooms?: string;
   sqft?: string;
-  frequency: string;
+  carpetCleaning?: string;
+  appliances?: boolean;
+  blinds?: boolean;
+  lvtSteam?: boolean;
+  lvtSteamGrout?: boolean;
+  // shared
+  frequency?: string;
   name: string;
+  company?: string;
   email: string;
   phone: string;
-  address?: string;
+  preferredContact?: string;
   message?: string;
   consent: boolean;
   website?: string; // honeypot
 };
 
+// Fields validated when leaving each step. The details step (1) is all-optional.
 const STEP_FIELDS: (keyof QuoteFormValues)[][] = [
-  ["service"],
-  ["propertyType", "bedrooms", "bathrooms", "sqft"],
-  ["frequency"],
-  ["name", "company", "email", "phone", "address", "message", "consent"],
+  ["audience"],
+  [],
+  ["name", "company", "email", "phone", "preferredContact", "message", "consent"],
 ];
 
 type Status = "idle" | "submitting" | "success" | "error";
@@ -63,42 +90,48 @@ export function QuoteForm({
   const ts = useTranslations("Quote.steps");
   const locale = useLocale();
 
+  // ?service= prefill: only when it's one of the business services — pre-pick the
+  // business audience + check that service so the CTA lands mid-flow.
+  const isBizService = Boolean(
+    defaultService && (BUSINESS_SERVICES as readonly string[]).includes(defaultService),
+  );
+
   const schema = useMemo(
     () =>
       z.object({
-        // react-hook-form yields `null` for an unselected radio group, so
-        // coerce null/undefined -> "" before validating (otherwise zod reports a
-        // raw "expected string, received null" instead of the friendly message).
-        service: z.preprocess(
+        audience: z.preprocess(
           (v) => v ?? "",
-          z.string().refine((v) => (serviceSlugs as readonly string[]).includes(v), {
-            error: tv("serviceRequired"),
+          z.string().refine((v) => (AUDIENCES as readonly string[]).includes(v), {
+            error: tv("audienceRequired"),
           }),
         ),
-        propertyType: z.preprocess(
-          (v) => v ?? "",
-          z.string().refine((v) => (PROPERTY_TYPES as readonly string[]).includes(v), {
-            error: tv("propertyTypeRequired"),
-          }),
-        ),
+        spaceType: z.string().optional(),
+        services: z.array(z.string()).optional(),
+        restrooms: z.string().optional(),
+        offices: z.string().optional(),
+        conferenceRooms: z.string().optional(),
+        windows: z.string().optional(),
+        flooring: z.string().optional(),
+        lastCleaning: z.string().optional(),
+        firstTimeDeepClean: z.boolean().optional(),
+        blindsType: z.string().optional(),
+        specialSurfaces: z.string().optional(),
         bedrooms: z.string().optional(),
         bathrooms: z.string().optional(),
         sqft: z.string().optional(),
-        frequency: z.preprocess(
-          (v) => v ?? "",
-          z.string().refine((v) => (FREQUENCIES as readonly string[]).includes(v), {
-            error: tv("frequencyRequired"),
-          }),
-        ),
+        carpetCleaning: z.string().optional(),
+        appliances: z.boolean().optional(),
+        blinds: z.boolean().optional(),
+        lvtSteam: z.boolean().optional(),
+        lvtSteamGrout: z.boolean().optional(),
+        frequency: z.string().optional(),
         name: z.string().min(1, tv("nameRequired")).min(2, tv("nameMin")),
         company: z.string().max(160).optional(),
         email: z.string().min(1, tv("emailRequired")).email(tv("emailInvalid")),
         phone: z.string().min(1, tv("phoneRequired")).min(7, tv("phoneInvalid")),
-        address: z.string().optional(),
-        message: z.string().max(1000).optional(),
-        consent: z.boolean().refine((v) => v === true, {
-          error: tv("consentRequired"),
-        }),
+        preferredContact: z.string().optional(),
+        message: z.string().max(2000).optional(),
+        consent: z.boolean().refine((v) => v === true, { error: tv("consentRequired") }),
         website: z.string().max(0).optional(),
       }),
     [tv],
@@ -108,17 +141,32 @@ export function QuoteForm({
     resolver: zodResolver(schema) as Resolver<QuoteFormValues>,
     mode: "onTouched",
     defaultValues: {
-      service: defaultService,
-      propertyType: "",
-      company: "",
+      audience: isBizService ? "business" : "",
+      spaceType: "",
+      services: isBizService ? [defaultService] : [],
+      restrooms: "",
+      offices: "",
+      conferenceRooms: "",
+      windows: "",
+      flooring: "",
+      lastCleaning: "",
+      firstTimeDeepClean: false,
+      blindsType: "",
+      specialSurfaces: "",
       bedrooms: "",
       bathrooms: "",
       sqft: "",
+      carpetCleaning: "",
+      appliances: false,
+      blinds: false,
+      lvtSteam: false,
+      lvtSteamGrout: false,
       frequency: "",
       name: "",
+      company: "",
       email: "",
       phone: "",
-      address: "",
+      preferredContact: "",
       message: "",
       consent: false,
       website: "",
@@ -128,36 +176,29 @@ export function QuoteForm({
   const [step, setStep] = useState(0);
   const [status, setStatus] = useState<Status>("idle");
   const [devMode, setDevMode] = useState(false);
-  // Guards against a same-tick double submit (the disabled attr only applies
-  // after the next render, so two synchronous clicks could otherwise both fire).
   const submittingRef = useRef(false);
   const totalSteps = STEP_FIELDS.length;
   const { register, formState } = form;
   const { errors, touchedFields, isSubmitted } = formState;
-  // Show a contact-field error only after the user has actually engaged with that
-  // field (blur), so arriving at the contact step never greets them with a wall of
-  // red. A premature submit focuses the first empty field and shows the calm summary
-  // below the buttons — it never lights up every field at once.
+  // Contact-field errors show only after the user engages that field (blur) — a
+  // premature submit focuses the first empty field + shows one calm summary line.
   const fieldError = (name: keyof QuoteFormValues) =>
     touchedFields[name] ? errors[name]?.message : undefined;
-  // Reactive subscription (render-safe, unlike form.watch()) — drives the
-  // bedrooms-field gating for non-residential property types.
-  const propertyType = useWatch({ control: form.control, name: "propertyType" });
+  const audience = useWatch({ control: form.control, name: "audience" });
 
   async function next() {
-    const valid = await form.trigger(STEP_FIELDS[step]);
+    const fields = STEP_FIELDS[step];
+    const valid = fields.length === 0 ? true : await form.trigger(fields);
     if (valid) setStep((s) => Math.min(s + 1, totalSteps - 1));
   }
-
   function back() {
     setStep((s) => Math.max(s - 1, 0));
   }
 
   async function onSubmit(values: QuoteFormValues) {
-    if (submittingRef.current) return; // already in flight (same-tick double click)
-    // Honeypot: bots fill hidden fields. Silently "succeed" without sending.
+    if (submittingRef.current) return;
     if (values.website) {
-      setStatus("success");
+      setStatus("success"); // honeypot: silently "succeed" without sending
       return;
     }
     submittingRef.current = true;
@@ -186,12 +227,8 @@ export function QuoteForm({
         <span className="grid size-14 place-items-center rounded-full bg-secondary text-royal">
           <CheckCircle2 className="size-8" aria-hidden />
         </span>
-        <h3 className="font-heading text-xl font-bold text-navy">
-          {t("success.title")}
-        </h3>
-        <p className="max-w-sm text-sm text-muted-foreground">
-          {t("success.body")}
-        </p>
+        <h3 className="font-heading text-xl font-bold text-navy">{t("success.title")}</h3>
+        <p className="max-w-sm text-sm text-muted-foreground">{t("success.body")}</p>
         {devMode ? (
           <p className="rounded-lg bg-muted px-3 py-2 text-sm text-muted-foreground">
             {t("devNote")}
@@ -217,8 +254,7 @@ export function QuoteForm({
   const progress = ((step + 1) / totalSteps) * 100;
 
   return (
-    // onSubmit reads submittingRef only inside the deferred submit handler (not
-    // during render); the rule can't see through RHF's handleSubmit wrapper.
+    // onSubmit reads submittingRef only inside the deferred submit handler.
     // eslint-disable-next-line react-hooks/refs
     <form onSubmit={form.handleSubmit(onSubmit)} noValidate className="flex flex-col gap-6">
       {/* Progress */}
@@ -235,8 +271,7 @@ export function QuoteForm({
         </div>
       </div>
 
-      {/* Honeypot (hidden from users & assistive tech). Named "website" — the
-          visible business-name field below owns "company" now. */}
+      {/* Honeypot */}
       <div aria-hidden className="hidden">
         <label>
           Website
@@ -245,101 +280,128 @@ export function QuoteForm({
       </div>
 
       <div className="min-h-[15rem]">
+        {/* STEP 0 — audience fork */}
         {step === 0 ? (
           <Fieldset
-            legend={tf("service.label")}
-            description={ts("service.description")}
-            error={errors.service?.message}
+            legend={tf("audience.label")}
+            description={ts("audience.description")}
+            error={errors.audience?.message}
           >
-            <div className="grid gap-2.5 sm:grid-cols-2">
-              {serviceSlugs.map((slug) => (
-                <OptionCard
-                  key={slug}
-                  label={tf(`service.options.${slug}`)}
-                  value={slug}
-                  iconName={getService(slug)?.icon}
-                  {...register("service")}
-                />
-              ))}
+            <div className="grid gap-3 sm:grid-cols-2">
+              <OptionCard
+                label={tf("audience.options.business")}
+                sublabel={tf("audience.hint.business")}
+                value="business"
+                icon={<Building2 className="size-5" />}
+                {...register("audience")}
+              />
+              <OptionCard
+                label={tf("audience.options.property-manager")}
+                sublabel={tf("audience.hint.property-manager")}
+                value="property-manager"
+                icon={<KeyRound className="size-5" />}
+                {...register("audience")}
+              />
             </div>
           </Fieldset>
         ) : null}
 
+        {/* STEP 1 — branch details (all optional) */}
         {step === 1 ? (
-          <Fieldset
-            legend={ts("property.title")}
-            description={ts("property.description")}
-            error={errors.propertyType?.message}
-          >
-            <div className="flex flex-col gap-5">
-              <div className="grid gap-2.5 sm:grid-cols-2">
-                {PROPERTY_TYPES.map((pt) => (
-                  <OptionCard
-                    key={pt}
-                    label={tf(`propertyType.options.${pt}`)}
-                    value={pt}
-                    {...register("propertyType")}
-                  />
-                ))}
-              </div>
-              {/* Bedrooms only make sense for homes/units — offices, sites and
-                  amenity buildings get restrooms + sqft (role-audit finding). */}
-              <div className="grid grid-cols-2 gap-4">
-                {!NON_RESIDENTIAL.has(propertyType) ? (
-                  <Field label={tf("bedrooms.label")} htmlFor="bedrooms">
-                    <Input
-                      id="bedrooms"
-                      inputMode="numeric"
-                      placeholder={tf("bedrooms.placeholder")}
-                      {...register("bedrooms")}
-                    />
+          <Fieldset legend={ts("details.title")} description={ts("details.description")}>
+            {audience === "business" ? (
+              <div className="flex flex-col gap-6">
+                <FieldGroup label={tf("spaceType.label")}>
+                  <div className="grid gap-2.5 sm:grid-cols-2">
+                    {SPACE_TYPES.map((s) => (
+                      <OptionCard key={s} label={tf(`spaceType.options.${s}`)} value={s} {...register("spaceType")} />
+                    ))}
+                  </div>
+                </FieldGroup>
+
+                <FieldGroup label={tf("servicesNeeded.label")} hint={tf("servicesNeeded.description")}>
+                  <div className="grid gap-2.5 sm:grid-cols-2">
+                    {BUSINESS_SERVICES.map((s) => (
+                      <CheckCard
+                        key={s}
+                        label={tf(`service.options.${s}`)}
+                        value={s}
+                        iconName={getService(s)?.icon}
+                        {...register("services")}
+                      />
+                    ))}
+                  </div>
+                </FieldGroup>
+
+                <FieldGroup label={tf("businessFrequency.label")}>
+                  <div className="grid gap-2.5 sm:grid-cols-2">
+                    {BUSINESS_FREQ.map((f) => (
+                      <OptionCard key={f} label={tf(`frequency.options.${f}`)} value={f} {...register("frequency")} />
+                    ))}
+                  </div>
+                </FieldGroup>
+
+                <div className="grid grid-cols-2 gap-4 sm:grid-cols-4">
+                  <NumberField id="restrooms" label={tf("restrooms.label")} reg={register("restrooms")} />
+                  <NumberField id="offices" label={tf("offices.label")} reg={register("offices")} />
+                  <NumberField id="conferenceRooms" label={tf("conferenceRooms.label")} reg={register("conferenceRooms")} />
+                  <NumberField id="windows" label={tf("windows.label")} reg={register("windows")} />
+                </div>
+
+                <FieldGroup label={tf("flooring.label")}>
+                  <div className="grid grid-cols-2 gap-2.5 sm:grid-cols-4">
+                    {FLOORING.map((f) => (
+                      <OptionCard key={f} label={tf(`flooring.options.${f}`)} value={f} {...register("flooring")} />
+                    ))}
+                  </div>
+                </FieldGroup>
+
+                <div className="grid gap-4 sm:grid-cols-2">
+                  <Field label={tf("lastCleaning.label")} htmlFor="lastCleaning">
+                    <Input id="lastCleaning" placeholder={tf("lastCleaning.placeholder")} {...register("lastCleaning")} />
                   </Field>
-                ) : null}
-                <Field label={tf("bathrooms.label")} htmlFor="bathrooms">
-                  <Input
-                    id="bathrooms"
-                    inputMode="numeric"
-                    placeholder={tf("bathrooms.placeholder")}
-                    {...register("bathrooms")}
-                  />
+                  <Field label={tf("blindsType.label")} htmlFor="blindsType">
+                    <Input id="blindsType" placeholder={tf("blindsType.placeholder")} {...register("blindsType")} />
+                  </Field>
+                </div>
+                <Field label={tf("specialSurfaces.label")} htmlFor="specialSurfaces">
+                  <Input id="specialSurfaces" placeholder={tf("specialSurfaces.placeholder")} {...register("specialSurfaces")} />
                 </Field>
+
+                <Toggle label={tf("firstTimeDeepClean.label")} hint={tf("firstTimeDeepClean.hint")} {...register("firstTimeDeepClean")} />
               </div>
-              <Field label={tf("sqft.label")} htmlFor="sqft" hint={tf("sqft.help")}>
-                <Input
-                  id="sqft"
-                  inputMode="numeric"
-                  placeholder={tf("sqft.placeholder")}
-                  {...register("sqft")}
-                />
-              </Field>
-            </div>
+            ) : (
+              <div className="flex flex-col gap-6">
+                <div className="grid grid-cols-3 gap-4">
+                  <NumberField id="bedrooms" label={tf("bedrooms.label")} reg={register("bedrooms")} />
+                  <NumberField id="bathrooms" label={tf("bathrooms.label")} reg={register("bathrooms")} />
+                  <NumberField id="sqft" label={tf("sqft.label")} reg={register("sqft")} />
+                </div>
+
+                <FieldGroup label={tf("carpetCleaning.label")}>
+                  <div className="grid gap-2.5 sm:grid-cols-3">
+                    {PM_CARPET.map((c) => (
+                      <OptionCard key={c} label={tf(`carpetCleaning.options.${c}`)} value={c} {...register("carpetCleaning")} />
+                    ))}
+                  </div>
+                </FieldGroup>
+
+                <FieldGroup label={tf("pmExtras.label")}>
+                  <div className="grid gap-2.5 sm:grid-cols-2">
+                    <Toggle label={tf("appliances.label")} {...register("appliances")} />
+                    <Toggle label={tf("blinds.label")} {...register("blinds")} />
+                    <Toggle label={tf("lvtSteam.label")} {...register("lvtSteam")} />
+                    <Toggle label={tf("lvtSteamGrout.label")} {...register("lvtSteamGrout")} />
+                  </div>
+                </FieldGroup>
+              </div>
+            )}
           </Fieldset>
         ) : null}
 
+        {/* STEP 2 — contact (shared) */}
         {step === 2 ? (
-          <Fieldset
-            legend={tf("frequency.label")}
-            description={ts("frequency.description")}
-            error={errors.frequency?.message}
-          >
-            <div className="grid gap-2.5 sm:grid-cols-2">
-              {FREQUENCIES.map((f) => (
-                <OptionCard
-                  key={f}
-                  label={tf(`frequency.options.${f}`)}
-                  value={f}
-                  {...register("frequency")}
-                />
-              ))}
-            </div>
-          </Fieldset>
-        ) : null}
-
-        {step === 3 ? (
-          <Fieldset
-            legend={ts("contact.title")}
-            description={ts("contact.description")}
-          >
+          <Fieldset legend={ts("contact.title")} description={ts("contact.description")}>
             <div className="flex flex-col gap-4">
               <div className="grid gap-4 sm:grid-cols-2">
                 <Field label={tf("name.label")} htmlFor="name" error={fieldError("name")}>
@@ -357,9 +419,13 @@ export function QuoteForm({
                   <Input id="phone" type="tel" autoComplete="tel" placeholder={tf("phone.placeholder")} {...register("phone")} />
                 </Field>
               </div>
-              <Field label={tf("address.label")} htmlFor="address">
-                <Input id="address" autoComplete="street-address" placeholder={tf("address.placeholder")} {...register("address")} />
-              </Field>
+              <FieldGroup label={tf("preferredContact.label")}>
+                <div className="grid grid-cols-3 gap-2.5">
+                  {PREFERRED_CONTACT.map((c) => (
+                    <OptionCard key={c} label={tf(`preferredContact.options.${c}`)} value={c} {...register("preferredContact")} />
+                  ))}
+                </div>
+              </FieldGroup>
               <Field label={tf("message.label")} htmlFor="message">
                 <Textarea id="message" rows={3} placeholder={tf("message.placeholder")} {...register("message")} />
               </Field>
@@ -385,8 +451,7 @@ export function QuoteForm({
         ) : null}
       </div>
 
-      {/* After a failed submit: one calm line + focus on the first empty field —
-          never a per-field wall of red on arrival. */}
+      {/* Calm summary after a failed submit — never a per-field wall on arrival. */}
       {step === totalSteps - 1 && isSubmitted && Object.keys(errors).length > 0 ? (
         <p role="alert" className="text-sm font-medium text-destructive">
           {tv("incompleteForm")}
@@ -425,8 +490,8 @@ export function QuoteForm({
   );
 }
 
-function stepKey(step: number): "service" | "property" | "frequency" | "contact" {
-  return (["service", "property", "frequency", "contact"] as const)[step];
+function stepKey(step: number): "audience" | "details" | "contact" {
+  return (["audience", "details", "contact"] as const)[step];
 }
 
 function Fieldset({
@@ -444,13 +509,30 @@ function Fieldset({
     <fieldset className="flex flex-col gap-4">
       <legend className="flex flex-col gap-1">
         <span className="font-heading text-base font-semibold text-navy">{legend}</span>
-        {description ? (
-          <span className="text-sm text-muted-foreground">{description}</span>
-        ) : null}
+        {description ? <span className="text-sm text-muted-foreground">{description}</span> : null}
       </legend>
       {children}
       {error ? <p className="text-sm text-destructive">{error}</p> : null}
     </fieldset>
+  );
+}
+
+/** A labelled group inside a step (for radio/checkbox clusters). */
+function FieldGroup({
+  label,
+  hint,
+  children,
+}: {
+  label: string;
+  hint?: string;
+  children: React.ReactNode;
+}) {
+  return (
+    <div className="flex flex-col gap-2.5">
+      <span className="text-sm font-semibold text-navy">{label}</span>
+      {hint ? <span className="-mt-1.5 text-sm text-muted-foreground">{hint}</span> : null}
+      {children}
+    </div>
   );
 }
 
@@ -477,7 +559,62 @@ function Field({
   );
 }
 
+/** Small numeric input (count/area). Inputs stay ≥16px via the shared Input. */
+function NumberField({
+  id,
+  label,
+  reg,
+}: {
+  id: string;
+  label: string;
+  reg: React.ComponentProps<"input">;
+}) {
+  return (
+    <div className="flex flex-col gap-1.5">
+      <Label htmlFor={id} className="text-xs">
+        {label}
+      </Label>
+      <Input id={id} inputMode="numeric" placeholder="—" {...reg} />
+    </div>
+  );
+}
+
 const OptionCard = function OptionCard({
+  ref,
+  label,
+  sublabel,
+  value,
+  icon,
+  ...props
+}: React.ComponentProps<"input"> & {
+  label: string;
+  sublabel?: string;
+  icon?: React.ReactNode;
+}) {
+  return (
+    <label
+      className={cn(
+        "flex cursor-pointer items-center gap-2.5 rounded-xl border border-border bg-surface px-4 py-3 text-sm font-medium text-navy transition-colors",
+        "hover:border-sky/50 has-[:checked]:border-royal has-[:checked]:bg-secondary has-[:checked]:ring-1 has-[:checked]:ring-royal",
+        "has-[:focus-visible]:outline-2 has-[:focus-visible]:outline-offset-2 has-[:focus-visible]:outline-ring",
+      )}
+    >
+      <input ref={ref} type="radio" value={value} className="sr-only" {...props} />
+      {icon ? (
+        <span className="grid size-8 shrink-0 place-items-center rounded-lg bg-secondary text-royal">
+          {icon}
+        </span>
+      ) : null}
+      <span className="flex flex-col">
+        <span>{label}</span>
+        {sublabel ? <span className="text-xs font-normal text-muted-foreground">{sublabel}</span> : null}
+      </span>
+    </label>
+  );
+};
+
+/** Multi-select card (checkbox) — same look as OptionCard, for services etc. */
+const CheckCard = function CheckCard({
   ref,
   label,
   value,
@@ -495,13 +632,42 @@ const OptionCard = function OptionCard({
         "has-[:focus-visible]:outline-2 has-[:focus-visible]:outline-offset-2 has-[:focus-visible]:outline-ring",
       )}
     >
-      <input ref={ref} type="radio" value={value} className="sr-only" {...props} />
+      <input ref={ref} type="checkbox" value={value} className="sr-only" {...props} />
       {iconName ? (
         <span className="grid size-8 shrink-0 place-items-center rounded-lg bg-secondary text-royal">
           <Icon name={iconName} className="size-4" />
         </span>
       ) : null}
       <span>{label}</span>
+    </label>
+  );
+};
+
+/** Boolean checkbox styled as a togglable pill (add-on questions). */
+const Toggle = function Toggle({
+  ref,
+  label,
+  hint,
+  ...props
+}: React.ComponentProps<"input"> & { label: string; hint?: string }) {
+  return (
+    <label
+      className={cn(
+        "flex cursor-pointer items-start gap-3 rounded-xl border border-border bg-surface px-4 py-3 text-sm font-medium text-navy transition-colors",
+        "hover:border-sky/50 has-[:checked]:border-royal has-[:checked]:bg-secondary",
+        "has-[:focus-visible]:outline-2 has-[:focus-visible]:outline-offset-2 has-[:focus-visible]:outline-ring",
+      )}
+    >
+      <input
+        ref={ref}
+        type="checkbox"
+        className="mt-0.5 size-4 shrink-0 rounded border-input accent-royal"
+        {...props}
+      />
+      <span className="flex flex-col">
+        <span>{label}</span>
+        {hint ? <span className="text-xs font-normal text-muted-foreground">{hint}</span> : null}
+      </span>
     </label>
   );
 };

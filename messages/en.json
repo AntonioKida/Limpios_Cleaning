@@ -761,6 +761,14 @@
     "modalDescription": "Tell us about your space. It takes about two minutes.",
     "stepLabel": "Step {current} of {total}",
     "steps": {
+      "audience": {
+        "title": "You",
+        "description": "First, tell us who's asking — we'll tailor the questions."
+      },
+      "details": {
+        "title": "Details",
+        "description": "Optional — it helps us quote, and the free walkthrough confirms everything."
+      },
       "service": {
         "title": "Service",
         "description": "What do you need cleaned?"
@@ -779,6 +787,78 @@
       }
     },
     "fields": {
+      "audience": {
+        "label": "Are you a business or a property manager?",
+        "description": "This tailors the questions to your space.",
+        "options": {
+          "business": "A business",
+          "property-manager": "A property manager"
+        },
+        "hint": {
+          "business": "Offices, retail, medical, facilities",
+          "property-manager": "Rental units & turnovers"
+        }
+      },
+      "spaceType": {
+        "label": "Type of space",
+        "options": {
+          "office": "Office",
+          "retail": "Retail",
+          "medical": "Medical",
+          "construction": "Construction site",
+          "other": "Other"
+        }
+      },
+      "servicesNeeded": {
+        "label": "Service(s) needed",
+        "description": "Pick all that apply."
+      },
+      "businessFrequency": {
+        "label": "How often?"
+      },
+      "restrooms": { "label": "Restrooms" },
+      "offices": { "label": "Offices" },
+      "conferenceRooms": { "label": "Conf. rooms" },
+      "windows": { "label": "Windows" },
+      "flooring": {
+        "label": "Flooring",
+        "options": { "carpet": "Carpet", "lvt": "LVT", "lvp": "LVP", "marble": "Marble" }
+      },
+      "lastCleaning": {
+        "label": "Last professional cleaning?",
+        "placeholder": "e.g. 3 months ago, or never"
+      },
+      "blindsType": {
+        "label": "Window blinds",
+        "placeholder": "e.g. vertical, faux wood"
+      },
+      "specialSurfaces": {
+        "label": "Special desktops or surfaces",
+        "placeholder": "Glass, stone, electronics-heavy desks…"
+      },
+      "firstTimeDeepClean": {
+        "label": "Include a first-time deep clean?",
+        "hint": "A one-time reset before recurring service (priced higher)."
+      },
+      "carpetCleaning": {
+        "label": "Carpet cleaning",
+        "options": {
+          "none": "None",
+          "steam": "Steam",
+          "steam-deodorizer": "Steam + deodorizer"
+        }
+      },
+      "pmExtras": {
+        "label": "Add-ons"
+      },
+      "appliances": { "label": "Include appliances" },
+      "blinds": { "label": "Include window blinds" },
+      "lvtSteam": { "label": "LVT steam clean" },
+      "lvtSteamGrout": { "label": "LVT steam + color grout sealant" },
+      "preferredContact": {
+        "label": "Preferred contact",
+        "options": { "phone": "Phone", "email": "Email", "text": "Text" }
+      },
       "service": {
         "label": "Service needed",
         "placeholder": "Choose a service",
@@ -820,6 +900,7 @@
       "frequency": {
         "label": "How often?",
         "options": {
+          "daily": "Daily",
           "onetime": "One-time project",
           "weekly": "Weekly",
           "biweekly": "Every 2 weeks",
@@ -865,6 +946,7 @@
       "done": "Done"
     },
     "validation": {
+      "audienceRequired": "Please tell us who you are.",
       "serviceRequired": "Please choose a service.",
       "propertyTypeRequired": "Please choose a property type.",
       "frequencyRequired": "Please choose a frequency.",

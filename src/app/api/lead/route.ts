@@ -30,6 +30,10 @@ function escapeHtml(value: string): string {
 // Display labels for the internal notification (English — the lead stores slugs).
 // Unmapped ids fall back to a humanized slug, so the email keeps working if the
 // content enums grow (it just won't be as polished until the label is added here).
+const AUDIENCE_LABELS: Record<string, string> = {
+  business: "Business",
+  "property-manager": "Property manager",
+};
 const SERVICE_LABELS: Record<string, string> = {
   commercial: "Commercial cleaning",
   "post-construction": "Post-construction",
@@ -40,21 +44,37 @@ const SERVICE_LABELS: Record<string, string> = {
   "deep-cleaning": "Deep cleaning",
   "interior-painting": "Interior painting",
 };
-const PROPERTY_LABELS: Record<string, string> = {
-  office: "Office / retail / facility",
+const SPACE_LABELS: Record<string, string> = {
+  office: "Office",
+  retail: "Retail",
+  medical: "Medical",
   construction: "Construction site",
-  community: "HOA / community",
-  house: "House",
-  apartment: "Apartment / unit",
   other: "Other",
 };
 const FREQUENCY_LABELS: Record<string, string> = {
-  onetime: "One-time",
+  daily: "Daily",
   weekly: "Weekly",
-  biweekly: "Every 2 weeks",
   monthly: "Monthly",
+  onetime: "One-time",
+  biweekly: "Every 2 weeks",
   custom: "Custom schedule",
   turnover: "Turnover / as-needed",
+};
+const FLOORING_LABELS: Record<string, string> = {
+  carpet: "Carpet",
+  lvt: "LVT",
+  lvp: "LVP",
+  marble: "Marble",
+};
+const CARPET_LABELS: Record<string, string> = {
+  none: "None",
+  steam: "Steam",
+  "steam-deodorizer": "Steam + deodorizer",
+};
+const PREFERRED_LABELS: Record<string, string> = {
+  phone: "Phone call",
+  email: "Email",
+  text: "Text message",
 };
 
 function humanize(value: string): string {
@@ -67,28 +87,55 @@ function labelFor(map: Record<string, string>, value?: string): string | undefin
 
 /**
  * The internal "new lead" notification to the Limpios team. Optimized to be
- * scanned + acted on: the service and prospect are up top, one-tap Call / Email
- * buttons, then the job details, then the message. Email-client-safe (table
- * layout, inline styles only, system fonts, no external assets); Resend sets
- * `replyTo` to the lead's address so a plain reply reaches them.
+ * scanned + acted on: the audience + prospect are up top, one-tap Call / Email
+ * buttons, then the job details (fields depend on the business vs property-manager
+ * branch), then the message. Email-client-safe (table layout, inline styles only,
+ * system fonts, no external assets); Resend sets `replyTo` to the lead's address.
  */
 function buildEmail(lead: LeadInput) {
   const e = escapeHtml;
-  const service = labelFor(SERVICE_LABELS, lead.service);
-  const property = labelFor(PROPERTY_LABELS, lead.propertyType);
-  const frequency = labelFor(FREQUENCY_LABELS, lead.frequency);
+  const isBiz = lead.audience === "business";
+  const audienceLabel = labelFor(AUDIENCE_LABELS, lead.audience);
   const firstName = lead.name?.trim().split(/\s+/)[0] || lead.name;
   const language = lead.locale === "es" ? "Spanish" : "English";
   const telHref = lead.phone ? lead.phone.replace(/[^\d+]/g, "") : "";
+  const yes = "Yes";
+  const services =
+    Array.isArray(lead.services) && lead.services.length > 0
+      ? lead.services.map((s) => labelFor(SERVICE_LABELS, s)).join(", ")
+      : undefined;
 
-  // Detail rows: [label, safe-HTML value]. Empty values are dropped.
-  const detailRows: [string, string | undefined][] = [
-    ["Property type", property && e(property)],
-    ["Bedrooms", lead.bedrooms && e(lead.bedrooms)],
-    ["Bathrooms", lead.bathrooms && e(lead.bathrooms)],
-    ["Square footage", lead.sqft && e(lead.sqft)],
-    ["Frequency", frequency && e(frequency)],
-    ["Address / city", lead.address && e(lead.address)],
+  // Raw [label, value] rows for the active branch — reused for HTML + plain text.
+  const jobRows: [string, string | undefined][] = isBiz
+    ? [
+        ["Space type", labelFor(SPACE_LABELS, lead.spaceType)],
+        ["Services needed", services],
+        ["Frequency", labelFor(FREQUENCY_LABELS, lead.frequency)],
+        ["Restrooms", lead.restrooms],
+        ["Offices", lead.offices],
+        ["Conference rooms", lead.conferenceRooms],
+        ["Windows", lead.windows],
+        ["Flooring", labelFor(FLOORING_LABELS, lead.flooring)],
+        ["Last professional cleaning", lead.lastCleaning],
+        ["First-time deep clean", lead.firstTimeDeepClean ? yes : undefined],
+        ["Window blinds", lead.blindsType],
+        ["Special surfaces", lead.specialSurfaces],
+      ]
+    : [
+        ["Bedrooms", lead.bedrooms],
+        ["Bathrooms", lead.bathrooms],
+        ["Square footage", lead.sqft],
+        ["Carpet cleaning", labelFor(CARPET_LABELS, lead.carpetCleaning)],
+        ["Appliances", lead.appliances ? yes : undefined],
+        ["Window blinds", lead.blinds ? yes : undefined],
+        ["LVT steam clean", lead.lvtSteam ? yes : undefined],
+        ["LVT steam + grout sealant", lead.lvtSteamGrout ? yes : undefined],
+      ];
+  jobRows.push(["Preferred contact", labelFor(PREFERRED_LABELS, lead.preferredContact)]);
+
+  // HTML rows (escaped) + the clickable contact rows.
+  const htmlRows: [string, string | undefined][] = [
+    ...jobRows.map(([label, value]) => [label, value ? e(value) : undefined] as [string, string | undefined]),
     [
       "Email",
       lead.email &&
@@ -100,7 +147,7 @@ function buildEmail(lead: LeadInput) {
         `<a href="tel:${e(telHref)}" style="color:#1b5a9d;text-decoration:none;font-weight:600;">${e(lead.phone)}</a>`,
     ],
   ];
-  const rows = detailRows.filter(([, v]) => Boolean(v));
+  const rows = htmlRows.filter(([, v]) => Boolean(v));
   const rowsHtml = rows
     .map(([label, value], i) => {
       const sep = i === rows.length - 1 ? "" : "border-bottom:1px solid #f0ede8;";
@@ -111,8 +158,8 @@ function buildEmail(lead: LeadInput) {
     })
     .join("");
 
-  const servicePill = service
-    ? `<span style="display:inline-block;background:#e8f1fa;color:#1b5a9d;font-size:11px;font-weight:700;letter-spacing:.5px;text-transform:uppercase;padding:5px 12px;border-radius:999px;">${e(service)}</span>`
+  const audiencePill = audienceLabel
+    ? `<span style="display:inline-block;background:#e8f1fa;color:#1b5a9d;font-size:11px;font-weight:700;letter-spacing:.5px;text-transform:uppercase;padding:5px 12px;border-radius:999px;">${e(audienceLabel)}</span>`
     : "";
   const companyLine = lead.company
     ? `<div style="font-size:14px;color:#50607a;margin-top:4px;">${e(lead.company)}</div>`
@@ -134,7 +181,7 @@ function buildEmail(lead: LeadInput) {
       </td></tr>`
     : "";
 
-  const preheader = `New estimate request from ${lead.name}${service ? ` — ${service}` : ""}`;
+  const preheader = `New estimate request from ${lead.name}${audienceLabel ? ` — ${audienceLabel}` : ""}`;
 
   const html = `<!doctype html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="color-scheme" content="light only"><title>New estimate request</title></head>
@@ -149,8 +196,8 @@ function buildEmail(lead: LeadInput) {
           <div style="font-size:13px;color:#9db4d4;margin-top:3px;">via limpioscleaning.com</div>
         </td></tr>
         <tr><td style="padding:28px 32px 4px;">
-          ${servicePill}
-          <div style="font-size:22px;font-weight:700;color:#0a2359;margin-top:${service ? "14px" : "0"};line-height:1.25;">${e(lead.name)}</div>
+          ${audiencePill}
+          <div style="font-size:22px;font-weight:700;color:#0a2359;margin-top:${audienceLabel ? "14px" : "0"};line-height:1.25;">${e(lead.name)}</div>
           ${companyLine}
           ${buttons}
         </td></tr>
@@ -171,14 +218,9 @@ function buildEmail(lead: LeadInput) {
     "NEW ESTIMATE REQUEST",
     "",
     `${lead.name}${lead.company ? ` — ${lead.company}` : ""}`,
-    service ? `Service: ${service}` : "",
+    audienceLabel ? `Audience: ${audienceLabel}` : "",
     "",
-    property ? `Property type: ${property}` : "",
-    lead.bedrooms ? `Bedrooms: ${lead.bedrooms}` : "",
-    lead.bathrooms ? `Bathrooms: ${lead.bathrooms}` : "",
-    lead.sqft ? `Square footage: ${lead.sqft}` : "",
-    frequency ? `Frequency: ${frequency}` : "",
-    lead.address ? `Address / city: ${lead.address}` : "",
+    ...jobRows.filter(([, v]) => Boolean(v)).map(([l, v]) => `${l}: ${v}`),
     lead.email ? `Email: ${lead.email}` : "",
     lead.phone ? `Phone: ${lead.phone}` : "",
     lead.message ? `\nMessage:\n${lead.message}` : "",
@@ -188,7 +230,7 @@ function buildEmail(lead: LeadInput) {
     .filter((line) => line !== "")
     .join("\n");
 
-  const subject = `New estimate request · ${lead.name}${lead.company ? ` (${lead.company})` : ""}`;
+  const subject = `New estimate request · ${audienceLabel ?? "Lead"} · ${lead.name}${lead.company ? ` (${lead.company})` : ""}`;
   return { subject, html, text };
 }
 

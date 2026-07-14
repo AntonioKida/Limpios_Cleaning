@@ -2,9 +2,7 @@ import { describe, it, expect } from "vitest";
 import { leadSchema, isHoneypotTripped } from "@/lib/lead-schema";
 
 const valid = {
-  service: "deep-cleaning",
-  propertyType: "house",
-  frequency: "biweekly",
+  audience: "business",
   name: "Jane Doe",
   email: "jane@example.com",
   phone: "4075551234",
@@ -16,23 +14,40 @@ describe("leadSchema", () => {
     expect(leadSchema.safeParse(valid).success).toBe(true);
   });
 
-  it("accepts optional fields", () => {
-    const r = leadSchema.safeParse({
+  it("accepts optional branch fields (business + property-manager)", () => {
+    const business = leadSchema.safeParse({
       ...valid,
-      company: "Acme Property Group",
+      spaceType: "office",
+      services: ["commercial", "window-cleaning"],
+      restrooms: "4",
+      firstTimeDeepClean: true,
+      flooring: "lvt",
+      frequency: "weekly",
+      company: "Acme Facilities",
+      preferredContact: "email",
+      message: "After 6pm please",
+    });
+    expect(business.success).toBe(true);
+
+    const pm = leadSchema.safeParse({
+      ...valid,
+      audience: "property-manager",
       bedrooms: "3",
       bathrooms: "2",
       sqft: "1800",
-      address: "Clermont, FL",
-      message: "Two cats at home",
+      appliances: true,
+      carpetCleaning: "steam-deodorizer",
+      lvtSteamGrout: true,
     });
-    expect(r.success).toBe(true);
+    expect(pm.success).toBe(true);
   });
 
-  it("rejects missing required fields", () => {
+  it("rejects missing/invalid required fields", () => {
     expect(leadSchema.safeParse({ ...valid, name: "" }).success).toBe(false);
-    expect(leadSchema.safeParse({ ...valid, service: "" }).success).toBe(false);
-    expect(leadSchema.safeParse({ ...valid, frequency: "" }).success).toBe(false);
+    expect(leadSchema.safeParse({ ...valid, audience: "" }).success).toBe(false);
+    expect(leadSchema.safeParse({ ...valid, audience: "someone-else" }).success).toBe(false);
+    const { email: _e, ...noEmail } = valid;
+    expect(leadSchema.safeParse(noEmail).success).toBe(false);
   });
 
   it("rejects an invalid email", () => {
@@ -59,7 +74,7 @@ describe("honeypot", () => {
   });
   it("treats company as a REAL field, not the honeypot", () => {
     // Regression guard for the rename: a business name must never drop a lead.
-    expect(isHoneypotTripped({ company: "Acme Property Group" } as never)).toBe(false);
-    expect(leadSchema.safeParse({ ...valid, company: "Acme Property Group" }).success).toBe(true);
+    expect(isHoneypotTripped({ company: "Acme Facilities" } as never)).toBe(false);
+    expect(leadSchema.safeParse({ ...valid, company: "Acme Facilities" }).success).toBe(true);
   });
 });
