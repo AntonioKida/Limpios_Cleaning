@@ -31,8 +31,8 @@ export function localBusinessSchema({ description }: { description: string }) {
     url: site.url,
     telephone: site.phone.e164,
     email: site.email,
-    image: `${site.url}/brand/logo.jpeg`,
-    logo: `${site.url}/brand/logo.jpeg`,
+    image: `${site.url}/brand/logo-l.png`,
+    logo: `${site.url}/brand/logo-l.png`,
     priceRange: "$$",
     // Service-area business — no `address`/PostalAddress. Coverage via areaServed.
     geo: {
