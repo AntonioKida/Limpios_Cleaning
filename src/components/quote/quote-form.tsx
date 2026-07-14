@@ -484,13 +484,21 @@ export function QuoteForm({
         ) : (
           <span />
         )}
+        {/* The `key`s are load-bearing. Without them React reuses ONE DOM node for
+            both buttons and just rewrites `type` — and on the details step `next()`
+            never awaits (no fields to validate), so that rewrite lands synchronously
+            INSIDE the click dispatch. The browser then reads the fresh type="submit"
+            when it runs the click's default action and submits the form the user
+            never submitted, failing validation and painting the contact step red on
+            arrival. Distinct keys unmount the Next button instead of mutating it, so
+            the clicked node is detached before any default action can fire. */}
         {step < totalSteps - 1 ? (
-          <Button type="button" variant="cta" size="lg" className="h-11 px-6" onClick={next}>
+          <Button key="next" type="button" variant="cta" size="lg" className="h-11 px-6" onClick={next}>
             {t("buttons.next")}
             <ArrowRight className="size-4" />
           </Button>
         ) : (
-          <Button type="submit" variant="cta" size="lg" className="h-11 px-6" disabled={status === "submitting"}>
+          <Button key="submit" type="submit" variant="cta" size="lg" className="h-11 px-6" disabled={status === "submitting"}>
             {status === "submitting" ? (
               <>
                 <Loader2 className="size-4 animate-spin" />

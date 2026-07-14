@@ -2,10 +2,14 @@ import { useTranslations } from "next-intl";
 import { Container } from "@/components/ui/container";
 import { Icon } from "@/components/icon";
 import { trustStats } from "@/content/home";
-import { site } from "@/content/site";
 
 // Credentials strip — deliberately carries DIFFERENT proof than the hero's
 // star line (veteran/insured) and the "Why" cards, so nothing is restated.
+//
+// No `{year}` is threaded in: the founding year was never confirmed by the owner,
+// and the strip now leads with the SBA/military proof instead. Passing an
+// unconfirmed 2023 in "just in case" is how a false founding claim ships the day
+// someone edits the message back to "Serving since {year}".
 export function TrustBar() {
   const t = useTranslations("Home.trustBar");
 
@@ -21,9 +25,7 @@ export function TrustBar() {
               <span className="shrink-0 text-sky">
                 <Icon name={stat.icon} className="size-6" />
               </span>
-              <span className="text-sm font-semibold text-navy">
-                {t(stat.id, { year: site.foundedYear })}
-              </span>
+              <span className="text-sm font-semibold text-navy">{t(stat.id)}</span>
             </li>
           ))}
         </ul>

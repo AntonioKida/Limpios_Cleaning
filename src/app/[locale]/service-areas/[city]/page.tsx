@@ -10,6 +10,7 @@ import { Container } from "@/components/ui/container";
 import { ServiceCard } from "@/components/sections/service-card";
 import { CTASection } from "@/components/sections/cta-section";
 import { QuoteCTA } from "@/components/quote/quote-cta";
+import { PhoneLink } from "@/components/phone-link";
 import { Button } from "@/components/ui/button";
 import { JsonLd } from "@/components/json-ld";
 import { localBusinessSchema, breadcrumbSchema } from "@/lib/json-ld";
@@ -96,7 +97,7 @@ export default async function CityPage({
       <Container className="pt-8">
         <Link
           href={routes.serviceAreas}
-          className="inline-flex items-center gap-1.5 text-sm font-semibold text-royal hover:underline"
+          className="inline-flex min-h-11 items-center gap-1.5 text-sm font-semibold text-royal hover:underline"
         >
           <ArrowLeft className="size-4" />
           {t("labels.backToAreas")}
@@ -123,13 +124,11 @@ export default async function CityPage({
             <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
               {tc("estimateNote")}
             </p>
-            <a
-              href={site.phone.href}
-              className="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-royal hover:underline"
-            >
-              <Phone className="size-4" aria-hidden />
+            {/* Was a hand-rolled copy of PhoneLink that rendered a 21px-tall tap
+                target and skipped the call-tracking hook. Use the real component. */}
+            <PhoneLink showIcon className="mt-4 text-sm font-semibold text-royal hover:underline">
               {tc("callUs", { phone: site.phone.display })}
-            </a>
+            </PhoneLink>
           </aside>
         </div>
       </Section>

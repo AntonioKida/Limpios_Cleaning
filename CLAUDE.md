@@ -26,9 +26,14 @@ Bilingual (EN/ES) marketing site for a veteran-owned cleaning company. See
 - **Lead pipeline:** `/api/lead` rate-limits, validates (`src/lib/lead-schema.ts`),
   persists (`src/lib/lead-store.ts`, Upstash/KV env-gated) BEFORE emailing
   (Resend). Don't make a Resend failure drop the lead or 502 the user.
-- **Quality gate:** `typecheck && lint && test && build` must all pass. The
-  Vitest parity test fails on i18n key drift. Reviews are placeholders — keep
-  `reviewsArePlaceholder` true (gates rating structured data) until real ones land.
+- **Quality gate:** `typecheck && lint && test && build` must all pass (plus
+  `check:placeholders`, which blocks new TODOs *and* any em-dash in copy). The
+  Vitest parity test fails on i18n key drift.
+- **Honesty gate:** there are no reviews and no ratings. The placeholder reviews
+  and the `reviewsArePlaceholder` flag are gone; `/reviews` is now `/trusted-by`
+  (anonymized client categories live, named clients gated behind
+  `clientsServedEnabled`, no logos ever). Never emit `AggregateRating` until real
+  attributable reviews exist.
 - **Turbopack dev cache** can serve stale CSS after token edits — `rm -rf .next`
   and restart if a change doesn't show. The production `build` is authoritative.
 - Placeholders are marked `// TODO` (and `(TODO confirm with Papo)` in copy); the

@@ -81,7 +81,7 @@ export default async function ServicesPage({
               <li key={service.slug}>
                 <Link
                   href={routes.service(service.slug)}
-                  className="group inline-flex items-center gap-2 rounded-full border border-border bg-surface px-4 py-2 text-sm font-semibold text-navy transition-colors hover:border-sky/50 hover:bg-secondary"
+                  className="group inline-flex min-h-11 items-center gap-2 rounded-full border border-border bg-surface px-4 py-2 text-sm font-semibold text-navy transition-colors hover:border-sky/50 hover:bg-secondary"
                 >
                   <Icon name={service.icon} className="size-4 text-royal" />
                   {t(`items.${service.slug}.name`)}

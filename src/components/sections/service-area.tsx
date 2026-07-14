@@ -44,7 +44,7 @@ export function ServiceAreaSection() {
           <div>
             <Link
               href={routes.serviceAreas}
-              className="inline-flex items-center gap-1.5 text-sm font-semibold text-royal hover:underline"
+              className="inline-flex min-h-11 items-center gap-1.5 text-sm font-semibold text-royal hover:underline"
             >
               {t("cta")}
               <ArrowRight className="size-4" />

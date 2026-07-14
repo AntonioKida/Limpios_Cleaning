@@ -16,9 +16,13 @@ const SCHEMA_DAY: Record<DayKey, string> = {
 /**
  * LocalBusiness as a SERVICE-AREA business: NO PostalAddress is published (the
  * old suite was a UPS mailbox, removed per owner 2026-07). The coverage is
- * declared via `areaServed`; contact is phone + email only. AggregateRating is
- * intentionally OMITTED while reviews are placeholders (`reviewsArePlaceholder`)
- * — never emit structured data for sample reviews.
+ * declared via `areaServed`; contact is phone + email only.
+ *
+ * AggregateRating is intentionally ABSENT, and there is no flag to flip. The
+ * placeholder reviews were deleted outright, so there is no rating to emit and no
+ * `reviewsArePlaceholder` gate to get wrong. Do not add one back until real,
+ * attributable reviews exist: fabricated rating markup is the fastest way to earn
+ * a Google manual action.
  */
 export function localBusinessSchema({ description }: { description: string }) {
   return {

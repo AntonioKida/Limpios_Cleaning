@@ -14,6 +14,11 @@ interface PhoneLinkProps {
 /**
  * Click-to-call link. The phone is a Google Voice line — this is the ONLY way
  * we surface it (no SMS automation). Always points at the single NAP source.
+ *
+ * min-h-11 (44px) is a tap target, not decoration. Every instance of this link is
+ * standalone (header, footer, contact card) rather than inline in a sentence, so
+ * the WCAG target-size inline exception does not cover it — and it was rendering
+ * only 29px tall, on the primary mobile conversion action.
  */
 export function PhoneLink({
   className,
@@ -27,7 +32,7 @@ export function PhoneLink({
       href={site.phone.href}
       data-call-cta
       aria-label={ariaLabel ?? `Call ${site.phone.display}`}
-      className={cn("inline-flex items-center gap-2", className)}
+      className={cn("inline-flex min-h-11 items-center gap-2", className)}
     >
       {showIcon ? (
         <Phone className={cn("size-4", iconClassName)} aria-hidden />

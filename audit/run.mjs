@@ -10,15 +10,26 @@ const OUT = "audit";
 const SHOTS = path.join(OUT, "screenshots");
 for (const d of ["desktop", "mobile"]) fs.mkdirSync(path.join(SHOTS, d), { recursive: true });
 
-const services = ["commercial", "post-construction", "move-in-out", "window-cleaning", "carpet-cleaning", "residential", "deep-cleaning", "interior-painting"];
-const cities = ["clermont", "minneola", "groveland", "winter-garden", "horizon-west", "four-corners", "montverde", "mascotte"];
-const paths = [
-  "", "/services", ...services.map((s) => `/services/${s}`),
-  "/pricing", "/service-areas", ...cities.map((c) => `/service-areas/${c}`),
-  "/about", "/reviews", "/contact", "/quote",
-];
-const enRoutes = paths.map((p) => `/en${p}`);
-const esSample = ["", "/services", "/services/deep-cleaning", "/pricing", "/contact"].map((p) => `/es${p}`);
+/**
+ * Routes come from the live sitemap, not a hardcoded list. The old hardcoded list
+ * silently went stale (it was still auditing /reviews months after that page was
+ * deleted, and never covered /trusted-by), which is exactly the failure a route
+ * audit is supposed to catch. Deriving from sitemap.xml means the audit surface
+ * follows the app automatically. /quote is unioned in because it is a modal route
+ * that is intentionally not in the sitemap.
+ */
+async function discoverRoutes() {
+  const res = await fetch(`${BASE}/sitemap.xml`);
+  if (!res.ok) throw new Error(`sitemap.xml -> ${res.status}`);
+  const xml = await res.text();
+  const paths = [...xml.matchAll(/<loc>([^<]+)<\/loc>/g)]
+    .map((m) => new URL(m[1]).pathname.replace(/\/$/, ""))
+    .filter(Boolean);
+  const all = new Set([...paths, "/en/quote", "/es/quote"]);
+  const en = [...all].filter((p) => p.startsWith("/en")).sort();
+  const es = [...all].filter((p) => p.startsWith("/es")).sort();
+  return { en, es };
+}
 
 const DESKTOP = { width: 1366, height: 900 };
 const MOBILE = { width: 390, height: 844 };
@@ -93,47 +104,94 @@ async function auditPage(ctx, route, device) {
   return { route, device, status, consoleMsgs, axe, ...data };
 }
 
+/**
+ * Quote-form E2E for the 3-step audience fork (you -> details -> contact).
+ *
+ * This is deliberately a REGRESSION test for the validation bugs the client
+ * reported, not just a happy path. The rule we are enforcing: a step the user has
+ * merely *arrived at* must never show red error text. Errors are earned, by
+ * touching a field or by attempting to submit. Three ways that broke before:
+ *   - freshStepClean:  landing on the contact step pre-yelled "Please enter your name".
+ *   - audienceErrorClears: the audience error stuck around after you picked an option.
+ *   - summaryDoesNotStick: the error summary reappeared every time you stepped back
+ *     and forward again, because RHF's global isSubmitted never resets.
+ * If any of these regress, the flag flips false and the audit reports it.
+ */
 async function testQuoteFlow(ctx) {
+  const out = {
+    modalOpens: false,
+    step0FreshClean: false,
+    step0Validation: false,
+    audienceErrorClears: false,
+    step1FreshClean: false,
+    contactFreshClean: false,
+    submitEmptyShowsSummary: false,
+    summaryDoesNotStick: false,
+    success: false,
+    errors: [],
+  };
   const page = await ctx.newPage();
-  const out = { modalOpens: false, step1Validation: false, step4Validation: false, success: false, errors: [] };
   try {
-    await page.goto(BASE + "/en", { waitUntil: "load" });
-    await page.waitForTimeout(1000);
-    await page.locator('main a[href*="/quote"]').first().click();
-    const dialog = page.locator('[role=dialog]');
-    await dialog.waitFor({ state: "visible", timeout: 10000 });
+    await page.goto(BASE + "/en/quote", { waitUntil: "load" });
+    await page.waitForTimeout(1200);
+    const dialog = page.locator("[role=dialog]").first();
+    const form = (await dialog.count()) ? dialog : page.locator("form").first();
+    await form.waitFor({ state: "visible", timeout: 15000 });
     out.modalOpens = true;
 
-    // Step 1 validation (Next with nothing selected)
-    await dialog.getByRole("button", { name: /^Next$/i }).click();
+    // Any visible "Please …" string is a validation error being shown.
+    const errs = () => form.locator("text=/Please /i").count();
+    const next = () => form.getByRole("button", { name: /^Next$/i }).click();
+
+    // 1. Fresh step 0: nothing touched, nothing submitted -> zero errors.
+    out.step0FreshClean = (await errs()) === 0;
+
+    // 2. Next with no audience picked -> the audience error appears.
+    await next();
+    await page.waitForTimeout(400);
+    out.step0Validation = (await form.locator("text=/who you are/i").count()) > 0;
+
+    // 3. Pick an audience -> that error must clear immediately (was sticky).
+    await form.locator('label:has(input[type=radio][value="business"])').click();
+    await page.waitForTimeout(300);
+    out.audienceErrorClears = (await form.locator("text=/who you are/i").count()) === 0;
+
+    // 4. Details step: every field optional, so arriving must be silent.
+    await next();
     await page.waitForTimeout(500);
-    out.step1Validation = (await dialog.locator("text=/choose a service/i").count()) > 0;
+    out.step1FreshClean = (await errs()) === 0;
 
-    // Walk steps — click the visible label card (the radio itself is sr-only;
-    // with 8 service options the clipped input is no longer auto-actionable).
-    await dialog.locator('label:has(input[type=radio][value="commercial"])').click();
-    await dialog.getByRole("button", { name: /^Next$/i }).click();
-    await page.waitForTimeout(400);
-    await dialog.locator('label:has(input[type=radio][value="office"])').click();
-    await dialog.getByRole("button", { name: /^Next$/i }).click();
-    await page.waitForTimeout(400);
-    await dialog.locator('label:has(input[type=radio][value="biweekly"])').click();
-    await dialog.getByRole("button", { name: /^Next$/i }).click();
-    await page.waitForTimeout(400);
-
-    // Step 4 validation (submit empty)
-    await dialog.getByRole("button", { name: /free estimate/i }).last().click();
+    // 5. Contact step: arriving must be silent (the bug the client reported).
+    await next();
     await page.waitForTimeout(500);
-    out.step4Validation = (await dialog.locator("text=/enter your name/i").count()) > 0;
+    out.contactFreshClean = (await errs()) === 0;
 
-    // Fill + submit
-    await dialog.locator("#name").fill("Audit User");
-    await dialog.locator("#email").fill("audit@example.com");
-    await dialog.locator("#phone").fill("4075551234");
-    await dialog.locator('input[type=checkbox]').check();
-    await dialog.getByRole("button", { name: /free estimate/i }).last().click();
-    await page.waitForTimeout(2000);
-    out.success = (await dialog.locator("text=/Request received/i").count()) > 0;
+    // 6. Now actually submit empty -> the calm summary is expected.
+    const submit = () => form.getByRole("button", { name: /free estimate/i }).last().click();
+    await submit();
+    await page.waitForTimeout(600);
+    out.submitEmptyShowsSummary =
+      (await form.locator("text=/complete the required fields/i").count()) > 0;
+
+    // 7. Step back and forward -> the summary must NOT follow you around.
+    await form.getByRole("button", { name: /^Back$/i }).click();
+    await page.waitForTimeout(400);
+    await next();
+    await page.waitForTimeout(500);
+    out.summaryDoesNotStick =
+      (await form.locator("text=/complete the required fields/i").count()) === 0;
+
+    // 8. Happy path.
+    await form.locator("#name").fill("Audit User");
+    await form.locator("#email").fill("audit@example.com");
+    await form.locator("#phone").fill("4075551234");
+    await form.locator("input[type=checkbox]").last().check();
+    await submit();
+    await page.waitForTimeout(3000);
+    // Scope to the PAGE, not the form: on success the component unmounts the form
+    // and renders the confirmation panel in its place, so a form-scoped locator
+    // would always find nothing and report a false failure.
+    out.success = (await page.locator("text=/Request received/i").count()) > 0;
     try { await page.screenshot({ path: path.join(SHOTS, "desktop", "_quote-success.png") }); } catch {}
   } catch (e) {
     out.errors.push(String(e).slice(0, 200));
@@ -176,18 +234,25 @@ function buildGraph(pages) {
 }
 
 (async () => {
+  const { en: enRoutes, es: esRoutes } = await discoverRoutes();
   const browser = await chromium.launch();
-  const results = { generatedAt: new Date().toISOString(), base: BASE, mode: "next dev (perf indicative only)", pages: [], graph: {}, quoteForm: {} };
+  const results = { generatedAt: new Date().toISOString(), base: BASE, mode: "next start (production build)", pages: [], graph: {}, quoteForm: {} };
 
   const deskCtx = await browser.newContext({ viewport: DESKTOP, deviceScaleFactor: 1 });
   const mobCtx = await browser.newContext({ viewport: MOBILE, deviceScaleFactor: 2, isMobile: true, hasTouch: true });
 
-  console.log("== Desktop EN crawl ==");
+  console.log(`== Routes from sitemap: ${enRoutes.length} EN + ${esRoutes.length} ES ==`);
+  console.log("== Desktop EN crawl (axe) ==");
   for (const r of enRoutes) { const res = await auditPage(deskCtx, r, "desktop"); results.pages.push(res); console.log(`  ${res.status} ${r} (axe:${res.axe ? res.axe.length : "-"})`); }
   console.log("== Mobile EN crawl ==");
   for (const r of enRoutes) { const res = await auditPage(mobCtx, r, "mobile"); results.pages.push(res); console.log(`  ${res.status} ${r} overflow:${res.scrollW > res.innerW}`); }
-  console.log("== ES sample (desktop) ==");
-  for (const r of esSample) { const res = await auditPage(deskCtx, r, "desktop"); results.pages.push(res); console.log(`  ${res.status} ${r}`); }
+  // ES gets the same axe treatment as EN. It used to be a 5-route sample, which
+  // meant a Spanish-only a11y regression (longer strings, different labels) could
+  // ship unseen on 17 of 22 pages.
+  console.log("== Desktop ES crawl (axe) ==");
+  for (const r of esRoutes) { const res = await auditPage(deskCtx, r, "desktop"); results.pages.push(res); console.log(`  ${res.status} ${r} (axe:${res.axe ? res.axe.length : "-"})`); }
+  console.log("== Mobile ES crawl ==");
+  for (const r of esRoutes) { const res = await auditPage(mobCtx, r, "mobile"); results.pages.push(res); console.log(`  ${res.status} ${r} overflow:${res.scrollW > res.innerW}`); }
 
   console.log("== Quote form flow ==");
   results.quoteForm = await testQuoteFlow(deskCtx);

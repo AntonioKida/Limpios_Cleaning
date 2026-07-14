@@ -142,7 +142,7 @@ export default async function ServiceDetailPage({
       <Container className="pt-8">
         <Link
           href={routes.services}
-          className="inline-flex items-center gap-1.5 text-sm font-semibold text-royal hover:underline"
+          className="inline-flex min-h-11 items-center gap-1.5 text-sm font-semibold text-royal hover:underline"
         >
           <ArrowLeft className="size-4" />
           {t("labels.allServices")}
