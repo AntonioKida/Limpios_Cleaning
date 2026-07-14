@@ -50,7 +50,10 @@ export function BeforeAfterSlider({
   return (
     <div
       className={cn(
-        "group relative isolate touch-none overflow-hidden rounded-2xl border border-border bg-muted select-none",
+        // touch-pan-y (NOT touch-none): a vertical swipe scrolls the PAGE; only
+        // horizontal gestures drive the slider. touch-none here trapped vertical
+        // scroll on mobile — the page froze/stuttered at the gallery (Papo's bug).
+        "group relative isolate touch-pan-y overflow-hidden rounded-2xl border border-border bg-muted select-none",
         className,
       )}
       style={{ aspectRatio: aspect }}
@@ -99,7 +102,9 @@ export function BeforeAfterSlider({
         value={pos}
         onChange={(e) => setPos(Number(e.target.value))}
         aria-label={`${dragHint} — ${beforeAlt}`}
-        className="peer absolute inset-0 z-20 m-0 h-full w-full cursor-ew-resize appearance-none bg-transparent opacity-0"
+        // touch-pan-y so a vertical swipe scrolls the page instead of the input
+        // capturing it; horizontal drag still moves the divider.
+        className="peer absolute inset-0 z-20 m-0 h-full w-full cursor-ew-resize touch-pan-y appearance-none bg-transparent opacity-0"
       />
 
       {/* Divider line (sibling of the input) */}
