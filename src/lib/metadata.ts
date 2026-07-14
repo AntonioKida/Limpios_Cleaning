@@ -22,7 +22,7 @@ export function buildMetadata({
   title: string;
   description: string;
   locale: Locale;
-  /** Path AFTER the locale segment, e.g. "/services/residential". */
+  /** Path AFTER the locale segment, e.g. "/services/move-in-out". */
   path?: string;
   /** Use the title verbatim (skip the "%s | Limpios…" template). */
   titleAbsolute?: boolean;
