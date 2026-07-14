@@ -101,7 +101,7 @@ export function BeforeAfterSlider({
         max={100}
         value={pos}
         onChange={(e) => setPos(Number(e.target.value))}
-        aria-label={`${dragHint} — ${beforeAlt}`}
+        aria-label={`${dragHint}. ${beforeAlt}`}
         // touch-pan-y so a vertical swipe scrolls the page instead of the input
         // capturing it; horizontal drag still moves the divider.
         className="peer absolute inset-0 z-20 m-0 h-full w-full cursor-ew-resize touch-pan-y appearance-none bg-transparent opacity-0"

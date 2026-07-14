@@ -31,8 +31,8 @@ export function GalleryGrid({
           before={pair.before}
           after={pair.after}
           aspect="3 / 4"
-          beforeAlt={`${t("beforeLabel")} — ${caption}`}
-          afterAlt={`${t("afterLabel")} — ${caption}`}
+          beforeAlt={`${t("beforeLabel")}: ${caption}`}
+          afterAlt={`${t("afterLabel")}: ${caption}`}
           beforeLabel={t("beforeLabel")}
           afterLabel={t("afterLabel")}
           dragHint={t("dragHint")}

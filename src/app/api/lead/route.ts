@@ -181,7 +181,7 @@ function buildEmail(lead: LeadInput) {
       </td></tr>`
     : "";
 
-  const preheader = `New estimate request from ${lead.name}${audienceLabel ? ` — ${audienceLabel}` : ""}`;
+  const preheader = `New estimate request from ${lead.name}${audienceLabel ? ` · ${audienceLabel}` : ""}`;
 
   const html = `<!doctype html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="color-scheme" content="light only"><title>New estimate request</title></head>
@@ -217,7 +217,7 @@ function buildEmail(lead: LeadInput) {
   const text = [
     "NEW ESTIMATE REQUEST",
     "",
-    `${lead.name}${lead.company ? ` — ${lead.company}` : ""}`,
+    `${lead.name}${lead.company ? ` · ${lead.company}` : ""}`,
     audienceLabel ? `Audience: ${audienceLabel}` : "",
     "",
     ...jobRows.filter(([, v]) => Boolean(v)).map(([l, v]) => `${l}: ${v}`),

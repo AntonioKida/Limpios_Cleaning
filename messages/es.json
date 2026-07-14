@@ -3,8 +3,8 @@
     "siteName": "Limpios Cleaning Management",
     "tagline": "Siéntese, relájese, y nosotros hacemos la limpieza.",
     "defaultTitle": "Limpieza Comercial en Florida Central | Empresa de Veterano",
-    "defaultDescription": "Limpios Cleaning Management — limpieza comercial en toda Florida Central, con base en el condado de Lake y propiedad de un veterano. Oficinas, post-construcción, mudanzas, ventanas y alfombras. Con licencia, asegurados y bilingües. Visita y presupuesto gratis.",
-    "ogAlt": "Limpios Cleaning Management — limpieza comercial de propiedad de un veterano en Florida Central",
+    "defaultDescription": "Limpios Cleaning Management ofrece limpieza comercial en toda Florida Central, con base en el condado de Lake y propiedad de un veterano. Oficinas, post-construcción, mudanzas, ventanas y alfombras. Con licencia, asegurados y bilingües. Visita y presupuesto gratis.",
+    "ogAlt": "Limpios Cleaning Management, limpieza comercial de propiedad de un veterano en Florida Central",
     "pages": {
       "home": {
         "title": "Limpieza Comercial en Florida Central | Empresa de Veterano",
@@ -15,15 +15,15 @@
         "description": "Limpieza comercial, post-construcción, mudanzas, ventanas y alfombras en toda Florida Central. Con licencia, asegurados y de propiedad de un veterano. Cada trabajo comienza con una visita gratuita."
       },
       "pricing": {
-        "title": "Precios — Visita y Presupuesto Gratis",
-        "description": "Sin tarifas fijas y sin sorpresas: su precio se calcula con una visita gratuita a su espacio — metraje, alcance, condición y equipo. Reciba un presupuesto por escrito sin costo."
+        "title": "Precios: Visita y Presupuesto Gratis",
+        "description": "Sin tarifas fijas y sin sorpresas. Su precio se calcula con una visita gratuita a su espacio, según el metraje, el alcance, la condición y el equipo. Reciba un presupuesto por escrito sin costo."
       },
       "serviceAreas": {
         "title": "Áreas de Servicio en Florida Central",
-        "description": "Limpios atiende negocios y propiedades en toda Florida Central desde nuestra base en el condado de Lake — Clermont, Minneola, Winter Garden y más. Visitas gratuitas en toda la región."
+        "description": "Limpios atiende negocios y propiedades en toda Florida Central desde nuestra base en el condado de Lake, incluyendo Clermont, Minneola, Winter Garden y más. Visitas gratuitas en toda la región."
       },
       "about": {
-        "title": "Nosotros — Empresa Local de un Veterano",
+        "title": "Nosotros: Empresa Local de un Veterano",
         "description": "Conozca al veterano detrás de Limpios Cleaning Management. Miembro de la Cámara de Comercio de South Lake, con licencia y seguro, y con trato personal en cada espacio."
       },
       "trustedBy": {
@@ -31,7 +31,7 @@
         "description": "Los negocios y administradores de propiedades de Florida Central para los que limpia Limpios Cleaning Management, y las credenciales detrás del trabajo."
       },
       "contact": {
-        "title": "Contacto — Visita y Presupuesto Gratis",
+        "title": "Contacto: Visita y Presupuesto Gratis",
         "description": "Llame, escriba o envíe un mensaje a Limpios Cleaning Management para agendar una visita gratuita en cualquier punto de Florida Central. Bilingües, amables y locales del condado de Lake."
       }
     }
@@ -79,7 +79,7 @@
     "perVisit": "por visita",
     "perService": "por servicio",
     "estimate": "presupuesto",
-    "estimateNote": "Cada presupuesto comienza con una visita gratuita a su espacio — sin tarifas fijas y sin compromiso.",
+    "estimateNote": "Cada presupuesto comienza con una visita gratuita a su espacio. Sin tarifas fijas y sin compromiso.",
     "licensedInsured": "Con licencia y seguro",
     "veteranOwned": "Empresa de un veterano",
     "ecoFriendly": "Productos ecológicos",
@@ -108,7 +108,7 @@
     "switchToEs": "Cambiar a Español"
   },
   "Footer": {
-    "blurb": "Limpieza comercial de propiedad de un veterano para negocios, administradores de propiedades, HOAs y constructoras en toda Florida Central — con base en el condado de Lake. Siéntese, relájese, y nosotros hacemos la limpieza.",
+    "blurb": "Limpieza comercial de propiedad de un veterano para negocios, administradores de propiedades, HOAs y constructoras en toda Florida Central, con base en el condado de Lake. Siéntese, relájese, y nosotros hacemos la limpieza.",
     "slogan": "Empresa de un veterano",
     "servicesTitle": "Servicios",
     "areasTitle": "Áreas de Servicio",
@@ -134,11 +134,11 @@
       "sloganProof": "Certificado por la SBA · 28 años de experiencia militar",
       "title": "Limpieza comercial en la que su negocio puede",
       "titleAccent": "confiar",
-      "subtitle": "Oficinas, obras recién terminadas, mudanzas, ventanas y alfombras — limpiadas según un alcance por escrito por un equipo con licencia, seguro y de propiedad de un veterano. Con base en el condado de Lake, servimos toda Florida Central.",
+      "subtitle": "Oficinas, obras recién terminadas, mudanzas, ventanas y alfombras, limpiadas según un alcance por escrito por un equipo con licencia, seguro y de propiedad de un veterano. Con base en el condado de Lake, servimos toda Florida Central.",
       "ctaPrimary": "Presupuesto gratis",
       "ctaSecondary": "Llamar ahora",
       "trust": "Empresa de un veterano, con licencia y seguro.",
-      "mascotAlt": "Mascota de Limpios Cleaning — el dueño con sombrero panamá y botella rociadora, saludando amablemente",
+      "mascotAlt": "Mascota de Limpios Cleaning: el dueño con sombrero panamá y botella rociadora, saludando amablemente",
       "chipChamber": "Miembro de la Cámara de Comercio"
     },
     "trustBar": {
@@ -164,7 +164,7 @@
       "items": {
         "commercial": {
           "title": "Negocios comerciales",
-          "description": "Oficinas, clínicas, comercios e instalaciones — recurrente o puntual, en el horario que le convenga."
+          "description": "Oficinas, clínicas, comercios e instalaciones. Servicio recurrente o puntual, en el horario que le convenga."
         },
         "property-managers": {
           "title": "Administradores de propiedades",
@@ -183,7 +183,7 @@
     "steps": {
       "eyebrow": "Cómo funciona",
       "title": "Una visita gratuita, luego un presupuesto claro",
-      "subtitle": "Cada espacio es diferente, así que cotizamos a partir de una visita — no de un tarifario. Sin compromiso y sin sorpresas.",
+      "subtitle": "Cada espacio es diferente, así que cotizamos a partir de una visita y no de un tarifario. Sin compromiso y sin sorpresas.",
       "items": {
         "walkthrough": {
           "title": "Agende una visita",
@@ -191,11 +191,11 @@
         },
         "estimate": {
           "title": "Reciba su presupuesto",
-          "description": "Recibe un presupuesto claro por escrito según alcance, tamaño, condición y equipo — normalmente en un día."
+          "description": "Recibe un presupuesto claro por escrito según alcance, tamaño, condición y equipo, normalmente en un día."
         },
         "clean": {
           "title": "Nosotros limpiamos",
-          "description": "Nuestro equipo verificado y asegurado sigue la lista de verificación — fuera de horario si su agenda lo requiere."
+          "description": "Nuestro equipo verificado y asegurado sigue la lista de verificación, incluso fuera de horario si su agenda lo requiere."
         }
       }
     },
@@ -249,7 +249,7 @@
     "serviceArea": {
       "eyebrow": "Dónde trabajamos",
       "title": "Servimos toda Florida Central",
-      "subtitle": "Tenemos base en el condado de Lake y trabajamos en toda Florida Central — si su propiedad está en la región, podemos visitarla.",
+      "subtitle": "Tenemos base en el condado de Lake y trabajamos en toda Florida Central. Si su propiedad está en la región, podemos visitarla.",
       "listIntro": "Áreas donde más trabajamos",
       "notListed": "¿No ve su zona? Si está en Florida Central, es muy probable que la cubramos. Solo pregunte.",
       "cta": "Ver todas las áreas de servicio",
@@ -264,14 +264,14 @@
     },
     "finalCta": {
       "title": "¿Listo para delegar la limpieza?",
-      "subtitle": "Agende hoy su visita gratuita — el presupuesto es por escrito, claro y suyo sin compromiso.",
+      "subtitle": "Agende hoy su visita gratuita. El presupuesto es por escrito, claro y suyo sin compromiso.",
       "primary": "Quiero mi presupuesto gratis",
       "secondary": "Llamar ahora"
     },
     "seeInAction": {
       "eyebrow": "En el trabajo",
       "title": "Véanos en acción",
-      "subtitle": "Un equipo real de Limpios en un trabajo real de Florida Central — sin videos de archivo."
+      "subtitle": "Un equipo real de Limpios en un trabajo real de Florida Central. Sin videos de archivo."
     }
   },
   "Services": {
@@ -281,7 +281,7 @@
       "subtitle": "Asegurados, de propiedad de un veterano y con alcance por escrito. Elija el servicio que necesita, o pida una visita gratuita y le orientamos.",
       "intro": "Proyecto puntual o contrato recurrente: es el mismo equipo y el mismo estándar en cada trabajo que hacemos en Florida Central.",
       "alsoAvailableTitle": "Para administradores de propiedades",
-      "alsoAvailableBody": "Limpieza de mudanzas (entrada/salida) en unidades vacías entre inquilinos, además de limpiezas profundas para pasar la inspección — pida un presupuesto gratis y agendamos una visita."
+      "alsoAvailableBody": "Limpieza de mudanzas (entrada/salida) en unidades vacías entre inquilinos, además de limpiezas profundas para pasar la inspección. Pida un presupuesto gratis y agendamos una visita."
     },
     "labels": {
       "included": "Qué incluye",
@@ -294,16 +294,16 @@
       "allServices": "Todos los servicios",
       "pricingLabel": "Precios",
       "galleryTitle": "Antes y después",
-      "gallerySubtitle": "Resultados reales de trabajos recientes — arrastre cualquier foto para comparar.",
+      "gallerySubtitle": "Resultados reales de trabajos recientes. Arrastre cualquier foto para comparar.",
       "photosTitle": "En el trabajo",
-      "photosSubtitle": "Fotos reales de trabajos recientes de Limpios — sin imágenes de archivo.",
+      "photosSubtitle": "Fotos reales de trabajos recientes de Limpios. Sin imágenes de archivo.",
       "videoTitle": "Véanos trabajar"
     },
     "items": {
       "commercial": {
         "name": "Limpieza comercial",
         "tagline": "Un espacio de trabajo que causa la impresión correcta.",
-        "description": "Limpieza confiable de oficinas, comercios e instalaciones con un calendario hecho a la medida de su negocio — fuera de horario o durante el día. Su equipo y sus clientes entran a un espacio fresco y saludable cada vez.",
+        "description": "Limpieza confiable de oficinas, comercios e instalaciones con un calendario hecho a la medida de su negocio, fuera de horario o durante el día. Su equipo y sus clientes entran a un espacio fresco y saludable cada vez.",
         "metaDescription": "Limpieza comercial y de oficinas en toda Florida Central. Recurrente o puntual, disponible fuera de horario, con licencia y seguro, empresa de un veterano. Visita y presupuesto gratis.",
         "who": [
           "Oficinas, clínicas, salones y comercios",
@@ -328,7 +328,7 @@
       "post-construction": {
         "name": "Limpieza post-construcción",
         "tagline": "De obra polvorienta a lista para entregar.",
-        "description": "Limpieza especializada después de una obra o remodelación. Remoción de polvo fino, escombros y el trabajo de detalle que convierte una obra terminada en un espacio listo para entregar — en su cronograma y coordinado con sus contratistas.",
+        "description": "Limpieza especializada después de una obra o remodelación. Remoción de polvo fino, escombros y el trabajo de detalle que convierte una obra terminada en un espacio listo para entregar, en su cronograma y coordinado con sus contratistas.",
         "metaDescription": "Limpieza post-construcción en Florida Central para constructoras y remodeladores. Polvo fino, escombros y limpieza final de detalle. Con licencia y seguro. Visita y presupuesto gratis.",
         "who": [
           "Contratistas y constructoras que necesitan la limpieza final",
@@ -376,8 +376,8 @@
       "window-cleaning": {
         "name": "Limpieza de ventanas",
         "tagline": "Cristales tan limpios que desaparecen.",
-        "description": "Limpieza de ventanas interior y exterior para comercios, oficinas y casas — vidrios, marcos, repisas y rieles, sin rayas. Un espacio terminado no está terminado hasta que las ventanas lo están.",
-        "metaDescription": "Limpieza de ventanas en Florida Central — comercios, oficinas y casas. Vidrios, marcos, repisas y rieles sin rayas. Con licencia y seguro. Visita y presupuesto gratis.",
+        "description": "Limpieza de ventanas interior y exterior para comercios, oficinas y casas. Vidrios, marcos, repisas y rieles, sin rayas. Un espacio terminado no está terminado hasta que las ventanas lo están.",
+        "metaDescription": "Limpieza de ventanas en Florida Central para comercios, oficinas y casas. Vidrios, marcos, repisas y rieles sin rayas. Con licencia y seguro. Visita y presupuesto gratis.",
         "who": [
           "Comercios y oficinas que viven de la primera impresión",
           "Obras nuevas con vidrios polvorientos o etiquetados",
@@ -400,8 +400,8 @@
       "carpet-cleaning": {
         "name": "Limpieza de alfombras",
         "tagline": "Pisos frescos y alfombras que duran más.",
-        "description": "Limpieza profesional de alfombras para oficinas, áreas comunes y casas. Eliminamos las líneas de tráfico, manchas y olores que la aspiradora normal deja atrás — y ayudamos a que su alfombra dure más entre reemplazos.",
-        "metaDescription": "Limpieza de alfombras en Florida Central — oficinas, áreas comunes y casas. Líneas de tráfico, manchas y olores a cargo de un equipo asegurado. Presupuesto gratis.",
+        "description": "Limpieza profesional de alfombras para oficinas, áreas comunes y casas. Eliminamos las líneas de tráfico, manchas y olores que la aspiradora normal deja atrás, y ayudamos a que su alfombra dure más entre reemplazos.",
+        "metaDescription": "Limpieza de alfombras en Florida Central para oficinas, áreas comunes y casas. Líneas de tráfico, manchas y olores a cargo de un equipo asegurado. Presupuesto gratis.",
         "who": [
           "Oficinas y suites comerciales con mucho tráfico",
           "Casas club de HOA y áreas comunes",
@@ -424,8 +424,8 @@
       "deep-cleaning": {
         "name": "Limpieza profunda",
         "tagline": "Un reinicio que llega a cada rincón.",
-        "description": "Una limpieza de detalle de arriba a abajo para espacios que necesitan atención extra. Zócalos, lechada y los rincones detrás y dentro de las cosas que una limpieza estándar omite — ideal antes de empezar un servicio recurrente o tras mucho tiempo sin limpieza profesional.",
-        "metaDescription": "Limpieza profunda en Florida Central — zócalos, lechada, accesorios y detalle de arriba a abajo, para oficinas y casas. Asegurados, empresa de un veterano. Presupuesto gratis.",
+        "description": "Una limpieza de detalle de arriba a abajo para espacios que necesitan atención extra. Zócalos, lechada y los rincones detrás y dentro de las cosas que una limpieza estándar omite. Es ideal antes de empezar un servicio recurrente o tras mucho tiempo sin limpieza profesional.",
+        "metaDescription": "Limpieza profunda en Florida Central con zócalos, lechada, accesorios y detalle de arriba a abajo, para oficinas y casas. Asegurados, empresa de un veterano. Presupuesto gratis.",
         "who": [
           "Clientes nuevos antes de empezar el servicio recurrente",
           "Oficinas y casas con limpieza profesional pendiente",
@@ -449,7 +449,7 @@
         "name": "Limpieza residencial",
         "tagline": "El mismo estándar, en casa.",
         "description": "Limpieza del hogar recurrente o puntual con la misma lista de verificación por escrito y el mismo equipo verificado que llevamos al trabajo comercial. Cocinas, baños, habitaciones y áreas comunes, bien hechos.",
-        "metaDescription": "Limpieza de casas en Florida Central por un equipo con licencia, seguro y de propiedad de un veterano. Recurrente o puntual — visita y presupuesto gratis.",
+        "metaDescription": "Limpieza de casas en Florida Central por un equipo con licencia, seguro y de propiedad de un veterano. Recurrente o puntual. Visita y presupuesto gratis.",
         "who": [
           "Propietarios que quieren un equipo constante y de confianza",
           "Familias y profesionales ocupados",
@@ -472,8 +472,8 @@
       "interior-painting": {
         "name": "Pintura interior",
         "tagline": "Una mano de pintura, con limpieza incluida.",
-        "description": "Pintura interior ordenada y detallista para paredes, molduras y techos. Preparamos, protegemos pisos y muebles, y limpiamos al terminar — con el mismo cuidado que ponemos en cada trabajo.",
-        "metaDescription": "Pintura interior en Florida Central — paredes, molduras y techos, con preparación prolija y limpieza al final. Asegurados y detallistas. Presupuesto gratis.",
+        "description": "Pintura interior ordenada y detallista para paredes, molduras y techos. Preparamos, protegemos pisos y muebles, y limpiamos al terminar, con el mismo cuidado que ponemos en cada trabajo.",
+        "metaDescription": "Pintura interior en Florida Central para paredes, molduras y techos, con preparación prolija y limpieza al final. Asegurados y detallistas. Presupuesto gratis.",
         "who": [
           "Entregas que necesitan retoques de pintura más limpieza",
           "Oficinas que renuevan un espacio entre inquilinos",
@@ -498,13 +498,13 @@
   "Pricing": {
     "eyebrow": "Precios",
     "title": "Precio según visita, no según tarifario",
-    "subtitle": "El metraje, el alcance, la condición y el equipo cambian en cada trabajo — por eso miramos antes de cotizar. La visita y el presupuesto por escrito siempre son gratis.",
-    "intro": "Cuéntenos sobre su espacio y agendamos una visita cuando le convenga. Recibirá un presupuesto claro por escrito — normalmente en un día — con el alcance detallado línea por línea.",
+    "subtitle": "El metraje, el alcance, la condición y el equipo cambian en cada trabajo, por eso miramos antes de cotizar. La visita y el presupuesto por escrito siempre son gratis.",
+    "intro": "Cuéntenos sobre su espacio y agendamos una visita cuando le convenga. Recibirá un presupuesto claro por escrito, normalmente en un día, con el alcance detallado línea por línea.",
     "popular": "Más solicitado",
     "packages": {
       "commercial": {
         "name": "Comercial y recurrente",
-        "description": "Oficinas, comercios e instalaciones con calendario recurrente — nocturno, semanal o a medida.",
+        "description": "Oficinas, comercios e instalaciones con calendario recurrente, ya sea nocturno, semanal o a medida.",
         "features": [
           "Alcance y calendario a medida",
           "Disponible fuera de horario",
@@ -548,11 +548,11 @@
       }
     },
     "factorsTitle": "Qué define su presupuesto",
-    "factorsIntro": "Cinco cosas fijan el precio. Las medimos en la visita para que el presupuesto sea real — no una suposición.",
+    "factorsIntro": "Cinco cosas fijan el precio. Las medimos en la visita para que el presupuesto sea real y no una suposición.",
     "factors": {
       "size": {
         "title": "Metraje",
-        "description": "El tamaño del espacio es el mayor factor de tiempo y precio — lo medimos en la visita."
+        "description": "El tamaño del espacio es el mayor factor de tiempo y precio, y lo medimos en la visita."
       },
       "scope": {
         "title": "Alcance del trabajo",
@@ -564,14 +564,14 @@
       },
       "crew": {
         "title": "Equipo y herramientas",
-        "description": "Cuántas personas y qué herramientas necesita el trabajo — escaleras para vidrios, máquinas para alfombra — define el presupuesto."
+        "description": "El presupuesto depende de cuántas personas y qué herramientas necesita el trabajo, como escaleras para vidrios o máquinas para alfombra."
       },
       "frequency": {
         "title": "Frecuencia",
         "description": "Los contratos recurrentes (nocturno, semanal, quincenal, mensual) cuestan menos por visita que los proyectos puntuales."
       }
     },
-    "disclaimer": "Cada presupuesto es gratis, por escrito y específico para su espacio. Sin compromiso — y sin sorpresas el día de la factura.",
+    "disclaimer": "Cada presupuesto es gratis, por escrito y específico para su espacio. Sin compromiso y sin sorpresas el día de la factura.",
     "volumeNote": "¿Administra varias propiedades, unidades u obras? Menciónelo en su solicitud y armamos el presupuesto alrededor de su cartera y su calendario.",
     "ctaTitle": "Reciba su visita y presupuesto gratis",
     "ctaSubtitle": "Dos minutos en línea, o una llamada rápida. Sin compromiso de ninguna forma.",
@@ -581,10 +581,10 @@
     "hub": {
       "eyebrow": "Áreas de servicio",
       "title": "Toda Florida Central, con base en el condado de Lake",
-      "subtitle": "Tenemos base en el condado de Lake y hacemos limpieza comercial y de propiedades en toda Florida Central — desde Clermont y Minneola hacia toda la región.",
+      "subtitle": "Tenemos base en el condado de Lake y hacemos limpieza comercial y de propiedades en toda Florida Central, desde Clermont y Minneola hacia toda la región.",
       "intro": "Ser locales importa: podemos visitar su espacio rápido, agendar según su horario y llegar cuando dijimos. Elija un área para saber más, o pida una visita gratuita y confirmamos su cobertura.",
       "notListedTitle": "¿No ve su ciudad?",
-      "notListedBody": "Si su propiedad está en Florida Central, es muy probable que ya la cubramos. Llámenos o pida un presupuesto — se lo confirmamos enseguida."
+      "notListedBody": "Si su propiedad está en Florida Central, es muy probable que ya la cubramos. Llámenos o pida un presupuesto y se lo confirmamos enseguida."
     },
     "labels": {
       "servingTitle": "Áreas que servimos",
@@ -596,14 +596,14 @@
     },
     "cityPage": {
       "metaTitle": "Servicios de Limpieza en {city}, FL",
-      "metaDescription": "Limpieza comercial y de propiedades en {city}, FL, de una empresa de veterano — oficinas, post-construcción, entregas, ventanas y alfombras. Con licencia y seguro. Visita y presupuesto gratis.",
-      "intro": "Limpios Cleaning Management ofrece limpieza comercial y de propiedades, de propiedad de un veterano, en {city} y en toda Florida Central. Oficinas, limpieza post-construcción, entregas de mudanza, ventanas y alfombras — a cargo de un equipo con licencia y seguro, con un alcance por escrito detrás de cada trabajo.",
+      "metaDescription": "Limpieza comercial y de propiedades en {city}, FL, de una empresa de veterano. Oficinas, post-construcción, entregas, ventanas y alfombras. Con licencia y seguro. Visita y presupuesto gratis.",
+      "intro": "Limpios Cleaning Management ofrece limpieza comercial y de propiedades, de propiedad de un veterano, en {city} y en toda Florida Central. Oficinas, limpieza post-construcción, entregas de mudanza, ventanas y alfombras, todo a cargo de un equipo con licencia y seguro, con un alcance por escrito detrás de cada trabajo.",
       "whyTitle": "Su equipo local en {city}",
-      "whyBody": "Nuestra base está en el condado de Lake, así que {city} es terreno conocido — llegamos a tiempo y tratamos sus negocios y propiedades como propios. Con licencia, seguro, bilingües y responsables ante una lista por escrito.",
+      "whyBody": "Nuestra base está en el condado de Lake, así que {city} es terreno conocido. Llegamos a tiempo y tratamos sus negocios y propiedades como propios. Con licencia, seguro, bilingües y responsables ante una lista por escrito.",
       "servicesTitle": "Servicios disponibles en {city}",
-      "servicesBody": "Nuestros servicios principales están disponibles en {city} — y el resto del catálogo también, a pedido:",
+      "servicesBody": "Nuestros servicios principales están disponibles en {city}, y el resto del catálogo también, a pedido:",
       "ctaTitle": "¿Listo para un espacio impecable en {city}?",
-      "ctaBody": "Agende hoy una visita gratuita — el presupuesto va por nuestra cuenta.",
+      "ctaBody": "Agende hoy una visita gratuita. El presupuesto va por nuestra cuenta.",
       "mapPlaceholder": "Mapa del área de servicio de {city}"
     },
     "cities": {
@@ -625,11 +625,11 @@
       },
       "horizon-west": {
         "blurb": "Servimos las villas de Horizon West con limpieza confiable y asegurada.",
-        "intro": "Horizon West es una de las comunidades de mayor crecimiento de Florida Central — y Limpios se enorgullece de mantener frescas sus oficinas, amenidades y obras nuevas, de Hamlin a Bridgewater."
+        "intro": "Horizon West es una de las comunidades de mayor crecimiento de Florida Central, y Limpios se enorgullece de mantener frescas sus oficinas, amenidades y obras nuevas, de Hamlin a Bridgewater."
       },
       "four-corners": {
         "blurb": "Limpieza de oficinas, rentas y propiedades en toda el área de Four Corners.",
-        "intro": "Four Corners está donde se juntan Lake, Orange, Polk y Osceola — con muchas rentas vacacionales y propiedades administradas. Limpios maneja entregas, limpiezas profundas y servicio recurrente con soltura."
+        "intro": "Four Corners está donde se juntan Lake, Orange, Polk y Osceola, con muchas rentas vacacionales y propiedades administradas. Limpios maneja entregas, limpiezas profundas y servicio recurrente con soltura."
       },
       "montverde": {
         "blurb": "Limpieza cuidadosa y personal para las propiedades y fincas de Montverde.",
@@ -637,7 +637,7 @@
       },
       "mascotte": {
         "blurb": "Limpieza amable y asegurada para negocios y hogares de Mascotte.",
-        "intro": "A Limpios le da gusto servir a Mascotte con el mismo cuidado de empresa de veterano que llevamos por todo el condado de Lake — confiables y locales."
+        "intro": "A Limpios le da gusto servir a Mascotte con el mismo cuidado de empresa de veterano que llevamos por todo el condado de Lake. Confiables y locales."
       }
     }
   },
@@ -650,7 +650,7 @@
       "body": [
         "Hola, soy Papo. Fundé Limpios después de salir del ejército y mudarme con mi familia al área de Clermont. Limpiaba oficinas y casas por mi cuenta, y quienes me contrataban me decían siempre lo mismo: los equipos anteriores recortaban esquinas, llegaban tarde o simplemente dejaban de contestar el teléfono.",
         "Eso me molestó. En el servicio militar uno llega a tiempo, hace el trabajo completo y da la cara cuando algo sale mal. Así que construí Limpios para funcionar así: el mismo equipo, una lista de verificación que sí seguimos y un teléfono que sí se contesta.",
-        "Hoy trabajamos con negocios, administradores de propiedades, constructoras y familias en toda Florida Central — y yo sigo saliendo a los trabajos. Me gusta que sea así."
+        "Hoy trabajamos con negocios, administradores de propiedades, constructoras y familias en toda Florida Central, y yo sigo saliendo a los trabajos. Me gusta que sea así."
       ]
     },
     "mission": {
@@ -663,7 +663,7 @@
     },
     "chamber": {
       "title": "Parte de la comunidad empresarial local",
-      "body": "Limpios es miembro de la Cámara de Comercio de South Lake — construimos esta empresa junto a los mismos negocios locales a los que servimos."
+      "body": "Limpios es miembro de la Cámara de Comercio de South Lake. Construimos esta empresa junto a los mismos negocios locales a los que servimos."
     },
     "values": {
       "veteran": {
@@ -696,7 +696,7 @@
       "button": "Presupuesto gratis"
     },
     "founderRole": "Fundador y Propietario",
-    "founderNamePlaceholder": "Nombre del propietario — por agregar"
+    "founderNamePlaceholder": "Nombre del propietario (por agregar)"
   },
   "TrustedBy": {
     "eyebrow": "Confían en nosotros",
@@ -726,11 +726,11 @@
     "subtitle": "Llame, envíe un mensaje o complete el formulario, y le respondemos enseguida en inglés o español.",
     "intro": "¿Tiene una pregunta o quiere agendar una visita? Con gusto le ayudamos.",
     "callTitle": "Llámenos",
-    "callBody": "Toque para llamar — es la forma más rápida de contactarnos. (Esta línea recibe solo llamadas, no mensajes de texto.)",
+    "callBody": "Toque para llamar. Es la forma más rápida de contactarnos. (Esta línea recibe solo llamadas, no mensajes de texto.)",
     "emailTitle": "Escríbanos",
     "emailBody": "Normalmente respondemos dentro de un día hábil.",
     "serviceAreaTitle": "Área de servicio",
-    "serviceAreaBody": "Vamos a usted — servicio en toda Florida Central, con base en el condado de Lake. Cada trabajo empieza con una visita gratuita en el sitio.",
+    "serviceAreaBody": "Vamos a usted, con servicio en toda Florida Central y base en el condado de Lake. Cada trabajo empieza con una visita gratuita en el sitio.",
     "hoursTitle": "Horario de teléfono y oficina",
     "formTitle": "Pida un presupuesto gratis",
     "formIntro": "Cuéntenos un poco sobre su espacio y agendamos una visita para enviarle un presupuesto por escrito.",
@@ -743,7 +743,7 @@
   "Quote": {
     "eyebrow": "Presupuesto gratis",
     "title": "Pida su presupuesto gratis",
-    "subtitle": "Cuéntenos sobre su espacio en unos dos minutos — agendamos una visita gratuita y le enviamos un presupuesto por escrito. Sin compromiso.",
+    "subtitle": "Cuéntenos sobre su espacio en unos dos minutos. Agendamos una visita gratuita y le enviamos un presupuesto por escrito. Sin compromiso.",
     "intro": "Responda unas preguntas rápidas y le contactamos para agendar su visita gratuita.",
     "trigger": "Presupuesto gratis",
     "modalTitle": "Pida su presupuesto gratis",
@@ -752,11 +752,11 @@
     "steps": {
       "audience": {
         "title": "Usted",
-        "description": "Primero, díganos quién pregunta — adaptamos las preguntas."
+        "description": "Primero, díganos quién pregunta para adaptar las preguntas."
       },
       "details": {
         "title": "Detalles",
-        "description": "Opcional — nos ayuda a cotizar, y la visita gratuita confirma todo."
+        "description": "Opcional, pero nos ayuda a cotizar. La visita gratuita confirma todo."
       },
       "service": {
         "title": "Servicio",
@@ -884,7 +884,7 @@
       "sqft": {
         "label": "Metraje aproximado (pies²)",
         "placeholder": "ej. 1800",
-        "help": "Opcional — útil para oficinas y espacios grandes."
+        "help": "Opcional, pero útil para oficinas y espacios grandes."
       },
       "frequency": {
         "label": "¿Cada cuánto?",
@@ -959,37 +959,37 @@
       "body": "No pudimos enviar su solicitud. Inténtelo de nuevo, o llámenos directamente y lo resolvemos.",
       "retry": "Reintentar"
     },
-    "devNote": "Modo dev: sin clave de correo — los datos del lead se registraron en la consola del servidor."
+    "devNote": "Modo dev: sin clave de correo. Los datos del lead se registraron en la consola del servidor."
   },
   "Faq": {
     "items": {
       "pricing": {
         "q": "¿Cuánto cuesta la limpieza?",
-        "a": "Depende del espacio — metraje, alcance, condición y el equipo que requiere el trabajo. Por eso no publicamos tarifas fijas: visitamos su espacio sin costo y luego enviamos un presupuesto por escrito, normalmente en un día. Sin compromiso y sin sorpresas."
+        "a": "Depende del espacio. Influyen el metraje, el alcance, la condición y el equipo que requiere el trabajo. Por eso no publicamos tarifas fijas: visitamos su espacio sin costo y luego enviamos un presupuesto por escrito, normalmente en un día. Sin compromiso y sin sorpresas."
       },
       "walkthrough": {
         "q": "¿Qué pasa durante la visita?",
-        "a": "Visitamos su espacio a la hora que le convenga, recorremos el alcance juntos y anotamos metraje, condición y acceso. Toma de 15 a 30 minutos en la mayoría de los espacios, es completamente gratis, y tendrá un presupuesto por escrito poco después — normalmente el mismo día."
+        "a": "Visitamos su espacio a la hora que le convenga, recorremos el alcance juntos y anotamos metraje, condición y acceso. Toma de 15 a 30 minutos en la mayoría de los espacios, es completamente gratis, y tendrá un presupuesto por escrito poco después, normalmente el mismo día."
       },
       "area": {
         "q": "¿Qué áreas atienden?",
-        "a": "Tenemos base en el condado de Lake y trabajamos en toda Florida Central — Clermont, Minneola, Winter Garden y mucho más. Si su propiedad está en la región, llámenos o pida un presupuesto y se lo confirmamos enseguida."
+        "a": "Tenemos base en el condado de Lake y trabajamos en toda Florida Central, incluyendo Clermont, Minneola, Winter Garden y mucho más. Si su propiedad está en la región, llámenos o pida un presupuesto y se lo confirmamos enseguida."
       },
       "insured": {
         "q": "¿Tienen licencia y seguro?",
-        "a": "Sí. Limpios cuenta con licencia y seguro de responsabilidad civil general — un Certificado de Seguro (COI) está disponible a pedido, y podemos gestionar límites de cobertura más altos si su propiedad los requiere. Todo el equipo está verificado con antecedentes antes de pisar su sitio."
+        "a": "Sí. Limpios cuenta con licencia y seguro de responsabilidad civil general. El Certificado de Seguro (COI) está disponible a pedido, y podemos gestionar límites de cobertura más altos si su propiedad los requiere. Todo el equipo está verificado con antecedentes antes de pisar su sitio."
       },
       "security": {
         "q": "¿Cómo manejan las llaves y el acceso?",
-        "a": "Las llaves y cualquier código de alarma o de entrada se guardan en una caja de seguridad con acceso limitado únicamente a la gerencia — nunca se entregan a limpiadores individuales. Coordinamos el acceso con usted durante la visita."
+        "a": "Las llaves y cualquier código de alarma o de entrada se guardan en una caja de seguridad con acceso limitado únicamente a la gerencia. Nunca se entregan a limpiadores individuales. Coordinamos el acceso con usted durante la visita."
       },
       "eco": {
         "q": "¿Sus productos son seguros para oficinas, niños y mascotas?",
-        "a": "Sí. Usamos productos ecológicos y de bajo olor, duros con la suciedad pero suaves con las personas — y mascotas — que usan el espacio. Si alguien en el sitio tiene alergias o sensibilidad, avísenos y lo ajustamos."
+        "a": "Sí. Usamos productos ecológicos y de bajo olor, duros con la suciedad pero suaves con las personas, y las mascotas, que usan el espacio. Si alguien en el sitio tiene alergias o sensibilidad, avísenos y lo ajustamos."
       },
       "supplies": {
         "q": "¿Debo poner insumos o equipo?",
-        "a": "No. Traemos nuestro propio equipo profesional e insumos ecológicos. Si su instalación exige un producto específico, no hay problema — coméntelo durante la visita."
+        "a": "No. Traemos nuestro propio equipo profesional e insumos ecológicos. Si su instalación exige un producto específico, no hay problema. Coméntelo durante la visita."
       },
       "satisfaction": {
         "q": "¿Y si no quedo satisfecho con la limpieza?",
@@ -997,7 +997,7 @@
       },
       "homes": {
         "q": "¿Limpian casas para mudanzas (entrada/salida)?",
-        "a": "Para mudanzas de entrada/salida, sí — limpiamos unidades vacías entre inquilinos para que pasen la inspección del administrador o del agente. Nos enfocamos en unidades vacías y espacios comerciales, no en la limpieza rutinaria de casas habitadas. Pida un presupuesto gratis y agendamos una visita."
+        "a": "Para mudanzas de entrada/salida, sí. Limpiamos unidades vacías entre inquilinos para que pasen la inspección del administrador o del agente. Nos enfocamos en unidades vacías y espacios comerciales, no en la limpieza rutinaria de casas habitadas. Pida un presupuesto gratis y agendamos una visita."
       },
       "bilingual": {
         "q": "¿Ofrecen servicio en español?",
@@ -1010,7 +1010,7 @@
     }
   },
   "Booking": {
-    "title": "Reservas en línea — muy pronto",
+    "title": "Reservas en línea: muy pronto",
     "body": "Estamos preparando las reservas instantáneas en línea. Mientras tanto, pida un presupuesto gratis y confirmamos su visita personalmente.",
     "providersNote": "Espacio para futura integración de un proveedor de reservas (BookingKoala, Launch27, Jobber o Housecall Pro)."
   },
