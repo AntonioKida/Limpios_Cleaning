@@ -133,8 +133,8 @@ export async function Footer() {
                   </Link>
                 </li>
                 <li>
-                  <Link href={routes.reviews} className={linkClass}>
-                    {tn("reviews")}
+                  <Link href={routes.trustedBy} className={linkClass}>
+                    {tn("trustedBy")}
                   </Link>
                 </li>
                 <li>

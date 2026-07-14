@@ -26,7 +26,7 @@ const navItems = [
   { key: "serviceAreas", href: routes.serviceAreas },
   { key: "pricing", href: routes.pricing },
   { key: "about", href: routes.about },
-  { key: "reviews", href: routes.reviews },
+  { key: "trustedBy", href: routes.trustedBy },
 ] as const;
 
 export function Header() {

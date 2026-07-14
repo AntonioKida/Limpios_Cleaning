@@ -26,9 +26,9 @@
         "title": "Nosotros — Empresa Local de un Veterano",
         "description": "Conozca al veterano detrás de Limpios Cleaning Management. Miembro de la Cámara de Comercio de South Lake, con licencia y seguro, y con trato personal en cada espacio."
       },
-      "reviews": {
-        "title": "Reseñas",
-        "description": "Vea lo que los negocios y propietarios de Florida Central dicen sobre Limpios Cleaning Management."
+      "trustedBy": {
+        "title": "Confían en nosotros",
+        "description": "Los negocios y administradores de propiedades de Florida Central para los que limpia Limpios Cleaning Management, y las credenciales detrás del trabajo."
       },
       "contact": {
         "title": "Contacto — Visita y Presupuesto Gratis",
@@ -96,7 +96,7 @@
     "services": "Servicios",
     "serviceAreas": "Áreas de Servicio",
     "about": "Nosotros",
-    "reviews": "Reseñas",
+    "trustedBy": "Confían en nosotros",
     "pricing": "Precios",
     "contact": "Contacto",
     "openMenu": "Abrir menú",
@@ -245,12 +245,6 @@
       },
       "seeMore": "Ver más transformaciones",
       "seeLess": "Mostrar menos"
-    },
-    "reviews": {
-      "eyebrow": "Se corre la voz",
-      "title": "Lo que dice Florida Central",
-      "subtitle": "Esto es lo que dicen los clientes después de nuestro trabajo.",
-      "viewAll": "Leer más reseñas"
     },
     "serviceArea": {
       "eyebrow": "Dónde trabajamos",
@@ -702,34 +696,27 @@
     "founderRole": "Fundador y Propietario",
     "founderNamePlaceholder": "Nombre del propietario — por agregar"
   },
-  "Reviews": {
-    "eyebrow": "Reseñas",
-    "title": "Lo que dicen nuestros clientes",
-    "subtitle": "Comentarios reales de los negocios y propiedades de Florida Central que cuidamos.",
-    "disclaimer": "Nota: las reseñas mostradas son ejemplos de muestra con fines de diseño y no son reseñas reales de clientes. Serán reemplazadas por reseñas verificadas de Google antes del lanzamiento.",
-    "leaveReview": "Dejar una reseña",
-    "ratingSummary": "Calificación de {rating} de 5",
-    "basedOn": "basado en {count} reseñas",
-    "items": {
-      "r1": {
-        "quote": "Limpios limpia nuestra oficina cada semana y ha sido impecable. Profesionales, puntuales y se ajustan a nuestro horario. No podríamos pedir más."
-      },
-      "r2": {
-        "quote": "Administro varias unidades de renta y sus limpiezas de entrega son las mejores que he usado — listas para inspección cada vez, con fotos cuando las pido."
-      },
-      "r3": {
-        "quote": "Me encantó el servicio. Muy profesionales y atentos a cada detalle. La oficina quedó impecable y el equipo es bilingüe — todo súper fácil."
-      },
-      "r4": {
-        "quote": "Hicieron la limpieza final de dos de nuestras obras esta primavera. Sin polvo, vidrios impecables, cero pendientes de limpieza en la lista. Los seguiremos usando."
-      },
-      "r5": {
-        "quote": "Confiables, puntuales y gente genuinamente amable. Como empresa de un veterano, le ponen verdadero orgullo a su trabajo. Ya tenemos contrato recurrente."
-      },
-      "r6": {
-        "quote": "Contraté la limpieza de salida de nuestra renta y el presupuesto de la visita fue exacto. Detallados, rápidos y con gran comunicación todo el tiempo."
-      }
-    }
+  "TrustedBy": {
+    "eyebrow": "Confían en nosotros",
+    "title": "Los negocios que nos mantienen bajo contrato",
+    "subtitle": "Limpiamos para oficinas de seguros, franquicias nacionales de comercio, sucursales de alquiler de equipos y oficinas inmobiliarias en toda Florida Central. Mantenemos privados los nombres de los clientes salvo que ellos indiquen lo contrario.",
+    "pageTitle": "Para quiénes limpiamos",
+    "pageSubtitle": "Este es el tipo de trabajo que los negocios de Florida Central nos confían, y las credenciales que lo respaldan.",
+    "categories": {
+      "insurance": "Oficinas de seguros",
+      "retail": "Franquicias nacionales de comercio",
+      "equipment": "Sucursales de alquiler de equipos",
+      "realestate": "Oficinas inmobiliarias y de administración de propiedades"
+    },
+    "proofTitle": "Lo que sí podemos comprobar",
+    "proof": {
+      "veteran": "Empresa de un veterano certificada por la SBA, con 28 años de experiencia militar.",
+      "insured": "Con licencia y seguro. El certificado de seguro está disponible a pedido.",
+      "chamber": "Miembro de la Cámara de Comercio de South Lake."
+    },
+    "ctaTitle": "¿Quiere el mismo estándar en su sitio?",
+    "ctaSubtitle": "Agende una visita gratuita y le entregamos el alcance por escrito.",
+    "ctaButton": "Presupuesto gratis"
   },
   "Contact": {
     "eyebrow": "Contacto",

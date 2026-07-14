@@ -1,6 +1,5 @@
 import { site, dayOrder, type DayKey } from "@/content/site";
 import { cities } from "@/content/cities";
-import { reviewsArePlaceholder } from "@/content/reviews";
 
 const BUSINESS_ID = `${site.url}/#business`;
 
@@ -59,16 +58,8 @@ export function localBusinessSchema({ description }: { description: string }) {
       name: site.chamber.name,
       url: site.chamber.url,
     },
-    // aggregateRating: gated — only when real reviews exist.
-    ...(reviewsArePlaceholder
-      ? {}
-      : {
-          aggregateRating: {
-            "@type": "AggregateRating",
-            ratingValue: site.rating.value,
-            reviewCount: site.rating.count,
-          },
-        }),
+    // NO aggregateRating / Review: there are no real reviews and we never
+    // fabricate them. Social proof lives in the "Trusted By" section instead.
   };
 }
 

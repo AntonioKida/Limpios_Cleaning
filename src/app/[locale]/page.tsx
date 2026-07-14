@@ -5,14 +5,13 @@ import { localBusinessSchema, faqPageSchema } from "@/lib/json-ld";
 import { faqIds } from "@/content/faq";
 import { Hero } from "@/components/sections/hero";
 import { TrustBar } from "@/components/sections/trust-bar";
-import { ClientsServed } from "@/components/sections/clients-served";
 import { SeeInAction } from "@/components/sections/see-in-action";
 import { ServicesOverview } from "@/components/sections/services-overview";
 import { Audiences } from "@/components/sections/audiences";
 import { HowItWorks } from "@/components/sections/how-it-works";
 import { WhyUs } from "@/components/sections/why-us";
 import { BeforeAfterGallery } from "@/components/sections/before-after";
-import { Testimonials } from "@/components/sections/testimonials";
+import { TrustedBy } from "@/components/sections/trusted-by";
 import { ServiceAreaSection } from "@/components/sections/service-area";
 import { Faq } from "@/components/sections/faq";
 import { CTASection } from "@/components/sections/cta-section";
@@ -44,16 +43,15 @@ export default async function HomePage({
       />
       <Hero />
       <TrustBar />
-      {/* Built but DISABLED (clientsServedEnabled=false) — renders nothing until
-          Papo has written permission from each named client. One-flag flip. */}
-      <ClientsServed />
       <SeeInAction />
       <ServicesOverview />
       <Audiences />
       <HowItWorks />
       <WhyUs />
       <BeforeAfterGallery />
-      <Testimonials />
+      {/* Replaces the retired placeholder reviews: anonymized client categories +
+          the trust stack we can prove. Named clients stay gated (no logos, ever). */}
+      <TrustedBy />
       <ServiceAreaSection />
       <Faq />
       <CTASection

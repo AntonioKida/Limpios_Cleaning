@@ -26,7 +26,7 @@ const entries: Entry[] = [
     priority: 0.7,
   })),
   { path: "/about", changeFrequency: "yearly", priority: 0.6 },
-  { path: "/reviews", changeFrequency: "monthly", priority: 0.6 },
+  { path: "/trusted-by", changeFrequency: "monthly", priority: 0.6 },
   { path: "/contact", changeFrequency: "yearly", priority: 0.7 },
   { path: "/quote", changeFrequency: "yearly", priority: 0.5 },
 ];

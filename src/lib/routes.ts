@@ -14,6 +14,6 @@ export const routes = {
   serviceAreas: "/service-areas",
   city: (slug: string) => `/service-areas/${slug}`,
   about: "/about",
-  reviews: "/reviews",
+  trustedBy: "/trusted-by",
   contact: "/contact",
 } as const;

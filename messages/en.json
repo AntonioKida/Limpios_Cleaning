@@ -26,9 +26,9 @@
         "title": "About — Veteran Owned & Local",
         "description": "Meet the veteran owner behind Limpios Cleaning Management. South Lake Chamber of Commerce member, licensed and insured, and personal about every space we clean."
       },
-      "reviews": {
-        "title": "Reviews",
-        "description": "See what Central Florida businesses and property owners say about Limpios Cleaning Management."
+      "trustedBy": {
+        "title": "Trusted By",
+        "description": "The Central Florida businesses and property managers Limpios Cleaning Management cleans for, and the credentials behind the work."
       },
       "contact": {
         "title": "Contact — Free Walkthrough & Estimate",
@@ -96,7 +96,7 @@
     "services": "Services",
     "serviceAreas": "Service Areas",
     "about": "About",
-    "reviews": "Reviews",
+    "trustedBy": "Trusted By",
     "pricing": "Pricing",
     "contact": "Contact",
     "openMenu": "Open menu",
@@ -245,12 +245,6 @@
       },
       "seeMore": "See more transformations",
       "seeLess": "Show fewer"
-    },
-    "reviews": {
-      "eyebrow": "Word gets around",
-      "title": "What Central Florida says",
-      "subtitle": "Here's what clients have to say after we've come through.",
-      "viewAll": "Read more reviews"
     },
     "serviceArea": {
       "eyebrow": "Where we work",
@@ -702,34 +696,27 @@
     "founderRole": "Founder & Owner",
     "founderNamePlaceholder": "Owner name — to be added"
   },
-  "Reviews": {
-    "eyebrow": "Reviews",
-    "title": "What our clients say",
-    "subtitle": "Real feedback from the Central Florida businesses and properties we look after.",
-    "disclaimer": "Note: the reviews shown are sample placeholders for design purposes and are not real customer reviews. They will be replaced with verified Google reviews before launch.",
-    "leaveReview": "Leave a review",
-    "ratingSummary": "Rated {rating} out of 5",
-    "basedOn": "based on {count} reviews",
-    "items": {
-      "r1": {
-        "quote": "Limpios cleans our office every week and it's been flawless. Professional, reliable, and they work around our hours. Couldn't ask for better."
-      },
-      "r2": {
-        "quote": "I manage several rental units and their move-out turnovers are the best I've used — inspection-ready every time, with photos when I ask."
-      },
-      "r3": {
-        "quote": "Me encantó el servicio. Muy profesionales y atentos a cada detalle. La oficina quedó impecable y el equipo es bilingüe — todo súper fácil."
-      },
-      "r4": {
-        "quote": "They did the final clean on two of our builds this spring. Dust-free, glass spotless, zero punch-list items on cleaning. We'll keep using them."
-      },
-      "r5": {
-        "quote": "Trustworthy, on time, and genuinely kind people. As a veteran owned business they bring real pride to their work. We're on a recurring contract now."
-      },
-      "r6": {
-        "quote": "Booked a move-out clean for our rental and the walkthrough estimate was spot-on. Detailed, fast, and great communication throughout."
-      }
-    }
+  "TrustedBy": {
+    "eyebrow": "Trusted by",
+    "title": "The businesses that keep us on contract",
+    "subtitle": "We clean for insurance offices, national retail franchises, equipment-rental branches and real-estate offices across Central Florida. We keep client names private unless they tell us otherwise.",
+    "pageTitle": "Who we clean for",
+    "pageSubtitle": "Here is the kind of work Central Florida businesses trust us with, and the credentials that back it up.",
+    "categories": {
+      "insurance": "Insurance offices",
+      "retail": "National retail franchises",
+      "equipment": "Equipment-rental branches",
+      "realestate": "Real-estate and property-management offices"
+    },
+    "proofTitle": "What we can prove",
+    "proof": {
+      "veteran": "SBA-certified Veteran Owned Business, with 28 years of military experience.",
+      "insured": "Licensed and insured. A certificate of insurance is available on request.",
+      "chamber": "Member of the South Lake Chamber of Commerce."
+    },
+    "ctaTitle": "Want the same standard at your site?",
+    "ctaSubtitle": "Book a free walkthrough and we will put the scope in writing.",
+    "ctaButton": "Get a free estimate"
   },
   "Contact": {
     "eyebrow": "Contact",

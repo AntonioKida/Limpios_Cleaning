@@ -71,16 +71,10 @@ export const site = {
   licenseIsPlaceholder: false,
 
   /**
-   * Google rating. PLACEHOLDER values — gate AggregateRating JSON-LD on real
-   * data before launch. TODO: replace with real Google Business Profile rating
-   * + the public review URL.
+   * NO ratings/reviews data. The fake placeholder reviews were retired (2026-07)
+   * in favour of the "Trusted By" section: anonymized client categories + the
+   * trust stack we can actually prove. AggregateRating is never emitted.
    */
-  rating: {
-    value: 5.0,
-    count: 27,
-    isPlaceholder: true,
-    reviewUrl: "https://g.page/r/limpios-cleaning/review", // TODO: real GBP link
-  },
 
   /**
    * Judean Services LLC (the legal entity) filed 2023-09-18; the "Limpios
