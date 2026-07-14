@@ -253,7 +253,9 @@
       "listIntro": "Areas we're in most often",
       "notListed": "Don't see your area? If it's in Central Florida, there's a good chance we cover it. Just ask.",
       "cta": "See all service areas",
-      "mapPlaceholder": "Service-area map"
+      "mapTitle": "Where we work in Central Florida",
+      "mapDesc": "Map of Florida with the Limpios service area highlighted in Central Florida, covering Clermont, Minneola, Groveland, Winter Garden, Horizon West and Four Corners.",
+      "mapRegion": "Central Florida"
     },
     "faq": {
       "eyebrow": "Good to know",

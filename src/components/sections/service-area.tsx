@@ -2,6 +2,7 @@ import { ArrowRight, MapPin } from "lucide-react";
 import { useTranslations } from "next-intl";
 import { Section } from "@/components/ui/section";
 import { SectionHeading } from "@/components/ui/section-heading";
+import { FloridaMap } from "@/components/florida-map";
 import { Reveal } from "@/components/reveal";
 import { Link } from "@/i18n/navigation";
 import { cities } from "@/content/cities";
@@ -51,32 +52,11 @@ export function ServiceAreaSection() {
           </div>
         </div>
 
-        {/* Stylized map placeholder. TODO: replace with a real map embed. */}
+        {/* Real (stylized) Florida map: a static inline SVG. No Google/Mapbox
+            embed, so no API key, no JS weight, and it renders without JS. */}
         <Reveal delay={0.1}>
-          <div className="relative aspect-[4/3] overflow-hidden rounded-[1.75rem] border border-border bg-gradient-to-br from-cool to-secondary shadow-sm">
-            <div
-              aria-hidden
-              className="absolute inset-0 opacity-60 [background-image:linear-gradient(color-mix(in_srgb,var(--royal)_10%,transparent)_1px,transparent_1px),linear-gradient(90deg,color-mix(in_srgb,var(--royal)_10%,transparent)_1px,transparent_1px)] [background-size:38px_38px]"
-            />
-            {[
-              { top: "28%", left: "32%" },
-              { top: "44%", left: "58%" },
-              { top: "62%", left: "40%" },
-              { top: "36%", left: "72%" },
-            ].map((p, i) => (
-              <span
-                key={i}
-                aria-hidden
-                className="absolute -translate-x-1/2 -translate-y-full text-sky drop-shadow"
-                style={{ top: p.top, left: p.left }}
-              >
-                <MapPin className="size-7 fill-sky/20" />
-              </span>
-            ))}
-            <div className="absolute inset-x-0 bottom-0 flex items-center gap-2 bg-surface/80 px-5 py-3 text-sm font-medium text-navy backdrop-blur">
-              <MapPin className="size-4 text-royal" aria-hidden />
-              {t("mapPlaceholder")}
-            </div>
+          <div className="rounded-[1.75rem] border border-border bg-cool p-6 shadow-sm sm:p-8">
+            <FloridaMap className="mx-auto max-w-xs sm:max-w-sm" />
           </div>
         </Reveal>
       </div>

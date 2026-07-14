@@ -253,7 +253,9 @@
       "listIntro": "Áreas donde más trabajamos",
       "notListed": "¿No ve su zona? Si está en Florida Central, es muy probable que la cubramos. Solo pregunte.",
       "cta": "Ver todas las áreas de servicio",
-      "mapPlaceholder": "Mapa del área de servicio"
+      "mapTitle": "Dónde trabajamos en Florida Central",
+      "mapDesc": "Mapa de Florida con el área de servicio de Limpios destacada en Florida Central, que cubre Clermont, Minneola, Groveland, Winter Garden, Horizon West y Four Corners.",
+      "mapRegion": "Florida Central"
     },
     "faq": {
       "eyebrow": "Bueno saberlo",
