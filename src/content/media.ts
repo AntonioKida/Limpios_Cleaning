@@ -59,11 +59,11 @@ export const videos: Record<VideoId, VideoClip> = {
   vid2: {
     id: "vid2",
     poster: "/video-posters/Vid2_poster.jpg",
-    url: YT("oMk5WvdESvU"), // residential deep clean
+    url: YT("oMk5WvdESvU"), // deep clean
     provider: "youtube",
     spokenCaptions: false,
     durationSec: 18,
-    services: ["residential"],
+    services: ["deep-cleaning"],
   },
   vid3: {
     id: "vid3",

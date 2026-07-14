@@ -71,6 +71,26 @@ export const site = {
   licenseIsPlaceholder: false,
 
   /**
+   * "SBA-certified" is UNCONFIRMED and therefore NOT rendered.
+   *
+   * It names a real federal registration (SBA VetCert), which makes it the
+   * highest-liability claim on the site: asserting it without an active
+   * certification is materially worse than any other overstatement here. The
+   * repo disagreed with itself about it — BUSINESS-PROFILE.md inferred it from
+   * the owner's own public pages, while docs/fable-audit/ says do not assert it —
+   * and the owner has not confirmed either way.
+   *
+   * So it is gated rather than deleted, because the capability should survive the
+   * question. While this is false, every SBA surface renders the confirmed claim
+   * instead: "Veteran Owned Business", plus the 28 years of military service.
+   * Flip this to true once the owner produces the VetCert and all three surfaces
+   * (hero slogan proof, trust bar, Trusted By proof stack) restore the SBA line
+   * together. Fails closed: the safe string is the default, so forgetting the
+   * flag ships the truth, not the claim.
+   */
+  sbaCertifiedConfirmed: false,
+
+  /**
    * NO ratings/reviews data. The fake placeholder reviews were retired (2026-07)
    * in favour of the "Trusted By" section: anonymized client categories + the
    * trust stack we can actually prove. AggregateRating is never emitted.

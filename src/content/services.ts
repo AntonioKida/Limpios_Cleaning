@@ -6,9 +6,16 @@
  *
  * REPOSITIONING (2026-07, owner brief): the primary offer is the five B2B-first
  * services below (commercial, post-construction, move-in/out, window, carpet).
- * `residential` and `interior-painting` are DEMOTED, not deleted — decision
- * gate G1 (docs/fable-audit/30-decision-gates.md): routes, copy and quote
- * options stay live so the change is reversible with two flag flips.
+ * `interior-painting` is DEMOTED, not deleted — decision gate G1
+ * (docs/fable-audit/30-decision-gates.md).
+ *
+ * `residential` is DELETED, not demoted (2026-07, owner confirmation). It sold
+ * recurring cleaning of occupied homes, which the owner does not do and which the
+ * site's own FAQ already denied — two live, indexable pages contradicting each
+ * other. His actual words: "we clean empty homes preparing for new tenants." That
+ * IS `move-in-out`, which already existed and already said exactly that, so the
+ * page was redundant as well as false. Folded into `move-in-out`; the old route
+ * 308s there (next.config.ts) so no link or crawl equity is dropped.
  */
 
 export const serviceSlugs = [
@@ -17,7 +24,6 @@ export const serviceSlugs = [
   "move-in-out",
   "window-cleaning",
   "carpet-cleaning",
-  "residential",
   "deep-cleaning",
   "interior-painting",
 ] as const;
@@ -86,21 +92,13 @@ export const services: Service[] = [
   },
   // ——— Demoted (G1): reachable, quotable, out of the primary surfaces.
   // deep-cleaning is not in the owner's five either, but its route/content are
-  // preserved for the same reversibility reason as residential/painting. ———
-  {
-    slug: "residential",
-    icon: "House",
-    featured: false,
-    secondary: true,
-    related: ["deep-cleaning", "carpet-cleaning", "window-cleaning"],
-    price: { model: "quote" },
-  },
+  // preserved for the same reversibility reason as painting. ———
   {
     slug: "deep-cleaning",
     icon: "Sparkles",
     featured: false,
     secondary: true,
-    related: ["residential", "move-in-out", "carpet-cleaning"],
+    related: ["move-in-out", "carpet-cleaning", "commercial"],
     price: { model: "quote" },
   },
   {

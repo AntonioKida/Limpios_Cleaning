@@ -62,8 +62,8 @@ const META: Meta[] = [
   { id: "img2", room: "fridge", flagship: true, services: ["deep-cleaning"] }, // moldy fridge → spotless
   { id: "img8", room: "bathroom", flagship: true, services: ["deep-cleaning", "move-in-out"] }, // bathroom → fresh
   { id: "img4", room: "shower", flagship: false, services: ["deep-cleaning"] },
-  { id: "img7", room: "kitchen", flagship: false, services: ["residential", "move-in-out"] },
-  { id: "img1", room: "patio", flagship: false, services: ["residential"] },
+  { id: "img7", room: "kitchen", flagship: false, services: ["move-in-out"] },
+  { id: "img1", room: "patio", flagship: false, services: ["deep-cleaning"] },
   { id: "img6", room: "shower", flagship: false, services: ["deep-cleaning"] },
   { id: "img3", room: "fridge", flagship: false, services: ["deep-cleaning"] }, // caked drawer (disclose)
   { id: "img9", room: "kitchen", flagship: false, services: ["move-in-out"] },

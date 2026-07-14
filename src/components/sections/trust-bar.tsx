@@ -2,6 +2,7 @@ import { useTranslations } from "next-intl";
 import { Container } from "@/components/ui/container";
 import { Icon } from "@/components/icon";
 import { trustStats } from "@/content/home";
+import { site } from "@/content/site";
 
 // Credentials strip — deliberately carries DIFFERENT proof than the hero's
 // star line (veteran/insured) and the "Why" cards, so nothing is restated.
@@ -25,7 +26,12 @@ export function TrustBar() {
               <span className="shrink-0 text-sky">
                 <Icon name={stat.icon} className="size-6" />
               </span>
-              <span className="text-sm font-semibold text-navy">{t(stat.id)}</span>
+              <span className="text-sm font-semibold text-navy">
+                {/* SBA-certified is unconfirmed, so it is gated. See site.ts. */}
+                {stat.id === "since" && site.sbaCertifiedConfirmed
+                  ? t("sinceSba")
+                  : t(stat.id)}
+              </span>
             </li>
           ))}
         </ul>

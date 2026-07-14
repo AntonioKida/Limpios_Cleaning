@@ -60,9 +60,9 @@ const META: Meta[] = [
   // Window cleaning
   { id: "img15", services: ["window-cleaning"] },
   { id: "img14", services: ["window-cleaning"] },
-  // Detail standards (residential/deep-detail proof) + About
-  { id: "img16", services: ["residential"], about: true },
-  { id: "img19", services: ["residential", "move-in-out"] },
+  // Detail standards (deep-detail proof) + About
+  { id: "img16", services: ["deep-cleaning"], about: true },
+  { id: "img19", services: ["move-in-out"] },
   // Brand / About only
   { id: "img20", services: [], about: true },
   { id: "img29", services: [], about: true },

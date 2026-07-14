@@ -8,7 +8,7 @@ const ROUTES = [
   "/en",
   "/es",
   "/en/services",
-  "/en/services/residential",
+  "/en/services/move-in-out",
   "/en/service-areas/clermont",
   "/en/pricing",
   "/en/contact",

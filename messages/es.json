@@ -129,7 +129,8 @@
     "hero": {
       "eyebrow": "Empresa de un veterano · Florida Central",
       "slogan": "Empresa de un veterano",
-      "sloganProof": "Certificado por la SBA · 28 años de experiencia militar",
+      "sloganProof": "28 años de experiencia militar",
+      "sloganProofSba": "Certificado por la SBA · 28 años de experiencia militar",
       "title": "Limpieza comercial en la que su negocio puede",
       "titleAccent": "confiar",
       "subtitle": "Oficinas, obras recién terminadas, mudanzas, ventanas y alfombras, limpiadas según un alcance por escrito por un equipo verificado y de propiedad de un veterano. Con licencia y seguro, con base en el condado de Lake, servimos toda Florida Central.",
@@ -140,7 +141,8 @@
       "chipChamber": "Miembro de la Cámara de Comercio"
     },
     "trustBar": {
-      "since": "Certificado por la SBA · 28 años de experiencia militar",
+      "since": "Empresa de un veterano · 28 años de experiencia militar",
+      "sinceSba": "Certificado por la SBA · 28 años de experiencia militar",
       "chamber": "Miembro de la Cámara de South Lake",
       "bilingual": "English y Español",
       "local": "Base en el condado de Lake · Toda Florida Central"
@@ -193,7 +195,7 @@
         },
         "clean": {
           "title": "Nosotros limpiamos",
-          "description": "Nuestro equipo verificado, con antecedentes revisados, sigue la lista de verificación, incluso fuera de horario si su agenda lo requiere."
+          "description": "Nuestro equipo verificado, con antecedentes revisados, sigue la lista de verificación por las tardes y los fines de semana, alrededor del horario de su negocio."
         }
       }
     },
@@ -301,13 +303,13 @@
       "commercial": {
         "name": "Limpieza comercial",
         "tagline": "Un espacio de trabajo que causa la impresión correcta.",
-        "description": "Limpieza confiable de oficinas, comercios e instalaciones con un calendario hecho a la medida de su negocio, fuera de horario o durante el día. Su equipo y sus clientes entran a un espacio fresco y saludable cada vez.",
-        "metaDescription": "Limpieza comercial y de oficinas en toda Florida Central. Recurrente o puntual, disponible fuera de horario, con licencia y seguro, empresa de un veterano. Visita y presupuesto gratis.",
+        "description": "Limpieza confiable de oficinas, comercios e instalaciones con un calendario hecho a la medida de su negocio: tardes, fines de semana o durante el día. Su equipo y sus clientes entran a un espacio fresco y saludable cada vez.",
+        "metaDescription": "Limpieza comercial y de oficinas en toda Florida Central. Recurrente o puntual, disponible tardes y fines de semana, con licencia y seguro, empresa de un veterano. Visita y presupuesto gratis.",
         "who": [
           "Oficinas, clínicas, salones y comercios",
           "Administradores de propiedades e instalaciones",
           "HOAs con casas club y amenidades",
-          "Negocios que necesitan servicio flexible fuera de horario"
+          "Negocios que necesitan servicio por las tardes y los fines de semana"
         ],
         "included": [
           "Recepción, áreas comunes y estaciones de trabajo",
@@ -320,7 +322,7 @@
           "Metraje y número de baños",
           "Frecuencia y calendario de limpieza",
           "Necesidades especiales (pisos, vidrios, desinfección)",
-          "Servicio diurno o fuera de horario"
+          "Servicio diurno, por la tarde o en fin de semana"
         ]
       },
       "post-construction": {
@@ -423,10 +425,10 @@
         "name": "Limpieza profunda",
         "tagline": "Un reinicio que llega a cada rincón.",
         "description": "Una limpieza de detalle de arriba a abajo para espacios que necesitan atención extra. Zócalos, lechada y los rincones detrás y dentro de las cosas que una limpieza estándar omite. Es ideal antes de empezar un servicio recurrente o tras mucho tiempo sin limpieza profesional.",
-        "metaDescription": "Limpieza profunda en Florida Central con zócalos, lechada, accesorios y detalle de arriba a abajo, para oficinas y casas. Asegurados, empresa de un veterano. Presupuesto gratis.",
+        "metaDescription": "Limpieza profunda en Florida Central con zócalos, lechada, accesorios y detalle de arriba a abajo, para oficinas, instalaciones y unidades vacías. Asegurados, empresa de un veterano. Presupuesto gratis.",
         "who": [
           "Clientes nuevos antes de empezar el servicio recurrente",
-          "Oficinas y casas con limpieza profesional pendiente",
+          "Oficinas y propiedades con limpieza profesional pendiente",
           "Reinicios de temporada o de entrega"
         ],
         "included": [
@@ -443,30 +445,6 @@
           "Si después pasa a servicio recurrente"
         ]
       },
-      "residential": {
-        "name": "Limpieza residencial",
-        "tagline": "El mismo estándar, en casa.",
-        "description": "Limpieza del hogar recurrente o puntual con la misma lista de verificación por escrito y el mismo equipo verificado que llevamos al trabajo comercial. Cocinas, baños, habitaciones y áreas comunes, bien hechos.",
-        "metaDescription": "Limpieza de casas en Florida Central de una empresa con licencia, seguro y de propiedad de un veterano. Recurrente o puntual. Visita y presupuesto gratis.",
-        "who": [
-          "Propietarios que quieren un equipo constante y de confianza",
-          "Familias y profesionales ocupados",
-          "Quienes prefieren productos de bajo olor, bien elegidos"
-        ],
-        "included": [
-          "Cocinas: cubiertas, tarjas, exterior de electrodomésticos, estufa",
-          "Baños: inodoros, regaderas, tinas, lavabos, espejos",
-          "Desempolvado de superficies, repisas y accesorios alcanzables",
-          "Pisos aspirados y trapeados en toda la casa",
-          "Basura retirada y camas tendidas a pedido"
-        ],
-        "factors": [
-          "Tamaño de la casa (habitaciones, baños, metraje)",
-          "Condición actual y nivel de desorden",
-          "Frecuencia del servicio (recurrente ahorra más)",
-          "Extras como horno, refrigerador o ventanas"
-        ]
-      },
       "interior-painting": {
         "name": "Pintura interior",
         "tagline": "Una mano de pintura, con limpieza incluida.",
@@ -475,7 +453,7 @@
         "who": [
           "Entregas que necesitan retoques de pintura más limpieza",
           "Oficinas que renuevan un espacio entre inquilinos",
-          "Propietarios que repintan una habitación o toda la casa"
+          "Arrendadores que repintan una unidad antes de publicarla"
         ],
         "included": [
           "Preparación de superficies, resane y cinta",
@@ -505,7 +483,7 @@
         "description": "Oficinas, comercios e instalaciones con calendario recurrente, ya sea nocturno, semanal o a medida.",
         "features": [
           "Alcance y calendario a medida",
-          "Disponible fuera de horario",
+          "Tardes y fines de semana disponibles",
           "Desinfección de baños y puntos de contacto",
           "El mismo equipo verificado en cada visita"
         ],
@@ -634,7 +612,7 @@
         "intro": "El carácter tranquilo y establecido de Montverde merece un trato cuidadoso. Limpios lleva limpieza detallada y confiable a las propiedades de toda la zona."
       },
       "mascotte": {
-        "blurb": "Limpieza amable y asegurada para negocios y hogares de Mascotte.",
+        "blurb": "Limpieza amable y asegurada para negocios y propiedades de Mascotte.",
         "intro": "A Limpios le da gusto servir a Mascotte con el mismo cuidado de empresa de veterano que llevamos por todo el condado de Lake. Confiables y locales."
       }
     }
@@ -657,7 +635,7 @@
     },
     "eco": {
       "title": "Nuestro compromiso ecológico",
-      "body": "Usamos productos ecológicos y de bajo olor, duros con la suciedad y suaves con las personas que usan el espacio todos los días. Una limpieza más sana no debería costarle el aire de su propio edificio."
+      "body": "Usamos productos ecológicos, duros con la suciedad y suaves con las personas que usan el espacio todos los días. Una limpieza más sana no debería costarle el aire de su propio edificio."
     },
     "chamber": {
       "title": "Parte de la comunidad empresarial local",
@@ -710,7 +688,8 @@
     },
     "proofTitle": "Lo que sí podemos comprobar",
     "proof": {
-      "veteran": "Empresa de un veterano certificada por la SBA, con 28 años de experiencia militar.",
+      "veteran": "Empresa de un veterano, con 28 años de experiencia militar.",
+      "veteranSba": "Empresa de un veterano certificada por la SBA, con 28 años de experiencia militar.",
       "insured": "Con licencia y seguro. El certificado de seguro está disponible a pedido.",
       "chamber": "Miembro de la Cámara de Comercio de South Lake."
     },
@@ -855,7 +834,6 @@
           "move-in-out": "Limpieza de mudanza",
           "window-cleaning": "Limpieza de ventanas",
           "carpet-cleaning": "Limpieza de alfombras",
-          "residential": "Limpieza residencial",
           "deep-cleaning": "Limpieza profunda",
           "interior-painting": "Pintura interior"
         }
@@ -983,7 +961,7 @@
       },
       "eco": {
         "q": "¿Sus productos son seguros para oficinas, niños y mascotas?",
-        "a": "Sí. Usamos productos ecológicos y de bajo olor, duros con la suciedad pero suaves con las personas, y las mascotas, que usan el espacio. Si alguien en el sitio tiene alergias o sensibilidad, avísenos y lo ajustamos."
+        "a": "Sí. Usamos productos ecológicos, duros con la suciedad pero suaves con las personas, y las mascotas, que usan el espacio. Si alguien en el sitio tiene alergias o sensibilidad, avísenos y lo ajustamos."
       },
       "supplies": {
         "q": "¿Debo poner insumos o equipo?",
@@ -1023,7 +1001,7 @@
     "playLabel": "Reproducir video",
     "captions": {
       "vid1": "Desinfección electrostática de una oficina comercial",
-      "vid2": "Así limpiamos una casa de Florida Central",
+      "vid2": "Por dentro de una limpieza profunda en Florida Central",
       "vid3": "Nuestros estándares de detalle, de cerca",
       "vid4": "Desinfectando una sala de juntas",
       "vid5": "Una limpieza de mudanza, de principio a fin",

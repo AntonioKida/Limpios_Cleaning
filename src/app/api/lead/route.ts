@@ -40,7 +40,6 @@ const SERVICE_LABELS: Record<string, string> = {
   "move-in-out": "Move-in / move-out",
   "window-cleaning": "Window cleaning",
   "carpet-cleaning": "Carpet cleaning",
-  residential: "Residential cleaning",
   "deep-cleaning": "Deep cleaning",
   "interior-painting": "Interior painting",
 };

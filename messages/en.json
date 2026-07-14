@@ -129,7 +129,8 @@
     "hero": {
       "eyebrow": "Veteran Owned · Central Florida",
       "slogan": "Veteran Owned Business",
-      "sloganProof": "SBA-certified · 28 years of military experience",
+      "sloganProof": "28 years of military experience",
+      "sloganProofSba": "SBA-certified · 28 years of military experience",
       "title": "Commercial cleaning your business can",
       "titleAccent": "count on",
       "subtitle": "Offices, post-construction sites, turnovers, windows and carpets, cleaned to a written scope by a vetted, veteran owned crew. Licensed and insured, based in Lake County, serving all of Central Florida.",
@@ -140,7 +141,8 @@
       "chipChamber": "Chamber of Commerce member"
     },
     "trustBar": {
-      "since": "SBA-certified · 28 years of military experience",
+      "since": "Veteran Owned · 28 years of military experience",
+      "sinceSba": "SBA-certified · 28 years of military experience",
       "chamber": "South Lake Chamber member",
       "bilingual": "English & Español",
       "local": "Lake County based · Central Florida wide"
@@ -193,7 +195,7 @@
         },
         "clean": {
           "title": "We clean",
-          "description": "Our vetted, background-checked team works the checklist, after-hours if that's what your schedule needs."
+          "description": "Our vetted, background-checked team works the checklist evenings and weekends, around your business hours."
         }
       }
     },
@@ -301,13 +303,13 @@
       "commercial": {
         "name": "Commercial cleaning",
         "tagline": "A workspace that makes the right impression.",
-        "description": "Reliable office, retail and facility cleaning on a schedule built around your business, after-hours or daytime. Your team and your customers walk into a fresh, healthy space every time.",
-        "metaDescription": "Commercial & office cleaning across Central Florida. Recurring or one-time, after-hours available, licensed & insured, veteran owned. Free walkthrough and estimate.",
+        "description": "Reliable office, retail and facility cleaning on a schedule built around your business: evenings, weekends or daytime. Your team and your customers walk into a fresh, healthy space every time.",
+        "metaDescription": "Commercial & office cleaning across Central Florida. Recurring or one-time, evenings and weekends available, licensed & insured, veteran owned. Free walkthrough and estimate.",
         "who": [
           "Offices, clinics, salons and retail storefronts",
           "Property managers and facility directors",
           "HOAs with clubhouses and amenity centers",
-          "Businesses that need flexible, after-hours service"
+          "Businesses that need evening and weekend service"
         ],
         "included": [
           "Reception, common areas and workstations",
@@ -320,7 +322,7 @@
           "Square footage and number of restrooms",
           "Cleaning frequency and schedule",
           "Specialty needs (floors, glass, disinfection)",
-          "Daytime vs. after-hours service"
+          "Daytime vs. evening or weekend service"
         ]
       },
       "post-construction": {
@@ -423,10 +425,10 @@
         "name": "Deep cleaning",
         "tagline": "A reset that reaches every corner.",
         "description": "A top-to-bottom detail clean for spaces that need extra attention. Baseboards, grout, and the spots behind and inside things that a standard clean skips. It's the right call before recurring service starts or after a long gap.",
-        "metaDescription": "Deep cleaning in Central Florida covering baseboards, grout, fixtures and detail work top to bottom, for offices and homes. Insured, veteran owned. Free estimate.",
+        "metaDescription": "Deep cleaning in Central Florida covering baseboards, grout, fixtures and detail work top to bottom, for offices, facilities and vacant units. Insured, veteran owned. Free estimate.",
         "who": [
           "First-time clients before starting recurring service",
-          "Offices and homes overdue for a professional clean",
+          "Offices and properties overdue for a professional clean",
           "Seasonal or handover resets"
         ],
         "included": [
@@ -443,30 +445,6 @@
           "Whether it becomes recurring service afterward"
         ]
       },
-      "residential": {
-        "name": "Residential cleaning",
-        "tagline": "The same standards, at home.",
-        "description": "Recurring or one-time home cleaning with the same written checklist and vetted crew we bring to commercial work. Kitchens, baths, bedrooms and living spaces, done properly.",
-        "metaDescription": "Residential house cleaning in Central Florida from a licensed, insured, veteran owned company. Recurring or one-time. Free walkthrough and estimate.",
-        "who": [
-          "Homeowners who want a consistent, trusted team",
-          "Busy families and professionals",
-          "Anyone who prefers low-odor, carefully chosen products"
-        ],
-        "included": [
-          "Kitchens: counters, sinks, exterior of appliances, stovetop",
-          "Bathrooms: toilets, showers, tubs, sinks, mirrors",
-          "Dusting of reachable surfaces, sills and fixtures",
-          "Floors vacuumed and mopped throughout",
-          "Trash emptied and beds made on request"
-        ],
-        "factors": [
-          "Home size (bedrooms, bathrooms, square footage)",
-          "Current condition and clutter level",
-          "How often you book (recurring saves you more)",
-          "Add-ons like inside-oven, fridge, or windows"
-        ]
-      },
       "interior-painting": {
         "name": "Interior painting",
         "tagline": "A fresh coat, cleanly done.",
@@ -475,7 +453,7 @@
         "who": [
           "Turnovers that need paint touch-ups plus cleaning",
           "Offices refreshing a space between tenants",
-          "Homeowners repainting a room or a whole home"
+          "Landlords repainting a unit before it lists"
         ],
         "included": [
           "Surface prep, patching and taping",
@@ -505,7 +483,7 @@
         "description": "Offices, retail and facilities on a recurring schedule, whether nightly, weekly or custom.",
         "features": [
           "Custom scope & schedule",
-          "After-hours available",
+          "Evenings & weekends available",
           "Restroom & touchpoint sanitizing",
           "Same vetted crew each visit"
         ],
@@ -634,7 +612,7 @@
         "intro": "Montverde's quiet, established character deserves a careful touch. Limpios brings detailed, trustworthy cleaning to properties throughout the area."
       },
       "mascotte": {
-        "blurb": "Friendly, insured cleaning for Mascotte businesses and households.",
+        "blurb": "Friendly, insured cleaning for Mascotte businesses and properties.",
         "intro": "Limpios is glad to serve Mascotte with the same veteran owned care we bring across Lake County. Reliable and local."
       }
     }
@@ -657,7 +635,7 @@
     },
     "eco": {
       "title": "Our eco-friendly commitment",
-      "body": "We use eco-friendly, low-odor products that are hard on dirt and easy on the people who use the space every day. A healthier clean shouldn't cost you the air in your own building."
+      "body": "We use eco-friendly products that are hard on dirt and easy on the people who use the space every day. A healthier clean shouldn't cost you the air in your own building."
     },
     "chamber": {
       "title": "Part of the local business community",
@@ -710,7 +688,8 @@
     },
     "proofTitle": "What we can prove",
     "proof": {
-      "veteran": "SBA-certified Veteran Owned Business, with 28 years of military experience.",
+      "veteran": "Veteran Owned Business, with 28 years of military experience.",
+      "veteranSba": "SBA-certified Veteran Owned Business, with 28 years of military experience.",
       "insured": "Licensed and insured. A certificate of insurance is available on request.",
       "chamber": "Member of the South Lake Chamber of Commerce."
     },
@@ -855,7 +834,6 @@
           "move-in-out": "Move-in / move-out",
           "window-cleaning": "Window cleaning",
           "carpet-cleaning": "Carpet cleaning",
-          "residential": "Residential cleaning",
           "deep-cleaning": "Deep cleaning",
           "interior-painting": "Interior painting"
         }
@@ -983,7 +961,7 @@
       },
       "eco": {
         "q": "Are your products safe for offices, kids and pets?",
-        "a": "Yes. We use eco-friendly, low-odor products that are tough on dirt but gentle on the people, and pets, who use the space. If anyone on site has allergies or sensitivities, tell us and we'll adjust."
+        "a": "Yes. We use eco-friendly products that are tough on dirt but gentle on the people, and pets, who use the space. If anyone on site has allergies or sensitivities, tell us and we'll adjust."
       },
       "supplies": {
         "q": "Do I need to provide supplies or equipment?",
@@ -1023,7 +1001,7 @@
     "playLabel": "Play video",
     "captions": {
       "vid1": "Electrostatic disinfection of a commercial office",
-      "vid2": "How we clean a Central Florida home",
+      "vid2": "Inside a Central Florida deep clean",
       "vid3": "Our detailing standards, up close",
       "vid4": "Disinfecting a conference room",
       "vid5": "A move-in / move-out clean, start to finish",

@@ -30,7 +30,8 @@ export function Hero() {
                 {t("slogan")}
               </p>
               <p className="text-sm font-medium text-muted-foreground">
-                {t("sloganProof")}
+                {/* SBA-certified is unconfirmed, so it is gated. See site.ts. */}
+                {t(site.sbaCertifiedConfirmed ? "sloganProofSba" : "sloganProof")}
               </p>
             </div>
           </Reveal>

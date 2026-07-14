@@ -36,7 +36,7 @@ await shoot(
   [
     "/en",
     "/en/services",
-    "/en/services/residential",
+    "/en/services/move-in-out",
     "/en/services/deep-cleaning", // before/after gallery + standards video
     "/en/services/commercial", // portrait video trio
     "/en/pricing",
