@@ -190,10 +190,22 @@ export function QuoteForm({
   const totalSteps = STEP_FIELDS.length;
   const { register, formState } = form;
   const { errors, touchedFields } = formState;
-  // Contact-field errors show only after the user engages that field (blur) — a
-  // premature submit focuses the first empty field + shows one calm summary line.
+  // An error is shown once it is EARNED: either the user engaged that field and left
+  // it invalid (blur), or they tried to advance and could not. Nothing red on arrival.
+  //
+  // `attemptedAdvance` is load-bearing here, not just belt-and-braces. RHF's
+  // handleSubmit does not mark fields touched, so gating on `touchedFields` alone
+  // meant a failed submit identified NO field — the user got one generic summary line
+  // and no way to tell which inputs were wrong. That is a WCAG 3.3.1 (Level A) miss,
+  // and axe cannot see it.
   const fieldError = (name: keyof QuoteFormValues) =>
-    touchedFields[name] ? errors[name]?.message : undefined;
+    touchedFields[name] || attemptedAdvance ? errors[name]?.message : undefined;
+
+  /** Ties an input to its error text so assistive tech announces the two together. */
+  const errorProps = (name: keyof QuoteFormValues) =>
+    fieldError(name)
+      ? { "aria-invalid": true as const, "aria-describedby": `${name}-error` }
+      : {};
   const audience = useWatch({ control: form.control, name: "audience" });
 
   async function next() {
@@ -429,7 +441,7 @@ export function QuoteForm({
             <div className="flex flex-col gap-5">
               <div className="grid gap-5 sm:grid-cols-2">
                 <Field label={tf("name.label")} htmlFor="name" error={fieldError("name")}>
-                  <Input id="name" autoComplete="name" placeholder={tf("name.placeholder")} {...register("name")} />
+                  <Input id="name" autoComplete="name" placeholder={tf("name.placeholder")} {...errorProps("name")} {...register("name")} />
                 </Field>
                 <Field label={tf("company.label")} htmlFor="company">
                   <Input id="company" autoComplete="organization" placeholder={tf("company.placeholder")} {...register("company")} />
@@ -437,10 +449,10 @@ export function QuoteForm({
               </div>
               <div className="grid gap-5 sm:grid-cols-2">
                 <Field label={tf("email.label")} htmlFor="email" error={fieldError("email")}>
-                  <Input id="email" type="email" autoComplete="email" placeholder={tf("email.placeholder")} {...register("email")} />
+                  <Input id="email" type="email" autoComplete="email" placeholder={tf("email.placeholder")} {...errorProps("email")} {...register("email")} />
                 </Field>
                 <Field label={tf("phone.label")} htmlFor="phone" error={fieldError("phone")}>
-                  <Input id="phone" type="tel" autoComplete="tel" placeholder={tf("phone.placeholder")} {...register("phone")} />
+                  <Input id="phone" type="tel" autoComplete="tel" placeholder={tf("phone.placeholder")} {...errorProps("phone")} {...register("phone")} />
                 </Field>
               </div>
               <FieldGroup label={tf("preferredContact.label")}>
@@ -457,12 +469,15 @@ export function QuoteForm({
                 <input
                   type="checkbox"
                   className="mt-0.5 size-4 shrink-0 rounded border-input accent-royal"
+                  {...errorProps("consent")}
                   {...register("consent")}
                 />
                 <span>{tf("consent.label")}</span>
               </label>
               {fieldError("consent") ? (
-                <p className="text-sm text-destructive">{fieldError("consent")}</p>
+                <p id="consent-error" className="text-sm text-destructive">
+                  {fieldError("consent")}
+                </p>
               ) : null}
               {status === "error" ? (
                 <div className="rounded-lg border border-destructive/30 bg-destructive/10 px-3 py-2 text-sm text-destructive">
@@ -590,7 +605,11 @@ function Field({
       </Label>
       {children}
       {hint ? <p className="text-sm text-muted-foreground">{hint}</p> : null}
-      {error ? <p className="text-sm text-destructive">{error}</p> : null}
+      {error ? (
+        <p id={`${htmlFor}-error`} className="text-sm text-destructive">
+          {error}
+        </p>
+      ) : null}
     </div>
   );
 }
