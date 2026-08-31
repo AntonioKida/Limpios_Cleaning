@@ -29,7 +29,13 @@ export type JobPhotoId =
   | "img20"
   | "img25"
   | "img26"
-  | "img29";
+  | "img29"
+  | "img30"
+  | "img31"
+  | "img32"
+  | "img36"
+  | "img37"
+  | "img38";
 
 export interface JobPhoto {
   id: JobPhotoId;
@@ -63,6 +69,15 @@ const META: Meta[] = [
   // Detail standards (deep-detail proof) + About
   { id: "img16", services: ["deep-cleaning"], about: true },
   { id: "img19", services: ["move-in-out"] },
+  // Carpet cleaning — this page's primary proof strip (order = strongest first,
+  // process shot last). Residential jobs, captioned as carpet cleaning without
+  // any commercial implication (owner: no commercial carpet work yet).
+  { id: "img36", services: ["carpet-cleaning"] },
+  { id: "img30", services: ["carpet-cleaning"] },
+  { id: "img31", services: ["carpet-cleaning"] },
+  { id: "img32", services: ["carpet-cleaning"] },
+  { id: "img38", services: ["carpet-cleaning"] },
+  { id: "img37", services: ["carpet-cleaning"] },
   // Brand / About only
   { id: "img20", services: [], about: true },
   { id: "img29", services: [], about: true },

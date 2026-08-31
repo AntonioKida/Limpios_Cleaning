@@ -22,6 +22,16 @@ const ids = [
   "img25", // post-construction AFTER: finished marble bath, floors gleaming
   "img26", // post-construction AFTER: cleaned room, glossy wood floor
   "img29", // brand: Limpios Cleaning Management cap, close-up
+  // Carpet cleaning (round-4 batch, residential jobs — labelled honestly as carpet
+  // cleaning, never as commercial). See docs/BUSINESS-PROFILE.md media notes for
+  // the 3 dropped: img33 (byte-identical to img32), img34 (dim/tight closet,
+  // redundant), img35 (busy background, redundant with the stronger img30).
+  "img36", // carpet: bright empty room, edge-to-edge clean, even grooming lines
+  "img30", // carpet: stair landing, clean fan grooming lines, wand in frame
+  "img31", // carpet: fresh grooming lines near a doorway (landscape)
+  "img32", // carpet: wide room cleaned end-to-end, extraction hose across floor
+  "img38", // carpet: cleaned room with extraction hoses staged
+  "img37", // carpet: truck-mount extraction hoses run in from the van (process)
 ];
 
 const MAX_W = 768; // native width of the round-3 shots; never upscale
