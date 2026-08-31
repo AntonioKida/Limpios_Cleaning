@@ -1,12 +1,9 @@
-# .husky/pre-push — local 2-level CI gate (replaces GitHub-hosted minutes). Before EVERY push, runs the
-# FAST gate (~2-3 min) on the VM: native placeholders + typecheck + lint + test + build. The FULL gate
-# (~6-8 min: both GitHub jobs via `act`, in parallel) runs with `npm run gate:full` before merging to main.
-# See docs/CI-LOCAL-VM.md.
+# .husky/pre-push — local CI gate (replaces GitHub-hosted minutes). Before EVERY push, runs the FAST gate
+# (~2-3 min) in WSL: native placeholders + typecheck + lint + test + build against the committed SHA. The
+# FULL gate (~6-8 min: both GitHub jobs via `act`) runs with `npm run gate:full` before merging to main.
+# See docs/CI-LOCAL-WSL.md.
 #
 # ⚠️ ESCAPE: `git push --no-verify` skips this hook entirely (emergencies).
-
-GATE_REMOTE="${CI_LOCAL_GATE_REMOTE:-vm-gate}"
-[ "$1" = "$GATE_REMOTE" ] && exit 0   # the internal sync push to the VM is not gated (avoids recursion)
 
 # Commit to gate = what's being pushed (first non-zero local_sha from stdin); fallback to HEAD.
 SHA=""

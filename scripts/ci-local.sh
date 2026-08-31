@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# scripts/ci-local.sh [fast|full] — 2-level local CI gate, runs on the VM. Replaces GitHub-hosted CI
+# scripts/ci-local.sh [fast|full] — 2-level local CI gate, runs in WSL. Replaces GitHub-hosted CI
 # (minutes exhausted). Limpios has NO database, so this is pure Node/Docker — no supabase, no test selector.
 #
 #   fast (~2-3 min, pre-push):  NATIVE parallel run of the `checks` job — placeholders ‖ typecheck ‖ lint ‖
@@ -9,7 +9,7 @@
 #                               `npm run gate:full` before merging to main. (First run pulls a ~1GB image.)
 #
 # Sub-gates run in PARALLEL (background + wait, exit codes captured — ALL evaluated, not fail-fast, so every
-# failure is reported). Fail-closed via the trap below. Escape: git push --no-verify. Docs: docs/CI-LOCAL-VM.md.
+# failure is reported). Fail-closed via the trap below. Escape: git push --no-verify. Docs: docs/CI-LOCAL-WSL.md.
 set -uo pipefail
 export PATH="$HOME/.local/node/bin:$HOME/.local/bin:$PATH"
 cd "$(cd "$(dirname "$0")/.." && pwd)" || exit 2

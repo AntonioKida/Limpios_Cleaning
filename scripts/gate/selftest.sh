@@ -5,7 +5,7 @@
 # path tries to report green (a trailing echo / exit 0). Uses the CI_LOCAL_SELFTEST=1 hook, which marks
 # FAIL=1 and `exit 0` on purpose BEFORE any setup (touches nothing) — the gate's trap backstop must convert
 # that into !=0. Runs on the host in <1s; it's the lock that stops a future refactor from reintroducing a
-# gate that lies green. Wired as `npm run gate:selftest` and run first by remote-gate.sh. Docs: docs/CI-LOCAL-VM.md.
+# gate that lies green. Wired as `npm run gate:selftest` and run first by remote-gate.sh. Docs: docs/CI-LOCAL-WSL.md.
 set -u
 ROOT="$(cd "$(dirname "$0")/../.." && pwd)"
 

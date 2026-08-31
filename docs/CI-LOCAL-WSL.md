@@ -1,6 +1,6 @@
-# Local CI on a self-hosted VM (`act`)
+# Local CI in WSL (`act`)
 
-GitHub-hosted Actions minutes are exhausted, so CI runs on a self-hosted Ubuntu VM
+GitHub-hosted Actions minutes are exhausted, so CI runs locally in **WSL** (Ubuntu)
 instead. The **same** `.github/workflows/ci.yml` is the source of truth — it's just
 executed locally by [`act`](https://github.com/nektos/act) (which runs GitHub
 Actions workflows in Docker) plus a fast native pass, wired to `git push` via a
@@ -8,8 +8,11 @@ Actions workflows in Docker) plus a fast native pass, wired to `git push` via a
 
 Nothing about the app changed. If GitHub minutes ever return, re-enable the
 workflow's `push`/`pull_request` triggers (see the comment at the top of `ci.yml`).
-To stop gating pushes locally, remove `.husky/pre-push` (and optionally the
-`vm-gate` remote).
+To stop gating pushes locally, remove `.husky/pre-push`.
+
+> This replaced an earlier VMware-VM gate. The VM is gone; everything now runs in
+> WSL on the same machine, which is faster (no SSH, ext4 not a 9p mount) and has no
+> VM to power on.
 
 ## Two levels
 
@@ -19,7 +22,7 @@ To stop gating pushes locally, remove `.husky/pre-push` (and optionally the
 | **full** | before merging to `main` | **both** jobs via `act`: `checks` ‖ `smoke` (Playwright), node-20-in-container | ~6–8 min (first run pulls a ~1 GB image) | `npm run gate:full` |
 
 - **fast** is native (no Docker) for speed — a quick "is this push sane?" check. It
-  uses the VM's Node 22, so it's a close-but-not-identical stand-in.
+  uses WSL's Node 22, so it's a close-but-not-identical stand-in.
 - **full** is the authoritative reproduction: `act` runs the exact workflow steps in
   the `catthehacker/ubuntu:act-latest` container on Node 20, including the Playwright
   smoke job. Run it before you merge.
@@ -30,31 +33,34 @@ Both are **fail-closed** (see "Integrity" below). Escape hatch for emergencies:
 ## Architecture
 
 ```
-host (Windows)                          VM (kida@192.168.246.129)
-──────────────                          ─────────────────────────
+host (Windows, Git Bash)                WSL (Ubuntu-22.04)
+────────────────────────                ──────────────────
 git push origin …
   └─ .husky/pre-push
        └─ scripts/gate/remote-gate.sh fast <sha>
-            1. selftest.sh           (host, <1s — proves gate can't lie green)
-            2. git push vm-gate <sha>:gate ───────►  ~/limpios-gate.git   (bare mirror)
-            3. ssh … ─────────────────────────────►  ~/limpios-gate       (workdir)
-                                                        git reset --hard origin/gate
-                                                        bash scripts/ci-local.sh fast
+            1. selftest.sh        (host, <1s — proves the gate can't lie green)
+            2. wslpath -u <repo>  (resolve /mnt/c/… path)
+            3. wsl.exe … bash ───►  scripts/gate/wsl-gate.sh fast <sha> <mnt-path>
+                                        ├─ clone (first run) / fetch  ~/limpios-gate
+                                        ├─ git checkout --detach <sha>
+                                        └─ bash scripts/ci-local.sh fast
        exit ≠ 0  ⇒  push aborted
 ```
 
-- `vm-gate` → `kida@192.168.246.129:limpios-gate.git`. The `pre-push` hook skips its
-  own sync push (`$1 == vm-gate`) to avoid recursion.
-- It gates the **committed** HEAD (what you're publishing), not your dirty tree.
+- No SSH and no bare-mirror remote any more: the host repo is visible to WSL at
+  `/mnt/c/…`, so `wsl-gate.sh` clones/fetches from it directly into an isolated
+  ext4 workdir and pins it to the exact commit being pushed.
+- It gates the **committed** SHA (what you're publishing), not your dirty tree.
+- Overridable via env: `CI_LOCAL_WSL_DISTRO` (default `Ubuntu-22.04`),
+  `CI_LOCAL_GATE_DIR` (default `~/limpios-gate`).
 
 ### Total isolation from the Carbonell project
 
-The VM also hosts an unrelated project (Carbonell). This setup lives entirely in its
-own paths and **never touches** anything named `carbonell`:
+WSL also hosts an unrelated project at `~/carbonell`. This gate lives entirely in its
+own path and **never touches** anything named `carbonell`:
 
-- Owns: `~/limpios-gate.git` (bare), `~/limpios-gate` (workdir), remote `vm-gate`.
-- Reuses only the shared read-only toolchain under `~/.local` (Node, `act`) and the
-  global `~/.config/act/actrc`.
+- Owns: `~/limpios-gate` (the isolated clone; its `origin` is the host working copy).
+- Reuses only the shared read-only toolchain (`node` via nvm, `act` under `~/.local`).
 - Limpios has **no database**, so there are none of Carbonell's Supabase containers,
   ports, or `project_id` collisions to worry about — the two never intersect.
 
@@ -74,41 +80,41 @@ a gate that can lie must not be trusted. Run it directly with `npm run gate:self
 
 - `.github/workflows/ci.yml` — unchanged jobs; triggers set to `workflow_dispatch`.
 - `.husky/pre-push` — fires the fast gate on every push.
-- `scripts/gate/remote-gate.sh` — host→VM driver (selftest → sync → ssh run).
-- `scripts/ci-local.sh` — the gate itself, runs on the VM (`fast` native / `full` act).
+- `scripts/gate/remote-gate.sh` — host driver (selftest → resolve path → run in WSL).
+- `scripts/gate/wsl-gate.sh` — WSL side: isolated clone, pin to SHA, run `ci-local.sh`.
+- `scripts/ci-local.sh` — the gate itself (`fast` native / `full` act).
 - `scripts/gate/selftest.sh` — fail-closed integrity guard.
 - `package.json` — `gate:fast`, `gate:full`, `gate:selftest`.
 
-## One-time setup (host)
+## One-time setup
 
-```sh
-git remote add vm-gate kida@192.168.246.129:limpios-gate.git
-```
-
-The VM side (`~/limpios-gate.git` bare + `~/limpios-gate` workdir) and the toolchain
-(`act`, Node, Docker) are already provisioned.
+None. On the first push, `wsl-gate.sh` clones the isolated `~/limpios-gate` from the
+host working copy; the toolchain (`act`, Node via nvm, Docker) is already provisioned
+in WSL. To pre-warm it: `npm run gate:fast`.
 
 ## Troubleshooting
 
 - **First `gate:full` is slow** — `act` pulls the ~1 GB runner image once, then caches it.
-- **Docker not running on the VM** — `act` needs it; `docker ps` should succeed.
+- **Docker not running in WSL** — `act` needs it; `docker ps` should succeed.
 - **`act` skips a job** — jobs run under the `workflow_dispatch` event (no branch
   filter). `scripts/ci-local.sh` sets this via `ACT_EVENT`.
+- **"could not resolve a WSL path"** — the `Ubuntu-22.04` distro isn't running; `wsl -l -v`
+  should list it as `Running`. Override with `CI_LOCAL_WSL_DISTRO` if you renamed it.
 - **Need to bypass in an emergency** — `git push --no-verify`.
 
 ## Maintenance notes
 
-Setting this up surfaced three things that had been broken on a clean checkout while
-GitHub CI was creditless (Vercel hid them because it runs `npm install`, not `npm ci`):
+Setting the local gate up surfaced three things that had been broken on a clean checkout
+while GitHub CI was creditless (Vercel hid them because it runs `npm install`, not `npm ci`):
 
-- **Lockfile toolchain — keep it npm 10.** CI (`setup-node` node 20), the VM gate, and
-  `act` all use **npm 10**; this dev host runs **npm 11** (node 24). npm 11 writes a lockfile
-  form npm 10 rejects (extra `libc` fields; a deduped `@swc/helpers` that npm 10 wants
-  nested), so `npm ci` fails. The committed `package-lock.json` is the **npm-10** form —
-  readable by both, so `npm ci` is green everywhere. If you run `npm install` under npm 11 it
-  may re-drift the lock; the fast gate will catch it (`npm ci` fails on push). To resync,
-  regenerate with npm 10 — e.g. on the VM `cd ~/limpios-gate && npm install --package-lock-only`
-  — and commit the result. (Or run `npm install` under node 20 locally.)
+- **Lockfile toolchain — keep it npm 10.** CI (`setup-node` node 20), the WSL gate (npm
+  10.9.8 / node 22), and `act` all use **npm 10**; this dev host's Git-Bash side runs a
+  newer npm. Newer npm writes a lockfile form npm 10 rejects (extra `libc` fields; a
+  deduped `@swc/helpers` that npm 10 wants nested), so `npm ci` fails. The committed
+  `package-lock.json` is the **npm-10** form — readable by both, so `npm ci` is green
+  everywhere. If you run `npm install` under a newer npm it may re-drift the lock; the fast
+  gate will catch it (`npm ci` fails on push). To resync, regenerate with npm 10 — e.g. in
+  WSL `cd ~/limpios-gate && npm install --package-lock-only` — and commit the result.
 - **`typecheck` self-generates Next types.** `npm run typecheck` is `next typegen && tsc
   --noEmit`. `next-env.d.ts` (which declares `*.jpeg`/image module types) is gitignored and
   only written by a build, so on a clean checkout `tsc` needs `next typegen` first. Don't drop
