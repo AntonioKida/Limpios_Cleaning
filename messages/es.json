@@ -129,8 +129,7 @@
     "hero": {
       "eyebrow": "Empresa de un veterano · Florida Central",
       "slogan": "Empresa de un veterano",
-      "sloganProof": "28 años de experiencia militar",
-      "sloganProofSba": "Certificado por la SBA · 28 años de experiencia militar",
+      "sloganProof": "Veteran Owned Small Business, con 28 años de experiencia militar",
       "title": "Limpieza comercial en la que su negocio puede",
       "titleAccent": "confiar",
       "subtitle": "Oficinas, obras recién terminadas, mudanzas, ventanas y alfombras, limpiadas según un alcance por escrito por un equipo verificado y de propiedad de un veterano. Con licencia y seguro, con base en el condado de Lake, servimos toda Florida Central.",
@@ -141,8 +140,7 @@
       "chipChamber": "Miembro de la Cámara de Comercio"
     },
     "trustBar": {
-      "since": "Empresa de un veterano · 28 años de experiencia militar",
-      "sinceSba": "Certificado por la SBA · 28 años de experiencia militar",
+      "since": "Veteran Owned Small Business · 28 años de experiencia militar",
       "chamber": "Miembro de la Cámara de South Lake",
       "bilingual": "English y Español",
       "local": "Base en el condado de Lake · Toda Florida Central"
@@ -202,12 +200,12 @@
     "why": {
       "eyebrow": "Por qué Limpios",
       "title": "Locales, responsables y realmente minuciosos",
-      "subtitle": "La mayoría de los equipos son aceptables. La diferencia aquí está en el seguimiento: las mismas caras verificadas, un alcance por escrito, un presupuesto rápido y una garantía que sí cumplimos.",
+      "subtitle": "La mayoría de los equipos son aceptables. La diferencia aquí está en el seguimiento: limpiadores verificados y con antecedentes revisados, un alcance por escrito en cada visita, un presupuesto rápido y una garantía que sí cumplimos.",
       "ctaAbout": "Lea nuestra historia",
       "points": {
         "team": {
-          "title": "El mismo equipo verificado",
-          "description": "Sin rotación constante. Recibe a los mismos limpiadores con antecedentes verificados, que conocen su espacio y sus estándares."
+          "title": "Un equipo verificado y con antecedentes",
+          "description": "Cada limpiador se verifica con antecedentes antes de pisar su sitio. Sea cual sea el equipo que le toque, trabaja con el mismo estándar por escrito."
         },
         "checklist": {
           "title": "Alcance y lista por escrito",
@@ -279,7 +277,7 @@
       "eyebrow": "Servicios",
       "title": "Limpieza de nivel comercial, cinco especialidades",
       "subtitle": "Asegurados, de propiedad de un veterano y con alcance por escrito. Elija el servicio que necesita, o pida una visita gratuita y le orientamos.",
-      "intro": "Proyecto puntual o contrato recurrente: es el mismo equipo y el mismo estándar en cada trabajo que hacemos en Florida Central.",
+      "intro": "Proyecto puntual o contrato recurrente: es el mismo estándar por escrito en cada trabajo que hacemos en Florida Central.",
       "alsoAvailableTitle": "Para administradores de propiedades",
       "alsoAvailableBody": "Limpieza de mudanzas (entrada/salida) en unidades vacías entre inquilinos, además de limpiezas profundas para pasar la inspección. Pida un presupuesto gratis y agendamos una visita."
     },
@@ -485,7 +483,7 @@
           "Alcance y calendario a medida",
           "Tardes y fines de semana disponibles",
           "Desinfección de baños y puntos de contacto",
-          "El mismo equipo verificado en cada visita"
+          "Equipo verificado y con antecedentes"
         ],
         "cta": "Pedir presupuesto"
       },
@@ -625,7 +623,7 @@
       "title": "Nuestra historia",
       "body": [
         "Hola, soy Papo. Fundé Limpios después de salir del ejército y mudarme con mi familia al área de Clermont. Limpiaba oficinas y casas por mi cuenta, y quienes me contrataban me decían siempre lo mismo: los equipos anteriores recortaban esquinas, llegaban tarde o simplemente dejaban de contestar el teléfono.",
-        "Eso me molestó. En el servicio militar uno llega a tiempo, hace el trabajo completo y da la cara cuando algo sale mal. Así que construí Limpios para funcionar así: el mismo equipo, una lista de verificación que sí seguimos y un teléfono que sí se contesta.",
+        "Eso me molestó. En el servicio militar uno llega a tiempo, hace el trabajo completo y da la cara cuando algo sale mal. Así que construí Limpios para funcionar así: un equipo verificado, una lista de verificación que sí seguimos y un teléfono que sí se contesta.",
         "Hoy trabajamos con negocios, administradores de propiedades, HOAs y constructoras en toda Florida Central, y yo sigo saliendo a los trabajos. Me gusta que sea así."
       ]
     },
@@ -661,7 +659,7 @@
     },
     "team": {
       "title": "Nuestro equipo",
-      "body": "Cada limpiador de Limpios está verificado, capacitado y con antecedentes revisados. Verá las mismas caras en su sitio, a tiempo, tratando su espacio como propio."
+      "body": "Cada limpiador de Limpios está verificado, capacitado y con antecedentes revisados. Sea quien sea su equipo, llega a tiempo y trata su espacio como propio, siguiendo la misma lista de verificación por escrito en cada visita."
     },
     "teamPhotos": {
       "title": "El equipo, en trabajos reales"
@@ -688,8 +686,7 @@
     },
     "proofTitle": "Lo que sí podemos comprobar",
     "proof": {
-      "veteran": "Empresa de un veterano, con 28 años de experiencia militar.",
-      "veteranSba": "Empresa de un veterano certificada por la SBA, con 28 años de experiencia militar.",
+      "veteran": "Veteran Owned Small Business, con 28 años de experiencia militar.",
       "insured": "Con licencia y seguro. El certificado de seguro está disponible a pedido.",
       "chamber": "Miembro de la Cámara de Comercio de South Lake."
     },
@@ -1023,7 +1020,13 @@
       "img20": "Miembro del equipo de Limpios con camiseta de la empresa detallando gabinetes altos desde una escalera",
       "img25": "Baño de mármol terminado tras la limpieza post-construcción, pisos relucientes",
       "img26": "Habitación limpia con pisos de madera brillantes tras la limpieza post-construcción",
-      "img29": "Gorra con el logo de Limpios Cleaning Management sobre una mesa de trabajo"
+      "img29": "Gorra con el logo de Limpios Cleaning Management sobre una mesa de trabajo",
+      "img30": "Alfombra gris recién limpiada en un descanso de escalera, con líneas de cepillado marcadas y la boquilla aún a la vista",
+      "img31": "Alfombra gris después de la limpieza, con líneas de cepillado recientes junto a una entrada",
+      "img32": "Habitación vacía con alfombra gris limpiada de lado a lado y una manguera de extracción cruzando el piso",
+      "img36": "Habitación luminosa y vacía con alfombra gris limpiada de borde a borde y líneas de cepillado uniformes",
+      "img37": "Mangueras de extracción de la unidad montada en camión, tendidas para un trabajo de limpieza de alfombras",
+      "img38": "Habitación vacía con alfombra gris recién limpiada y las mangueras de extracción listas para el trabajo"
     }
   }
 }

@@ -10,15 +10,15 @@ import {
 } from "lucide-react";
 import { Section } from "@/components/ui/section";
 import { ClientsServed } from "@/components/sections/clients-served";
-import { site } from "@/content/site";
 
 /**
  * Social proof WITHOUT fake reviews. Three deliberately-layered levels:
  *  1. LIVE: anonymized client *categories* (zero legal risk, names never used).
- *  2. LIVE: the trust stack we can actually prove (Veteran Owned Business with 28
- *     years of military service, licensed + insured with a COI on request, chamber
- *     member). "SBA-certified" is NOT in that list until the owner confirms it —
- *     it is gated on `site.sbaCertifiedConfirmed`.
+ *  2. LIVE: the trust stack we can actually prove (a Veteran Owned Small Business
+ *     with 28 years of military service, licensed + insured with a COI on request,
+ *     chamber member). We render "Veteran Owned Small Business", never
+ *     "SBA-certified" — the latter names the SBA VetCert registration, a stronger
+ *     claim the owner has not made.
  *  3. GATED: the named client list (text only, no logos) — rendered by
  *     <ClientsServed/>, which stays off until Papo has written permission.
  * No client LOGOS anywhere, in any path: that needs per-brand written consent.
@@ -87,10 +87,7 @@ export function TrustedBy({
                 <Icon className="size-4.5" aria-hidden />
               </span>
               <span className="text-sm leading-relaxed text-foreground">
-                {/* SBA-certified is unconfirmed, so it is gated. See site.ts. */}
-                {id === "veteran" && site.sbaCertifiedConfirmed
-                  ? t("proof.veteranSba")
-                  : t(`proof.${id}`)}
+                {t(`proof.${id}`)}
               </span>
             </li>
           ))}

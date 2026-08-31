@@ -129,8 +129,7 @@
     "hero": {
       "eyebrow": "Veteran Owned · Central Florida",
       "slogan": "Veteran Owned Business",
-      "sloganProof": "28 years of military experience",
-      "sloganProofSba": "SBA-certified · 28 years of military experience",
+      "sloganProof": "A Veteran Owned Small Business with 28 years of military experience",
       "title": "Commercial cleaning your business can",
       "titleAccent": "count on",
       "subtitle": "Offices, post-construction sites, turnovers, windows and carpets, cleaned to a written scope by a vetted, veteran owned crew. Licensed and insured, based in Lake County, serving all of Central Florida.",
@@ -141,8 +140,7 @@
       "chipChamber": "Chamber of Commerce member"
     },
     "trustBar": {
-      "since": "Veteran Owned · 28 years of military experience",
-      "sinceSba": "SBA-certified · 28 years of military experience",
+      "since": "Veteran Owned Small Business · 28 years of military experience",
       "chamber": "South Lake Chamber member",
       "bilingual": "English & Español",
       "local": "Lake County based · Central Florida wide"
@@ -202,12 +200,12 @@
     "why": {
       "eyebrow": "Why Limpios",
       "title": "Local, accountable, and genuinely thorough",
-      "subtitle": "Most crews are fine. The difference here is in the follow-through: the same vetted faces, a written scope, an estimate back fast, and a guarantee we actually honor.",
+      "subtitle": "Most crews are fine. The difference here is in the follow-through: vetted, background-checked cleaners, a written scope every visit, an estimate back fast, and a guarantee we actually honor.",
       "ctaAbout": "Read our story",
       "points": {
         "team": {
-          "title": "The same vetted team",
-          "description": "Not a rotating cast. You get the same background-checked cleaners who learn your space and your standards."
+          "title": "A vetted, background-checked crew",
+          "description": "Every cleaner is vetted and background-checked before they set foot on your site. Whichever crew you get, they work to the same written standard."
         },
         "checklist": {
           "title": "A written scope & checklist",
@@ -279,7 +277,7 @@
       "eyebrow": "Services",
       "title": "Commercial-grade cleaning, five ways",
       "subtitle": "Insured, veteran owned, and done to a written scope. Pick the service that fits, or request a free walkthrough and we'll point you the right way.",
-      "intro": "One-time project or recurring contract, it's the same crew and the same standards on every job we run across Central Florida.",
+      "intro": "One-time project or recurring contract, it's the same written standard on every job we run across Central Florida.",
       "alsoAvailableTitle": "For property managers",
       "alsoAvailableBody": "Move-in/move-out turnovers on empty units between tenants, plus deep cleans to pass inspection. Request a free estimate and we'll set up a walkthrough."
     },
@@ -485,7 +483,7 @@
           "Custom scope & schedule",
           "Evenings & weekends available",
           "Restroom & touchpoint sanitizing",
-          "Same vetted crew each visit"
+          "Vetted, background-checked crew"
         ],
         "cta": "Request an estimate"
       },
@@ -625,7 +623,7 @@
       "title": "Our story",
       "body": [
         "Hi, I'm Papo. I started Limpios after I got out of the military and moved my family to the Clermont area. I'd been cleaning offices and houses on the side, and the people who hired me kept telling me the same thing: the crews they'd used before would cut corners, show up late, or just stop answering the phone.",
-        "That bugged me. In the service you show up on time, you do the job all the way, and you own it when something's off. So I built Limpios to run like that. Same crew, a written checklist we actually follow, and a phone that gets answered.",
+        "That bugged me. In the service you show up on time, you do the job all the way, and you own it when something's off. So I built Limpios to run like that: a vetted crew, a written checklist we actually follow, and a phone that gets answered.",
         "These days we work with businesses, property managers, HOAs and builders across Central Florida, and I'm usually out on jobs myself. I like it that way."
       ]
     },
@@ -661,7 +659,7 @@
     },
     "team": {
       "title": "Our team",
-      "body": "Every Limpios cleaner is vetted, trained and background-checked. You'll see the same faces on your site, on time, treating your space like it's theirs."
+      "body": "Every Limpios cleaner is vetted, trained and background-checked. Whoever's on your crew shows up on time and treats your space like it's theirs, working the same written checklist every visit."
     },
     "teamPhotos": {
       "title": "The crew, on real jobs"
@@ -688,8 +686,7 @@
     },
     "proofTitle": "What we can prove",
     "proof": {
-      "veteran": "Veteran Owned Business, with 28 years of military experience.",
-      "veteranSba": "SBA-certified Veteran Owned Business, with 28 years of military experience.",
+      "veteran": "A Veteran Owned Small Business with 28 years of military experience.",
       "insured": "Licensed and insured. A certificate of insurance is available on request.",
       "chamber": "Member of the South Lake Chamber of Commerce."
     },
@@ -1023,7 +1020,13 @@
       "img20": "Limpios crew member in a branded shirt detailing tall cabinets from a ladder",
       "img25": "Finished marble bathroom after post-construction cleaning, floors gleaming",
       "img26": "Cleaned bedroom with glossy wood floors after post-construction cleaning",
-      "img29": "Limpios Cleaning Management branded cap on a workbench"
+      "img29": "Limpios Cleaning Management branded cap on a workbench",
+      "img30": "Freshly cleaned grey carpet on a stair landing, with clean grooming lines and the cleaning wand still in frame",
+      "img31": "Grey carpet after cleaning, showing fresh grooming lines near a doorway",
+      "img32": "Empty room with grey carpet cleaned end to end, an extraction hose run across the floor",
+      "img36": "Bright empty room with grey carpet cleaned edge to edge, even grooming lines across the floor",
+      "img37": "Truck-mount extraction hoses run in from the van for a carpet cleaning job",
+      "img38": "Empty room with freshly cleaned grey carpet and the extraction hoses staged for the job"
     }
   }
 }

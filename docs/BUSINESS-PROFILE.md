@@ -21,7 +21,32 @@ otherwise "helpfully" restore things Papo asked us to remove.
 - **2026-07-14 — "Low-odor" REMOVED from all copy.** Neither Papo nor any of his own
   materials ever claimed it; it was a copy embellishment. **Eco-friendly stays** (it is
   on his own site).
-- **2026-07-14 — "SBA-certified" is GATED OFF, pending Papo.** See Credentials below.
+- **2026-08-31 — SBA credential RESOLVED to "Veteran Owned Small Business."** Hube
+  confirmed the exact SBA term: he is a **Veteran Owned Small Business**. That phrase
+  now renders on the hero proof line, trust bar and Trusted By stack, paired with the
+  "Veteran Owned Business" brand slogan. The old `sbaCertifiedConfirmed` gate is
+  removed. We still never render **"SBA-certified"** as a phrase: that names the SBA
+  VetCert *registration* specifically, a stronger and separately-verifiable claim the
+  owner has not made. "Veteran Owned Small Business" (the self-certifiable status) is
+  not a synonym for "SBA-certified".
+- **2026-08-31 — Crew consistency claim CORRECTED (was false).** Hube: *"The crew
+  rotates depending on locations."* The site had claimed the opposite ("the same
+  vetted team… not a rotating cast… the same cleaners who learn your space"). All such
+  "same faces / same team / same crew" copy is gone. The consistency story is now
+  true: **vetted, background-checked cleaners + a written checklist every visit**, so
+  the standard holds regardless of which crew is on site.
+- **2026-08-31 — Carpet-cleaning photos added (residential jobs).** img30–img38
+  delivered; **6 shipped** (img36, img30, img31, img32, img38, img37) to the Carpet
+  Cleaning service page as its proof strip, **3 dropped** (img33 byte-identical to
+  img32; img34 dim/tight closet; img35 busy background — both redundant with the
+  stronger img30). Captioned honestly as carpet cleaning with **no commercial
+  implication** (owner: **no commercial carpet work yet — residential only**). The
+  batch contained **no "other-company logos" screenshot**, so there was nothing to
+  exclude on that count. Not added to the homepage before/after gallery: those are
+  genuine before/after pairs and these are single shots — forcing a fake pair would be
+  dishonest.
+- **2026-07-14 — "SBA-certified" was GATED OFF, pending Papo.** Superseded 2026-08-31
+  (resolved to "Veteran Owned Small Business", above).
 - **2026-07 — Street address REMOVED from the site, deliberately.** See Contact below.
 - **2026-07 — Placeholder reviews DELETED** (not flagged off). There is no
   `reviewsArePlaceholder` flag any more and no `AggregateRating` is ever emitted. The
@@ -50,15 +75,14 @@ otherwise "helpfully" restore things Papo asked us to remove.
 
 ## Credentials & trust
 - **Veteran Owned** ✅ — **28 years of military experience** ✅
-- **SBA-certified** ⚠️ **UNCONFIRMED — NOT RENDERED.** This names a real federal
-  registration (SBA VetCert), which makes it the highest-liability claim on the site:
-  asserting it without an active certification is materially worse than any other
-  overstatement here. It was only ever inferred from his own public pages, and
-  `docs/fable-audit/00-context-reconciliation.md` explicitly says *do not assert it*.
-  It is therefore **gated behind `site.sbaCertifiedConfirmed` (currently `false`)**, and
-  every SBA surface renders "Veteran Owned Business" instead. **Antonio is confirming
-  with Papo.** When he produces the VetCert, flip that one flag to `true` and the hero,
-  trust bar and Trusted By proof stack all restore the SBA line together.
+- **Veteran Owned Small Business** ✅ **(confirmed by owner 2026-08-31).** This is the
+  SBA term Hube confirmed, and it is what renders on the hero proof line, trust bar and
+  Trusted By stack: *"A Veteran Owned Small Business with 28 years of military
+  experience."* The "Veteran Owned Business" brand slogan stays as the hook above it.
+- **"SBA-certified": do NOT render.** It is a stronger, distinct claim — it points at
+  the SBA VetCert *registration* specifically, which the owner has not asserted. There
+  is no gate any more; the confirmed "Veteran Owned Small Business" wording simply
+  renders. Do not reintroduce "SBA-certified" without the VetCert in hand.
 - **Licensed** ✅ — **License #L2600319** (city business license). Cleaning services don't
   require a trade licence in FL, so phrase carefully and never imply a specialised one.
 - **Insured** ✅ — **General Liability**, and a **certificate of insurance (COI) is
@@ -101,10 +125,11 @@ Commercial businesses · Property managers · Homeowners associations (HOAs) · 
 - (His FB lists price range "$$" 🔎 — directional only; the site correctly shows no rate card.)
 
 ## Team
-- ⚠️ **CONFIRM structure:** solo owner-operator vs. a crew. Videos show a 2–3 person crew,
-  and we know the cleaners are 1099 and work day jobs at the county schools. The site says
-  "the same background-checked, vetted cleaners" and "our team" — background checks are
-  confirmed; **team size / "same faces every visit" is still unverified.**
+- **The crew ROTATES depending on location** ✅ (confirmed by Hube 2026-08-31). The
+  cleaners are 1099 and work day jobs at the county schools, so who is on a given job
+  varies. Background checks are confirmed. **Do NOT claim "same faces / same team /
+  same crew every visit"** — that was on the site and is false. Consistency is framed
+  as vetted, background-checked people + a written checklist every visit.
 
 ## Claims the site currently ASSERTS — status
 - 48-hour free re-clean guarantee ✅ confirmed
@@ -112,8 +137,8 @@ Commercial businesses · Property managers · Homeowners associations (HOAs) · 
 - Evenings & weekends availability ✅ confirmed (replaced the vague "after-hours")
 - Eco-friendly products ✅🔎 (low-odor removed — never claimed by Papo)
 - Bilingual English/Español ✅ confirmed
-- "The same faces every visit" ⚠️ — depends on team structure, still unverified
-- SBA-certified ⚠️ — **gated off**, see Credentials
+- Consistency via checklist, **not** "same faces" ✅ (crew rotates — corrected 2026-08-31)
+- Veteran Owned Small Business ✅ confirmed (replaced the gated SBA claim)
 - Any equipment specifics (e.g., HEPA) — none remain in the copy ✅
 
 ## Online presence
@@ -135,12 +160,13 @@ Commercial businesses · Property managers · Homeowners associations (HOAs) · 
 
 ## STILL NEEDED FROM PAPO (the minimized ask)
 **Launch-critical:**
-1. **SBA VetCert** — confirm the certification is real and active, or we leave it off permanently. (In progress with Antonio.)
+1. **SBA VetCert** — only if we ever want to state "SBA-certified" specifically. The
+   confirmed "Veteran Owned Small Business" wording is already live and does not need it.
 2. **Real Google reviews** — the GBP review link, and start collecting.
 3. **Interior painting: in or out?**
-4. **Team structure** — solo or a crew; is it genuinely "the same faces every visit"?
-5. **Proof photos** — commercial/office, carpet, construction-cleanup jobs.
-6. **Transparent mascot PNG.**
+4. **Proof photos** — commercial/office and construction-cleanup jobs. (Carpet is now
+   covered by the img30–img38 residential batch; still no *commercial* carpet work.)
+5. **Transparent mascot PNG.**
 
 **Nice-to-have / pre-launch:**
 7. Confirm the **founding year** (registry says the LLC filed 2023-09-18; nothing on the site claims a founding year today, and none should be added until he confirms).
